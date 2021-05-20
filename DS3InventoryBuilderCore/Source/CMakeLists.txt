@@ -1,5 +1,7 @@
 target_sources(DS3InventoryBuilderCore
 	PRIVATE
+		"Calculator.cpp"
+		"Calculator.h"
 		"Database.cpp"
 		"Database.h"
 		"PlayerAttributes.hpp"

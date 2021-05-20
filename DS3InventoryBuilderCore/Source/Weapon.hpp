@@ -12,22 +12,24 @@ namespace invbuilder
 		int physical, magic, fire, lightning, dark, bleed, poison;
 	};
 
+	struct Status final
+	{
+		float bleed, poison, frost;
+	};
+
+	struct DamageTypes final
+	{
+		float physical, magic, fire, lightning, dark;
+		auto Total() const { return physical + magic + fire + lightning + dark; }
+	};
+
+	struct Resistance final
+	{
+		float bleed, poison, frost, curse;
+	};
+
 	struct LevelProperties final
 	{
-		struct Status final
-		{
-			float bleed, poison, frost;
-		};
-
-		struct DamageTypes final
-		{
-			float physical, magic, fire, lightning, dark;
-		};
-
-		struct Resistance final
-		{
-			float bleed, poison, frost, curse;
-		};
 
 		float luckMod;
 		float stability;

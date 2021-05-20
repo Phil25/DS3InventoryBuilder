@@ -8,6 +8,7 @@ using Weapon = invbuilder::Weapon;
 using PlayerAttributes = invbuilder::PlayerAttributes;
 using InfusionProperties = invbuilder::InfusionProperties;
 using LevelProperties = invbuilder::LevelProperties;
+using DamageTypes = invbuilder::DamageTypes;
 using SaturationFunctionID = invbuilder::SaturationFunctionID;
 
 namespace
@@ -191,7 +192,7 @@ namespace
 		};
 	}
 
-	auto ParseDamageTypes(const rapidjson::Value& types) -> LevelProperties::DamageTypes
+	auto ParseDamageTypes(const rapidjson::Value& types) -> DamageTypes
 	{
 		return {
 			types["physical"].GetFloat(),
