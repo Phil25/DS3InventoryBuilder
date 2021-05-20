@@ -1,0 +1,67 @@
+#pragma once
+
+#include <Weapon.hpp>
+
+namespace invbuilder
+{
+	class Database final
+	{
+	public:
+		using Weapons = std::map<std::string_view, Weapon>;
+
+	private:
+		const Weapons weapons{
+			{ // start Dagger
+				"Dagger",
+				{
+					"Dagger",
+					Weapon::Type::Dagger,
+					1,
+					1.0,
+					true,
+					true,
+					false,
+					1.5,
+					{5, 9, 0, 0, 0}, // requirements
+					{ // properties (map<Infusion, InfusionPropetiesa>)
+						{ // no infusion
+							Weapon::Infusion::None,
+							{
+								{9, 0, 0, 0, 0, 7, 7}, // saturation indices
+								{{ // levels array
+									{ // level properties #0
+										1.0, // luck mod
+										15.0, // stability
+										{0.0, 0.0, 0.0}, // statuses
+										{65.0, 0.0, 0.0, 0.0, 0.0}, // damage
+										{10.0, 70.0, 0.0, 0.0, 0.0}, // scaling
+										{35.0, 20.0, 15.0, 15.0, 20.0}, // absorption
+										{10.0, 10.0, 10.0, 10.0} // resistance
+									},
+									{ // level properties #1
+										1.05, // luck mod
+										15.0, // stability
+										{0.0, 0.0, 0.0}, // statuses
+										{71.5, 0.0, 0.0, 0.0, 0.0}, // damage
+										{10.5, 73.5, 0.0, 0.0, 0.0}, // scaling
+										{35.0, 20.0, 15.0, 15.0, 20.0}, // absorption
+										{10.0, 10.0, 10.0, 10.0} // resistance
+									},
+									{}, // level properties #2
+									{}, // level properties #3
+									{}, // level properties #4
+									{}, // level properties #5
+									{}, // level properties #6
+									{}, // level properties #7
+									{}, // level properties #8
+									{}, // level properties #9
+									{} // level properties #10
+								}}
+							}
+						} // end no infusion
+					}
+				}
+			} // end dagger
+		};
+	};
+}
