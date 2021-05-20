@@ -1,0 +1,15 @@
+if (WIN32)
+	add_executable(DS3InventoryBuilder WIN32)
+elseif (APPLE)
+	add_executable(DS3InventoryBuilder MACOSX_BUNDLE)
+else ()
+	add_executable(DS3InventoryBuilder)
+endif ()
+
+set(REG_FILE ".*\.(c[pp]?|h[pp]?)")
+source_group("Source" REGULAR_EXPRESSION "${REG_FILE}")
+source_group("Source\\Frames" REGULAR_EXPRESSION "Frames/${REG_FILE}")
+
+target_link_libraries(DS3InventoryBuilder PRIVATE DS3InventoryBuilderCore CONAN_PKG::wxwidgets)
+
+add_subdirectory("Source")

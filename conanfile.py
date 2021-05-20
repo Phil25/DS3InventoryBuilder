@@ -8,6 +8,7 @@ class DS3InventoryBuilder(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     requires = (
         "cmake_installer/3.14.5@conan/stable",
+        "wxwidgets/3.1.4@bincrafters/stable",
         "rapidjson/cci.20200410",
         "bzip2/1.0.8"
     )

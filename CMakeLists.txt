@@ -16,5 +16,6 @@ if (DEFINED APP_VERSION)
     add_definitions(-DAPP_VERSION="${APP_VERSION}")
 endif ()
 
+add_subdirectory(DS3InventoryBuilder)
 add_subdirectory(DS3InventoryBuilderCore)
 add_subdirectory(DS3InventoryBuilderManual)
