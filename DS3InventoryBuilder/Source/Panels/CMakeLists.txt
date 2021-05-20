@@ -1,0 +1,13 @@
+target_sources(DS3InventoryBuilder
+	PRIVATE
+		"Finder.cpp"
+		"Finder.h"
+		"Inventory.cpp"
+		"Inventory.h"
+		"Preview.cpp"
+		"Preview.h"
+		"Settings.cpp"
+		"Settings.h"
+		"Title.cpp"
+		"Title.h"
+)
