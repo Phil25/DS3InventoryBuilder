@@ -7,18 +7,23 @@ namespace invbuilder
 {
 	class Database final
 	{
-		using Weapons = std::unordered_map<std::string, Weapon>;
-		const Weapons weapons;
+		using WeaponNames = std::vector<std::string>;
+		const WeaponNames names;
+
+		using WeaponData = std::unordered_map<std::string_view, Weapon>;
+		const WeaponData weapons;
 
 		using SaturationFunction = std::array<float, 100>;
 		using Saturations = std::vector<SaturationFunction>;
 		const Saturations saturations;
 
-		Database(Weapons weapons, Saturations staurations);
+		Database(WeaponNames names, WeaponData weapons, Saturations staurations);
 
 	public:
+		auto GetNames() const -> const WeaponNames&;
+		auto GetWeapon(const size_t index) const -> const Weapon&;
 		auto GetWeapon(const char* name) const -> const Weapon&;
-		auto GetSaturationFunction(size_t index) const -> const SaturationFunction&;
+		auto GetSaturationFunction(const size_t index) const -> const SaturationFunction&;
 
 		static auto Create() -> Database;
 	};

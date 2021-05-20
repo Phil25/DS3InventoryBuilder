@@ -286,10 +286,22 @@ namespace
 	}
 }
 
-Database::Database(Weapons weapons, Saturations saturations)
-	: weapons(std::move(weapons))
+Database::Database(WeaponNames names, WeaponData weapons, Saturations saturations)
+	: names(std::move(names))
+	, weapons(std::move(weapons))
 	, saturations(std::move(saturations))
 {
+}
+
+auto Database::GetNames() const -> const WeaponNames&
+{
+	return names;
+}
+
+auto Database::GetWeapon(const size_t index) const -> const Weapon&
+{
+	assert(index < names.size() && "invalid weapon index");
+	return weapons.at(names[index]);
 }
 
 auto Database::GetWeapon(const char* name) const -> const Weapon&
@@ -297,7 +309,7 @@ auto Database::GetWeapon(const char* name) const -> const Weapon&
 	return weapons.at(name);
 }
 
-auto Database::GetSaturationFunction(size_t index) const -> const SaturationFunction&
+auto Database::GetSaturationFunction(const size_t index) const -> const SaturationFunction&
 {
 	assert(index < saturations.size() && "invalid saturation function index");
 	return saturations[index];
@@ -310,15 +322,23 @@ auto Database::Create() -> Database
 	rapidjson::Document doc;
 	doc.Parse(weaponData.data());
 
-	Weapons weapons;
+	WeaponNames names;
+	WeaponData weapons;
+	names.reserve(286);
+	weapons.reserve(286);
+
 	for (auto it = doc.MemberBegin(); it != doc.MemberEnd(); ++it)
 	{
-		weapons.emplace(it->name.GetString(), ParseWeapon(it->value));
+		const auto& ref = names.emplace_back(it->name.GetString());
+		weapons.emplace(ref, ParseWeapon(it->value));
 	}
 
 	Saturations saturations{
 #include "Data/saturations.txt"
 	};
 
-	return Database(std::move(weapons), std::move(saturations));
+	assert(names.size() == weapons.size() && "names and weapons container mismatch");
+	assert(names.size() && "empty weapon data");
+	assert(names.size() == 286 && "there are 286 weapons in the game");
+	return Database(std::move(names), std::move(weapons), std::move(saturations));
 }

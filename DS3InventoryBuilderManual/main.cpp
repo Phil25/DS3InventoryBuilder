@@ -20,5 +20,7 @@ int main()
 	std::cout << (db.GetWeapon("Ringed Knight Paired Greatswords").type == Type::UltraGreatsword) << cr;
 	std::cout << db.GetSaturationFunction(5)[33] << cr;
 
+	std::cout << db.GetNames().size() << cr;
+
 	return 0;
 }
