@@ -4,6 +4,8 @@ WIP subtitle: allows you to quickly build inventory in order to optimize it for 
 
 ## Legal, thirdparty and thanks
 * Item names and images are properties of FromSoftware Inc.
+* [RapidJSON](https://rapidjson.org/).
+* [bzip2 library](https://www.sourceware.org/bzip2/).
 * [soulsplanner.com](https://soulsplanner.com)'s weapon parameter tables.
 * [Table Capture](https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop) Chrome extension to parse said tables.
 * [How to Calcualte AR](https://blog.mugenmonkey.com/2016/07/22/how-to-calculate-ar.html) article at MugenMonkey Blog.
