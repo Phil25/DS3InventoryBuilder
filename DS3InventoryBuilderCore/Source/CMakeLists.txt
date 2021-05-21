@@ -4,6 +4,8 @@ target_sources(DS3InventoryBuilderCore
 		"Calculator.h"
 		"Database.cpp"
 		"Database.h"
+		"ImageStorage.cpp"
+		"ImageStorage.h"
 		"PlayerAttributes.hpp"
 		"Weapon.hpp"
 )

@@ -1,4 +1,5 @@
 #include "Database.h"
+#include <ImageStorage.h>
 #include <rapidjson/document.h>
 #include <bzlib.h>
 #include <vector>
@@ -21,6 +22,7 @@ namespace
 #include "Data/weapon_data.json.bz2.txt"
 		};
 
+		// TODO: decompressed has size zero, turn this into array pointer
 		std::vector<char> decompressed;
 		decompressed.reserve(maxDecompressedWeaponDataSize);
 		unsigned int destLen = maxDecompressedWeaponDataSize;
@@ -31,7 +33,7 @@ namespace
 
 		const auto success = BZ2_bzBuffToBuffDecompress(&decompressed.front(), &destLen, source, sourceLen, 0, 0);
 
-		assert(success == 0 && "Failure in decompressing weapon data");
+		assert(success == 0 && "failure decompressing weapon data");
 		(void)success;
 
 		return decompressed;
@@ -273,6 +275,7 @@ namespace
 	auto ParseWeapon(const rapidjson::Value& data) -> Weapon
 	{
 		return {
+			data["id"].GetInt(),
 			data["name"].GetString(),
 			ToWeaponType(data["class"].GetString()),
 			data["order"].GetInt(),
@@ -314,6 +317,11 @@ auto Database::GetSaturationFunction(const size_t index) const -> const Saturati
 {
 	assert(index < saturations.size() && "invalid saturation function index");
 	return saturations[index];
+}
+
+auto Database::GetImage(unsigned int& size, std::string& name) const -> uint8_t*
+{
+	return GetImageBytes(size, name);
 }
 
 auto Database::Create() -> Database

@@ -64,6 +64,7 @@ namespace invbuilder
 
 		using Properties = std::map<Infusion, const InfusionProperties>;
 
+		const int id;
 		const std::string name;
 		const Type type;
 		const int orderID;

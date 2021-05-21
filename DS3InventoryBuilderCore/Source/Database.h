@@ -24,6 +24,7 @@ namespace invbuilder
 		auto GetWeapon(const size_t index) const -> const Weapon&;
 		auto GetWeapon(const char* name) const -> const Weapon&;
 		auto GetSaturationFunction(const size_t index) const -> const SaturationFunction&;
+		auto GetImage(unsigned int& size, std::string& name) const -> uint8_t*;
 
 		static auto Create() -> Database;
 	};

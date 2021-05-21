@@ -2,6 +2,7 @@ import csv
 import json
 import bz2
 import os
+from pathlib import Path
 from enum import IntEnum
 
 # *THIS IS A VERY DISORGANIZED SCRIPT*
@@ -16,6 +17,8 @@ SHORTEN = False
 
 FILENAME_WEAPON_DATA = "weapon_data.json.bz2.txt"
 FILENAME_SATURATIONS = "saturations.txt"
+FILENAME_IMAGE_DECLARATIONS = "ImageDeclarations.hpp"
+FILENAME_IMAGE_ACCESSOR = "ImageAccessor.hpp"
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -68,7 +71,7 @@ def s(text):
         return text
 
     return {
-        "name": "n", "class": "c", "buffable": "b", "infusable": "i?", "weight": "w",
+        "id": "id", "name": "n", "class": "c", "buffable": "b", "infusable": "i?", "weight": "w",
         "lck_coeff": "l", "requirements": "r", "order": "o", "unique": "u", "infusion": "i",
 
         "saturation_index": "s", "level": "l",
@@ -82,12 +85,22 @@ def s(text):
         "str": "s", "dex": "d", "int": "i", "fth": "f", "lck": "l",
     }[text]
 
+# alternatively: `cat {file} | xxd -p | sed -s 's/\(..\)/0x\1, /g' > {output}`
+def to_cpp_byte_array(b):
+    return " ".join(map("0x{:02X},".format, b))
+
+def to_cpp_identifier(name):
+    identifier = name.replace(" ", "")
+    identifier = identifier.replace("'", "")
+    return identifier.replace("-", "")
+
 def parse_weapon(out, weapon):
     index = int(weapon[WD.ID][:-4])
 
     if index not in out:
         out[index] = {}
         out[index]["static"] = {
+            s("id"): int(weapon[WD.ID]),
             s("name"): weapon[WD.NAME],
             s("class"): weapon[WD.CLASS],
             s("buffable"): weapon[WD.BUFFABLE] == "TRUE",
@@ -300,11 +313,9 @@ def build_weapon_data(delete_artifacts=False):
             out.write(raw.read())
 
     print(f"Preparing C++ byte format for weapon data (filename=\"{FILENAME_WEAPON_DATA}\")...", flush=True)
-    # alternatively: `cat {file} | xxd -p | sed -s 's/\(..\)/0x\1, /g' > {output}`
     with open(f"{dir_path}/weapon_data.json.bz2", "rb") as f:
-        b = " ".join(map("0x{:02X},".format, f.read()))
         with open(f"{dir_path}/{FILENAME_WEAPON_DATA}", "w") as out:
-            out.write(b)
+            out.write(to_cpp_byte_array(f.read()))
 
     print("Weapon data generation successful!", flush=True)
 
@@ -331,6 +342,33 @@ def build_saturations(delete_artifacts=False):
 
     print("Saturations generation successful!", flush=True)
 
+def build_images():
+    images = os.listdir(f"{dir_path}/Raw/Image/")
+    images = [Path(i).stem for i in images]
+
+    print(f"Preparing C++ {FILENAME_IMAGE_DECLARATIONS}...", flush=True)
+    with open(f"{dir_path}/{FILENAME_IMAGE_DECLARATIONS}", "w") as out:
+        for name in images:
+            identifier = to_cpp_identifier(name)
+            out.write(f"static uint8_t {identifier}[]={{")
+            with open(f"{dir_path}/Raw/Image/{name}.png", "rb") as image:
+                out.write(to_cpp_byte_array(image.read()))
+            out.write("};")
+
+    print(f"Preparing C++ {FILENAME_IMAGE_ACCESSOR}...", flush=True)
+    with open(f"{dir_path}/{FILENAME_IMAGE_ACCESSOR}", "w") as out:
+        out.write("uint8_t* GetImageBytes(unsigned int& size, std::string& name){\n")
+        index = 0
+        out.write(f"static int index={index};switch(++index){{\n")
+        for name in images:
+            index += 1
+            identifier = to_cpp_identifier(name)
+            out.write(f"case {index}: size=sizeof({identifier}); name=\"{name}\"; return {identifier};\n")
+        out.write("}return nullptr;}")
+
+    print("Images generation successful!", flush=True)
+
 if __name__ == "__main__":
     build_weapon_data()
     build_saturations()
+    build_images()

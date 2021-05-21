@@ -35,6 +35,13 @@ class DS3InventoryBuilder(ConanFile):
             gen.build_saturations(delete_artifacts=True)
             shutil.move(gen_path / gen.FILENAME_SATURATIONS, out_path)
 
+        if (out_path / gen.FILENAME_IMAGE_DECLARATIONS).exists() and (out_path / gen.FILENAME_IMAGE_ACCESSOR).exists():
+            print(f"Image data already generated", flush=True)
+        else:
+            gen.build_images()
+            shutil.move(gen_path / gen.FILENAME_IMAGE_DECLARATIONS, out_path / gen.FILENAME_IMAGE_DECLARATIONS)
+            shutil.move(gen_path / gen.FILENAME_IMAGE_ACCESSOR, out_path / gen.FILENAME_IMAGE_ACCESSOR)
+
     def build(self):
         cmake = CMake(self)
 

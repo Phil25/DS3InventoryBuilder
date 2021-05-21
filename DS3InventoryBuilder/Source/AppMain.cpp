@@ -1,6 +1,39 @@
 #include "AppMain.h"
 
+#include <wx/mstream.h>
+
 wxIMPLEMENT_APP(AppMain);
+
+AppMain::Images::Images(const invbuilder::Database& db)
+{
+	unsigned int size;
+	std::string name;
+	uint8_t* buffer{nullptr};
+
+	while (buffer = db.GetImage(size, name))
+	{
+		auto stream = wxMemoryInputStream{buffer, size};
+		auto data = ImageData{{stream, wxBITMAP_TYPE_PNG}, {}};
+		images.emplace(std::move(name), std::move(data));
+	}
+}
+
+auto AppMain::Images::Get(const char* name, const int size) -> const wxBitmap&
+{
+	auto it = images.find(name);
+	assert(it != images.end() && "image not found");
+
+	auto& cache = it->second;
+
+	if (cache.bitmap.GetWidth() != size)
+	{
+		auto image = cache.image.Scale(size, size);
+		cache.bitmap = wxBitmap{std::move(image)};
+	}
+
+	assert(cache.bitmap.GetHeight() == size && "images should be 1:1");
+	return cache.bitmap;
+}
 
 AppMain::AppMain()
 	: database(invbuilder::Database::Create())
@@ -10,6 +43,8 @@ AppMain::AppMain()
 bool AppMain::OnInit()
 {
 	wxInitAllImageHandlers();
+
+	images = std::make_unique<Images>(database);
 
 	auto title = wxString("DS3InventoryBuilder -- v");
 	title.Append(APP_VERSION);
@@ -23,4 +58,10 @@ bool AppMain::OnInit()
 auto AppMain::GetDatabase() -> const invbuilder::Database&
 {
 	return database;
+}
+
+auto AppMain::GetImage(const char* name, const int size) -> const wxBitmap&
+{
+	assert(images && "images not initialized");
+	return images->Get(name, size);
 }
