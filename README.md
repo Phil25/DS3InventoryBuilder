@@ -2,16 +2,19 @@
 
 WIP subtitle: allows you to quickly build inventory in order to optimize it for hardswarps and look up weapon stats and info.
 
-## Legal, thirdparty and thanks
-* Item names and images are properties of FromSoftware Inc.
-* [RapidJSON](https://rapidjson.org/).
-* [bzip2 library](https://www.sourceware.org/bzip2/).
+## Special thanks
 * [soulsplanner.com](https://soulsplanner.com)'s weapon parameter tables.
 * [Table Capture](https://chrome.google.com/webstore/detail/table-capture/iebpjdmgckacbodjpijphcplhebcmeop) Chrome extension to parse said tables.
 * [How to Calcualte AR](https://blog.mugenmonkey.com/2016/07/22/how-to-calculate-ar.html) article at MugenMonkey Blog.
 * [Post on calcuting AR](https://www.reddit.com/r/darksouls3/comments/4gqrpy/how_to_calculate_attack_rating_of_any_weapon_at/) by `u/Frostitutes`.
 * [Spreadsheet with full weapon data](https://www.reddit.com/r/darksouls3/comments/4j3o40/spreadsheet_with_full_ar_calculation/) by `u/monrandira` and `u/pireax`.
-* [ds3-ar](https://github.com/Derling/ds3-ar/tree/master/src) project from Derling.
+* [ds3-ar](https://github.com/Derling/ds3-ar/tree/master/src) project from `Derling`.
+
+## Legal and thirdparty
+* Item names and images are properties of FromSoftware Inc.
+* [wxWidgets](https://www.wxwidgets.org/) for corss-platform native GUI.
+* [RapidJSON](https://rapidjson.org/).
+* [bzip2](https://www.sourceware.org/bzip2/).
 
 ## Building
 This project uses the [Conan](https://docs.conan.io/en/latest/installation.html) package manager.
