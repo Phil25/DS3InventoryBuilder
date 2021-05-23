@@ -14,7 +14,7 @@ case 11: size=sizeof(BarbedStraightSword); name="Barbed Straight Sword"; return 
 case 12: size=sizeof(BastardSword); name="Bastard Sword"; return BastardSword;
 case 13: size=sizeof(BattleAxe); name="Battle Axe"; return BattleAxe;
 case 14: size=sizeof(BlackBlade); name="Black Blade"; return BlackBlade;
-case 15: size=sizeof(BlackBowOfPharis); name="Black Bow Of Pharis"; return BlackBowOfPharis;
+case 15: size=sizeof(BlackBowofPharis); name="Black Bow of Pharis"; return BlackBowofPharis;
 case 16: size=sizeof(BlackIronGreatshield); name="Black Iron Greatshield"; return BlackIronGreatshield;
 case 17: size=sizeof(BlackKnightGlaive); name="Black Knight Glaive"; return BlackKnightGlaive;
 case 18: size=sizeof(BlackKnightGreataxe); name="Black Knight Greataxe"; return BlackKnightGreataxe;
@@ -166,7 +166,7 @@ case 163: size=sizeof(Lucerne); name="Lucerne"; return Lucerne;
 case 164: size=sizeof(Mace); name="Mace"; return Mace;
 case 165: size=sizeof(MailBreaker); name="Mail Breaker"; return MailBreaker;
 case 166: size=sizeof(ManSerpentHatchet); name="Man Serpent Hatchet"; return ManSerpentHatchet;
-case 167: size=sizeof(ManGrubsStaff); name="Man-Grub's Staff"; return ManGrubsStaff;
+case 167: size=sizeof(MangrubsStaff); name="Man-grub's Staff"; return MangrubsStaff;
 case 168: size=sizeof(ManikinClaws); name="Manikin Claws"; return ManikinClaws;
 case 169: size=sizeof(MendicantsStaff); name="Mendicant's Staff"; return MendicantsStaff;
 case 170: size=sizeof(MillwoodBattleAxe); name="Millwood Battle Axe"; return MillwoodBattleAxe;

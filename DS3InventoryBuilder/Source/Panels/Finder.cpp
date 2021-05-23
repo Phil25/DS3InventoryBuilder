@@ -1,8 +1,14 @@
 #include "Finder.h"
 
+#include <Panels/WeaponGrid.h>
+
 Finder::Finder(wxWindow* parent)
 	: Title(parent, "Weapon Finder")
 {
-	this->SetMinSize(wxSize(64 * 5, 0)); // 5x 64x64 icons
-	this->SetMaxSize(wxSize(128 * 5, 99999)); // 5x 128x128 icons
+	auto* sizer = new wxBoxSizer(wxHORIZONTAL);
+	sizer->AddStretchSpacer(1);
+	sizer->Add(new WeaponGrid(GetContent()), 100, wxEXPAND);
+	sizer->AddStretchSpacer(1);
+
+	GetContent()->SetSizer(sizer);
 }

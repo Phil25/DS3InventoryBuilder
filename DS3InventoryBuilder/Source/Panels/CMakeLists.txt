@@ -10,4 +10,6 @@ target_sources(DS3InventoryBuilder
 		"Settings.h"
 		"Title.cpp"
 		"Title.h"
+		"WeaponGrid.cpp"
+		"WeaponGrid.h"
 )

@@ -18,7 +18,7 @@ AppMain::Images::Images(const invbuilder::Database& db)
 	}
 }
 
-auto AppMain::Images::Get(const char* name, const int size) -> const wxBitmap&
+auto AppMain::Images::Get(const std::string& name, const int size) -> const wxBitmap&
 {
 	auto it = images.find(name);
 	assert(it != images.end() && "image not found");
@@ -27,7 +27,7 @@ auto AppMain::Images::Get(const char* name, const int size) -> const wxBitmap&
 
 	if (cache.bitmap.GetWidth() != size)
 	{
-		auto image = cache.image.Scale(size, size);
+		auto image = cache.image.Scale(size, size, wxIMAGE_QUALITY_BICUBIC);
 		cache.bitmap = wxBitmap{std::move(image)};
 	}
 
@@ -60,7 +60,7 @@ auto AppMain::GetDatabase() -> const invbuilder::Database&
 	return database;
 }
 
-auto AppMain::GetImage(const char* name, const int size) -> const wxBitmap&
+auto AppMain::GetImage(const std::string& name, const int size) -> const wxBitmap&
 {
 	assert(images && "images not initialized");
 	return images->Get(name, size);

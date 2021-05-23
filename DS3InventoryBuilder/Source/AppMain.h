@@ -19,7 +19,7 @@ class AppMain final : public wxApp
 	public:
 		Images(const invbuilder::Database&);
 
-		auto Get(const char* name, const int size) -> const wxBitmap&;
+		auto Get(const std::string& name, const int size) -> const wxBitmap&;
 	};
 
 	const invbuilder::Database database;
@@ -33,7 +33,7 @@ public:
 	bool OnInit() override;
 
 	auto GetDatabase() -> const invbuilder::Database&;
-	auto GetImage(const char* name, const int size) -> const wxBitmap&;
+	auto GetImage(const std::string& name, const int size) -> const wxBitmap&;
 };
 
 DECLARE_APP(AppMain)

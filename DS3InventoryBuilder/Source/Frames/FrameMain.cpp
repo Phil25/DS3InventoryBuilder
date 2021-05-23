@@ -20,7 +20,7 @@ FrameMain::FrameMain(wxString title) : wxFrame(nullptr, wxID_ANY, std::move(titl
 
 	main->Add(finder, 1, wxEXPAND | wxALL, 3);
 	main->Add(inventory, 1, wxEXPAND | wxRIGHT | wxTOP | wxBOTTOM, 3);
-	main->Add(right, 1, wxEXPAND | wxRIGHT | wxTOP | wxBOTTOM, 3);
+	main->Add(right, 0, wxEXPAND | wxRIGHT | wxTOP | wxBOTTOM, 3);
 
 	this->SetSizerAndFit(main);
 }
