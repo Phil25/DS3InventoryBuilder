@@ -2,37 +2,153 @@
 
 #include <AppMain.h>
 
+#define RETURN_COMPARISON_ON_DIFFERENCE(a,b) \
+	switch (Compare(a, b)) \
+	{ \
+	case -1: return true; \
+	case 1: return false; \
+	} \
+
 class WeaponGrid::Card final : public wxPanel
 {
-	const std::string name{"Dagger"};
+	using Weapon = invbuilder::Weapon;
+	using Infusion = Weapon::Infusion;
+
+	const Weapon& data;
+	Infusion infusion{Infusion::None};
+	int level{10};
 
 public:
-	Card(wxWindow* parent)
+	Card(wxWindow* parent, const std::string& name)
 		: wxPanel(parent)
+		, data(wxGetApp().GetDatabase().GetWeapon(name))
 	{
 		Bind(wxEVT_PAINT, [&](wxPaintEvent&) { this->Render(); });
 	}
 
+	auto GetData() const -> const Weapon&
+	{
+		return data;
+	}
+
+	auto GetInfusion() const
+	{
+		return infusion;
+	}
+
+	auto SetInfusion(const Infusion infusion)
+	{
+		this->infusion = infusion;
+	}
+
+	auto GetLevel() const
+	{
+		return level;
+	}
+
+	auto SetLevel(const int level)
+	{
+		this->level = level;
+	}
+
+private:
 	void Render()
 	{
 		const auto& size = this->GetSize().x;
 		auto dc = wxPaintDC{this};
 
-		dc.DrawBitmap(wxGetApp().GetImage(name, size), 0, 0, false);
+		dc.DrawBitmap(wxGetApp().GetImage(data.name, size), 0, 0, false);
 	}
 };
+
+namespace
+{
+	template <typename T>
+	constexpr int Compare(const T& a, const T& b) noexcept
+	{
+		return (a < b) ? -1 : (a > b);
+	}
+}
+
+bool ComparatorDefault(const WeaponGrid::Card* card1, const WeaponGrid::Card* card2)
+{
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetData().orderID, card2->GetData().orderID);
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetInfusion(), card2->GetInfusion());
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetLevel(), card2->GetLevel());
+	return true; // weapons are the same
+}
+
+bool ComparatorWeight(const WeaponGrid::Card* card1, const WeaponGrid::Card* card2)
+{
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetData().weight, card2->GetData().weight);
+	return ComparatorDefault(card1, card2);
+}
+
+namespace
+{
+	inline auto* GetComparatorFunction(const WeaponSorting::Method method)
+	{
+		using M = WeaponSorting::Method;
+		switch (method)
+		{
+		case M::Default: return ComparatorDefault;
+		case M::Weight: return ComparatorWeight;
+		case M::AttackPower: return ComparatorDefault; // TODO
+		case M::GuardAbsorption: return ComparatorDefault; // TODO
+		case M::Effect: return ComparatorDefault; // TODO
+		}
+
+		assert(false && "invalid sorting method");
+		return ComparatorDefault;
+	}
+}
 
 WeaponGrid::WeaponGrid(wxWindow* parent)
 	: wxPanel(parent)
 {
-	for (int i = 0; i < 286; ++i)
-		cards.push_back(new Card(this));
-
 	this->SetMinSize(wxSize(64 * 5, 128));
 	this->SetMaxSize(wxSize(128 * 5, 99999));
 
 	Bind(wxEVT_SIZE, &WeaponGrid::OnSize, this);
 	Bind(wxEVT_MOUSEWHEEL, &WeaponGrid::OnMousewheel, this);
+}
+
+void WeaponGrid::InitializeBaseWeapons()
+{
+	for (const auto& name : wxGetApp().GetDatabase().GetNames())
+		cards.emplace_back(new Card(this, name));
+
+	Sort();
+}
+
+void WeaponGrid::SetSorting(const WeaponSorting& sorting)
+{
+	if (this->sorting.method != sorting.method &&
+		this->sorting.reverse != sorting.reverse)
+	{
+		this->sorting = sorting;
+		Sort();
+	}
+}
+
+void WeaponGrid::AddWeapon(const Card* card)
+{
+}
+
+void WeaponGrid::RemoveWeapon(const Card* card)
+{
+}
+
+void WeaponGrid::Sort()
+{
+	if (sorting.reverse)
+	{
+		std::sort(cards.rbegin(), cards.rend(), GetComparatorFunction(sorting.method));
+	}
+	else
+	{
+		std::sort(cards.begin(), cards.end(), GetComparatorFunction(sorting.method));
+	}
 }
 
 void WeaponGrid::OnSize(wxSizeEvent& e)

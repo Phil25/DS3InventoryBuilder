@@ -308,7 +308,7 @@ auto Database::GetWeapon(const size_t index) const -> const Weapon&
 	return weapons.at(names[index]);
 }
 
-auto Database::GetWeapon(const char* name) const -> const Weapon&
+auto Database::GetWeapon(const std::string& name) const -> const Weapon&
 {
 	return weapons.at(name);
 }
