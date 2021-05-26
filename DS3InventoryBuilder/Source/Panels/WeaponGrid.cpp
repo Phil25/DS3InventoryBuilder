@@ -1,6 +1,7 @@
 #include "WeaponGrid.h"
 
 #include <AppMain.h>
+#include <algorithm>
 
 #define RETURN_COMPARISON_ON_DIFFERENCE(a,b) \
 	switch (Compare(a, b)) \
@@ -8,6 +9,37 @@
 	case -1: return true; \
 	case 1: return false; \
 	} \
+
+
+namespace
+{
+	template <typename T>
+	constexpr int Compare(const T& a, const T& b) noexcept
+	{
+		return (a < b) ? -1 : (a > b);
+	}
+
+	inline auto GetItemColor(const bool selected, const bool hovered)
+	{
+		switch (selected + hovered * 2)
+		{
+		// Hufflepuff palette -- https://www.color-hex.com/color-palette/816
+		case 0: return wxColor(114, 98, 85); // normal
+		case 1: return wxColor(240, 199, 94); // selected
+		case 2: return wxColor(55, 46, 41); // hovered
+		case 3: return wxColor(236, 185, 57); // selected + hovered
+
+		// blue tones
+		//case 0: return wxColor(200, 200, 200); // normal
+		//case 1: return wxColor(100, 255, 255); // selected
+		//case 2: return wxColor(150, 240, 240); // hovered
+		//case 3: return wxColor(100, 240, 240); // selected + hovered
+		}
+
+		assert(false && "invalid highlight combo");
+		return wxColor();
+	}
+}
 
 class WeaponGrid::Card final : public wxPanel
 {
@@ -17,6 +49,9 @@ class WeaponGrid::Card final : public wxPanel
 	const Weapon& data;
 	Infusion infusion{Infusion::None};
 	int level{10};
+
+	bool selected{false};
+	bool hovered{false};
 
 public:
 	Card(wxWindow* parent, const std::string& name)
@@ -31,24 +66,41 @@ public:
 		return data;
 	}
 
-	auto GetInfusion() const
+	auto GetInfusion() const noexcept
 	{
 		return infusion;
 	}
 
-	auto SetInfusion(const Infusion infusion)
+	auto SetInfusion(const Infusion infusion) noexcept
 	{
 		this->infusion = infusion;
 	}
 
-	auto GetLevel() const
+	auto GetLevel() const noexcept
 	{
 		return level;
 	}
 
-	auto SetLevel(const int level)
+	auto SetLevel(const int level) noexcept
 	{
 		this->level = level;
+	}
+
+	bool IsSelected() const noexcept
+	{
+		return selected;
+	}
+
+	void SetSelected(const bool selected) noexcept
+	{
+		this->selected = selected;
+		Refresh();
+	}
+
+	void SetHovered(const bool hovered) noexcept
+	{
+		this->hovered = hovered;
+		Refresh();
 	}
 
 private:
@@ -57,18 +109,12 @@ private:
 		const auto& size = this->GetSize().x;
 		auto dc = wxPaintDC{this};
 
+		dc.SetBrush(GetItemColor(selected, hovered));
+		dc.DrawRectangle({}, {size, size});
+
 		dc.DrawBitmap(wxGetApp().GetImage(data.name, size), 0, 0, false);
 	}
 };
-
-namespace
-{
-	template <typename T>
-	constexpr int Compare(const T& a, const T& b) noexcept
-	{
-		return (a < b) ? -1 : (a > b);
-	}
-}
 
 bool ComparatorDefault(const WeaponGrid::Card* card1, const WeaponGrid::Card* card2)
 {
@@ -116,7 +162,14 @@ WeaponGrid::WeaponGrid(wxWindow* parent)
 void WeaponGrid::InitializeBaseWeapons()
 {
 	for (const auto& name : wxGetApp().GetDatabase().GetNames())
-		cards.emplace_back(new Card(this, name));
+	{
+		auto* card = new Card(this, name);
+		card->Bind(wxEVT_LEFT_DOWN, &WeaponGrid::OnItemMouse, this);
+		card->Bind(wxEVT_LEFT_UP, &WeaponGrid::OnItemMouse, this);
+		card->Bind(wxEVT_ENTER_WINDOW, &WeaponGrid::OnItemEnterHover, this);
+		card->Bind(wxEVT_LEAVE_WINDOW, &WeaponGrid::OnItemLeaveHover, this);
+		cards.emplace_back(card);
+	}
 
 	Sort();
 }
@@ -174,6 +227,58 @@ void WeaponGrid::OnMousewheel(wxMouseEvent& e)
 			{current.start - 5, current.start},
 			{current.start - 5, current.end - 5});
 	}
+}
+
+void WeaponGrid::OnItemMouse(wxMouseEvent& e)
+{
+	int id = std::find(cards.begin(), cards.end(), e.GetEventObject()) - cards.begin();
+	assert(0 <= id && id < cards.size() && "clicked on weapon card not found");
+
+	if (e.LeftDown() && !selecting)
+	{
+		ClearSelection();
+		cards[id]->SetSelected(true);
+
+		selection.start = id;
+		selection.end = id;
+
+		selecting = true;
+	}
+	else if (e.LeftUp() && selecting)
+	{
+		selecting = false;
+	}
+}
+
+void WeaponGrid::OnItemEnterHover(wxMouseEvent& e)
+{
+	int id = std::find(cards.begin(), cards.end(), e.GetEventObject()) - cards.begin();
+	assert(0 <= id && id < cards.size() && "clicked on weapon card not found");
+
+	cards[id]->SetHovered(true);
+
+	if (!selecting)
+		return;
+
+	ClearSelection();
+	selection.end = id;
+
+	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+		cards[i]->SetSelected(true);
+}
+
+void WeaponGrid::OnItemLeaveHover(wxMouseEvent& e)
+{
+	int id = std::find(cards.begin(), cards.end(), e.GetEventObject()) - cards.begin();
+	assert(0 <= id && id < cards.size() && "clicked on weapon card not found");
+
+	cards[id]->SetHovered(false);
+}
+
+void WeaponGrid::ClearSelection()
+{
+	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+		cards[i]->SetSelected(false);
 }
 
 void WeaponGrid::UpdateSize(const int width, const int height)

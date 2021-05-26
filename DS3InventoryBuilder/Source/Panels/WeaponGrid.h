@@ -25,8 +25,11 @@ class WeaponGrid final : public wxPanel
 
 	int cardSize{};
 	Range current{};
+	Range selection{};
 
 	WeaponSorting sorting{WeaponSorting::Method::Default, false};
+
+	bool selecting{false};
 
 public:
 	WeaponGrid(wxWindow* parent);
@@ -43,7 +46,13 @@ private:
 
 	void OnSize(wxSizeEvent& e);
 	void OnMousewheel(wxMouseEvent& e);
+
+	void OnItemMouse(wxMouseEvent& e);
+	void OnItemEnterHover(wxMouseEvent& e);
+	void OnItemLeaveHover(wxMouseEvent& e);
 	
+	void ClearSelection();
+
 	void UpdateSize(const int width, const int height);
 	void UpdateScroll(const Range& toHide, const Range& toShow, const Range& toUpdate);
 
