@@ -51,6 +51,8 @@ private:
 	void OnItemEnterHover(wxMouseEvent& e);
 	void OnItemLeaveHover(wxMouseEvent& e);
 	
+	void SelectItemID(const int id);
+	void DeselectItemID(const int id);
 	void ClearSelection();
 
 	void UpdateSize(const int width, const int height);

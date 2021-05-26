@@ -39,6 +39,19 @@ namespace
 		assert(false && "invalid highlight combo");
 		return wxColor();
 	}
+
+	inline auto GetPageUpID(const int id)
+	{
+		const auto rowsToTop = id / 5;
+		return id - std::min(rowsToTop, 5) * 5;
+	}
+
+	inline auto GetPageDownID(const int id, const int size)
+	{
+		const auto max = size - 1;
+		const auto rowsToBottom = (max - id) / 5;
+		return id + std::min(rowsToBottom, 5) * 5;
+	}
 }
 
 class WeaponGrid::Card final : public wxPanel
@@ -52,6 +65,7 @@ class WeaponGrid::Card final : public wxPanel
 
 	bool selected{false};
 	bool hovered{false};
+	int atPageFromSelection{};
 
 public:
 	Card(wxWindow* parent, const std::string& name)
@@ -103,6 +117,12 @@ public:
 		Refresh();
 	}
 
+	void SetAtPageFromSelection(const int atPageFromSelection) noexcept
+	{
+		this->atPageFromSelection = atPageFromSelection;
+		Refresh();
+	}
+
 private:
 	void Render()
 	{
@@ -113,6 +133,12 @@ private:
 		dc.DrawRectangle({}, {size, size});
 
 		dc.DrawBitmap(wxGetApp().GetImage(data.name, size), 0, 0, false);
+
+		switch (atPageFromSelection)
+		{
+		case -1: dc.DrawBitmap(wxGetApp().GetImage("Key_R2", size / 3), 2, 2, false); break;
+		case 1: dc.DrawBitmap(wxGetApp().GetImage("Key_L2", size / 3), 2, 2, false); break;
+		}
 	}
 };
 
@@ -237,7 +263,7 @@ void WeaponGrid::OnItemMouse(wxMouseEvent& e)
 	if (e.LeftDown() && !selecting)
 	{
 		ClearSelection();
-		cards[id]->SetSelected(true);
+		SelectItemID(id);
 
 		selection.start = id;
 		selection.end = id;
@@ -264,7 +290,7 @@ void WeaponGrid::OnItemEnterHover(wxMouseEvent& e)
 	selection.end = id;
 
 	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
-		cards[i]->SetSelected(true);
+		SelectItemID(i);
 }
 
 void WeaponGrid::OnItemLeaveHover(wxMouseEvent& e)
@@ -275,10 +301,24 @@ void WeaponGrid::OnItemLeaveHover(wxMouseEvent& e)
 	cards[id]->SetHovered(false);
 }
 
+void WeaponGrid::SelectItemID(const int id)
+{
+	cards[id]->SetSelected(true);
+	cards[GetPageUpID(id)]->SetAtPageFromSelection(1);
+	cards[GetPageDownID(id, cards.size())]->SetAtPageFromSelection(-1);
+}
+
+void WeaponGrid::DeselectItemID(const int id)
+{
+	cards[id]->SetSelected(false);
+	cards[GetPageUpID(id)]->SetAtPageFromSelection(0);
+	cards[GetPageDownID(id, cards.size())]->SetAtPageFromSelection(0);
+}
+
 void WeaponGrid::ClearSelection()
 {
 	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
-		cards[i]->SetSelected(false);
+		DeselectItemID(i);
 }
 
 void WeaponGrid::UpdateSize(const int width, const int height)
