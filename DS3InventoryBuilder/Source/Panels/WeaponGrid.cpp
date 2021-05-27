@@ -10,7 +10,6 @@
 	case 1: return false; \
 	} \
 
-
 namespace
 {
 	template <typename T>
@@ -40,13 +39,20 @@ namespace
 		return wxColor();
 	}
 
-	inline auto GetPageUpID(const int id)
+	inline int GetIDFromPosition(const int x, const int y, const int startingCardID, const int cardSize) noexcept
+	{
+		const auto row = y / cardSize;
+		const auto firstRowID = startingCardID + static_cast<size_t>(row) * 5;
+		return firstRowID + x / cardSize;
+	}
+
+	inline auto GetPageUpID(const int id) noexcept
 	{
 		const auto rowsToTop = id / 5;
 		return id - std::min(rowsToTop, 5) * 5;
 	}
 
-	inline auto GetPageDownID(const int id, const int size)
+	inline auto GetPageDownID(const int id, const int size) noexcept
 	{
 		const auto max = size - 1;
 		const auto rowsToBottom = (max - id) / 5;
@@ -54,7 +60,7 @@ namespace
 	}
 }
 
-class WeaponGrid::Card final : public wxPanel
+struct WeaponGrid::Card final
 {
 	using Weapon = invbuilder::Weapon;
 	using Infusion = Weapon::Infusion;
@@ -65,94 +71,41 @@ class WeaponGrid::Card final : public wxPanel
 
 	bool selected{false};
 	bool hovered{false};
-	int atPageFromSelection{};
+	int atPageFromSelection{0};
 
-public:
-	Card(wxWindow* parent, const std::string& name)
-		: wxPanel(parent)
-		, data(wxGetApp().GetDatabase().GetWeapon(name))
+	wxPoint position{};
+
+	Card(const std::string& name)
+		: data(wxGetApp().GetDatabase().GetWeapon(name))
 	{
-		Bind(wxEVT_PAINT, [&](wxPaintEvent&) { this->Render(); });
 	}
 
-	auto GetData() const -> const Weapon&
+	void Render(wxPaintDC& dc, const int size)
 	{
-		return data;
-	}
-
-	auto GetInfusion() const noexcept
-	{
-		return infusion;
-	}
-
-	auto SetInfusion(const Infusion infusion) noexcept
-	{
-		this->infusion = infusion;
-	}
-
-	auto GetLevel() const noexcept
-	{
-		return level;
-	}
-
-	auto SetLevel(const int level) noexcept
-	{
-		this->level = level;
-	}
-
-	bool IsSelected() const noexcept
-	{
-		return selected;
-	}
-
-	void SetSelected(const bool selected) noexcept
-	{
-		this->selected = selected;
-		Refresh();
-	}
-
-	void SetHovered(const bool hovered) noexcept
-	{
-		this->hovered = hovered;
-		Refresh();
-	}
-
-	void SetAtPageFromSelection(const int atPageFromSelection) noexcept
-	{
-		this->atPageFromSelection = atPageFromSelection;
-		Refresh();
-	}
-
-private:
-	void Render()
-	{
-		const auto& size = this->GetSize().x;
-		auto dc = wxPaintDC{this};
-
 		dc.SetBrush(GetItemColor(selected, hovered));
-		dc.DrawRectangle({}, {size, size});
+		dc.DrawRectangle(position, {size, size});
 
-		dc.DrawBitmap(wxGetApp().GetImage(data.name, size), 0, 0, false);
+		dc.DrawBitmap(wxGetApp().GetImage(data.name, size), position, false);
 
 		switch (atPageFromSelection)
 		{
-		case -1: dc.DrawBitmap(wxGetApp().GetImage("Key_R2", size / 3), 2, 2, false); break;
-		case 1: dc.DrawBitmap(wxGetApp().GetImage("Key_L2", size / 3), 2, 2, false); break;
+		case -1: dc.DrawBitmap(wxGetApp().GetImage("Key_R2", size / 3), position.x + 2, position.y + 2, false); break;
+		case 1: dc.DrawBitmap(wxGetApp().GetImage("Key_L2", size / 3), position.x + 2, position.y + 2, false); break;
 		}
 	}
 };
 
-bool ComparatorDefault(const WeaponGrid::Card* card1, const WeaponGrid::Card* card2)
+bool ComparatorDefault(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
 {
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetData().orderID, card2->GetData().orderID);
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetInfusion(), card2->GetInfusion());
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetLevel(), card2->GetLevel());
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->data.orderID, card2->data.orderID);
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->infusion, card2->infusion);
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->level, card2->level);
 	return true; // weapons are the same
 }
 
-bool ComparatorWeight(const WeaponGrid::Card* card1, const WeaponGrid::Card* card2)
+bool ComparatorWeight(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
 {
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->GetData().weight, card2->GetData().weight);
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->data.weight, card2->data.weight);
 	return ComparatorDefault(card1, card2);
 }
 
@@ -181,21 +134,21 @@ WeaponGrid::WeaponGrid(wxWindow* parent)
 	this->SetMinSize(wxSize(64 * 5, 128));
 	this->SetMaxSize(wxSize(128 * 5, 99999));
 
-	Bind(wxEVT_SIZE, &WeaponGrid::OnSize, this);
-	Bind(wxEVT_MOUSEWHEEL, &WeaponGrid::OnMousewheel, this);
+	this->Bind(wxEVT_SIZE, &WeaponGrid::OnSize, this);
+
+	this->Bind(wxEVT_MOUSEWHEEL, &WeaponGrid::OnMousewheel, this);
+	this->Bind(wxEVT_MOTION, &WeaponGrid::OnMouseMotion, this);
+	this->Bind(wxEVT_LEAVE_WINDOW, &WeaponGrid::OnMouseLeave, this);
+	this->Bind(wxEVT_LEFT_DOWN, &WeaponGrid::OnItemMouse, this);
+	this->Bind(wxEVT_LEFT_UP, &WeaponGrid::OnItemMouse, this);
+
+	this->Bind(wxEVT_PAINT, &WeaponGrid::Render, this);
 }
 
 void WeaponGrid::InitializeBaseWeapons()
 {
 	for (const auto& name : wxGetApp().GetDatabase().GetNames())
-	{
-		auto* card = new Card(this, name);
-		card->Bind(wxEVT_LEFT_DOWN, &WeaponGrid::OnItemMouse, this);
-		card->Bind(wxEVT_LEFT_UP, &WeaponGrid::OnItemMouse, this);
-		card->Bind(wxEVT_ENTER_WINDOW, &WeaponGrid::OnItemEnterHover, this);
-		card->Bind(wxEVT_LEAVE_WINDOW, &WeaponGrid::OnItemLeaveHover, this);
-		cards.emplace_back(card);
-	}
+		cards.emplace_back(std::make_unique<Card>(name));
 
 	Sort();
 }
@@ -230,43 +183,78 @@ void WeaponGrid::Sort()
 	}
 }
 
+void WeaponGrid::Render(wxPaintEvent& e)
+{
+	auto dc = wxPaintDC{this};
+
+	for (int i = std::max(current.start, 0ULL); i < std::min(current.end, cards.size()); ++i)
+		cards[i]->Render(dc, cardSize);
+}
+
+void WeaponGrid::RenderItems(const bool fullRedraw)
+{
+	for (int pos = 0, i = std::max(current.start, 0ULL); i < std::min(current.end, cards.size()); ++i, ++pos)
+	{
+		const int row = pos / 5;
+		const int col = pos % 5;
+		cards[i]->position = {col * cardSize, row * cardSize};
+	}
+
+	// redraw needed always if background is visible at the end
+	Refresh(fullRedraw || current.end > cards.size());
+}
+
 void WeaponGrid::OnSize(wxSizeEvent& e)
 {
-	UpdateSize(e.GetSize().x, e.GetSize().y);
+	cardSize = e.GetSize().x / 5;
+	visibleRows = e.GetSize().y / cardSize;
+	current.end = current.start + static_cast<size_t>(visibleRows) * 5;
+	RenderItems(true);
 }
 
 void WeaponGrid::OnMousewheel(wxMouseEvent& e)
 {
 	const auto rotation = e.GetWheelRotation();
 
-	if (rotation < 0 && current.start < cards.size() - 5) // down
+	if (rotation < 0 && current.start < cards.size() - (static_cast<size_t>(visibleRows) * 5)) // down
 	{
-		UpdateScroll(
-			{current.start, current.start + 5},
-			{current.end, current.end + 5},
-			{current.start + 5, current.end + 5});
+		current.start += 5;
+		current.end += 5;
+		UpdateMousePosition(e.GetPosition().x, e.GetPosition().y, false);
+		RenderItems();
 	}
 	else if (rotation > 0 && current.start > 0) // up
 	{
-		UpdateScroll(
-			{current.end - 5, current.end},
-			{current.start - 5, current.start},
-			{current.start - 5, current.end - 5});
+		current.start -= 5;
+		current.end -= 5;
+		UpdateMousePosition(e.GetPosition().x, e.GetPosition().y, false);
+		RenderItems();
 	}
+}
+
+void WeaponGrid::OnMouseMotion(wxMouseEvent& e)
+{
+	UpdateMousePosition(e.GetPosition().x, e.GetPosition().y);
+}
+
+void WeaponGrid::OnMouseLeave(wxMouseEvent&)
+{
+	OnItemLeaveHover(mouseOver, true);
+	mouseOver = -1;
 }
 
 void WeaponGrid::OnItemMouse(wxMouseEvent& e)
 {
-	int id = std::find(cards.begin(), cards.end(), e.GetEventObject()) - cards.begin();
-	assert(0 <= id && id < cards.size() && "clicked on weapon card not found");
+	if (mouseOver < 0 || mouseOver >= cards.size())
+		return;
 
 	if (e.LeftDown() && !selecting)
 	{
 		ClearSelection();
-		SelectItemID(id);
+		SelectItemID(mouseOver);
 
-		selection.start = id;
-		selection.end = id;
+		selection.start = mouseOver;
+		selection.end = mouseOver;
 
 		selecting = true;
 	}
@@ -274,89 +262,82 @@ void WeaponGrid::OnItemMouse(wxMouseEvent& e)
 	{
 		selecting = false;
 	}
+
+	Refresh();
 }
 
-void WeaponGrid::OnItemEnterHover(wxMouseEvent& e)
+void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw)
 {
-	int id = std::find(cards.begin(), cards.end(), e.GetEventObject()) - cards.begin();
-	assert(0 <= id && id < cards.size() && "clicked on weapon card not found");
+	const auto id = GetIDFromPosition(x, y, current.start, cardSize);
 
-	cards[id]->SetHovered(true);
-
-	if (!selecting)
+	if (id == mouseOver)
 		return;
 
-	ClearSelection();
-	selection.end = id;
-
-	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
-		SelectItemID(i);
+	OnItemLeaveHover(mouseOver, redraw);
+	mouseOver = id;
+	OnItemEnterHover(mouseOver, redraw);
 }
 
-void WeaponGrid::OnItemLeaveHover(wxMouseEvent& e)
+void WeaponGrid::OnItemEnterHover(const int id, const bool redraw)
 {
-	int id = std::find(cards.begin(), cards.end(), e.GetEventObject()) - cards.begin();
-	assert(0 <= id && id < cards.size() && "clicked on weapon card not found");
+	if (id < 0 || id >= cards.size()) return;
 
-	cards[id]->SetHovered(false);
+	cards[id]->hovered = true;
+	bool wasRefreshed = false;
+
+	if (selecting)
+	{
+		ClearSelection();
+		selection.end = id;
+
+		for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+			SelectItemID(i);
+
+		Refresh();
+		wasRefreshed = true;
+	}
+
+	if (redraw && !wasRefreshed)
+	{
+		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize});
+	}
+}
+
+void WeaponGrid::OnItemLeaveHover(const int id, const bool redraw)
+{
+	if (id < 0 || id >= cards.size()) return;
+
+	cards[id]->hovered = false;
+
+	if (redraw)
+	{
+		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize});
+	}
 }
 
 void WeaponGrid::SelectItemID(const int id)
 {
-	cards[id]->SetSelected(true);
-	cards[GetPageUpID(id)]->SetAtPageFromSelection(1);
-	cards[GetPageDownID(id, cards.size())]->SetAtPageFromSelection(-1);
+	cards[id]->selected = true;
+
+	if (const auto pageUpID = GetPageUpID(id); pageUpID != id)
+		cards[pageUpID]->atPageFromSelection = 1;
+
+	if (const auto pageDownID = GetPageDownID(id, cards.size()); pageDownID != id)
+		cards[pageDownID]->atPageFromSelection = -1;
 }
 
 void WeaponGrid::DeselectItemID(const int id)
 {
-	cards[id]->SetSelected(false);
-	cards[GetPageUpID(id)]->SetAtPageFromSelection(0);
-	cards[GetPageDownID(id, cards.size())]->SetAtPageFromSelection(0);
+	cards[id]->selected = false;
+	cards[GetPageUpID(id)]->atPageFromSelection = 0;
+	cards[GetPageDownID(id, cards.size())]->atPageFromSelection = 0;
 }
 
 void WeaponGrid::ClearSelection()
 {
-	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+	const auto start = std::max(std::min(selection.start, selection.end), 0ULL);
+	const auto end = std::min(std::max(selection.start, selection.end), cards.size() - 1);
+
+	for (int i = start; i <= end; ++i)
 		DeselectItemID(i);
-}
-
-void WeaponGrid::UpdateSize(const int width, const int height)
-{
-	for (auto* card : cards)
-		card->Hide();
-
-	cardSize = width / 5;
-	const auto visibleRows = height / cardSize + 1;
-	current.end = current.start + static_cast<size_t>(visibleRows) * 5;
-
-	for (int pos = 0, i = current.start; i < std::min(cards.size(), current.end); ++i, ++pos)
-	{
-		const int row = pos / 5;
-		const int col = pos % 5;
-
-		cards[i]->SetPosition(wxPoint(col * cardSize, row * cardSize));
-		cards[i]->SetSize(cardSize, cardSize);
-		cards[i]->Show();
-	}
-}
-
-void WeaponGrid::UpdateScroll(const Range& toHide, const Range& toShow, const Range& toUpdate)
-{
-	for (int i = toHide.start; i < std::min(toHide.end, cards.size()); ++i)
-		cards[i]->Hide();
-
-	for (int i = toShow.start; i < std::min(toShow.end, cards.size()); ++i)
-		cards[i]->Show();
-
-	for (int pos = 0, i = toUpdate.start; i < std::min(toUpdate.end, cards.size()); ++i, ++pos)
-	{
-		const int row = pos / 5;
-		const int col = pos % 5;
-
-		cards[i]->SetSize(cardSize, cardSize);
-		cards[i]->SetPosition(wxPoint(col * cardSize, row * cardSize));
-	}
-
-	current = toUpdate;
 }

@@ -20,9 +20,12 @@ class WeaponGrid final : public wxPanel
 		size_t start, end;
 	};
 
-	class Card;
-	std::vector<Card*> cards;
+	struct Card;
+	using CardPtr = std::unique_ptr<Card>;
+	std::vector<CardPtr> cards;
 
+	int mouseOver{-1};
+	int visibleRows{};
 	int cardSize{};
 	Range current{};
 	Range selection{};
@@ -44,20 +47,25 @@ private:
 
 	void Sort();
 
+	void Render(wxPaintEvent& e);
+	void RenderItems(const bool fullRedraw=false);
+
+
 	void OnSize(wxSizeEvent& e);
 	void OnMousewheel(wxMouseEvent& e);
 
+	void OnMouseMotion(wxMouseEvent& e);
+	void OnMouseLeave(wxMouseEvent& e);
 	void OnItemMouse(wxMouseEvent& e);
-	void OnItemEnterHover(wxMouseEvent& e);
-	void OnItemLeaveHover(wxMouseEvent& e);
+
+	void UpdateMousePosition(const int x, const int y, const bool redraw=true);
+	void OnItemEnterHover(const int id, const bool redraw);
+	void OnItemLeaveHover(const int id, const bool redraw);
 	
 	void SelectItemID(const int id);
 	void DeselectItemID(const int id);
 	void ClearSelection();
 
-	void UpdateSize(const int width, const int height);
-	void UpdateScroll(const Range& toHide, const Range& toShow, const Range& toUpdate);
-
-	friend bool ComparatorDefault(const WeaponGrid::Card*, const WeaponGrid::Card*);
-	friend bool ComparatorWeight(const WeaponGrid::Card*, const WeaponGrid::Card*);
+	friend bool ComparatorDefault(const WeaponGrid::CardPtr&, const WeaponGrid::CardPtr&);
+	friend bool ComparatorWeight(const WeaponGrid::CardPtr&, const WeaponGrid::CardPtr&);
 };
