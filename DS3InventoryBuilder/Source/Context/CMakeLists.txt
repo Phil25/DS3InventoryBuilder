@@ -2,10 +2,11 @@ target_sources(DS3InventoryBuilder
 	PRIVATE
 		"IAttributesListener.h"
 		"IAttributesListener.cpp"
+		"ISelectionListener.h"
+		"ISelectionListener.cpp"
 		#"IFinderOptionsListener.hpp"
 		#"IFinderSortingListener.hpp"
 		#"IInventorySortingListener.hpp"
-		#"ISelectionListener.hpp"
 		"SessionData.cpp"
 		"SessionData.h"
 )

@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <memory>
+#include <string>
+#include <Weapon.hpp>
 
 class IAttributesListener;
 class IFinderOptionsListener;
@@ -9,8 +11,33 @@ class IFinderSortingListener;
 class IInventorySortingListener;
 class ISelectionListener;
 
+class WeaponContext final
+{
+	using Infusion = invbuilder::Weapon::Infusion;
+
+	int level;
+	Infusion infusion;
+
+public:
+	const int gridID;
+	const int cardID;
+	const std::string name;
+
+	WeaponContext(const int gridID, const int cardID, std::string name, const int level=10, const Infusion=Infusion::None) noexcept;
+
+	auto GetLevel() const noexcept -> int;
+	void SetLevel(const int level) noexcept;
+
+	auto GetInfusion() const noexcept -> Infusion;
+	void SetInfusion(const Infusion infusion) noexcept;
+};
+
 class SessionData final
 {
+public:
+	using SelectionVector = std::vector<std::weak_ptr<WeaponContext>>;
+
+private:
 	struct Listeners final
 	{
 		std::vector<std::weak_ptr<IAttributesListener>> attributes;
@@ -23,11 +50,15 @@ class SessionData final
 	Listeners listeners;
 
 	struct { int str, dex, int_, fth, lck; } attributes;
+	SelectionVector selection;
 
 public:
 	SessionData() = default;
 
 	void UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck);
+	void UpdateSelection(SelectionVector);
+
+	auto GetSelection() const -> const SelectionVector&;
 
 private:
 	void RegisterAttributesListener(const std::weak_ptr<IAttributesListener>&);

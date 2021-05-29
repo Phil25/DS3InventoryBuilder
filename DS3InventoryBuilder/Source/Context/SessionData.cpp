@@ -1,7 +1,33 @@
 #include "SessionData.h"
 
 #include <Context/IAttributesListener.h>
+#include <Context/ISelectionListener.h>
 #include <cassert>
+
+WeaponContext::WeaponContext(const int gridID, const int cardID, std::string name, const int level, const Infusion infusion) noexcept
+	: gridID(gridID), cardID(cardID), name(std::move(name)), level(level), infusion(infusion)
+{
+}
+
+auto WeaponContext::GetLevel() const noexcept -> int
+{
+	return level;
+}
+
+void WeaponContext::SetLevel(const int level) noexcept
+{
+	this->level = level;
+}
+
+auto WeaponContext::GetInfusion() const noexcept -> Infusion
+{
+	return infusion;
+}
+
+void WeaponContext::SetInfusion(const Infusion infusion) noexcept
+{
+	this->infusion = infusion;
+}
 
 void SessionData::UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck)
 {
@@ -23,6 +49,20 @@ void SessionData::UpdateAttributes(const int str, const int dex, const int int_,
 	for (const auto& weakPtr : listeners.attributes)
 		if (const auto ptr = weakPtr.lock(); ptr)
 			ptr->OnUpdate(str, dex, int_, fth, lck);
+}
+
+void SessionData::UpdateSelection(std::vector<std::weak_ptr<WeaponContext>> selection)
+{
+	this->selection = std::move(selection);
+
+	for (const auto& weakPtr : listeners.selection)
+		if (const auto ptr = weakPtr.lock(); ptr)
+			ptr->OnUpdate();
+}
+
+auto SessionData::GetSelection() const -> const SelectionVector&
+{
+	return selection;
 }
 
 void SessionData::RegisterAttributesListener(const std::weak_ptr<IAttributesListener>& listener)

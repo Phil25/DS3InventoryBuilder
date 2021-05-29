@@ -34,17 +34,18 @@ class WeaponGrid final : public wxPanel
 
 	bool selecting{false};
 
+	const int gridID;
+	static int GridID;
+
 public:
 	WeaponGrid(wxWindow* parent);
 
 	void InitializeBaseWeapons();
 
+	void SetFiltering();
 	void SetSorting(const WeaponSorting& sorting);
 
 private:
-	void AddWeapon(const Card* card);
-	void RemoveWeapon(const Card* card);
-
 	void Sort();
 
 	void Render(wxPaintEvent& e);
@@ -63,8 +64,9 @@ private:
 	void OnItemLeaveHover(const int id, const bool redraw);
 	
 	void SelectItemID(const int id);
-	void DeselectItemID(const int id);
+	void DeselectItemID(const int id, const bool triggerSelectionUpdate=true);
 	void ClearSelection();
+	void UpdateSelection();
 
 	friend bool ComparatorDefault(const WeaponGrid::CardPtr&, const WeaponGrid::CardPtr&);
 	friend bool ComparatorWeight(const WeaponGrid::CardPtr&, const WeaponGrid::CardPtr&);

@@ -65,9 +65,7 @@ struct WeaponGrid::Card final
 	using Weapon = invbuilder::Weapon;
 	using Infusion = Weapon::Infusion;
 
-	const Weapon& data;
-	Infusion infusion{Infusion::None};
-	int level{10};
+	std::shared_ptr<WeaponContext> context;
 
 	bool selected{false};
 	bool hovered{false};
@@ -75,9 +73,16 @@ struct WeaponGrid::Card final
 
 	wxPoint position{};
 
-	Card(const std::string& name)
-		: data(wxGetApp().GetDatabase().GetWeapon(name))
+	Card(const int gridID, const int cardID, std::string name)
+		: context(std::make_shared<WeaponContext>(gridID, cardID, std::move(name)))
 	{
+	}
+
+	void UpdateContext(const int gridID, const int cardID)
+	{
+		// UpdateContext() should be done only after sorting, and before that selection should be emptied, removing the preview
+		assert(context.use_count() == 1 && "only this card should own the weapon context at this time");
+		context = std::make_shared<WeaponContext>(gridID, cardID, context->name, context->GetLevel(), context->GetInfusion());
 	}
 
 	void Render(wxPaintDC& dc, const int size)
@@ -85,7 +90,7 @@ struct WeaponGrid::Card final
 		dc.SetBrush(GetItemColor(selected, hovered));
 		dc.DrawRectangle(position, {size, size});
 
-		dc.DrawBitmap(wxGetApp().GetImage(data.name, size), position, false);
+		dc.DrawBitmap(wxGetApp().GetImage(context->name, size), position, false);
 
 		switch (atPageFromSelection)
 		{
@@ -97,15 +102,21 @@ struct WeaponGrid::Card final
 
 bool ComparatorDefault(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
 {
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->data.orderID, card2->data.orderID);
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->infusion, card2->infusion);
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->level, card2->level);
+	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->name);
+	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->name);
+
+	RETURN_COMPARISON_ON_DIFFERENCE(data1.orderID, data2.orderID);
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetInfusion(), card2->context->GetInfusion());
+	RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetLevel(), card2->context->GetLevel());
 	return true; // weapons are the same
 }
 
 bool ComparatorWeight(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
 {
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->data.weight, card2->data.weight);
+	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->name);
+	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->name);
+
+	RETURN_COMPARISON_ON_DIFFERENCE(data1.weight, data2.weight);
 	return ComparatorDefault(card1, card2);
 }
 
@@ -130,6 +141,7 @@ namespace
 
 WeaponGrid::WeaponGrid(wxWindow* parent)
 	: wxPanel(parent)
+	, gridID(++GridID)
 {
 	this->SetMinSize(wxSize(64 * 5, 128));
 	this->SetMaxSize(wxSize(128 * 5, 99999));
@@ -147,32 +159,45 @@ WeaponGrid::WeaponGrid(wxWindow* parent)
 
 void WeaponGrid::InitializeBaseWeapons()
 {
+	int cardID = 0;
 	for (const auto& name : wxGetApp().GetDatabase().GetNames())
-		cards.emplace_back(std::make_unique<Card>(name));
+		cards.emplace_back(std::make_unique<Card>(gridID, cardID++, name));
 
 	Sort();
 }
 
+void WeaponGrid::SetFiltering(/*filtering options*/)
+{
+	//assert(fallback && "cannot use filtering with uninitialized fallback vector");
+
+	/*
+	I.  Add optional<vector<CardPtr>> as a vector to keep getting cards from (CardPtr = shared)
+	II. Pass a const bool to ctor to create it
+
+	1. ClearSelection()
+	2. cards.clean()
+	3. Iterate fallback and copy CardPtr of revelant weapons
+	5. Sort()
+
+	But then cardIDs don't match... Gotta rethink this again later
+
+	Consider using SetFiltering(some empty value) instead of InitializeBaseWeapons()
+	*/
+}
+
 void WeaponGrid::SetSorting(const WeaponSorting& sorting)
 {
-	if (this->sorting.method != sorting.method &&
-		this->sorting.reverse != sorting.reverse)
-	{
-		this->sorting = sorting;
-		Sort();
-	}
-}
+	if (this->sorting.method == sorting.method && this->sorting.reverse == sorting.reverse)
+		return;
 
-void WeaponGrid::AddWeapon(const Card* card)
-{
-}
-
-void WeaponGrid::RemoveWeapon(const Card* card)
-{
+	this->sorting = sorting;
+	Sort();
 }
 
 void WeaponGrid::Sort()
 {
+	ClearSelection();
+
 	if (sorting.reverse)
 	{
 		std::sort(cards.rbegin(), cards.rend(), GetComparatorFunction(sorting.method));
@@ -181,6 +206,10 @@ void WeaponGrid::Sort()
 	{
 		std::sort(cards.begin(), cards.end(), GetComparatorFunction(sorting.method));
 	}
+
+	int cardID = 0;
+	for (auto& card : cards)
+		card->UpdateContext(gridID, cardID++);
 }
 
 void WeaponGrid::Render(wxPaintEvent& e)
@@ -251,11 +280,11 @@ void WeaponGrid::OnItemMouse(wxMouseEvent& e)
 	if (e.LeftDown() && !selecting)
 	{
 		ClearSelection();
-		SelectItemID(mouseOver);
 
 		selection.start = mouseOver;
 		selection.end = mouseOver;
 
+		SelectItemID(mouseOver);
 		selecting = true;
 	}
 	else if (e.LeftUp() && selecting)
@@ -324,13 +353,18 @@ void WeaponGrid::SelectItemID(const int id)
 
 	if (const auto pageDownID = GetPageDownID(id, cards.size()); pageDownID != id)
 		cards[pageDownID]->atPageFromSelection = -1;
+
+	UpdateSelection();
 }
 
-void WeaponGrid::DeselectItemID(const int id)
+void WeaponGrid::DeselectItemID(const int id, const bool triggerSelectionUpdate)
 {
 	cards[id]->selected = false;
 	cards[GetPageUpID(id)]->atPageFromSelection = 0;
 	cards[GetPageDownID(id, cards.size())]->atPageFromSelection = 0;
+
+	if (triggerSelectionUpdate)
+		UpdateSelection();
 }
 
 void WeaponGrid::ClearSelection()
@@ -339,5 +373,19 @@ void WeaponGrid::ClearSelection()
 	const auto end = std::min(std::max(selection.start, selection.end), cards.size() - 1);
 
 	for (int i = start; i <= end; ++i)
-		DeselectItemID(i);
+		DeselectItemID(i, false);
+
+	UpdateSelection();
 }
+
+void WeaponGrid::UpdateSelection()
+{
+	SessionData::SelectionVector v;
+
+	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+		v.push_back(cards[i]->context);
+
+	wxGetApp().GetSessionData().UpdateSelection(std::move(v));
+}
+
+int WeaponGrid::GridID = 0;
