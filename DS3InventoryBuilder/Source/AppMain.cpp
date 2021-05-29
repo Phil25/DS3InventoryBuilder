@@ -66,3 +66,8 @@ auto AppMain::GetImage(const std::string& name, const int size) -> const wxBitma
 	assert(size > 0 && "bitmap size must be positive");
 	return images->Get(name, size);
 }
+
+auto AppMain::GetSessionData() -> SessionData&
+{
+	return sessionData;
+}

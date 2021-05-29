@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Database.h>
+#include <Context/SessionData.h>
 #include <Frames/FrameMain.h>
 #include <wx/wx.h>
 
@@ -25,6 +26,8 @@ class AppMain final : public wxApp
 	const invbuilder::Database database;
 	std::unique_ptr<Images> images;
 
+	SessionData sessionData;
+
 	FrameMain* frameMain{nullptr};
 
 public:
@@ -34,6 +37,7 @@ public:
 
 	auto GetDatabase() -> const invbuilder::Database&;
 	auto GetImage(const std::string& name, const int size) -> const wxBitmap&;
+	auto GetSessionData() -> SessionData&;
 };
 
 DECLARE_APP(AppMain)
