@@ -32,7 +32,7 @@ Settings::Settings(wxWindow* parent)
 	, fth(new Attribute{GetContent(), "FTH", 10})
 	, lck(new Attribute{GetContent(), "LCK", 7})
 {
-	this->SetMinSize(wxSize(550, 0));
+	this->SetMinSize(wxSize(550, 140));
 
 	str->Bind(wxEVT_SPINCTRL, &Settings::UpdateAttributes, this);
 	dex->Bind(wxEVT_SPINCTRL, &Settings::UpdateAttributes, this);

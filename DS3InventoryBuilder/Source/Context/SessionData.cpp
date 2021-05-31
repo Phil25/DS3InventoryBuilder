@@ -65,6 +65,11 @@ auto SessionData::GetSelection() const -> const SelectionVector&
 	return selection;
 }
 
+auto SessionData::GetAttributes() const -> const invbuilder::PlayerAttributes&
+{
+	return {1.f * attributes.str, 1.f * attributes.dex, 1.f * attributes.int_, 1.f * attributes.fth, 1.f * attributes.lck};
+}
+
 void SessionData::RegisterAttributesListener(const std::weak_ptr<IAttributesListener>& listener)
 {
 	listeners.attributes.push_back(listener);

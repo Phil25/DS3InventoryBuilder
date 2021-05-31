@@ -49,7 +49,7 @@ private:
 
 	Listeners listeners;
 
-	struct { int str, dex, int_, fth, lck; } attributes;
+	struct { int str{18}, dex{18}, int_{10}, fth{10}, lck{7}; } attributes;
 	SelectionVector selection;
 
 public:
@@ -58,6 +58,7 @@ public:
 	void UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck);
 	void UpdateSelection(SelectionVector);
 
+	auto GetAttributes() const -> const invbuilder::PlayerAttributes&;
 	auto GetSelection() const -> const SelectionVector&;
 
 private:

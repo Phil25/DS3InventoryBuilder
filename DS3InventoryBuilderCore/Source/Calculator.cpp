@@ -26,11 +26,11 @@ namespace
 		const invbuilder::PlayerAttributes& attribs, const bool twoHanding) -> Saturations
 	{
 		const auto actualStr = std::floor(attribs.strength + attribs.strength * .5f * twoHanding);
-		const auto str = static_cast<size_t>(std::min(actualStr, 99.f));
-		const auto dex = static_cast<size_t>(attribs.dexterity);
-		const auto int_ = static_cast<size_t>(attribs.intelligence);
-		const auto fth = static_cast<size_t>(attribs.faith);
-		const auto lck = static_cast<size_t>(attribs.luck);
+		const auto str = std::lround(std::min(actualStr, 99.f));
+		const auto dex = std::lround(attribs.dexterity);
+		const auto int_ = std::lround(attribs.intelligence);
+		const auto fth = std::lround(attribs.faith);
+		const auto lck = std::lround(attribs.luck);
 
 		return {
 			{

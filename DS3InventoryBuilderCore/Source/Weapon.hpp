@@ -30,7 +30,6 @@ namespace invbuilder
 
 	struct LevelProperties final
 	{
-
 		float luckMod;
 		float stability;
 		Status status;

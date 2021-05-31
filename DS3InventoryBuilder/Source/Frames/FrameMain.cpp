@@ -15,8 +15,8 @@ FrameMain::FrameMain(wxString title) : wxFrame(nullptr, wxID_ANY, std::move(titl
 	auto* settings = new Settings(this);
 	auto* preview = new Preview(this);
 
-	right->Add(settings, 1, wxEXPAND | wxBOTTOM, 3);
-	right->Add(preview, 2, wxEXPAND, 3);
+	right->Add(settings, 0, wxEXPAND | wxBOTTOM, 3);
+	right->Add(preview, 1, wxEXPAND, 3);
 
 	main->Add(finder, 1, wxEXPAND | wxALL, 3);
 	main->Add(inventory, 1, wxEXPAND | wxRIGHT | wxTOP | wxBOTTOM, 3);
