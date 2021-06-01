@@ -10,6 +10,7 @@ class IFinderOptionsListener;
 class IFinderSortingListener;
 class IInventorySortingListener;
 class ISelectionListener;
+class IWeaponTransferListener;
 
 class WeaponContext final
 {
@@ -45,6 +46,7 @@ private:
 		std::vector<std::weak_ptr<IFinderSortingListener>> finderSorting;
 		std::vector<std::weak_ptr<IInventorySortingListener>> inventorySorting;
 		std::vector<std::weak_ptr<ISelectionListener>> selection;
+		std::vector<std::weak_ptr<IWeaponTransferListener>> weaponTransfer;
 	};
 
 	Listeners listeners;
@@ -57,6 +59,7 @@ public:
 
 	void UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck);
 	void UpdateSelection(SelectionVector);
+	void UpdateWeaponTransfer(const int originGridID, const int count);
 
 	auto GetAttributes() const -> const invbuilder::PlayerAttributes&;
 	auto GetSelection() const -> const SelectionVector&;
@@ -67,10 +70,12 @@ private:
 	void RegisterFinderSortingListener(const std::weak_ptr<IFinderSortingListener>&);
 	void RegisterInventorySortingListener(const std::weak_ptr<IInventorySortingListener>&);
 	void RegisterSelectionListener(const std::weak_ptr<ISelectionListener>&);
+	void RegisterWeaponTransferListener(const std::weak_ptr<IWeaponTransferListener>&);
 
 	friend IAttributesListener;
 	friend IFinderOptionsListener;
 	friend IFinderSortingListener;
 	friend IInventorySortingListener;
 	friend ISelectionListener;
+	friend IWeaponTransferListener;
 };

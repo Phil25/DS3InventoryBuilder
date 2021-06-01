@@ -73,8 +73,8 @@ struct WeaponGrid::Card final
 
 	wxPoint position{};
 
-	Card(const int gridID, const int cardID, std::string name)
-		: context(std::make_shared<WeaponContext>(gridID, cardID, std::move(name)))
+	Card(const int gridID, const int cardID, std::string name, const int level=10, const Infusion infusion=Infusion::None)
+		: context(std::make_shared<WeaponContext>(gridID, cardID, std::move(name), level, infusion))
 	{
 	}
 
@@ -153,6 +153,7 @@ WeaponGrid::WeaponGrid(wxWindow* parent)
 	this->Bind(wxEVT_LEAVE_WINDOW, &WeaponGrid::OnMouseLeave, this);
 	this->Bind(wxEVT_LEFT_DOWN, &WeaponGrid::OnItemMouse, this);
 	this->Bind(wxEVT_LEFT_UP, &WeaponGrid::OnItemMouse, this);
+	this->Bind(wxEVT_LEFT_DCLICK, &WeaponGrid::OnItemMouseDoubleClick, this);
 
 	this->Bind(wxEVT_PAINT, &WeaponGrid::Render, this);
 }
@@ -162,6 +163,44 @@ void WeaponGrid::InitializeBaseWeapons()
 	int cardID = 0;
 	for (const auto& name : wxGetApp().GetDatabase().GetNames())
 		cards.emplace_back(std::make_unique<Card>(gridID, cardID++, name));
+
+	Sort();
+}
+
+void WeaponGrid::AddSelectedWeapons(const int count)
+{
+	const auto& weaponSelection = wxGetApp().GetSessionData().GetSelection();
+
+	for (const auto& weakPtr : weaponSelection)
+	{
+		const auto ptr = weakPtr.lock();
+		for (int i = 0; i < count; ++i)
+			cards.emplace_back(std::make_unique<Card>(gridID, 0, ptr->name, ptr->GetLevel(), ptr->GetInfusion()));
+	}
+
+	Sort();
+}
+
+void WeaponGrid::RemoveSelectedWeapons()
+{
+	const auto& weaponSelection = wxGetApp().GetSessionData().GetSelection();
+
+	std::vector<int> toDelete;
+	toDelete.reserve(weaponSelection.size());
+
+	for (const auto& weakPtr : weaponSelection)
+		if (const auto ptr = weakPtr.lock(); ptr)
+			toDelete.push_back(ptr->cardID);
+
+	ClearSelection();
+	std::sort(toDelete.begin(), toDelete.end());
+
+	int counter = 0;
+	for (const int index : toDelete)
+	{
+		cards.erase(cards.begin() + index + counter);
+		--counter;
+	}
 
 	Sort();
 }
@@ -199,17 +238,15 @@ void WeaponGrid::Sort()
 	ClearSelection();
 
 	if (sorting.reverse)
-	{
 		std::sort(cards.rbegin(), cards.rend(), GetComparatorFunction(sorting.method));
-	}
 	else
-	{
 		std::sort(cards.begin(), cards.end(), GetComparatorFunction(sorting.method));
-	}
 
 	int cardID = 0;
 	for (auto& card : cards)
 		card->UpdateContext(gridID, cardID++);
+
+	RenderItems();
 }
 
 void WeaponGrid::Render(wxPaintEvent& e)
@@ -285,14 +322,29 @@ void WeaponGrid::OnItemMouse(wxMouseEvent& e)
 		selection.end = mouseOver;
 
 		SelectItemID(mouseOver);
+
+		selectedIDs.push_back(mouseOver);
+		UpdateSelection();
+
 		selecting = true;
 	}
 	else if (e.LeftUp() && selecting)
 	{
 		selecting = false;
+
+		selectedIDs.clear();
+		for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+			selectedIDs.push_back(i);
+
+		UpdateSelection();
 	}
 
 	Refresh();
+}
+
+void WeaponGrid::OnItemMouseDoubleClick(wxMouseEvent&)
+{
+	wxGetApp().GetSessionData().UpdateWeaponTransfer(gridID, 1);
 }
 
 void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw)
@@ -320,16 +372,18 @@ void WeaponGrid::OnItemEnterHover(const int id, const bool redraw)
 		selection.end = id;
 
 		for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+		{
 			SelectItemID(i);
+			selectedIDs.push_back(i);
+		}
 
+		UpdateSelection();
 		Refresh();
 		wasRefreshed = true;
 	}
 
 	if (redraw && !wasRefreshed)
-	{
 		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize});
-	}
 }
 
 void WeaponGrid::OnItemLeaveHover(const int id, const bool redraw)
@@ -339,9 +393,7 @@ void WeaponGrid::OnItemLeaveHover(const int id, const bool redraw)
 	cards[id]->hovered = false;
 
 	if (redraw)
-	{
 		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize});
-	}
 }
 
 void WeaponGrid::SelectItemID(const int id)
@@ -353,28 +405,21 @@ void WeaponGrid::SelectItemID(const int id)
 
 	if (const auto pageDownID = GetPageDownID(id, cards.size()); pageDownID != id)
 		cards[pageDownID]->atPageFromSelection = -1;
-
-	UpdateSelection();
 }
 
-void WeaponGrid::DeselectItemID(const int id, const bool triggerSelectionUpdate)
+void WeaponGrid::DeselectItemID(const int id)
 {
 	cards[id]->selected = false;
 	cards[GetPageUpID(id)]->atPageFromSelection = 0;
 	cards[GetPageDownID(id, cards.size())]->atPageFromSelection = 0;
-
-	if (triggerSelectionUpdate)
-		UpdateSelection();
 }
 
 void WeaponGrid::ClearSelection()
 {
-	const auto start = std::max(std::min(selection.start, selection.end), 0ULL);
-	const auto end = std::min(std::max(selection.start, selection.end), cards.size() - 1);
+	for (const int i : selectedIDs)
+		DeselectItemID(i);
 
-	for (int i = start; i <= end; ++i)
-		DeselectItemID(i, false);
-
+	selectedIDs.clear();
 	UpdateSelection();
 }
 
@@ -382,7 +427,7 @@ void WeaponGrid::UpdateSelection()
 {
 	SessionData::SelectionVector v;
 
-	for (int i = std::min(selection.start, selection.end); i <= std::max(selection.start, selection.end); ++i)
+	for (const int i : selectedIDs)
 		v.push_back(cards[i]->context);
 
 	wxGetApp().GetSessionData().UpdateSelection(std::move(v));

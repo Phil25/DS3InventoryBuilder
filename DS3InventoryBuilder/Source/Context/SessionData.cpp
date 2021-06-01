@@ -2,6 +2,7 @@
 
 #include <Context/IAttributesListener.h>
 #include <Context/ISelectionListener.h>
+#include <Context/IWeaponTransferListener.h>
 #include <cassert>
 
 WeaponContext::WeaponContext(const int gridID, const int cardID, std::string name, const int level, const Infusion infusion) noexcept
@@ -60,6 +61,13 @@ void SessionData::UpdateSelection(std::vector<std::weak_ptr<WeaponContext>> sele
 			ptr->OnUpdate();
 }
 
+void SessionData::UpdateWeaponTransfer(const int originGridID, const int count)
+{
+	for (const auto& weakPtr : listeners.weaponTransfer)
+		if (const auto ptr = weakPtr.lock(); ptr)
+			ptr->OnUpdate(originGridID, count);
+}
+
 auto SessionData::GetSelection() const -> const SelectionVector&
 {
 	return selection;
@@ -93,4 +101,9 @@ void SessionData::RegisterInventorySortingListener(const std::weak_ptr<IInventor
 void SessionData::RegisterSelectionListener(const std::weak_ptr<ISelectionListener>& listener)
 {
 	listeners.selection.push_back(listener);
+}
+
+void SessionData::RegisterWeaponTransferListener(const std::weak_ptr<IWeaponTransferListener>& listener)
+{
+	listeners.weaponTransfer.push_back(listener);
 }

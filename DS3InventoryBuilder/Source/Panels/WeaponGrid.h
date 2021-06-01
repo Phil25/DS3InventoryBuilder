@@ -24,23 +24,26 @@ class WeaponGrid final : public wxPanel
 	using CardPtr = std::unique_ptr<Card>;
 	std::vector<CardPtr> cards;
 
+	bool selecting{false};
 	int mouseOver{-1};
 	int visibleRows{};
 	int cardSize{};
 	Range current{};
 	Range selection{};
-
 	WeaponSorting sorting{WeaponSorting::Method::Default, false};
+	std::vector<int> selectedIDs;
 
-	bool selecting{false};
-
-	const int gridID;
 	static int GridID;
 
 public:
+	const int gridID;
+
 	WeaponGrid(wxWindow* parent);
 
 	void InitializeBaseWeapons();
+
+	void AddSelectedWeapons(const int count);
+	void RemoveSelectedWeapons();
 
 	void SetFiltering();
 	void SetSorting(const WeaponSorting& sorting);
@@ -52,19 +55,20 @@ private:
 	void RenderItems(const bool fullRedraw=false);
 
 
-	void OnSize(wxSizeEvent& e);
-	void OnMousewheel(wxMouseEvent& e);
+	void OnSize(wxSizeEvent&);
+	void OnMousewheel(wxMouseEvent&);
 
-	void OnMouseMotion(wxMouseEvent& e);
-	void OnMouseLeave(wxMouseEvent& e);
-	void OnItemMouse(wxMouseEvent& e);
+	void OnMouseMotion(wxMouseEvent&);
+	void OnMouseLeave(wxMouseEvent&);
+	void OnItemMouse(wxMouseEvent&);
+	void OnItemMouseDoubleClick(wxMouseEvent&);
 
 	void UpdateMousePosition(const int x, const int y, const bool redraw=true);
 	void OnItemEnterHover(const int id, const bool redraw);
 	void OnItemLeaveHover(const int id, const bool redraw);
 	
 	void SelectItemID(const int id);
-	void DeselectItemID(const int id, const bool triggerSelectionUpdate=true);
+	void DeselectItemID(const int id);
 	void ClearSelection();
 	void UpdateSelection();
 

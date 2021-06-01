@@ -4,6 +4,8 @@ target_sources(DS3InventoryBuilder
 		"IAttributesListener.cpp"
 		"ISelectionListener.h"
 		"ISelectionListener.cpp"
+		"IWeaponTransferListener.h"
+		"IWeaponTransferListener.cpp"
 		#"IFinderOptionsListener.hpp"
 		#"IFinderSortingListener.hpp"
 		#"IInventorySortingListener.hpp"

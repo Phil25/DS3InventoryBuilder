@@ -494,13 +494,10 @@ void Preview::OnSelectionUpdate()
 	selection.reserve(weakSelection.size());
 
 	for (const auto& weaponContext : weakSelection)
-	{
-		const auto ptr = weaponContext.lock();
-		if (ptr)
+		if (const auto ptr = weaponContext.lock(); ptr)
 			selection.emplace_back(ptr);
 		else
 			assert(false && "weapon context should be valid at this point");
-	}
 
 	if (!selection.size())
 	{
