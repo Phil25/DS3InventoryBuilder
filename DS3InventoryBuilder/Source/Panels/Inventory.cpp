@@ -25,7 +25,7 @@ public:
 Inventory::Inventory(wxWindow* parent)
 	: Title(parent, "Inventory")
 	, weaponTransferListener(std::make_shared<WeaponTransferListener>(this))
-	, grid(new WeaponGrid(GetContent()))
+	, grid(new WeaponGrid(GetContent(), false))
 {
 	weaponTransferListener->Register();
 

@@ -37,8 +37,9 @@ class WeaponGrid final : public wxPanel
 
 public:
 	const int gridID;
+	const bool fixed;
 
-	WeaponGrid(wxWindow* parent);
+	WeaponGrid(wxWindow* parent, const bool fixed=true);
 
 	void InitializeBaseWeapons();
 
@@ -60,8 +61,10 @@ private:
 
 	void OnMouseMotion(wxMouseEvent&);
 	void OnMouseLeave(wxMouseEvent&);
-	void OnItemMouse(wxMouseEvent&);
-	void OnItemMouseDoubleClick(wxMouseEvent&);
+
+	void OnItemMouseLeft(wxMouseEvent&);
+	void OnItemMouseDoubleLeft(wxMouseEvent&);
+	void OnItemMouseRight(wxMouseEvent&);
 
 	void UpdateMousePosition(const int x, const int y, const bool redraw=true);
 	void OnItemEnterHover(const int id, const bool redraw);

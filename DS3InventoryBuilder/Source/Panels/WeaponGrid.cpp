@@ -1,6 +1,7 @@
 #include "WeaponGrid.h"
 
 #include <AppMain.h>
+#include <Menus/WeaponPopup.h>
 #include <algorithm>
 
 #define RETURN_COMPARISON_ON_DIFFERENCE(a,b) \
@@ -139,9 +140,10 @@ namespace
 	}
 }
 
-WeaponGrid::WeaponGrid(wxWindow* parent)
+WeaponGrid::WeaponGrid(wxWindow* parent, const bool fixed)
 	: wxPanel(parent)
 	, gridID(++GridID)
+	, fixed(fixed)
 {
 	this->SetMinSize(wxSize(64 * 5, 128));
 	this->SetMaxSize(wxSize(128 * 5, 99999));
@@ -151,9 +153,11 @@ WeaponGrid::WeaponGrid(wxWindow* parent)
 	this->Bind(wxEVT_MOUSEWHEEL, &WeaponGrid::OnMousewheel, this);
 	this->Bind(wxEVT_MOTION, &WeaponGrid::OnMouseMotion, this);
 	this->Bind(wxEVT_LEAVE_WINDOW, &WeaponGrid::OnMouseLeave, this);
-	this->Bind(wxEVT_LEFT_DOWN, &WeaponGrid::OnItemMouse, this);
-	this->Bind(wxEVT_LEFT_UP, &WeaponGrid::OnItemMouse, this);
-	this->Bind(wxEVT_LEFT_DCLICK, &WeaponGrid::OnItemMouseDoubleClick, this);
+
+	this->Bind(wxEVT_LEFT_DOWN, &WeaponGrid::OnItemMouseLeft, this);
+	this->Bind(wxEVT_LEFT_UP, &WeaponGrid::OnItemMouseLeft, this);
+	this->Bind(wxEVT_LEFT_DCLICK, &WeaponGrid::OnItemMouseDoubleLeft, this);
+	this->Bind(wxEVT_RIGHT_DOWN, &WeaponGrid::OnItemMouseRight, this);
 
 	this->Bind(wxEVT_PAINT, &WeaponGrid::Render, this);
 }
@@ -309,7 +313,7 @@ void WeaponGrid::OnMouseLeave(wxMouseEvent&)
 	mouseOver = -1;
 }
 
-void WeaponGrid::OnItemMouse(wxMouseEvent& e)
+void WeaponGrid::OnItemMouseLeft(wxMouseEvent& e)
 {
 	if (mouseOver < 0 || mouseOver >= cards.size())
 		return;
@@ -342,9 +346,37 @@ void WeaponGrid::OnItemMouse(wxMouseEvent& e)
 	Refresh();
 }
 
-void WeaponGrid::OnItemMouseDoubleClick(wxMouseEvent&)
+void WeaponGrid::OnItemMouseDoubleLeft(wxMouseEvent&)
 {
 	wxGetApp().GetSessionData().UpdateWeaponTransfer(gridID, 1);
+}
+
+void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
+{
+	if (mouseOver < 0 || mouseOver >= cards.size())
+		return;
+
+	if (std::find(selectedIDs.begin(), selectedIDs.end(), mouseOver) == selectedIDs.end())
+	{
+		ClearSelection();
+
+		SelectItemID(mouseOver);
+		selectedIDs.push_back(mouseOver);
+		UpdateSelection();
+
+		Refresh();
+	}
+
+	int selectedLevels{0};
+	int selectedInfusions{0};
+	for (const auto i : selectedIDs)
+	{
+		selectedLevels |= 1 << cards[i]->context->GetLevel();
+		selectedInfusions |= 1 << static_cast<int>(cards[i]->context->GetInfusion());
+	}
+
+	auto menu = WeaponPopup{gridID, fixed, selectedLevels, selectedInfusions};
+	PopupMenu(&menu);
 }
 
 void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw)

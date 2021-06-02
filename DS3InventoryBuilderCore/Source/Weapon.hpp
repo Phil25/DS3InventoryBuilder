@@ -58,7 +58,8 @@ namespace invbuilder
 		enum class Infusion
 		{
 			None, Heavy, Sharp, Refined, Raw, Crystal, Simple, Fire, Chaos,
-			Lightning, Blessed, Deep, Dark, Blood, Poison, Hollow
+			Lightning, Blessed, Deep, Dark, Blood, Poison, Hollow,
+			Size
 		};
 
 		using Properties = std::map<Infusion, const InfusionProperties>;

@@ -1,12 +1,28 @@
 #include "SessionData.h"
 
+#include <AppMain.h>
 #include <Context/IAttributesListener.h>
 #include <Context/ISelectionListener.h>
 #include <Context/IWeaponTransferListener.h>
 #include <cassert>
 
+namespace
+{
+	inline auto GetWeaponInfusable(const std::string& name)
+	{
+		return wxGetApp().GetDatabase().GetWeapon(name).infusable;
+	}
+
+	inline auto GetWeaponUnique(const std::string& name)
+	{
+		return wxGetApp().GetDatabase().GetWeapon(name).unique;
+	}
+}
+
 WeaponContext::WeaponContext(const int gridID, const int cardID, std::string name, const int level, const Infusion infusion) noexcept
-	: gridID(gridID), cardID(cardID), name(std::move(name)), level(level), infusion(infusion)
+	: gridID(gridID), cardID(cardID), name(std::move(name))
+	, isUnique(GetWeaponUnique(this->name)), isInfusable(GetWeaponInfusable(this->name))
+	, level(level), infusion(isInfusable ? infusion : invbuilder::Weapon::Infusion::None)
 {
 }
 
@@ -17,6 +33,7 @@ auto WeaponContext::GetLevel() const noexcept -> int
 
 void WeaponContext::SetLevel(const int level) noexcept
 {
+	assert(0 <= level && level <= 10 && "illegal weapon level");
 	this->level = level;
 }
 
@@ -27,7 +44,7 @@ auto WeaponContext::GetInfusion() const noexcept -> Infusion
 
 void WeaponContext::SetInfusion(const Infusion infusion) noexcept
 {
-	this->infusion = infusion;
+	this->infusion = isInfusable ? infusion : invbuilder::Weapon::Infusion::None;
 }
 
 void SessionData::UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck)
@@ -47,6 +64,9 @@ void SessionData::UpdateAttributes(const int str, const int dex, const int int_,
 	attributes.fth = fth;
 	attributes.lck = lck;
 
+	UpdateSelection();
+
+	// TODO: this does not need to trigger anything
 	for (const auto& weakPtr : listeners.attributes)
 		if (const auto ptr = weakPtr.lock(); ptr)
 			ptr->OnUpdate(str, dex, int_, fth, lck);
@@ -55,7 +75,11 @@ void SessionData::UpdateAttributes(const int str, const int dex, const int int_,
 void SessionData::UpdateSelection(std::vector<std::weak_ptr<WeaponContext>> selection)
 {
 	this->selection = std::move(selection);
+	UpdateSelection();
+}
 
+void SessionData::UpdateSelection()
+{
 	for (const auto& weakPtr : listeners.selection)
 		if (const auto ptr = weakPtr.lock(); ptr)
 			ptr->OnUpdate();
@@ -73,7 +97,7 @@ auto SessionData::GetSelection() const -> const SelectionVector&
 	return selection;
 }
 
-auto SessionData::GetAttributes() const -> const invbuilder::PlayerAttributes&
+auto SessionData::GetAttributes() const -> invbuilder::PlayerAttributes
 {
 	return {1.f * attributes.str, 1.f * attributes.dex, 1.f * attributes.int_, 1.f * attributes.fth, 1.f * attributes.lck};
 }

@@ -23,6 +23,8 @@ public:
 	const int gridID;
 	const int cardID;
 	const std::string name;
+	const bool isUnique;
+	const bool isInfusable;
 
 	WeaponContext(const int gridID, const int cardID, std::string name, const int level=10, const Infusion=Infusion::None) noexcept;
 
@@ -59,9 +61,10 @@ public:
 
 	void UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck);
 	void UpdateSelection(SelectionVector);
+	void UpdateSelection();
 	void UpdateWeaponTransfer(const int originGridID, const int count);
 
-	auto GetAttributes() const -> const invbuilder::PlayerAttributes&;
+	auto GetAttributes() const -> invbuilder::PlayerAttributes;
 	auto GetSelection() const -> const SelectionVector&;
 
 private:

@@ -351,3 +351,31 @@ auto Database::Create() -> Database
 	assert(names.size() == 286 && "there are 286 weapons in the game");
 	return Database(std::move(names), std::move(weapons), std::move(saturations));
 }
+
+auto Database::ToString(const Weapon::Infusion infusion) -> std::string
+{
+	using I = Weapon::Infusion;
+
+	switch (infusion)
+	{
+	case I::None: return "None";
+	case I::Heavy: return "Heavy";
+	case I::Sharp: return "Sharp";
+	case I::Refined: return "Refined";
+	case I::Raw: return "Raw";
+	case I::Crystal: return "Crystal";
+	case I::Simple: return "Simple";
+	case I::Fire: return "Fire";
+	case I::Chaos: return "Chaos";
+	case I::Lightning: return "Lightning";
+	case I::Blessed: return "Blessed";
+	case I::Deep: return "Deep";
+	case I::Dark: return "Dark";
+	case I::Blood: return "Blood";
+	case I::Poison: return "Poison";
+	case I::Hollow: return "Hollow";
+	}
+
+	assert(false && "invalid infusion");
+	return {};
+}

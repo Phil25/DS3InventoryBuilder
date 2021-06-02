@@ -27,5 +27,7 @@ namespace invbuilder
 		auto GetImage(unsigned int& size, std::string& name) const -> uint8_t*;
 
 		static auto Create() -> Database;
+
+		static auto ToString(const Weapon::Infusion) -> std::string;
 	};
 }
