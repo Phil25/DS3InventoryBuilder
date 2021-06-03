@@ -53,8 +53,8 @@ public:
 private:
 	void Sort();
 
-	void Render(wxPaintEvent& e);
-	void RenderItems(const bool fullRedraw=false);
+	void OnRender(wxPaintEvent& e);
+	void RenderCards(const bool fullRedraw=false);
 
 	void OnSize(wxSizeEvent&);
 	void OnMousewheel(wxMouseEvent&);

@@ -276,7 +276,7 @@ WeaponGrid::WeaponGrid(wxWindow* parent, const bool fixed)
 	this->Bind(wxEVT_LEFT_DCLICK, &WeaponGrid::OnItemMouseDoubleLeft, this);
 	this->Bind(wxEVT_RIGHT_DOWN, &WeaponGrid::OnItemMouseRight, this);
 
-	this->Bind(wxEVT_PAINT, &WeaponGrid::Render, this);
+	this->Bind(wxEVT_PAINT, &WeaponGrid::OnRender, this);
 }
 
 void WeaponGrid::InitializeBaseWeapons()
@@ -328,8 +328,11 @@ void WeaponGrid::RemoveSelectedWeapons()
 
 void WeaponGrid::DiscardSelection()
 {
-	selection->Clear(false);
-	Refresh();
+	if (!selection->Get().empty())
+	{
+		selection->Clear(false);
+		Refresh(false);
+	}
 }
 
 void WeaponGrid::SetFiltering(/*filtering options*/)
@@ -373,10 +376,10 @@ void WeaponGrid::Sort()
 	for (auto& card : cards)
 		card->context->SetCardID(cardID++, card->context.use_count());
 
-	RenderItems();
+	RenderCards();
 }
 
-void WeaponGrid::Render(wxPaintEvent& e)
+void WeaponGrid::OnRender(wxPaintEvent& e)
 {
 	auto dc = wxPaintDC{this};
 
@@ -384,7 +387,7 @@ void WeaponGrid::Render(wxPaintEvent& e)
 		cards[i]->Render(dc, cardSize);
 }
 
-void WeaponGrid::RenderItems(const bool fullRedraw)
+void WeaponGrid::RenderCards(const bool fullRedraw)
 {
 	for (int pos = 0, i = std::max(current.start, 0ULL); i < std::min(current.end, cards.size()); ++i, ++pos)
 	{
@@ -402,7 +405,7 @@ void WeaponGrid::OnSize(wxSizeEvent& e)
 	cardSize = e.GetSize().x / 5;
 	visibleRows = e.GetSize().y / cardSize;
 	current.end = current.start + static_cast<size_t>(visibleRows) * 5;
-	RenderItems(true);
+	RenderCards(true);
 }
 
 void WeaponGrid::OnMousewheel(wxMouseEvent& e)
@@ -414,14 +417,14 @@ void WeaponGrid::OnMousewheel(wxMouseEvent& e)
 		current.start += 5;
 		current.end += 5;
 		UpdateMousePosition(e.GetPosition().x, e.GetPosition().y, false);
-		RenderItems();
+		RenderCards();
 	}
 	else if (rotation > 0 && current.start > 0) // up
 	{
 		current.start -= 5;
 		current.end -= 5;
 		UpdateMousePosition(e.GetPosition().x, e.GetPosition().y, false);
-		RenderItems();
+		RenderCards();
 	}
 }
 
@@ -432,6 +435,7 @@ void WeaponGrid::OnMouseMotion(wxMouseEvent& e)
 
 void WeaponGrid::OnMouseLeave(wxMouseEvent&)
 {
+	// TODO: stop selecting here?
 	OnItemLeaveHover(mouseOver, true);
 	mouseOver = -1;
 }
@@ -452,7 +456,7 @@ void WeaponGrid::OnItemMouseLeft(wxMouseEvent& e)
 		selection->End();
 	}
 
-	Refresh();
+	Refresh(false);
 }
 
 void WeaponGrid::OnItemMouseDoubleLeft(wxMouseEvent&)
@@ -469,7 +473,7 @@ void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
 	{
 		selection->Clear();
 		selection->Select({mouseOver * 1ULL, mouseOver * 1ULL});
-		Refresh();
+		Refresh(false);
 	}
 
 	int selectedLevels{0};
@@ -508,12 +512,12 @@ void WeaponGrid::OnItemEnterHover(const int id, const bool redraw)
 		selection->Clear();
 		selection->Extend(id);
 
-		Refresh();
+		Refresh(false);
 		wasRefreshed = true;
 	}
 
 	if (redraw && !wasRefreshed)
-		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize});
+		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize}, false);
 }
 
 void WeaponGrid::OnItemLeaveHover(const int id, const bool redraw)
@@ -523,7 +527,7 @@ void WeaponGrid::OnItemLeaveHover(const int id, const bool redraw)
 	cards[id]->hovered = false;
 
 	if (redraw)
-		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize});
+		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize}, false);
 }
 
 int WeaponGrid::GridID = 0;
