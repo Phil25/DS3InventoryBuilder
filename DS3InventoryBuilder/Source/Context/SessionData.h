@@ -55,12 +55,14 @@ private:
 
 	struct { int str{18}, dex{18}, int_{10}, fth{10}, lck{7}; } attributes;
 	SelectionVector selection;
+	int lastSelectionGridID{-1};
 
 public:
 	SessionData() = default;
 
 	void UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck);
-	void UpdateSelection(SelectionVector);
+	void UpdateSelection(const int gridID, SelectionVector);
+	void UpdateSelection(const int gridID);
 	void UpdateSelection();
 	void UpdateWeaponTransfer(const int originGridID, const int count);
 

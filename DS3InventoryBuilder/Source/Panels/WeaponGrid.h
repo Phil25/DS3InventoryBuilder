@@ -24,14 +24,14 @@ class WeaponGrid final : public wxPanel
 	using CardPtr = std::unique_ptr<Card>;
 	std::vector<CardPtr> cards;
 
-	bool selecting{false};
+	class SelectionManager;
+	std::unique_ptr<SelectionManager> selection;
+
 	int mouseOver{-1};
 	int visibleRows{};
 	int cardSize{};
 	Range current{};
-	Range selection{};
 	WeaponSorting sorting{WeaponSorting::Method::Default, false};
-	std::vector<int> selectedIDs;
 
 	static int GridID;
 
@@ -45,6 +45,7 @@ public:
 
 	void AddSelectedWeapons(const int count);
 	void RemoveSelectedWeapons();
+	void DiscardSelection();
 
 	void SetFiltering();
 	void SetSorting(const WeaponSorting& sorting);
@@ -54,7 +55,6 @@ private:
 
 	void Render(wxPaintEvent& e);
 	void RenderItems(const bool fullRedraw=false);
-
 
 	void OnSize(wxSizeEvent&);
 	void OnMousewheel(wxMouseEvent&);
@@ -69,11 +69,6 @@ private:
 	void UpdateMousePosition(const int x, const int y, const bool redraw=true);
 	void OnItemEnterHover(const int id, const bool redraw);
 	void OnItemLeaveHover(const int id, const bool redraw);
-	
-	void SelectItemID(const int id);
-	void DeselectItemID(const int id);
-	void ClearSelection();
-	void UpdateSelection();
 
 	friend bool ComparatorDefault(const WeaponGrid::CardPtr&, const WeaponGrid::CardPtr&);
 	friend bool ComparatorWeight(const WeaponGrid::CardPtr&, const WeaponGrid::CardPtr&);

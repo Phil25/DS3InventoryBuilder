@@ -92,7 +92,7 @@ public:
 	{
 	}
 
-	void OnUpdate() override
+	void OnUpdate(const int) override
 	{
 		preview->OnSelectionUpdate();
 	}

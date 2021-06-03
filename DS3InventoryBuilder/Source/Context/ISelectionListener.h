@@ -12,5 +12,5 @@ public:
 
 	void Register();
 
-	virtual void OnUpdate() = 0;
+	virtual void OnUpdate(const int gridID) = 0;
 };

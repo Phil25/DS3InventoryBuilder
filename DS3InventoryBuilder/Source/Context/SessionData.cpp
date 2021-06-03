@@ -72,17 +72,27 @@ void SessionData::UpdateAttributes(const int str, const int dex, const int int_,
 			ptr->OnUpdate(str, dex, int_, fth, lck);
 }
 
-void SessionData::UpdateSelection(std::vector<std::weak_ptr<WeaponContext>> selection)
+void SessionData::UpdateSelection(const int gridID, std::vector<std::weak_ptr<WeaponContext>> selection)
 {
+	if (selection.empty() && gridID != lastSelectionGridID)
+		return; // empty update from irrelevant grid
+
 	this->selection = std::move(selection);
-	UpdateSelection();
+
+	lastSelectionGridID = gridID;
+	UpdateSelection(gridID);
+}
+
+void SessionData::UpdateSelection(const int gridID)
+{
+	for (const auto& weakPtr : listeners.selection)
+		if (const auto ptr = weakPtr.lock(); ptr)
+			ptr->OnUpdate(gridID);
 }
 
 void SessionData::UpdateSelection()
 {
-	for (const auto& weakPtr : listeners.selection)
-		if (const auto ptr = weakPtr.lock(); ptr)
-			ptr->OnUpdate();
+	UpdateSelection(lastSelectionGridID);
 }
 
 void SessionData::UpdateWeaponTransfer(const int originGridID, const int count)
