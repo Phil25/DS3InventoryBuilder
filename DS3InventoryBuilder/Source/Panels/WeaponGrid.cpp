@@ -67,7 +67,7 @@ struct WeaponGrid::Card final
 	using Infusion = Weapon::Infusion;
 
 	using WeaponContextPtr = std::shared_ptr<WeaponContext>;
-	WeaponContextPtr context;
+	const WeaponContextPtr context;
 
 	bool selected{false};
 	bool hovered{false};
@@ -96,6 +96,13 @@ struct WeaponGrid::Card final
 		{
 		case -1: dc.DrawBitmap(wxGetApp().GetImage("Key_R2", size / 3), position.x + 2, position.y + 2, false); break;
 		case 1: dc.DrawBitmap(wxGetApp().GetImage("Key_L2", size / 3), position.x + 2, position.y + 2, false); break;
+		}
+
+		if (context->GetInfusion() != Infusion::None)
+		{
+			const int infusionSize = size / 4;
+			const int offset = size - infusionSize - 3;
+			dc.DrawBitmap(wxGetApp().GetImage(invbuilder::Database::ToString(context->GetInfusion()), infusionSize), position.x + offset, position.y + offset, false);
 		}
 	}
 };
@@ -486,6 +493,8 @@ void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
 
 	auto menu = WeaponPopup{gridID, fixed, selectedLevels, selectedInfusions};
 	PopupMenu(&menu);
+
+	Sort();
 }
 
 void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw)

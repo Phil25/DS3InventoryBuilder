@@ -139,7 +139,13 @@ namespace
 			case 'o': return Weapon::Infusion::Hollow;
 			default: assert(false && "invalid infusion");
 			}
-		case 'S': return Weapon::Infusion::Sharp;
+		case 'S':
+			switch (infusion[1])
+			{
+			case 'h': return Weapon::Infusion::Sharp;
+			case 'i': return Weapon::Infusion::Simple;
+			default: assert(false && "invalid infusion");
+			}
 		case 'R':
 			switch (infusion[1])
 			{

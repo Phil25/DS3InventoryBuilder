@@ -302,6 +302,7 @@ class Preview::WeaponBook final : public wxNotebook
 
 		void AddWeapon(const invbuilder::Weapon& weapon, const int level, const invbuilder::Weapon::Infusion infusion)
 		{
+			assert(!(infusion != invbuilder::Weapon::Infusion::None && !weapon.infusable) && "accessing infusion on non-infusable weapon");
 			const auto& data = weapon.properties.at(infusion).level[level];
 
 			absorptions->AddWeapon({weapon.name,
@@ -361,7 +362,9 @@ class Preview::WeaponBook final : public wxNotebook
 				ToString(weapon.buffable),
 			});
 
+			assert(!(infusion != invbuilder::Weapon::Infusion::None && !weapon.infusable) && "accessing infusion on non-infusable weapon");
 			const auto& scl = weapon.properties.at(infusion).level[level].scaling;
+
 			scaling->AddWeapon({weapon.name,
 				ToString(scl.strength),
 				ToString(scl.dexterity),
