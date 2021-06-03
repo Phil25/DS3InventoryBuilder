@@ -119,11 +119,62 @@ public:
 
 class Preview::PreviewIcon final : public wxPanel
 {
+	static const int size = 128;
+	std::vector<std::string> weapons;
+
 public:
 	PreviewIcon(wxWindow* parent) : wxPanel(parent)
 	{
-		this->SetMinSize(wxSize{128, 128});
-		this->SetBackgroundColour(*wxRED);
+		this->SetMinSize(wxSize{size, size});
+		this->Bind(wxEVT_PAINT, &PreviewIcon::OnRender, this);
+	}
+
+	void ClearWeaponIcon()
+	{
+		weapons.clear();
+		Refresh();
+	}
+
+	void SetWeaponIcon(std::string name)
+	{
+		weapons.clear();
+		weapons.emplace_back(std::move(name));
+		Refresh();
+	}
+
+	void SetWeaponIcons(std::vector<std::string> weapons)
+	{
+		this->weapons = std::move(weapons);
+		Refresh();
+	}
+
+private:
+	void OnRender(wxPaintEvent&)
+	{
+		if (weapons.empty())
+			return;
+
+		auto dc = wxPaintDC{this};
+
+		const auto weaponCount = std::min(weapons.size(), 25ULL);
+		const auto rowCount = GetRowCount(weaponCount);
+		const auto weaponSize = size / rowCount;
+
+		for (int i = 0; i < weaponCount; ++i)
+		{
+			const auto col = i % rowCount;
+			const auto row = i / rowCount;
+			dc.DrawBitmap(wxGetApp().GetImage(weapons[i], weaponSize), col * weaponSize, row * weaponSize, false);
+		}
+	}
+
+	int GetRowCount(const size_t weaponsCount)
+	{
+		if (weaponsCount <= 1) return 1;
+		if (weaponsCount <= 4) return 2;
+		if (weaponsCount <= 9) return 3;
+		if (weaponsCount <= 16) return 4;
+		return 5; // if (weaponsCount <= 25)
 	}
 };
 
@@ -518,14 +569,22 @@ void Preview::OnSelectionUpdate()
 	if (!selection.size())
 	{
 		label->SetLabel("No weapon selected");
+		icon->ClearWeaponIcon();
 	}
 	else if (selection.size() == 1)
 	{
 		label->SetLabel(selection[0]->GetName());
+		icon->SetWeaponIcon(selection[0]->GetName());
 	}
 	else
 	{
 		label->SetLabel(std::format("{}x weapons selected", selection.size()));
+
+		std::vector<std::string> weapons;
+		for (const auto& weapon : selection)
+			weapons.push_back(weapon->GetName());
+
+		icon->SetWeaponIcons(std::move(weapons));
 	}
 
 	book->UpdateSelection(selection);
