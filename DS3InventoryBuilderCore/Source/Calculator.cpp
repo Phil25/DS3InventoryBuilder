@@ -8,7 +8,7 @@ namespace
 {
 	struct Saturations final
 	{
-		// each attributes scale the following damage types
+		// each attribute scales the following damage types
 		struct Strength final { float physical; };
 		struct Dexterity final { float physical; };
 		struct Intelligence final { float magic, fire, dark; };
@@ -57,6 +57,11 @@ namespace
 			}
 		};
 	}
+
+	inline auto HasElementalDamage(const invbuilder::DamageTypes& types)
+	{
+		return types.magic || types.fire || types.lightning || types.dark;
+	}
 }
 
 auto calc::AttackRating(const Database& db, const char* name, const Weapon::Infusion infusion, const int level,
@@ -74,10 +79,12 @@ auto calc::AttackRating(const Database& db, const char* name, const Weapon::Infu
 	auto damages = weapon.properties.at(infusion).level[level].damage;
 	auto status = weapon.properties.at(infusion).level[level].status;
 
+	const bool faithScalesPhysical = infusion == Weapon::Infusion::Blessed || !HasElementalDamage(damages);
+
 	damages.physical *= (1
 		+ scaling.strength / 100 * saturations.strength.physical / 100
 		+ scaling.dexterity / 100 * saturations.dexterity.physical / 100
-		+ scaling.faith / 100 * saturations.faith.physical / 100 * (infusion == Weapon::Infusion::Blessed)
+		+ scaling.faith / 100 * saturations.faith.physical / 100 * faithScalesPhysical
 		+ scaling.luck / 100 * saturations.luck.physical / 100);
 
 	damages.magic *= 1 + scaling.intelligence / 100 * saturations.intelligence.magic / 100;
