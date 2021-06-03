@@ -23,7 +23,7 @@ namespace
 	{
 		switch (selected + hovered * 2)
 		{
-		// Hufflepuff palette -- https://www.color-hex.com/color-palette/816
+		// Hufflepuff palette: https://www.color-hex.com/color-palette/816
 		case 0: return wxColor(114, 98, 85); // normal
 		case 1: return wxColor(240, 199, 94); // selected
 		case 2: return wxColor(55, 46, 41); // hovered
@@ -37,8 +37,16 @@ namespace
 		}
 
 		assert(false && "invalid highlight combo");
-		return wxColor();
+		return wxColor{};
 	}
+
+	/*inline auto GetUniquenessColor(const bool unique)
+	{
+		// cool blue palette: https://www.color-hex.com/color-palette/30415
+		return unique
+			? wxColor(16, 125, 172)
+			: wxColor(113, 199, 236);
+	}*/
 
 	inline int GetIDFromPosition(const int x, const int y, const int startingCardID, const int cardSize) noexcept
 	{
@@ -104,6 +112,14 @@ struct WeaponGrid::Card final
 			const int offset = size - infusionSize - 3;
 			dc.DrawBitmap(wxGetApp().GetImage(invbuilder::Database::ToString(context->GetInfusion()), infusionSize), position.x + offset, position.y + offset, false);
 		}
+
+		/*{
+			const int levelWidth = size / 5 + 5;
+			dc.SetBrush(GetUniquenessColor(context->IsUnique()));
+			dc.DrawRectangle({position.x + size - levelWidth, position.y}, {levelWidth, levelWidth / 2});
+			dc.SetFont(wxFont{size / 10, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD});
+			dc.DrawText(std::to_string(context->GetLevel(true)), position.x + size - size / 5, position.y);
+		}*/
 	}
 };
 

@@ -253,7 +253,7 @@ def assign_uniqueness(weapons, filename):
         reader = csv.reader(f, delimiter="\t")
         for row in reader:
             name = get_name(row[0])
-            weapons[name][s("unique")] = row[1][-1] == "5" # +5
+            weapons[name][s("unique")] = row[0][-1] == "5" # +5
 
 def fix_missing_classes(data):
     # Spreasheets don't contain classes unique to DLCs and these have their classes wrong

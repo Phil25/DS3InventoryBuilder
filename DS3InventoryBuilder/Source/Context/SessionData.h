@@ -34,8 +34,9 @@ public:
 	void SetCardID(const int cardID, const int useCount);
 
 	auto GetName() const noexcept -> const std::string&;
+	bool IsUnique() const noexcept;
 
-	auto GetLevel() const noexcept -> int;
+	auto GetLevel(const bool translate=false) const noexcept -> int;
 	void SetLevel(const int level) noexcept;
 
 	auto GetInfusion() const noexcept -> Infusion;

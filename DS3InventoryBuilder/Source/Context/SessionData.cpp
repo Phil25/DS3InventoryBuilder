@@ -43,9 +43,14 @@ auto WeaponContext::GetName() const noexcept -> const std::string&
 	return name;
 }
 
-auto WeaponContext::GetLevel() const noexcept -> int
+bool WeaponContext::IsUnique() const noexcept
 {
-	return level;
+	return isUnique;
+}
+
+auto WeaponContext::GetLevel(const bool translate) const noexcept -> int
+{
+	return isUnique && translate ? level / 2 : level;
 }
 
 void WeaponContext::SetLevel(const int level) noexcept
