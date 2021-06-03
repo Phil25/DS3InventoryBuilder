@@ -190,6 +190,19 @@ public:
 		return selection;
 	}
 
+	void Set(decltype(selection) selection)
+	{
+		for (const int i : this->selection)
+			DeselectSingle(i);
+
+		this->selection = std::move(selection);
+
+		for (const int i : this->selection)
+			SelectSingle(i);
+
+		Update();
+	}
+
 	void Begin(const int id)
 	{
 		current.start = id;
@@ -316,11 +329,9 @@ void WeaponGrid::AddSelectedWeapons(const int count)
 	const auto& weaponSelection = wxGetApp().GetSessionData().GetSelection();
 
 	for (const auto& weakPtr : weaponSelection)
-	{
-		const auto ptr = weakPtr.lock();
-		for (int i = 0; i < count; ++i)
-			cards.emplace_back(std::make_unique<Card>(ptr));
-	}
+		if (const auto ptr = weakPtr.lock(); ptr)
+			for (int i = 0; i < count; ++i)
+				cards.emplace_back(std::make_unique<Card>(ptr));
 
 	Sort();
 }
@@ -388,7 +399,9 @@ void WeaponGrid::SetSorting(const WeaponSorting& sorting)
 
 void WeaponGrid::Sort()
 {
-	selection->Clear();
+	const auto prev = selection->Get();
+	std::vector<int> newSelection;
+	selection->Clear(false);
 
 	if (sorting.reverse)
 		std::sort(cards.rbegin(), cards.rend(), GetComparatorFunction(sorting.method));
@@ -397,8 +410,15 @@ void WeaponGrid::Sort()
 
 	int cardID = 0;
 	for (auto& card : cards)
-		card->context->SetCardID(cardID++, card->context.use_count());
+	{
+		if (std::find(prev.begin(), prev.end(), card->context->GetCardID()) != prev.end())
+			newSelection.push_back(cardID);
 
+		card->context->SetCardID(cardID, card->context.use_count());
+		++cardID;
+	}
+
+	selection->Set(std::move(newSelection));
 	RenderCards();
 }
 
@@ -527,7 +547,8 @@ void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw
 
 void WeaponGrid::OnItemEnterHover(const int id, const bool redraw)
 {
-	if (id < 0 || id >= cards.size()) return;
+	if (id < 0 || id >= cards.size())
+		return;
 
 	cards[id]->hovered = true;
 	bool wasRefreshed = false;
@@ -547,7 +568,8 @@ void WeaponGrid::OnItemEnterHover(const int id, const bool redraw)
 
 void WeaponGrid::OnItemLeaveHover(const int id, const bool redraw)
 {
-	if (id < 0 || id >= cards.size()) return;
+	if (id < 0 || id >= cards.size())
+		return;
 
 	cards[id]->hovered = false;
 
