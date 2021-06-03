@@ -385,3 +385,8 @@ auto Database::ToString(const Weapon::Infusion infusion) -> std::string
 	assert(false && "invalid infusion");
 	return {};
 }
+
+auto Database::GetDisplayLevel(const bool isUnique, const int level) -> int
+{
+	return isUnique ? level / 2 : level;
+}

@@ -48,9 +48,9 @@ bool WeaponContext::IsUnique() const noexcept
 	return isUnique;
 }
 
-auto WeaponContext::GetLevel(const bool translate) const noexcept -> int
+auto WeaponContext::GetLevel(const bool display) const noexcept -> int
 {
-	return isUnique && translate ? level / 2 : level;
+	return display ? invbuilder::Database::GetDisplayLevel(isUnique, level) : level;
 }
 
 void WeaponContext::SetLevel(const int level) noexcept

@@ -36,7 +36,7 @@ public:
 	auto GetName() const noexcept -> const std::string&;
 	bool IsUnique() const noexcept;
 
-	auto GetLevel(const bool translate=false) const noexcept -> int;
+	auto GetLevel(const bool display=false) const noexcept -> int;
 	void SetLevel(const int level) noexcept;
 
 	auto GetInfusion() const noexcept -> Infusion;

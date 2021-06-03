@@ -17,17 +17,17 @@ namespace
 		return *end == 0; // success
 	}
 
-	inline std::string ToString(const float val)
+	inline auto ToString(const float val) -> std::string
 	{
 		return std::format("{:.2f}", val);
 	}
 
-	inline std::string ToString(const bool val)
+	inline auto ToString(const bool val) -> std::string
 	{
 		return val ? "Yes" : "No";
 	}
 
-	inline std::string ToString(const invbuilder::Weapon::Type type)
+	inline auto ToString(const invbuilder::Weapon::Type type) -> std::string
 	{
 		using T = invbuilder::Weapon::Type;
 		switch (type)
@@ -66,6 +66,16 @@ namespace
 
 		assert(false && "invalid weapon class");
 		return "ERROR";
+	}
+
+	inline auto GetDisplayName(const std::string& name, const bool unique, const int level, const invbuilder::Weapon::Infusion infusion)
+	{
+		using DB = invbuilder::Database;
+		using Infusion = invbuilder::Weapon::Infusion;
+
+		return infusion == Infusion::None
+			? std::format("{} +{}", name, DB::GetDisplayLevel(unique, level))
+			: std::format("{} {} +{}", name, DB::ToString(infusion), DB::GetDisplayLevel(unique, level));
 	}
 }
 
@@ -256,8 +266,9 @@ class Preview::WeaponBook final : public wxNotebook
 			const auto& [attack, status] = invbuilder::calculator::AttackRating(
 				wxGetApp().GetDatabase(), weapon.name.c_str(),
 				infusion, level, attribs);
+			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
 
-			attackRating->AddWeapon({weapon.name,
+			attackRating->AddWeapon({name,
 				ToString(attack.Total()),
 				ToString(attack.physical),
 				ToString(attack.magic),
@@ -266,7 +277,7 @@ class Preview::WeaponBook final : public wxNotebook
 				ToString(attack.dark),
 			});
 
-			statusEffects->AddWeapon({weapon.name,
+			statusEffects->AddWeapon({name,
 				ToString(status.bleed),
 				ToString(status.poison),
 				ToString(status.frost)
@@ -304,8 +315,9 @@ class Preview::WeaponBook final : public wxNotebook
 		{
 			assert(!(infusion != invbuilder::Weapon::Infusion::None && !weapon.infusable) && "accessing infusion on non-infusable weapon");
 			const auto& data = weapon.properties.at(infusion).level[level];
+			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
 
-			absorptions->AddWeapon({weapon.name,
+			absorptions->AddWeapon({name,
 				ToString(data.stability),
 				ToString(data.absorption.physical),
 				ToString(data.absorption.magic),
@@ -314,7 +326,7 @@ class Preview::WeaponBook final : public wxNotebook
 				ToString(data.absorption.dark),
 			});
 
-			resistances->AddWeapon({weapon.name,
+			resistances->AddWeapon({name,
 				ToString(data.resistance.bleed),
 				ToString(data.resistance.poison),
 				ToString(data.resistance.frost),
@@ -355,17 +367,18 @@ class Preview::WeaponBook final : public wxNotebook
 
 		void AddWeapon(const invbuilder::Weapon& weapon, const int level, const invbuilder::Weapon::Infusion infusion)
 		{
-			generic->AddWeapon({weapon.name,
+			assert(!(infusion != invbuilder::Weapon::Infusion::None && !weapon.infusable) && "accessing infusion on non-infusable weapon");
+			const auto& scl = weapon.properties.at(infusion).level[level].scaling;
+			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
+
+			generic->AddWeapon({name,
 				ToString(weapon.type),
 				ToString(weapon.weight),
 				ToString(weapon.infusable),
 				ToString(weapon.buffable),
 			});
 
-			assert(!(infusion != invbuilder::Weapon::Infusion::None && !weapon.infusable) && "accessing infusion on non-infusable weapon");
-			const auto& scl = weapon.properties.at(infusion).level[level].scaling;
-
-			scaling->AddWeapon({weapon.name,
+			scaling->AddWeapon({name,
 				ToString(scl.strength),
 				ToString(scl.dexterity),
 				ToString(scl.intelligence),
@@ -373,7 +386,7 @@ class Preview::WeaponBook final : public wxNotebook
 				ToString(scl.luck),
 			});
 
-			requirements->AddWeapon({weapon.name,
+			requirements->AddWeapon({name,
 				std::to_string(std::lround(weapon.requirements.strength)),
 				std::to_string(std::lround(weapon.requirements.dexterity)),
 				std::to_string(std::lround(weapon.requirements.intelligence)),

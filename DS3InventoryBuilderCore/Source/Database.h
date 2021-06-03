@@ -29,5 +29,6 @@ namespace invbuilder
 		static auto Create() -> Database;
 
 		static auto ToString(const Weapon::Infusion) -> std::string;
+		static auto GetDisplayLevel(const bool isUnique, const int level) -> int;
 	};
 }
