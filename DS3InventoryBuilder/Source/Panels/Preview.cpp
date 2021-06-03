@@ -455,7 +455,7 @@ public:
 
 		for (const auto& weaponContext : selection)
 		{
-			const auto& weapon = wxGetApp().GetDatabase().GetWeapon(weaponContext->name);
+			const auto& weapon = wxGetApp().GetDatabase().GetWeapon(weaponContext->GetName());
 			pageProperties->AddWeapon(weapon, weaponContext->GetLevel(), weaponContext->GetInfusion());
 			pageOffensive->AddWeapon(weapon, weaponContext->GetLevel(), weaponContext->GetInfusion());
 			pageDefensive->AddWeapon(weapon, weaponContext->GetLevel(), weaponContext->GetInfusion());
@@ -505,7 +505,7 @@ void Preview::OnSelectionUpdate()
 	}
 	else if (selection.size() == 1)
 	{
-		label->SetLabel(selection[0]->name);
+		label->SetLabel(selection[0]->GetName());
 	}
 	else
 	{

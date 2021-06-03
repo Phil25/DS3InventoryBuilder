@@ -16,17 +16,24 @@ class WeaponContext final
 {
 	using Infusion = invbuilder::Weapon::Infusion;
 
+	const int gridID;
+	int cardID;
+
+	const std::string name;
+
+	const bool isUnique;
+	const bool isInfusable;
+
 	int level;
 	Infusion infusion;
 
 public:
-	const int gridID;
-	const int cardID;
-	const std::string name;
-	const bool isUnique;
-	const bool isInfusable;
-
 	WeaponContext(const int gridID, const int cardID, std::string name, const int level=10, const Infusion=Infusion::None) noexcept;
+
+	auto GetCardID() const noexcept -> int;
+	void SetCardID(const int cardID, const int useCount);
+
+	auto GetName() const noexcept -> const std::string&;
 
 	auto GetLevel() const noexcept -> int;
 	void SetLevel(const int level) noexcept;

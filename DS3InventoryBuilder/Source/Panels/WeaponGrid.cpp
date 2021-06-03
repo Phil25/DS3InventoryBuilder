@@ -66,7 +66,8 @@ struct WeaponGrid::Card final
 	using Weapon = invbuilder::Weapon;
 	using Infusion = Weapon::Infusion;
 
-	std::shared_ptr<WeaponContext> context;
+	using WeaponContextPtr = std::shared_ptr<WeaponContext>;
+	WeaponContextPtr context;
 
 	bool selected{false};
 	bool hovered{false};
@@ -79,11 +80,9 @@ struct WeaponGrid::Card final
 	{
 	}
 
-	void UpdateContext(const int gridID, const int cardID)
+	Card(const WeaponContextPtr& context)
+		: context(std::make_shared<WeaponContext>(*context))
 	{
-		// UpdateContext() should be done only after sorting, and before that selection should be emptied, removing the preview
-		assert(context.use_count() == 1 && "only this card should own the weapon context at this time");
-		context = std::make_shared<WeaponContext>(gridID, cardID, context->name, context->GetLevel(), context->GetInfusion());
 	}
 
 	void Render(wxPaintDC& dc, const int size)
@@ -91,7 +90,7 @@ struct WeaponGrid::Card final
 		dc.SetBrush(GetItemColor(selected, hovered));
 		dc.DrawRectangle(position, {size, size});
 
-		dc.DrawBitmap(wxGetApp().GetImage(context->name, size), position, false);
+		dc.DrawBitmap(wxGetApp().GetImage(context->GetName(), size), position, false);
 
 		switch (atPageFromSelection)
 		{
@@ -103,8 +102,8 @@ struct WeaponGrid::Card final
 
 bool ComparatorDefault(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
 {
-	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->name);
-	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->name);
+	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
+	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
 
 	RETURN_COMPARISON_ON_DIFFERENCE(data1.orderID, data2.orderID);
 	RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetInfusion(), card2->context->GetInfusion());
@@ -114,8 +113,8 @@ bool ComparatorDefault(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardP
 
 bool ComparatorWeight(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
 {
-	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->name);
-	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->name);
+	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
+	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
 
 	RETURN_COMPARISON_ON_DIFFERENCE(data1.weight, data2.weight);
 	return ComparatorDefault(card1, card2);
@@ -297,7 +296,7 @@ void WeaponGrid::AddSelectedWeapons(const int count)
 	{
 		const auto ptr = weakPtr.lock();
 		for (int i = 0; i < count; ++i)
-			cards.emplace_back(std::make_unique<Card>(gridID, 0, ptr->name, ptr->GetLevel(), ptr->GetInfusion()));
+			cards.emplace_back(std::make_unique<Card>(ptr));
 	}
 
 	Sort();
@@ -312,7 +311,7 @@ void WeaponGrid::RemoveSelectedWeapons()
 
 	for (const auto& weakPtr : weaponSelection)
 		if (const auto ptr = weakPtr.lock(); ptr)
-			toDelete.push_back(ptr->cardID);
+			toDelete.push_back(ptr->GetCardID());
 
 	selection->Clear();
 	std::sort(toDelete.begin(), toDelete.end());
@@ -372,7 +371,7 @@ void WeaponGrid::Sort()
 
 	int cardID = 0;
 	for (auto& card : cards)
-		card->UpdateContext(gridID, cardID++);
+		card->context->SetCardID(cardID++, card->context.use_count());
 
 	RenderItems();
 }

@@ -26,6 +26,23 @@ WeaponContext::WeaponContext(const int gridID, const int cardID, std::string nam
 {
 }
 
+auto WeaponContext::GetCardID() const noexcept -> int
+{
+	return cardID;
+}
+
+void WeaponContext::SetCardID(const int cardID, const int useCount)
+{
+	// this should be done only after sorting, and before that selection should be emptied, removing the preview
+	assert(useCount == 1 && "only this card should own the weapon context at this time");
+	this->cardID = cardID;
+}
+
+auto WeaponContext::GetName() const noexcept -> const std::string&
+{
+	return name;
+}
+
 auto WeaponContext::GetLevel() const noexcept -> int
 {
 	return level;
