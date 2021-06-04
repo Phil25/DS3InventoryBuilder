@@ -2,6 +2,8 @@ target_sources(DS3InventoryBuilder
 	PRIVATE
 		"IAttributesListener.h"
 		"IAttributesListener.cpp"
+		"IInventorySortingListener.h"
+		"IInventorySortingListener.cpp"
 		"ISelectionListener.h"
 		"ISelectionListener.cpp"
 		"IWeaponTransferListener.h"

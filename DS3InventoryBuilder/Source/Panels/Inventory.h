@@ -5,9 +5,11 @@
 
 class Inventory final : public Title
 {
+	class InventorySortingListener;
 	class WeaponTransferListener;
 	class SelectionListener;
 
+	std::shared_ptr<InventorySortingListener> inventorySortingListener;
 	std::shared_ptr<WeaponTransferListener> weaponTransferListener;
 	std::shared_ptr<SelectionListener> selectionListener;
 

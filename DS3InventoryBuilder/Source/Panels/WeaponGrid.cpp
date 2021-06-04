@@ -145,9 +145,10 @@ bool ComparatorWeight(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPt
 
 namespace
 {
-	inline auto* GetComparatorFunction(const WeaponSorting::Method method)
+	inline auto* GetComparatorFunction(const invbuilder::Weapon::Sorting::Method method)
 	{
-		using M = WeaponSorting::Method;
+		using M = invbuilder::Weapon::Sorting::Method;
+
 		switch (method)
 		{
 		case M::Default: return ComparatorDefault;
@@ -388,7 +389,7 @@ void WeaponGrid::SetFiltering(/*filtering options*/)
 	*/
 }
 
-void WeaponGrid::SetSorting(const WeaponSorting& sorting)
+void WeaponGrid::SetSorting(const Sorting& sorting)
 {
 	if (this->sorting.method == sorting.method && this->sorting.reverse == sorting.reverse)
 		return;

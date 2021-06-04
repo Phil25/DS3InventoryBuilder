@@ -386,6 +386,23 @@ auto Database::ToString(const Weapon::Infusion infusion) -> std::string
 	return {};
 }
 
+auto Database::ToString(const Weapon::Sorting::Method sortingMethod) -> std::string
+{
+	using M = Weapon::Sorting::Method;
+
+	switch (sortingMethod)
+	{
+	case M::Default: return "Default";
+	case M::Weight: return "Weight";
+	case M::AttackPower: return "Attack Power";
+	case M::GuardAbsorption: return "Guard Absorption";
+	case M::Effect: return "Effect";
+	}
+
+	assert(false && "invalid sorting method");
+	return {};
+}
+
 auto Database::GetDisplayLevel(const bool isUnique, const int level) -> int
 {
 	return isUnique ? level / 2 : level;

@@ -1,20 +1,12 @@
 #pragma once
 
 #include <wx/wx.h>
-
-struct WeaponSorting final
-{
-	enum class Method
-	{
-		Default, Weight, AttackPower, GuardAbsorption, Effect
-	};
-
-	Method method;
-	bool reverse;
-};
+#include <Weapon.hpp>
 
 class WeaponGrid final : public wxPanel
 {
+	using Sorting = invbuilder::Weapon::Sorting;
+
 	struct Range final
 	{
 		size_t start, end;
@@ -31,7 +23,7 @@ class WeaponGrid final : public wxPanel
 	int visibleRows{};
 	int cardSize{};
 	Range current{};
-	WeaponSorting sorting{WeaponSorting::Method::Default, false};
+	Sorting sorting{Sorting::Method::Default, false};
 
 	static int GridID;
 
@@ -48,7 +40,7 @@ public:
 	void DiscardSelection();
 
 	void SetFiltering();
-	void SetSorting(const WeaponSorting& sorting);
+	void SetSorting(const Sorting&);
 
 private:
 	void Sort();

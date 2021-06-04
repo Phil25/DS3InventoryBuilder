@@ -11,9 +11,13 @@ class Settings final : public Title
 	Attribute* fth{nullptr};
 	Attribute* lck{nullptr};
 
+	class InventorySorting;
+	InventorySorting* inventorySorting;
+
 public:
 	Settings(wxWindow* parent);
 
 private:
 	void UpdateAttributes(wxSpinEvent&);
+	void UpdateSorting(wxCommandEvent&);
 };

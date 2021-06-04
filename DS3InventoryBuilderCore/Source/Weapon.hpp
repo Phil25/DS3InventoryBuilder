@@ -62,6 +62,18 @@ namespace invbuilder
 			Size
 		};
 
+		struct Sorting final
+		{
+			enum class Method
+			{
+				Default, Weight, AttackPower, GuardAbsorption, Effect,
+				Size
+			};
+
+			Method method;
+			bool reverse;
+		};
+
 		using Properties = std::map<Infusion, const InfusionProperties>;
 
 		const int id;

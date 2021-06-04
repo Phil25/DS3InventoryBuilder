@@ -2,6 +2,7 @@
 
 #include <AppMain.h>
 #include <Context/IAttributesListener.h>
+#include <Context/IInventorySortingListener.h>
 #include <Context/ISelectionListener.h>
 #include <Context/IWeaponTransferListener.h>
 #include <cassert>
@@ -122,6 +123,13 @@ void SessionData::UpdateWeaponTransfer(const int originGridID, const int count)
 	for (const auto& weakPtr : listeners.weaponTransfer)
 		if (const auto ptr = weakPtr.lock(); ptr)
 			ptr->OnUpdate(originGridID, count);
+}
+
+void SessionData::UpdateInventorySorting(const invbuilder::Weapon::Sorting& sorting)
+{
+	for (const auto& weakPtr : listeners.inventorySorting)
+		if (const auto ptr = weakPtr.lock(); ptr)
+			ptr->OnUpdate(sorting);
 }
 
 auto SessionData::GetSelection() const -> const SelectionVector&

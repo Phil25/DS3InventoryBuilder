@@ -73,6 +73,7 @@ public:
 	void UpdateSelection(const int gridID);
 	void UpdateSelection();
 	void UpdateWeaponTransfer(const int originGridID, const int count);
+	void UpdateInventorySorting(const invbuilder::Weapon::Sorting&);
 
 	auto GetAttributes() const -> invbuilder::PlayerAttributes;
 	auto GetSelection() const -> const SelectionVector&;

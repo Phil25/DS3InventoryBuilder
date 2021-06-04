@@ -1,7 +1,23 @@
 #include "Inventory.h"
 
+#include <Context/IInventorySortingListener.h>
 #include <Context/ISelectionListener.h>
 #include <Context/IWeaponTransferListener.h>
+
+class Inventory::InventorySortingListener final : public IInventorySortingListener
+{
+	Inventory* const inventory;
+
+public:
+	InventorySortingListener(Inventory* const inventory) : inventory(inventory)
+	{
+	}
+
+	void OnUpdate(const invbuilder::Weapon::Sorting& sorting) override
+	{
+		inventory->grid->SetSorting(sorting);
+	}
+};
 
 class Inventory::SelectionListener final : public ISelectionListener
 {
@@ -40,10 +56,12 @@ public:
 
 Inventory::Inventory(wxWindow* parent)
 	: Title(parent, "Inventory")
+	, inventorySortingListener(std::make_shared<InventorySortingListener>(this))
 	, weaponTransferListener(std::make_shared<WeaponTransferListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
 	, grid(new WeaponGrid(GetContent(), false))
 {
+	inventorySortingListener->Register();
 	weaponTransferListener->Register();
 	selectionListener->Register();
 
