@@ -358,13 +358,21 @@ auto Database::Create() -> Database
 	return Database(std::move(names), std::move(weapons), std::move(saturations));
 }
 
-bool invbuilder::Database::IsCastingTool(const Weapon& w)
+bool Database::IsCastingTool(const Weapon& w)
 {
+	// TODO: Scholar's Candlestick is required to be here for calculations, see if other non-casting class weapons can be added (it would only make sense)
 	using T = Weapon::Type;
-	return w.type == T::PyromancyFlame || w.type == T::SacredChime || w.type == T::Staff || w.type == T::Talisman;
+	return w.type == T::PyromancyFlame || w.type == T::SacredChime || w.type == T::Staff || w.type == T::Talisman
+		|| w.id == 1070000; // Scholar's Candlestick 
 }
 
-bool invbuilder::Database::IsRanged(const Weapon& w)
+bool Database::IsShield(const Weapon& w)
+{
+	using T = Weapon::Type;
+	return w.type == T::SmallShield || w.type == T::Shield || w.type == T::Greatshield;
+}
+
+bool Database::IsRanged(const Weapon& w)
 {
 	using T = Weapon::Type;
 	return w.type == T::Bow || w.type == T::Greatbow || w.type == T::Crossbow;

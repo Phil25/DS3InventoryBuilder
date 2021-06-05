@@ -1,0 +1,2402 @@
+Ancient Dragon Greatshield  +5	16	-	-	-	D	-	-	-	207	-	-	-	-	207	-	-	-	-	6.5
+Anri's Straight Sword  +5	10	10	-	-	E	E	-	E	286	-	-	-	-	286	-	-	-	-	3.0
+Aquamarine Dagger  +5	5	14	18	-	E	C	C	-	183	70	-	-	-	254	-	-	-	-	1.5
+Arbalest  +10	18	8	-	-	-	-	-	-	273	-	-	-	-	273	-	-	-	-	6.0
+Archdeacon's Great Staff  +5	8	-	12	12	D	-	-	S	190	-	-	-	-	190	-	-	-	60	2.5
+Arstor's Spear  +5	11	19	-	-	D	B	-	-	397	-	-	-	-	397	-	36	-	-	6.5
+Astora Greatsword  +10	16	18	-	-	C	C	-	-	530	-	-	-	-	530	-	-	-	-	8.0
+Astora Greatsword Blessed +10	16	18	-	-	C	C	-	S	364	-	-	-	-	364	-	-	-	-	8.0
+Astora Greatsword Blood +10	16	18	-	-	C	C	-	-	410	-	-	-	-	410	74	-	-	-	8.0
+Astora Greatsword Chaos +10	16	18	-	-	C	C	A	A	275	-	249	-	-	525	-	-	-	-	8.0
+Astora Greatsword Crystal +10	16	18	-	-	D	C	S	-	295	199	-	-	-	495	-	-	-	-	8.0
+Astora Greatsword Dark +10	16	18	-	-	C	C	A	A	275	-	-	-	249	525	-	-	-	-	8.0
+Astora Greatsword Deep +10	16	18	-	-	-	-	-	-	253	-	-	-	253	506	-	-	-	-	8.0
+Astora Greatsword Fire +10	16	18	-	-	-	-	-	-	253	-	253	-	-	506	-	-	-	-	8.0
+Astora Greatsword Heavy +10	16	18	-	-	A	-	-	-	472	-	-	-	-	472	-	-	-	-	8.0
+Astora Greatsword Hollow +10	16	18	-	-	C	C	-	-	511	-	-	-	-	511	-	-	-	-	8.0
+Astora Greatsword Lightning +10	16	18	-	-	D	C	-	S	295	-	-	216	-	512	-	-	-	-	8.0
+Astora Greatsword Poison +10	16	18	-	-	C	C	-	-	410	-	-	-	-	410	-	98	-	-	8.0
+Astora Greatsword Raw +10	16	18	-	-	-	-	-	-	421	-	-	-	-	421	-	-	-	-	8.0
+Astora Greatsword Refined +10	16	18	-	-	B	B	-	-	532	-	-	-	-	532	-	-	-	-	8.0
+Astora Greatsword Sharp +10	16	18	-	-	D	S	-	-	558	-	-	-	-	558	-	-	-	-	8.0
+Astora Greatsword Simple +10	16	18	-	-	C	C	S	-	280	179	-	-	-	459	-	-	-	-	8.0
+Astora Straight Sword  +10	10	10	-	12	D	D	-	-	382	-	-	-	-	382	-	-	-	-	3.0
+Astora Straight Sword Blessed +10	10	10	-	12	D	D	-	B	248	-	-	-	-	248	-	-	-	-	3.0
+Astora Straight Sword Blood +10	10	10	-	12	D	D	-	-	296	-	-	-	-	296	52	-	-	-	3.0
+Astora Straight Sword Chaos +10	10	10	-	12	D	D	C	C	195	-	186	-	-	381	-	-	-	-	3.0
+Astora Straight Sword Crystal +10	10	10	-	12	D	D	C	-	216	173	-	-	-	390	-	-	-	-	3.0
+Astora Straight Sword Dark +10	10	10	-	12	D	D	C	C	195	-	-	-	186	381	-	-	-	-	3.0
+Astora Straight Sword Deep +10	10	10	-	12	-	-	-	-	192	-	-	-	192	384	-	-	-	-	3.0
+Astora Straight Sword Fire +10	10	10	-	12	-	-	-	-	192	-	192	-	-	384	-	-	-	-	3.0
+Astora Straight Sword Heavy +10	10	10	-	12	C	-	-	-	336	-	-	-	-	336	-	-	-	-	3.0
+Astora Straight Sword Hollow +10	10	10	-	12	D	D	-	-	372	-	-	-	-	372	-	-	-	-	3.0
+Astora Straight Sword Lightning +10	10	10	-	12	D	D	-	C	216	-	-	180	-	397	-	-	-	-	3.0
+Astora Straight Sword Poison +10	10	10	-	12	D	D	-	-	296	-	-	-	-	296	-	58	-	-	3.0
+Astora Straight Sword Raw +10	10	10	-	12	-	-	-	-	301	-	-	-	-	301	-	-	-	-	3.0
+Astora Straight Sword Refined +10	10	10	-	12	D	D	-	-	377	-	-	-	-	377	-	-	-	-	3.0
+Astora Straight Sword Sharp +10	10	10	-	12	E	C	-	-	366	-	-	-	-	366	-	-	-	-	3.0
+Astora Straight Sword Simple +10	10	10	-	12	D	D	B	-	197	154	-	-	-	351	-	-	-	-	3.0
+Avelyn  +10	16	14	-	-	-	-	-	-	128	-	-	-	-	128	-	-	-	-	7.5
+Bandit's Knife  +10	6	12	-	-	D	D	-	-	249	-	-	-	-	249	30	-	-	-	1.5
+Bandit's Knife Blessed +10	6	12	-	-	D	D	-	B	205	-	-	-	-	205	30	-	-	-	1.5
+Bandit's Knife Blood +10	6	12	-	-	D	D	-	-	193	-	-	-	-	193	59	-	-	-	1.5
+Bandit's Knife Chaos +10	6	12	-	-	D	D	C	C	152	-	143	-	-	296	30	-	-	-	1.5
+Bandit's Knife Crystal +10	6	12	-	-	D	D	B	-	168	129	-	-	-	297	30	-	-	-	1.5
+Bandit's Knife Dark +10	6	12	-	-	D	D	C	C	152	-	-	-	143	296	30	-	-	-	1.5
+Bandit's Knife Deep +10	6	12	-	-	-	-	-	-	146	-	-	-	146	292	30	-	-	-	1.5
+Bandit's Knife Fire +10	6	12	-	-	-	-	-	-	146	-	146	-	-	292	30	-	-	-	1.5
+Bandit's Knife Heavy +10	6	12	-	-	B	-	-	-	240	-	-	-	-	240	30	-	-	-	1.5
+Bandit's Knife Hollow +10	6	12	-	-	D	D	-	-	250	-	-	-	-	250	30	-	-	-	1.5
+Bandit's Knife Lightning +10	6	12	-	-	D	D	-	B	168	-	-	136	-	304	30	-	-	-	1.5
+Bandit's Knife Poison +10	6	12	-	-	D	D	-	-	193	-	-	-	-	193	30	57	-	-	1.5
+Bandit's Knife Raw +10	6	12	-	-	-	-	-	-	205	-	-	-	-	205	30	-	-	-	1.5
+Bandit's Knife Refined +10	6	12	-	-	C	C	-	-	260	-	-	-	-	260	30	-	-	-	1.5
+Bandit's Knife Sharp +10	6	12	-	-	E	B	-	-	261	-	-	-	-	261	30	-	-	-	1.5
+Bandit's Knife Simple +10	6	12	-	-	D	D	B	-	137	102	-	-	-	239	30	-	-	-	1.5
+Barbed Straight Sword  +10	11	11	-	-	C	D	-	-	399	-	-	-	-	399	30	-	-	-	3.0
+Barbed Straight Sword Blessed +10	11	11	-	-	C	D	-	A	264	-	-	-	-	264	30	-	-	-	3.0
+Barbed Straight Sword Blood +10	11	11	-	-	C	D	-	-	309	-	-	-	-	309	60	-	-	-	3.0
+Barbed Straight Sword Chaos +10	11	11	-	-	C	D	B	B	202	-	186	-	-	389	30	-	-	-	3.0
+Barbed Straight Sword Crystal +10	11	11	-	-	D	D	A	-	219	157	-	-	-	377	30	-	-	-	3.0
+Barbed Straight Sword Dark +10	11	11	-	-	C	D	B	B	202	-	-	-	186	389	30	-	-	-	3.0
+Barbed Straight Sword Deep +10	11	11	-	-	-	-	-	-	194	-	-	-	194	388	30	-	-	-	3.0
+Barbed Straight Sword Fire +10	11	11	-	-	-	-	-	-	194	-	194	-	-	388	30	-	-	-	3.0
+Barbed Straight Sword Heavy +10	11	11	-	-	B	-	-	-	353	-	-	-	-	353	30	-	-	-	3.0
+Barbed Straight Sword Hollow +10	11	11	-	-	C	D	-	-	384	-	-	-	-	384	30	-	-	-	3.0
+Barbed Straight Sword Lightning +10	11	11	-	-	D	D	-	A	219	-	-	168	-	388	30	-	-	-	3.0
+Barbed Straight Sword Poison +10	11	11	-	-	C	D	-	-	309	-	-	-	-	309	30	58	-	-	3.0
+Barbed Straight Sword Raw +10	11	11	-	-	-	-	-	-	286	-	-	-	-	286	30	-	-	-	3.0
+Barbed Straight Sword Refined +10	11	11	-	-	C	C	-	-	414	-	-	-	-	414	30	-	-	-	3.0
+Barbed Straight Sword Sharp +10	11	11	-	-	E	A	-	-	403	-	-	-	-	403	30	-	-	-	3.0
+Barbed Straight Sword Simple +10	11	11	-	-	C	D	A	-	205	141	-	-	-	346	30	-	-	-	3.0
+Bare Fists	-	-	-	-	S	S	-	-	170	-	-	-	-	170	-	-	-	-	0.0
+Bastard Sword  +10	16	10	-	-	C	D	-	-	493	-	-	-	-	493	-	-	-	-	8.0
+Bastard Sword Blessed +10	16	10	-	-	C	D	-	A	338	-	-	-	-	338	-	-	-	-	8.0
+Bastard Sword Blood +10	16	10	-	-	C	D	-	-	382	-	-	-	-	382	62	-	-	-	8.0
+Bastard Sword Chaos +10	16	10	-	-	C	D	B	B	259	-	239	-	-	498	-	-	-	-	8.0
+Bastard Sword Crystal +10	16	10	-	-	D	D	A	-	281	202	-	-	-	484	-	-	-	-	8.0
+Bastard Sword Dark +10	16	10	-	-	C	D	B	B	259	-	-	-	239	498	-	-	-	-	8.0
+Bastard Sword Deep +10	16	10	-	-	-	-	-	-	233	-	-	-	233	466	-	-	-	-	8.0
+Bastard Sword Fire +10	16	10	-	-	-	-	-	-	233	-	233	-	-	466	-	-	-	-	8.0
+Bastard Sword Heavy +10	16	10	-	-	A	-	-	-	479	-	-	-	-	479	-	-	-	-	8.0
+Bastard Sword Hollow +10	16	10	-	-	C	D	-	-	474	-	-	-	-	474	-	-	-	-	8.0
+Bastard Sword Lightning +10	16	10	-	-	D	D	-	A	281	-	-	216	-	498	-	-	-	-	8.0
+Bastard Sword Poison +10	16	10	-	-	C	D	-	-	382	-	-	-	-	382	-	72	-	-	8.0
+Bastard Sword Raw +10	16	10	-	-	-	-	-	-	374	-	-	-	-	374	-	-	-	-	8.0
+Bastard Sword Refined +10	16	10	-	-	C	C	-	-	496	-	-	-	-	496	-	-	-	-	8.0
+Bastard Sword Sharp +10	16	10	-	-	E	A	-	-	495	-	-	-	-	495	-	-	-	-	8.0
+Bastard Sword Simple +10	16	10	-	-	C	D	A	-	263	181	-	-	-	445	-	-	-	-	8.0
+Battle Axe  +10	12	8	-	-	C	D	-	-	433	-	-	-	-	433	-	-	-	-	4.0
+Battle Axe Blessed +10	12	8	-	-	C	D	-	A	293	-	-	-	-	293	-	-	-	-	4.0
+Battle Axe Blood +10	12	8	-	-	C	D	-	-	336	-	-	-	-	336	51	-	-	-	4.0
+Battle Axe Chaos +10	12	8	-	-	C	D	B	B	225	-	209	-	-	434	-	-	-	-	4.0
+Battle Axe Crystal +10	12	8	-	-	D	D	A	-	246	179	-	-	-	425	-	-	-	-	4.0
+Battle Axe Dark +10	12	8	-	-	C	D	B	B	231	-	-	-	214	445	-	-	-	-	4.0
+Battle Axe Deep +10	12	8	-	-	-	-	-	-	209	-	-	-	209	418	-	-	-	-	4.0
+Battle Axe Fire +10	12	8	-	-	-	-	-	-	203	-	203	-	-	407	-	-	-	-	4.0
+Battle Axe Heavy +10	12	8	-	-	A	-	-	-	410	-	-	-	-	410	-	-	-	-	4.0
+Battle Axe Hollow +10	12	8	-	-	C	D	-	-	416	-	-	-	-	416	-	-	-	-	4.0
+Battle Axe Lightning +10	12	8	-	-	D	D	-	A	252	-	-	196	-	448	-	-	-	-	4.0
+Battle Axe Poison +10	12	8	-	-	C	D	-	-	336	-	-	-	-	336	-	57	-	-	4.0
+Battle Axe Raw +10	12	8	-	-	-	-	-	-	330	-	-	-	-	330	-	-	-	-	4.0
+Battle Axe Refined +10	12	8	-	-	C	C	-	-	439	-	-	-	-	439	-	-	-	-	4.0
+Battle Axe Sharp +10	12	8	-	-	E	B	-	-	423	-	-	-	-	423	-	-	-	-	4.0
+Battle Axe Simple +10	12	8	-	-	C	D	A	-	229	160	-	-	-	390	-	-	-	-	4.0
+Black Blade  +10	18	18	-	-	E	C	-	-	407	-	-	-	-	407	30	-	-	-	6.5
+Black Blade Blessed +10	18	18	-	-	E	C	-	A	269	-	-	-	-	269	30	-	-	-	6.5
+Black Blade Blood +10	18	18	-	-	E	C	-	-	316	-	-	-	-	316	60	-	-	-	6.5
+Black Blade Chaos +10	18	18	-	-	E	C	B	B	208	-	194	-	-	403	30	-	-	-	6.5
+Black Blade Crystal +10	18	18	-	-	E	C	A	-	228	170	-	-	-	398	30	-	-	-	6.5
+Black Blade Dark +10	18	18	-	-	E	C	B	B	208	-	-	-	194	403	30	-	-	-	6.5
+Black Blade Deep +10	18	18	-	-	-	-	-	-	207	-	-	-	207	414	30	-	-	-	6.5
+Black Blade Fire +10	18	18	-	-	-	-	-	-	207	-	207	-	-	414	30	-	-	-	6.5
+Black Blade Heavy +10	18	18	-	-	B	-	-	-	366	-	-	-	-	366	30	-	-	-	6.5
+Black Blade Hollow +10	18	18	-	-	E	C	-	-	393	-	-	-	-	393	30	-	-	-	6.5
+Black Blade Lightning +10	18	18	-	-	E	C	-	A	228	-	-	180	-	409	30	-	-	-	6.5
+Black Blade Poison +10	18	18	-	-	E	C	-	-	316	-	-	-	-	316	30	58	-	-	6.5
+Black Blade Raw +10	18	18	-	-	-	-	-	-	306	-	-	-	-	306	30	-	-	-	6.5
+Black Blade Refined +10	18	18	-	-	C	C	-	-	401	-	-	-	-	401	30	-	-	-	6.5
+Black Blade Sharp +10	18	18	-	-	E	A	-	-	414	-	-	-	-	414	30	-	-	-	6.5
+Black Blade Simple +10	18	18	-	-	E	C	A	-	211	152	-	-	-	363	30	-	-	-	6.5
+Black Bow of Pharis  +10	9	18	-	-	D	B	-	-	246	-	-	-	-	246	-	-	-	-	3.0
+Black Iron Greatshield  +10	32	-	-	-	D	-	-	-	306	-	-	-	-	306	-	-	-	-	14.5
+Black Iron Greatshield Blessed +10	32	-	-	-	D	-	-	C	218	-	-	-	-	218	-	-	-	-	14.5
+Black Iron Greatshield Blood +10	32	-	-	-	D	-	-	-	237	-	-	-	-	237	61	-	-	-	14.5
+Black Iron Greatshield Chaos +10	32	-	-	-	D	-	D	D	174	-	169	-	-	343	-	-	-	-	14.5
+Black Iron Greatshield Crystal +10	32	-	-	-	D	-	C	-	196	163	-	-	-	359	-	-	-	-	14.5
+Black Iron Greatshield Dark +10	32	-	-	-	D	-	D	D	174	-	-	-	169	343	-	-	-	-	14.5
+Black Iron Greatshield Deep +10	32	-	-	-	-	-	-	-	179	-	-	-	179	358	-	-	-	-	14.5
+Black Iron Greatshield Fire +10	32	-	-	-	-	-	-	-	179	-	179	-	-	358	-	-	-	-	14.5
+Black Iron Greatshield Heavy +10	32	-	-	-	B	-	-	-	348	-	-	-	-	348	-	-	-	-	14.5
+Black Iron Greatshield Hollow +10	32	-	-	-	D	-	-	-	292	-	-	-	-	292	-	-	-	-	14.5
+Black Iron Greatshield Lightning +10	32	-	-	-	D	-	-	C	196	-	-	169	-	365	-	-	-	-	14.5
+Black Iron Greatshield Poison +10	32	-	-	-	D	-	-	-	237	-	-	-	-	237	-	71	-	-	14.5
+Black Iron Greatshield Raw +10	32	-	-	-	-	-	-	-	291	-	-	-	-	291	-	-	-	-	14.5
+Black Iron Greatshield Refined +10	32	-	-	-	D	D	-	-	323	-	-	-	-	323	-	-	-	-	14.5
+Black Iron Greatshield Sharp +10	32	-	-	-	D	-	-	-	267	-	-	-	-	267	-	-	-	-	14.5
+Black Iron Greatshield Simple +10	32	-	-	-	D	-	C	-	175	145	-	-	-	321	-	-	-	-	14.5
+Black Knight Glaive  +5	28	18	-	-	D	C	-	-	499	-	-	-	-	499	-	-	-	-	9.0
+Black Knight Greataxe  +5	36	18	-	-	C	D	-	-	647	-	-	-	-	647	-	-	-	-	19.5
+Black Knight Greatsword  +5	30	18	-	-	B	D	-	-	612	-	-	-	-	612	-	-	-	-	16.0
+Black Knight Shield  +5	18	-	-	-	D	-	-	-	262	-	-	-	-	262	-	-	-	-	7.5
+Black Knight Sword  +5	20	18	-	-	C	D	-	-	542	-	-	-	-	542	-	-	-	-	10.0
+Blacksmith Hammer  +10	13	13	-	-	B	-	-	-	340	-	-	-	-	340	-	-	-	-	5.0
+Blacksmith Hammer Blessed +10	13	13	-	-	C	-	-	A	255	-	-	-	-	255	-	-	-	-	5.0
+Blacksmith Hammer Blood +10	13	13	-	-	B	-	-	-	263	-	-	-	-	263	51	-	-	-	5.0
+Blacksmith Hammer Chaos +10	13	13	-	-	C	-	C	C	198	-	186	-	-	385	-	-	-	-	5.0
+Blacksmith Hammer Crystal +10	13	13	-	-	C	-	B	-	218	165	-	-	-	384	-	-	-	-	5.0
+Blacksmith Hammer Dark +10	13	13	-	-	C	-	C	C	198	-	-	-	186	385	-	-	-	-	5.0
+Blacksmith Hammer Deep +10	13	13	-	-	-	-	-	-	209	-	-	-	209	418	-	-	-	-	5.0
+Blacksmith Hammer Fire +10	13	13	-	-	-	-	-	-	209	-	209	-	-	418	-	-	-	-	5.0
+Blacksmith Hammer Heavy +10	13	13	-	-	A	-	-	-	366	-	-	-	-	366	-	-	-	-	5.0
+Blacksmith Hammer Hollow +10	13	13	-	-	B	-	-	-	325	-	-	-	-	325	-	-	-	-	5.0
+Blacksmith Hammer Lightning +10	13	13	-	-	C	-	-	B	218	-	-	175	-	393	-	-	-	-	5.0
+Blacksmith Hammer Poison +10	13	13	-	-	B	-	-	-	263	-	-	-	-	263	-	57	-	-	5.0
+Blacksmith Hammer Raw +10	13	13	-	-	-	-	-	-	319	-	-	-	-	319	-	-	-	-	5.0
+Blacksmith Hammer Refined +10	13	13	-	-	C	C	-	-	354	-	-	-	-	354	-	-	-	-	5.0
+Blacksmith Hammer Sharp +10	13	13	-	-	E	A	-	-	375	-	-	-	-	375	-	-	-	-	5.0
+Blacksmith Hammer Simple +10	13	13	-	-	B	-	A	-	201	148	-	-	-	349	-	-	-	-	5.0
+Bloodlust  +5	11	24	-	-	E	A	-	-	348	-	-	-	-	348	34	-	-	-	5.0
+Blue Wooden Shield  +10	8	-	-	-	D	-	-	-	200	-	-	-	-	200	-	-	-	-	2.5
+Blue Wooden Shield Blessed +10	8	-	-	-	D	-	-	C	152	-	-	-	-	152	-	-	-	-	2.5
+Blue Wooden Shield Blood +10	8	-	-	-	D	-	-	-	155	-	-	-	-	155	51	-	-	-	2.5
+Blue Wooden Shield Chaos +10	8	-	-	-	D	-	D	D	122	-	120	-	-	242	-	-	-	-	2.5
+Blue Wooden Shield Crystal +10	8	-	-	-	D	-	D	-	138	118	-	-	-	257	-	-	-	-	2.5
+Blue Wooden Shield Dark +10	8	-	-	-	D	-	D	D	122	-	-	-	120	242	-	-	-	-	2.5
+Blue Wooden Shield Deep +10	8	-	-	-	-	-	-	-	123	-	-	-	123	247	-	-	-	-	2.5
+Blue Wooden Shield Fire +10	8	-	-	-	-	-	-	-	123	-	123	-	-	247	-	-	-	-	2.5
+Blue Wooden Shield Heavy +10	8	-	-	-	C	-	-	-	223	-	-	-	-	223	-	-	-	-	2.5
+Blue Wooden Shield Hollow +10	8	-	-	-	D	-	-	-	191	-	-	-	-	191	-	-	-	-	2.5
+Blue Wooden Shield Lightning +10	8	-	-	-	D	-	-	D	138	-	-	122	-	260	-	-	-	-	2.5
+Blue Wooden Shield Poison +10	8	-	-	-	D	-	-	-	155	-	-	-	-	155	-	57	-	-	2.5
+Blue Wooden Shield Raw +10	8	-	-	-	-	-	-	-	200	-	-	-	-	200	-	-	-	-	2.5
+Blue Wooden Shield Refined +10	8	-	-	-	D	D	-	-	213	-	-	-	-	213	-	-	-	-	2.5
+Blue Wooden Shield Sharp +10	8	-	-	-	D	-	-	-	176	-	-	-	-	176	-	-	-	-	2.5
+Blue Wooden Shield Simple +10	8	-	-	-	D	-	C	-	123	105	-	-	-	229	-	-	-	-	2.5
+Bonewheel Shield  +10	30	10	-	-	D	-	-	-	303	-	-	-	-	303	-	-	-	-	15.0
+Bonewheel Shield Blessed +10	30	10	-	-	D	-	-	C	217	-	-	-	-	217	-	-	-	-	15.0
+Bonewheel Shield Blood +10	30	10	-	-	D	-	-	-	235	-	-	-	-	235	61	-	-	-	15.0
+Bonewheel Shield Chaos +10	30	10	-	-	D	-	D	D	172	-	167	-	-	340	-	-	-	-	15.0
+Bonewheel Shield Crystal +10	30	10	-	-	D	-	C	-	194	162	-	-	-	356	-	-	-	-	15.0
+Bonewheel Shield Dark +10	30	10	-	-	D	-	D	D	172	-	-	-	167	340	-	-	-	-	15.0
+Bonewheel Shield Deep +10	30	10	-	-	-	-	-	-	177	-	-	-	177	355	-	-	-	-	15.0
+Bonewheel Shield Fire +10	30	10	-	-	-	-	-	-	177	-	177	-	-	355	-	-	-	-	15.0
+Bonewheel Shield Heavy +10	30	10	-	-	B	-	-	-	345	-	-	-	-	345	-	-	-	-	15.0
+Bonewheel Shield Hollow +10	30	10	-	-	D	-	-	-	289	-	-	-	-	289	-	-	-	-	15.0
+Bonewheel Shield Lightning +10	30	10	-	-	D	-	-	C	194	-	-	168	-	362	-	-	-	-	15.0
+Bonewheel Shield Poison +10	30	10	-	-	D	-	-	-	235	-	-	-	-	235	-	71	-	-	15.0
+Bonewheel Shield Raw +10	30	10	-	-	-	-	-	-	288	-	-	-	-	288	-	-	-	-	15.0
+Bonewheel Shield Refined +10	30	10	-	-	D	D	-	-	320	-	-	-	-	320	-	-	-	-	15.0
+Bonewheel Shield Sharp +10	30	10	-	-	D	-	-	-	264	-	-	-	-	264	-	-	-	-	15.0
+Bonewheel Shield Simple +10	30	10	-	-	D	-	C	-	174	144	-	-	-	319	-	-	-	-	15.0
+Brigand Axe  +10	14	8	-	-	C	D	-	-	432	-	-	-	-	432	-	-	-	-	3.0
+Brigand Axe Blessed +10	14	8	-	-	C	D	-	A	300	-	-	-	-	300	-	-	-	-	3.0
+Brigand Axe Blood +10	14	8	-	-	C	D	-	-	335	-	-	-	-	335	51	-	-	-	3.0
+Brigand Axe Chaos +10	14	8	-	-	C	D	B	B	230	-	213	-	-	444	-	-	-	-	3.0
+Brigand Axe Crystal +10	14	8	-	-	D	D	A	-	251	183	-	-	-	434	-	-	-	-	3.0
+Brigand Axe Dark +10	14	8	-	-	C	D	B	B	225	-	-	-	208	433	-	-	-	-	3.0
+Brigand Axe Deep +10	14	8	-	-	-	-	-	-	205	-	-	-	205	410	-	-	-	-	3.0
+Brigand Axe Fire +10	14	8	-	-	-	-	-	-	210	-	210	-	-	421	-	-	-	-	3.0
+Brigand Axe Heavy +10	14	8	-	-	A	-	-	-	406	-	-	-	-	406	-	-	-	-	3.0
+Brigand Axe Hollow +10	14	8	-	-	C	D	-	-	415	-	-	-	-	415	-	-	-	-	3.0
+Brigand Axe Lightning +10	14	8	-	-	D	D	-	A	245	-	-	190	-	435	-	-	-	-	3.0
+Brigand Axe Poison +10	14	8	-	-	C	D	-	-	335	-	-	-	-	335	-	57	-	-	3.0
+Brigand Axe Raw +10	14	8	-	-	-	-	-	-	335	-	-	-	-	335	-	-	-	-	3.0
+Brigand Axe Refined +10	14	8	-	-	C	C	-	-	435	-	-	-	-	435	-	-	-	-	3.0
+Brigand Axe Sharp +10	14	8	-	-	E	B	-	-	423	-	-	-	-	423	-	-	-	-	3.0
+Brigand Axe Simple +10	14	8	-	-	C	D	A	-	234	164	-	-	-	398	-	-	-	-	3.0
+Brigand Twindaggers  +10	10	18	-	-	D	D	-	-	242	-	-	-	-	242	-	-	-	-	2.5
+Brigand Twindaggers Blessed +10	10	18	-	-	D	D	-	A	242	-	-	-	-	242	-	-	-	-	2.5
+Brigand Twindaggers Blood +10	10	18	-	-	D	D	-	-	188	-	-	-	-	188	52	-	-	-	2.5
+Brigand Twindaggers Chaos +10	10	18	-	-	D	D	B	B	154	-	143	-	-	297	-	-	-	-	2.5
+Brigand Twindaggers Crystal +10	10	18	-	-	D	D	A	-	168	122	-	-	-	291	-	-	-	-	2.5
+Brigand Twindaggers Dark +10	10	18	-	-	D	D	B	B	154	-	-	-	143	297	-	-	-	-	2.5
+Brigand Twindaggers Deep +10	10	18	-	-	-	-	-	-	148	-	-	-	148	296	-	-	-	-	2.5
+Brigand Twindaggers Fire +10	10	18	-	-	-	-	-	-	148	-	148	-	-	296	-	-	-	-	2.5
+Brigand Twindaggers Heavy +10	10	18	-	-	B	-	-	-	217	-	-	-	-	217	-	-	-	-	2.5
+Brigand Twindaggers Hollow +10	10	18	-	-	D	D	-	-	246	-	-	-	-	246	-	-	-	-	2.5
+Brigand Twindaggers Lightning +10	10	18	-	-	D	D	-	A	168	-	-	130	-	299	-	-	-	-	2.5
+Brigand Twindaggers Poison +10	10	18	-	-	D	D	-	-	188	-	-	-	-	188	-	58	-	-	2.5
+Brigand Twindaggers Raw +10	10	18	-	-	-	-	-	-	208	-	-	-	-	208	-	-	-	-	2.5
+Brigand Twindaggers Refined +10	10	18	-	-	C	C	-	-	245	-	-	-	-	245	-	-	-	-	2.5
+Brigand Twindaggers Sharp +10	10	18	-	-	E	A	-	-	257	-	-	-	-	257	-	-	-	-	2.5
+Brigand Twindaggers Simple +10	10	18	-	-	D	D	A	-	156	110	-	-	-	266	-	-	-	-	2.5
+Broadsword  +10	10	10	-	-	C	D	-	-	433	-	-	-	-	433	-	-	-	-	3.0
+Broadsword Blessed +10	10	10	-	-	C	D	-	S	293	-	-	-	-	293	-	-	-	-	3.0
+Broadsword Blood +10	10	10	-	-	C	D	-	-	335	-	-	-	-	335	52	-	-	-	3.0
+Broadsword Chaos +10	10	10	-	-	C	D	A	A	224	-	205	-	-	430	-	-	-	-	3.0
+Broadsword Crystal +10	10	10	-	-	C	D	A	-	242	171	-	-	-	414	-	-	-	-	3.0
+Broadsword Dark +10	10	10	-	-	C	D	A	A	224	-	-	-	205	430	-	-	-	-	3.0
+Broadsword Deep +10	10	10	-	-	-	-	-	-	212	-	-	-	212	425	-	-	-	-	3.0
+Broadsword Fire +10	10	10	-	-	-	-	-	-	212	-	212	-	-	425	-	-	-	-	3.0
+Broadsword Heavy +10	10	10	-	-	A	-	-	-	397	-	-	-	-	397	-	-	-	-	3.0
+Broadsword Hollow +10	10	10	-	-	C	D	-	-	417	-	-	-	-	417	-	-	-	-	3.0
+Broadsword Lightning +10	10	10	-	-	C	D	-	A	242	-	-	184	-	427	-	-	-	-	3.0
+Broadsword Poison +10	10	10	-	-	C	D	-	-	335	-	-	-	-	335	-	58	-	-	3.0
+Broadsword Raw +10	10	10	-	-	-	-	-	-	322	-	-	-	-	322	-	-	-	-	3.0
+Broadsword Refined +10	10	10	-	-	C	C	-	-	446	-	-	-	-	446	-	-	-	-	3.0
+Broadsword Sharp +10	10	10	-	-	E	A	-	-	435	-	-	-	-	435	-	-	-	-	3.0
+Broadsword Simple +10	10	10	-	-	C	D	S	-	227	153	-	-	-	381	-	-	-	-	3.0
+Broken Straight Sword  +10	8	8	-	-	C	D	-	-	242	-	-	-	-	242	-	-	-	-	1.0
+Broken Straight Sword Blessed +10	8	8	-	-	D	D	-	A	195	-	-	-	-	195	-	-	-	-	1.0
+Broken Straight Sword Blood +10	8	8	-	-	C	D	-	-	188	-	-	-	-	188	51	-	-	-	1.0
+Broken Straight Sword Chaos +10	8	8	-	-	C	D	B	B	150	-	139	-	-	289	-	-	-	-	1.0
+Broken Straight Sword Crystal +10	8	8	-	-	D	D	A	-	164	119	-	-	-	283	-	-	-	-	1.0
+Broken Straight Sword Dark +10	8	8	-	-	C	D	B	B	150	-	-	-	139	289	-	-	-	-	1.0
+Broken Straight Sword Deep +10	8	8	-	-	-	-	-	-	138	-	-	-	138	277	-	-	-	-	1.0
+Broken Straight Sword Fire +10	8	8	-	-	-	-	-	-	138	-	138	-	-	277	-	-	-	-	1.0
+Broken Straight Sword Heavy +10	8	8	-	-	B	-	-	-	225	-	-	-	-	225	-	-	-	-	1.0
+Broken Straight Sword Hollow +10	8	8	-	-	C	D	-	-	233	-	-	-	-	233	-	-	-	-	1.0
+Broken Straight Sword Lightning +10	8	8	-	-	D	D	-	A	164	-	-	127	-	291	-	-	-	-	1.0
+Broken Straight Sword Poison +10	8	8	-	-	C	D	-	-	188	-	-	-	-	188	-	57	-	-	1.0
+Broken Straight Sword Raw +10	8	8	-	-	-	-	-	-	195	-	-	-	-	195	-	-	-	-	1.0
+Broken Straight Sword Refined +10	8	8	-	-	C	C	-	-	253	-	-	-	-	253	-	-	-	-	1.0
+Broken Straight Sword Sharp +10	8	8	-	-	E	A	-	-	242	-	-	-	-	242	-	-	-	-	1.0
+Broken Straight Sword Simple +10	8	8	-	-	C	D	A	-	152	107	-	-	-	260	-	-	-	-	1.0
+Buckler  +10	7	13	-	-	D	-	-	-	160	-	-	-	-	160	-	-	-	-	1.5
+Buckler Blessed +10	7	13	-	-	D	-	-	D	119	-	-	-	-	119	-	-	-	-	1.5
+Buckler Blood +10	7	13	-	-	D	-	-	-	124	-	-	-	-	124	51	-	-	-	1.5
+Buckler Chaos +10	7	13	-	-	D	-	D	D	97	-	97	-	-	194	-	-	-	-	1.5
+Buckler Crystal +10	7	13	-	-	E	-	D	-	111	100	-	-	-	211	-	-	-	-	1.5
+Buckler Dark +10	7	13	-	-	D	-	D	D	97	-	-	-	97	194	-	-	-	-	1.5
+Buckler Deep +10	7	13	-	-	-	-	-	-	105	-	-	-	105	210	-	-	-	-	1.5
+Buckler Fire +10	7	13	-	-	-	-	-	-	105	-	105	-	-	210	-	-	-	-	1.5
+Buckler Heavy +10	7	13	-	-	D	-	-	-	169	-	-	-	-	169	-	-	-	-	1.5
+Buckler Hollow +10	7	13	-	-	D	-	-	-	153	-	-	-	-	153	-	-	-	-	1.5
+Buckler Lightning +10	7	13	-	-	E	-	-	D	111	-	-	102	-	213	-	-	-	-	1.5
+Buckler Poison +10	7	13	-	-	D	-	-	-	124	-	-	-	-	124	-	57	-	-	1.5
+Buckler Raw +10	7	13	-	-	-	-	-	-	174	-	-	-	-	174	-	-	-	-	1.5
+Buckler Refined +10	7	13	-	-	D	D	-	-	171	-	-	-	-	171	-	-	-	-	1.5
+Buckler Sharp +10	7	13	-	-	D	-	-	-	162	-	-	-	-	162	-	-	-	-	1.5
+Buckler Simple +10	7	13	-	-	D	-	D	-	97	88	-	-	-	186	-	-	-	-	1.5
+Butcher Knife  +10	24	-	-	-	S	-	-	-	397	-	-	-	-	397	-	-	-	-	7.0
+Caduceus Round Shield  +10	10	-	-	-	D	-	-	-	166	-	-	-	-	166	-	-	-	-	1.5
+Caduceus Round Shield Blessed +10	10	-	-	-	D	-	-	D	126	-	-	-	-	126	-	-	-	-	1.5
+Caduceus Round Shield Blood +10	10	-	-	-	D	-	-	-	129	-	-	-	-	129	51	-	-	-	1.5
+Caduceus Round Shield Chaos +10	10	-	-	-	D	-	D	D	103	-	102	-	-	206	-	-	-	-	1.5
+Caduceus Round Shield Crystal +10	10	-	-	-	D	-	D	-	118	105	-	-	-	223	-	-	-	-	1.5
+Caduceus Round Shield Dark +10	10	-	-	-	D	-	D	D	103	-	-	-	102	206	-	-	-	-	1.5
+Caduceus Round Shield Deep +10	10	-	-	-	-	-	-	-	109	-	-	-	109	218	-	-	-	-	1.5
+Caduceus Round Shield Fire +10	10	-	-	-	-	-	-	-	109	-	109	-	-	218	-	-	-	-	1.5
+Caduceus Round Shield Heavy +10	10	-	-	-	C	-	-	-	177	-	-	-	-	177	-	-	-	-	1.5
+Caduceus Round Shield Hollow +10	10	-	-	-	D	-	-	-	159	-	-	-	-	159	-	-	-	-	1.5
+Caduceus Round Shield Lightning +10	10	-	-	-	D	-	-	D	118	-	-	108	-	226	-	-	-	-	1.5
+Caduceus Round Shield Poison +10	10	-	-	-	D	-	-	-	129	-	-	-	-	129	-	57	-	-	1.5
+Caduceus Round Shield Raw +10	10	-	-	-	-	-	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Caduceus Round Shield Refined +10	10	-	-	-	D	D	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Caduceus Round Shield Sharp +10	10	-	-	-	D	-	-	-	148	-	-	-	-	148	-	-	-	-	1.5
+Caduceus Round Shield Simple +10	10	-	-	-	D	-	D	-	103	93	-	-	-	197	-	-	-	-	1.5
+Caestus  +10	5	8	-	-	C	C	-	-	334	-	-	-	-	334	-	-	-	-	0.5
+Caestus Blessed +10	5	8	-	-	D	D	-	S	245	-	-	-	-	245	-	-	-	-	0.5
+Caestus Blood +10	5	8	-	-	C	C	-	-	259	-	-	-	-	259	52	-	-	-	0.5
+Caestus Chaos +10	5	8	-	-	C	C	A	A	187	-	172	-	-	359	-	-	-	-	0.5
+Caestus Crystal +10	5	8	-	-	D	D	A	-	202	143	-	-	-	346	-	-	-	-	0.5
+Caestus Dark +10	5	8	-	-	C	C	A	A	187	-	-	-	172	359	-	-	-	-	0.5
+Caestus Deep +10	5	8	-	-	-	-	-	-	177	-	-	-	177	355	-	-	-	-	0.5
+Caestus Fire +10	5	8	-	-	-	-	-	-	177	-	177	-	-	355	-	-	-	-	0.5
+Caestus Heavy +10	5	8	-	-	A	-	-	-	316	-	-	-	-	316	-	-	-	-	0.5
+Caestus Hollow +10	5	8	-	-	C	C	-	-	322	-	-	-	-	322	-	-	-	-	0.5
+Caestus Lightning +10	5	8	-	-	D	D	-	A	202	-	-	154	-	356	-	-	-	-	0.5
+Caestus Poison +10	5	8	-	-	C	C	-	-	259	-	-	-	-	259	-	58	-	-	0.5
+Caestus Raw +10	5	8	-	-	-	-	-	-	262	-	-	-	-	262	-	-	-	-	0.5
+Caestus Refined +10	5	8	-	-	C	C	-	-	347	-	-	-	-	347	-	-	-	-	0.5
+Caestus Sharp +10	5	8	-	-	E	A	-	-	336	-	-	-	-	336	-	-	-	-	0.5
+Caestus Simple +10	5	8	-	-	C	C	S	-	190	128	-	-	-	318	-	-	-	-	0.5
+Caitha's Chime  +5	3	-	12	12	D	-	A	A	157	-	-	-	-	157	-	-	-	60	0.5
+Canvas Talisman  +10	4	-	-	14	D	-	-	A	144	-	-	-	-	144	-	-	-	118	0.5
+Carthus Curved Greatsword  +10	18	22	-	-	C	C	-	-	502	-	-	-	-	502	36	-	-	-	10.5
+Carthus Curved Greatsword Blessed +10	18	22	-	-	D	C	-	S	352	-	-	-	-	352	36	-	-	-	10.5
+Carthus Curved Greatsword Blood +10	18	22	-	-	C	C	-	-	389	-	-	-	-	389	72	-	-	-	10.5
+Carthus Curved Greatsword Chaos +10	18	22	-	-	C	C	A	A	266	-	241	-	-	508	36	-	-	-	10.5
+Carthus Curved Greatsword Crystal +10	18	22	-	-	D	C	S	-	286	193	-	-	-	479	36	-	-	-	10.5
+Carthus Curved Greatsword Dark +10	18	22	-	-	C	C	A	A	266	-	-	-	241	508	36	-	-	-	10.5
+Carthus Curved Greatsword Deep +10	18	22	-	-	-	-	-	-	240	-	-	-	240	481	36	-	-	-	10.5
+Carthus Curved Greatsword Fire +10	18	22	-	-	-	-	-	-	240	-	240	-	-	481	36	-	-	-	10.5
+Carthus Curved Greatsword Heavy +10	18	22	-	-	A	-	-	-	465	-	-	-	-	465	36	-	-	-	10.5
+Carthus Curved Greatsword Hollow +10	18	22	-	-	C	C	-	-	484	-	-	-	-	484	36	-	-	-	10.5
+Carthus Curved Greatsword Lightning +10	18	22	-	-	D	C	-	S	286	-	-	210	-	496	36	-	-	-	10.5
+Carthus Curved Greatsword Poison +10	18	22	-	-	C	C	-	-	389	-	-	-	-	389	36	72	-	-	10.5
+Carthus Curved Greatsword Raw +10	18	22	-	-	-	-	-	-	364	-	-	-	-	364	36	-	-	-	10.5
+Carthus Curved Greatsword Refined +10	18	22	-	-	B	B	-	-	517	-	-	-	-	517	36	-	-	-	10.5
+Carthus Curved Greatsword Sharp +10	18	22	-	-	D	S	-	-	521	-	-	-	-	521	36	-	-	-	10.5
+Carthus Curved Greatsword Simple +10	18	22	-	-	C	C	S	-	271	173	-	-	-	445	36	-	-	-	10.5
+Carthus Curved Sword  +10	15	18	-	-	D	C	-	-	388	-	-	-	-	388	30	-	-	-	5.5
+Carthus Curved Sword Blessed +10	15	18	-	-	D	C	-	S	262	-	-	-	-	262	30	-	-	-	5.5
+Carthus Curved Sword Blood +10	15	18	-	-	D	C	-	-	301	-	-	-	-	301	60	-	-	-	5.5
+Carthus Curved Sword Chaos +10	15	18	-	-	D	C	A	A	200	-	183	-	-	384	30	-	-	-	5.5
+Carthus Curved Sword Crystal +10	15	18	-	-	D	C	A	-	216	152	-	-	-	369	30	-	-	-	5.5
+Carthus Curved Sword Dark +10	15	18	-	-	D	C	A	A	200	-	-	-	183	384	30	-	-	-	5.5
+Carthus Curved Sword Deep +10	15	18	-	-	-	-	-	-	185	-	-	-	185	370	30	-	-	-	5.5
+Carthus Curved Sword Fire +10	15	18	-	-	-	-	-	-	185	-	185	-	-	370	30	-	-	-	5.5
+Carthus Curved Sword Heavy +10	15	18	-	-	A	-	-	-	345	-	-	-	-	345	30	-	-	-	5.5
+Carthus Curved Sword Hollow +10	15	18	-	-	D	C	-	-	374	-	-	-	-	374	30	-	-	-	5.5
+Carthus Curved Sword Lightning +10	15	18	-	-	D	C	-	A	216	-	-	164	-	381	30	-	-	-	5.5
+Carthus Curved Sword Poison +10	15	18	-	-	D	C	-	-	301	-	-	-	-	301	30	58	-	-	5.5
+Carthus Curved Sword Raw +10	15	18	-	-	-	-	-	-	273	-	-	-	-	273	30	-	-	-	5.5
+Carthus Curved Sword Refined +10	15	18	-	-	C	C	-	-	390	-	-	-	-	390	30	-	-	-	5.5
+Carthus Curved Sword Sharp +10	15	18	-	-	D	A	-	-	393	-	-	-	-	393	30	-	-	-	5.5
+Carthus Curved Sword Simple +10	15	18	-	-	D	C	S	-	203	137	-	-	-	340	30	-	-	-	5.5
+Carthus Shield  +10	8	-	-	-	D	-	-	-	147	-	-	-	-	147	-	-	-	-	2.5
+Carthus Shield Blessed +10	8	-	-	-	D	-	-	C	127	-	-	-	-	127	-	-	-	-	2.5
+Carthus Shield Blood +10	8	-	-	-	D	-	-	-	114	-	-	-	-	114	51	-	-	-	2.5
+Carthus Shield Chaos +10	8	-	-	-	D	-	D	D	101	-	99	-	-	201	-	-	-	-	2.5
+Carthus Shield Crystal +10	8	-	-	-	D	-	D	-	115	98	-	-	-	213	-	-	-	-	2.5
+Carthus Shield Dark +10	8	-	-	-	D	-	D	D	101	-	-	-	99	201	-	-	-	-	2.5
+Carthus Shield Deep +10	8	-	-	-	-	-	-	-	94	-	-	-	94	188	-	-	-	-	2.5
+Carthus Shield Fire +10	8	-	-	-	-	-	-	-	94	-	94	-	-	188	-	-	-	-	2.5
+Carthus Shield Heavy +10	8	-	-	-	C	-	-	-	164	-	-	-	-	164	-	-	-	-	2.5
+Carthus Shield Hollow +10	8	-	-	-	D	-	-	-	140	-	-	-	-	140	-	-	-	-	2.5
+Carthus Shield Lightning +10	8	-	-	-	D	-	-	D	115	-	-	101	-	216	-	-	-	-	2.5
+Carthus Shield Poison +10	8	-	-	-	D	-	-	-	114	-	-	-	-	114	-	57	-	-	2.5
+Carthus Shield Raw +10	8	-	-	-	-	-	-	-	145	-	-	-	-	145	-	-	-	-	2.5
+Carthus Shield Refined +10	8	-	-	-	D	D	-	-	157	-	-	-	-	157	-	-	-	-	2.5
+Carthus Shield Sharp +10	8	-	-	-	D	-	-	-	129	-	-	-	-	129	-	-	-	-	2.5
+Carthus Shield Simple +10	8	-	-	-	D	-	C	-	102	87	-	-	-	190	-	-	-	-	2.5
+Carthus Shotel  +10	12	19	-	-	E	B	-	-	374	-	-	-	-	374	30	-	-	-	3.0
+Carthus Shotel Blessed +10	12	19	-	-	E	C	-	A	264	-	-	-	-	264	30	-	-	-	3.0
+Carthus Shotel Blood +10	12	19	-	-	E	B	-	-	290	-	-	-	-	290	60	-	-	-	3.0
+Carthus Shotel Chaos +10	12	19	-	-	E	C	B	B	202	-	187	-	-	390	30	-	-	-	3.0
+Carthus Shotel Crystal +10	12	19	-	-	E	C	A	-	220	159	-	-	-	380	30	-	-	-	3.0
+Carthus Shotel Dark +10	12	19	-	-	E	C	B	B	202	-	-	-	187	390	30	-	-	-	3.0
+Carthus Shotel Deep +10	12	19	-	-	-	-	-	-	196	-	-	-	196	392	30	-	-	-	3.0
+Carthus Shotel Fire +10	12	19	-	-	-	-	-	-	196	-	196	-	-	392	30	-	-	-	3.0
+Carthus Shotel Heavy +10	12	19	-	-	A	-	-	-	356	-	-	-	-	356	30	-	-	-	3.0
+Carthus Shotel Hollow +10	12	19	-	-	E	B	-	-	360	-	-	-	-	360	30	-	-	-	3.0
+Carthus Shotel Lightning +10	12	19	-	-	E	C	-	A	220	-	-	170	-	391	30	-	-	-	3.0
+Carthus Shotel Poison +10	12	19	-	-	E	B	-	-	290	-	-	-	-	290	30	58	-	-	3.0
+Carthus Shotel Raw +10	12	19	-	-	-	-	-	-	288	-	-	-	-	288	30	-	-	-	3.0
+Carthus Shotel Refined +10	12	19	-	-	C	C	-	-	387	-	-	-	-	387	30	-	-	-	3.0
+Carthus Shotel Sharp +10	12	19	-	-	E	A	-	-	386	-	-	-	-	386	30	-	-	-	3.0
+Carthus Shotel Simple +10	12	19	-	-	E	B	A	-	205	143	-	-	-	349	30	-	-	-	3.0
+Cathedral Knight Greatshield  +10	32	-	-	-	D	-	-	-	306	-	-	-	-	306	-	-	-	-	15.5
+Cathedral Knight Greatshield Blessed +10	32	-	-	-	D	-	-	C	218	-	-	-	-	218	-	-	-	-	15.5
+Cathedral Knight Greatshield Blood +10	32	-	-	-	D	-	-	-	237	-	-	-	-	237	61	-	-	-	15.5
+Cathedral Knight Greatshield Chaos +10	32	-	-	-	D	-	D	D	174	-	169	-	-	343	-	-	-	-	15.5
+Cathedral Knight Greatshield Crystal +10	32	-	-	-	D	-	C	-	196	163	-	-	-	359	-	-	-	-	15.5
+Cathedral Knight Greatshield Dark +10	32	-	-	-	D	-	D	D	174	-	-	-	169	343	-	-	-	-	15.5
+Cathedral Knight Greatshield Deep +10	32	-	-	-	-	-	-	-	179	-	-	-	179	358	-	-	-	-	15.5
+Cathedral Knight Greatshield Fire +10	32	-	-	-	-	-	-	-	179	-	179	-	-	358	-	-	-	-	15.5
+Cathedral Knight Greatshield Heavy +10	32	-	-	-	B	-	-	-	348	-	-	-	-	348	-	-	-	-	15.5
+Cathedral Knight Greatshield Hollow +10	32	-	-	-	D	-	-	-	292	-	-	-	-	292	-	-	-	-	15.5
+Cathedral Knight Greatshield Lightning +10	32	-	-	-	D	-	-	C	196	-	-	169	-	365	-	-	-	-	15.5
+Cathedral Knight Greatshield Poison +10	32	-	-	-	D	-	-	-	237	-	-	-	-	237	-	71	-	-	15.5
+Cathedral Knight Greatshield Raw +10	32	-	-	-	-	-	-	-	291	-	-	-	-	291	-	-	-	-	15.5
+Cathedral Knight Greatshield Refined +10	32	-	-	-	D	D	-	-	323	-	-	-	-	323	-	-	-	-	15.5
+Cathedral Knight Greatshield Sharp +10	32	-	-	-	D	-	-	-	267	-	-	-	-	267	-	-	-	-	15.5
+Cathedral Knight Greatshield Simple +10	32	-	-	-	D	-	C	-	175	145	-	-	-	321	-	-	-	-	15.5
+Cathedral Knight Greatsword  +10	26	10	-	-	B	E	-	-	517	-	-	-	-	517	-	-	-	-	15.0
+Cathedral Knight Greatsword Blessed +10	26	10	-	-	C	E	-	A	351	-	-	-	-	351	-	-	-	-	15.0
+Cathedral Knight Greatsword Blood +10	26	10	-	-	B	E	-	-	400	-	-	-	-	400	74	-	-	-	15.0
+Cathedral Knight Greatsword Chaos +10	26	10	-	-	B	E	B	B	270	-	251	-	-	521	-	-	-	-	15.0
+Cathedral Knight Greatsword Crystal +10	26	10	-	-	C	E	A	-	295	215	-	-	-	511	-	-	-	-	15.0
+Cathedral Knight Greatsword Dark +10	26	10	-	-	B	E	B	B	270	-	-	-	251	521	-	-	-	-	15.0
+Cathedral Knight Greatsword Deep +10	26	10	-	-	-	-	-	-	257	-	-	-	257	514	-	-	-	-	15.0
+Cathedral Knight Greatsword Fire +10	26	10	-	-	-	-	-	-	257	-	257	-	-	514	-	-	-	-	15.0
+Cathedral Knight Greatsword Heavy +10	26	10	-	-	A	-	-	-	532	-	-	-	-	532	-	-	-	-	15.0
+Cathedral Knight Greatsword Hollow +10	26	10	-	-	B	E	-	-	497	-	-	-	-	497	-	-	-	-	15.0
+Cathedral Knight Greatsword Lightning +10	26	10	-	-	C	E	-	A	295	-	-	230	-	525	-	-	-	-	15.0
+Cathedral Knight Greatsword Poison +10	26	10	-	-	B	E	-	-	400	-	-	-	-	400	-	97	-	-	15.0
+Cathedral Knight Greatsword Raw +10	26	10	-	-	-	-	-	-	426	-	-	-	-	426	-	-	-	-	15.0
+Cathedral Knight Greatsword Refined +10	26	10	-	-	C	C	-	-	553	-	-	-	-	553	-	-	-	-	15.0
+Cathedral Knight Greatsword Sharp +10	26	10	-	-	D	A	-	-	553	-	-	-	-	553	-	-	-	-	15.0
+Cathedral Knight Greatsword Simple +10	26	10	-	-	B	E	A	-	274	193	-	-	-	468	-	-	-	-	15.0
+Chaos Blade  +5	16	14	-	-	E	S	-	-	420	-	-	-	-	420	34	-	-	-	6.0
+Claw  +10	6	14	-	-	D	C	-	-	300	-	-	-	-	300	30	-	-	-	1.5
+Claw Blessed +10	6	14	-	-	E	C	-	A	226	-	-	-	-	226	30	-	-	-	1.5
+Claw Blood +10	6	14	-	-	D	C	-	-	232	-	-	-	-	232	60	-	-	-	1.5
+Claw Chaos +10	6	14	-	-	D	C	B	B	173	-	161	-	-	335	30	-	-	-	1.5
+Claw Crystal +10	6	14	-	-	E	C	A	-	189	138	-	-	-	327	30	-	-	-	1.5
+Claw Dark +10	6	14	-	-	D	C	B	B	173	-	-	-	161	335	30	-	-	-	1.5
+Claw Deep +10	6	14	-	-	-	-	-	-	168	-	-	-	168	336	30	-	-	-	1.5
+Claw Fire +10	6	14	-	-	-	-	-	-	168	-	168	-	-	336	30	-	-	-	1.5
+Claw Heavy +10	6	14	-	-	A	-	-	-	289	-	-	-	-	289	30	-	-	-	1.5
+Claw Hollow +10	6	14	-	-	D	C	-	-	289	-	-	-	-	289	30	-	-	-	1.5
+Claw Lightning +10	6	14	-	-	E	C	-	A	189	-	-	147	-	337	30	-	-	-	1.5
+Claw Poison +10	6	14	-	-	D	C	-	-	232	-	-	-	-	232	30	58	-	-	1.5
+Claw Raw +10	6	14	-	-	-	-	-	-	249	-	-	-	-	249	30	-	-	-	1.5
+Claw Refined +10	6	14	-	-	C	C	-	-	319	-	-	-	-	319	30	-	-	-	1.5
+Claw Sharp +10	6	14	-	-	E	A	-	-	320	-	-	-	-	320	30	-	-	-	1.5
+Claw Simple +10	6	14	-	-	D	C	A	-	176	123	-	-	-	300	30	-	-	-	1.5
+Claymore  +10	16	13	-	-	C	D	-	-	493	-	-	-	-	493	-	-	-	-	9.0
+Claymore Blessed +10	16	13	-	-	D	D	-	A	338	-	-	-	-	338	-	-	-	-	9.0
+Claymore Blood +10	16	13	-	-	C	D	-	-	382	-	-	-	-	382	62	-	-	-	9.0
+Claymore Chaos +10	16	13	-	-	C	D	B	B	259	-	239	-	-	498	-	-	-	-	9.0
+Claymore Crystal +10	16	13	-	-	D	D	A	-	281	202	-	-	-	484	-	-	-	-	9.0
+Claymore Dark +10	16	13	-	-	C	D	B	B	259	-	-	-	239	498	-	-	-	-	9.0
+Claymore Deep +10	16	13	-	-	-	-	-	-	233	-	-	-	233	466	-	-	-	-	9.0
+Claymore Fire +10	16	13	-	-	-	-	-	-	233	-	233	-	-	466	-	-	-	-	9.0
+Claymore Heavy +10	16	13	-	-	A	-	-	-	479	-	-	-	-	479	-	-	-	-	9.0
+Claymore Hollow +10	16	13	-	-	C	D	-	-	474	-	-	-	-	474	-	-	-	-	9.0
+Claymore Lightning +10	16	13	-	-	D	D	-	A	281	-	-	216	-	498	-	-	-	-	9.0
+Claymore Poison +10	16	13	-	-	C	D	-	-	382	-	-	-	-	382	-	72	-	-	9.0
+Claymore Raw +10	16	13	-	-	-	-	-	-	374	-	-	-	-	374	-	-	-	-	9.0
+Claymore Refined +10	16	13	-	-	C	C	-	-	496	-	-	-	-	496	-	-	-	-	9.0
+Claymore Sharp +10	16	13	-	-	E	A	-	-	495	-	-	-	-	495	-	-	-	-	9.0
+Claymore Simple +10	16	13	-	-	C	D	A	-	263	181	-	-	-	445	-	-	-	-	9.0
+Cleric's Candlestick  +10	8	12	-	12	D	D	A	-	170	126	-	-	-	296	-	-	-	100	2.0
+Cleric's Sacred Chime  +10	3	-	-	14	D	-	-	S	144	-	-	-	-	144	-	-	-	100	0.5
+Club  +10	10	-	-	-	B	-	-	-	363	-	-	-	-	363	-	-	-	-	2.5
+Club Blessed +10	10	-	-	-	C	-	-	A	266	-	-	-	-	266	-	-	-	-	2.5
+Club Blood +10	10	-	-	-	B	-	-	-	281	-	-	-	-	281	51	-	-	-	2.5
+Club Chaos +10	10	-	-	-	B	-	B	B	206	-	192	-	-	398	-	-	-	-	2.5
+Club Crystal +10	10	-	-	-	C	-	A	-	225	167	-	-	-	393	-	-	-	-	2.5
+Club Dark +10	10	-	-	-	B	-	B	B	206	-	-	-	192	398	-	-	-	-	2.5
+Club Deep +10	10	-	-	-	-	-	-	-	199	-	-	-	199	399	-	-	-	-	2.5
+Club Fire +10	10	-	-	-	-	-	-	-	199	-	199	-	-	399	-	-	-	-	2.5
+Club Heavy +10	10	-	-	-	A	-	-	-	394	-	-	-	-	394	-	-	-	-	2.5
+Club Hollow +10	10	-	-	-	B	-	-	-	348	-	-	-	-	348	-	-	-	-	2.5
+Club Lightning +10	10	-	-	-	C	-	-	A	225	-	-	178	-	403	-	-	-	-	2.5
+Club Poison +10	10	-	-	-	B	-	-	-	281	-	-	-	-	281	-	57	-	-	2.5
+Club Raw +10	10	-	-	-	-	-	-	-	319	-	-	-	-	319	-	-	-	-	2.5
+Club Refined +10	10	-	-	-	C	C	-	-	381	-	-	-	-	381	-	-	-	-	2.5
+Club Sharp +10	10	-	-	-	E	A	-	-	393	-	-	-	-	393	-	-	-	-	2.5
+Club Simple +10	10	-	-	-	B	-	A	-	209	150	-	-	-	359	-	-	-	-	2.5
+Composite Bow  +10	12	12	-	-	D	D	-	-	247	-	-	-	-	247	-	-	-	-	3.5
+Corvian Greatknife  +10	12	16	-	-	D	D	-	-	256	-	-	-	-	256	-	-	-	-	2.5
+Corvian Greatknife Blessed +10	12	16	-	-	D	D	-	C	194	-	-	-	-	194	-	-	-	-	2.5
+Corvian Greatknife Blood +10	12	16	-	-	D	D	-	-	198	-	-	-	-	198	51	-	-	-	2.5
+Corvian Greatknife Chaos +10	12	16	-	-	D	D	D	D	154	-	149	-	-	304	-	-	-	-	2.5
+Corvian Greatknife Crystal +10	12	16	-	-	E	E	C	-	173	144	-	-	-	318	-	-	-	-	2.5
+Corvian Greatknife Dark +10	12	16	-	-	D	D	D	D	154	-	-	-	149	304	-	-	-	-	2.5
+Corvian Greatknife Deep +10	12	16	-	-	-	-	-	-	153	-	-	-	153	307	-	-	-	-	2.5
+Corvian Greatknife Fire +10	12	16	-	-	-	-	-	-	153	-	153	-	-	307	-	-	-	-	2.5
+Corvian Greatknife Heavy +10	12	16	-	-	D	-	-	-	232	-	-	-	-	232	-	-	-	-	2.5
+Corvian Greatknife Hollow +10	12	16	-	-	D	D	-	-	245	-	-	-	-	245	-	-	-	-	2.5
+Corvian Greatknife Lightning +10	12	16	-	-	E	E	-	C	173	-	-	149	-	323	-	-	-	-	2.5
+Corvian Greatknife Poison +10	12	16	-	-	D	D	-	-	198	-	-	-	-	198	-	57	-	-	2.5
+Corvian Greatknife Raw +10	12	16	-	-	-	-	-	-	223	-	-	-	-	223	-	-	-	-	2.5
+Corvian Greatknife Refined +10	12	16	-	-	D	D	-	-	272	-	-	-	-	272	-	-	-	-	2.5
+Corvian Greatknife Sharp +10	12	16	-	-	E	C	-	-	260	-	-	-	-	260	-	-	-	-	2.5
+Corvian Greatknife Simple +10	12	16	-	-	D	D	C	-	156	128	-	-	-	284	-	-	-	-	2.5
+Court Sorcerer's Staff  +10	6	-	14	-	D	-	S	-	163	-	-	-	-	163	-	-	-	60	2.0
+Crescent Axe  +10	14	12	-	-	D	C	-	-	427	-	-	-	-	427	-	-	-	-	6.0
+Crescent Axe Blessed +10	14	12	-	-	D	D	-	A	289	-	-	-	-	289	-	-	-	-	6.0
+Crescent Axe Blood +10	14	12	-	-	D	C	-	-	331	-	-	-	-	331	62	-	-	-	6.0
+Crescent Axe Chaos +10	14	12	-	-	D	C	B	B	221	-	204	-	-	426	-	-	-	-	6.0
+Crescent Axe Crystal +10	14	12	-	-	D	D	A	-	241	172	-	-	-	413	-	-	-	-	6.0
+Crescent Axe Dark +10	14	12	-	-	D	C	B	B	221	-	-	-	204	426	-	-	-	-	6.0
+Crescent Axe Deep +10	14	12	-	-	-	-	-	-	210	-	-	-	210	421	-	-	-	-	6.0
+Crescent Axe Fire +10	14	12	-	-	-	-	-	-	210	-	210	-	-	421	-	-	-	-	6.0
+Crescent Axe Heavy +10	14	12	-	-	A	-	-	-	396	-	-	-	-	396	-	-	-	-	6.0
+Crescent Axe Hollow +10	14	12	-	-	D	C	-	-	411	-	-	-	-	411	-	-	-	-	6.0
+Crescent Axe Lightning +10	14	12	-	-	D	D	-	A	241	-	-	185	-	426	-	-	-	-	6.0
+Crescent Axe Poison +10	14	12	-	-	D	C	-	-	331	-	-	-	-	331	-	72	-	-	6.0
+Crescent Axe Raw +10	14	12	-	-	-	-	-	-	322	-	-	-	-	322	-	-	-	-	6.0
+Crescent Axe Refined +10	14	12	-	-	C	C	-	-	444	-	-	-	-	444	-	-	-	-	6.0
+Crescent Axe Sharp +10	14	12	-	-	E	A	-	-	441	-	-	-	-	441	-	-	-	-	6.0
+Crescent Axe Simple +10	14	12	-	-	D	C	A	-	225	154	-	-	-	380	-	-	-	-	6.0
+Crescent Moon Sword  +5	10	16	-	-	-	C	D	-	224	150	-	-	-	374	-	-	-	-	2.5
+Crest Shield  +5	14	-	-	-	D	-	-	-	220	-	-	-	-	220	-	-	-	-	5.0
+Crimson Parma  +10	7	-	-	-	D	-	-	-	166	-	-	-	-	166	-	-	-	-	1.5
+Crimson Parma Blessed +10	7	-	-	-	D	-	-	D	126	-	-	-	-	126	-	-	-	-	1.5
+Crimson Parma Blood +10	7	-	-	-	D	-	-	-	129	-	-	-	-	129	51	-	-	-	1.5
+Crimson Parma Chaos +10	7	-	-	-	D	-	D	D	103	-	102	-	-	206	-	-	-	-	1.5
+Crimson Parma Crystal +10	7	-	-	-	D	-	D	-	118	105	-	-	-	223	-	-	-	-	1.5
+Crimson Parma Dark +10	7	-	-	-	D	-	D	D	103	-	-	-	102	206	-	-	-	-	1.5
+Crimson Parma Deep +10	7	-	-	-	-	-	-	-	109	-	-	-	109	218	-	-	-	-	1.5
+Crimson Parma Fire +10	7	-	-	-	-	-	-	-	109	-	109	-	-	218	-	-	-	-	1.5
+Crimson Parma Heavy +10	7	-	-	-	C	-	-	-	177	-	-	-	-	177	-	-	-	-	1.5
+Crimson Parma Hollow +10	7	-	-	-	D	-	-	-	159	-	-	-	-	159	-	-	-	-	1.5
+Crimson Parma Lightning +10	7	-	-	-	D	-	-	D	118	-	-	108	-	226	-	-	-	-	1.5
+Crimson Parma Poison +10	7	-	-	-	D	-	-	-	129	-	-	-	-	129	-	57	-	-	1.5
+Crimson Parma Raw +10	7	-	-	-	-	-	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Crimson Parma Refined +10	7	-	-	-	D	D	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Crimson Parma Sharp +10	7	-	-	-	D	-	-	-	148	-	-	-	-	148	-	-	-	-	1.5
+Crimson Parma Simple +10	7	-	-	-	D	-	D	-	103	93	-	-	-	197	-	-	-	-	1.5
+Crow Quills  +10	9	16	-	-	E	B	-	-	360	-	-	-	-	360	-	-	-	-	4.0
+Crow Quills Blessed +10	9	16	-	-	E	B	-	S	263	-	-	-	-	263	-	-	-	-	4.0
+Crow Quills Blood +10	9	16	-	-	E	B	-	-	279	-	-	-	-	279	52	-	-	-	4.0
+Crow Quills Chaos +10	9	16	-	-	E	B	A	A	195	-	179	-	-	374	-	-	-	-	4.0
+Crow Quills Crystal +10	9	16	-	-	E	C	A	-	211	149	-	-	-	361	-	-	-	-	4.0
+Crow Quills Dark +10	9	16	-	-	E	B	A	A	195	-	-	-	179	374	-	-	-	-	4.0
+Crow Quills Deep +10	9	16	-	-	-	-	-	-	186	-	-	-	186	373	-	-	-	-	4.0
+Crow Quills Fire +10	9	16	-	-	-	-	-	-	186	-	186	-	-	373	-	-	-	-	4.0
+Crow Quills Heavy +10	9	16	-	-	A	-	-	-	322	-	-	-	-	322	-	-	-	-	4.0
+Crow Quills Hollow +10	9	16	-	-	E	B	-	-	347	-	-	-	-	347	-	-	-	-	4.0
+Crow Quills Lightning +10	9	16	-	-	E	C	-	A	211	-	-	160	-	372	-	-	-	-	4.0
+Crow Quills Poison +10	9	16	-	-	E	B	-	-	279	-	-	-	-	279	-	58	-	-	4.0
+Crow Quills Raw +10	9	16	-	-	-	-	-	-	283	-	-	-	-	283	-	-	-	-	4.0
+Crow Quills Refined +10	9	16	-	-	C	C	-	-	373	-	-	-	-	373	-	-	-	-	4.0
+Crow Quills Sharp +10	9	16	-	-	E	S	-	-	380	-	-	-	-	380	-	-	-	-	4.0
+Crow Quills Simple +10	9	16	-	-	E	B	S	-	204	138	-	-	-	342	-	-	-	-	4.0
+Crow Talons  +10	6	19	-	-	E	C	-	-	315	-	-	-	-	315	30	-	-	-	3.0
+Crow Talons Blessed +10	6	19	-	-	E	C	-	A	237	-	-	-	-	237	30	-	-	-	3.0
+Crow Talons Blood +10	6	19	-	-	E	C	-	-	244	-	-	-	-	244	60	-	-	-	3.0
+Crow Talons Chaos +10	6	19	-	-	E	C	B	B	182	-	169	-	-	351	30	-	-	-	3.0
+Crow Talons Crystal +10	6	19	-	-	E	C	A	-	198	145	-	-	-	344	30	-	-	-	3.0
+Crow Talons Dark +10	6	19	-	-	E	C	B	B	182	-	-	-	169	351	30	-	-	-	3.0
+Crow Talons Deep +10	6	19	-	-	-	-	-	-	177	-	-	-	177	355	30	-	-	-	3.0
+Crow Talons Fire +10	6	19	-	-	-	-	-	-	177	-	177	-	-	355	30	-	-	-	3.0
+Crow Talons Heavy +10	6	19	-	-	B	-	-	-	293	-	-	-	-	293	30	-	-	-	3.0
+Crow Talons Hollow +10	6	19	-	-	E	C	-	-	304	-	-	-	-	304	30	-	-	-	3.0
+Crow Talons Lightning +10	6	19	-	-	E	C	-	A	198	-	-	154	-	353	30	-	-	-	3.0
+Crow Talons Poison +10	6	19	-	-	E	C	-	-	244	-	-	-	-	244	30	58	-	-	3.0
+Crow Talons Raw +10	6	19	-	-	-	-	-	-	262	-	-	-	-	262	30	-	-	-	3.0
+Crow Talons Refined +10	6	19	-	-	C	C	-	-	338	-	-	-	-	338	30	-	-	-	3.0
+Crow Talons Sharp +10	6	19	-	-	E	A	-	-	347	-	-	-	-	347	30	-	-	-	3.0
+Crow Talons Simple +10	6	19	-	-	E	C	A	-	185	130	-	-	-	315	30	-	-	-	3.0
+Crucifix of the Mad King  +5	19	-	10	14	C	-	E	D	325	-	-	-	143	469	-	-	-	-	12.0
+Crystal Chime  +5	3	-	18	18	D	-	C	C	154	-	-	-	-	154	-	-	-	20	0.5
+Crystal Sage's Rapier  +5	13	18	-	-	E	D	A	-	136	170	-	-	-	307	-	-	-	-	2.5
+Curse Ward Greatshield  +5	34	-	-	-	D	-	-	-	311	-	-	-	-	311	-	-	-	-	17.0
+Dagger  +10	5	9	-	-	E	B	-	-	239	-	-	-	-	239	-	-	-	-	1.5
+Dagger Blessed +10	5	9	-	-	E	B	-	S	239	-	-	-	-	239	-	-	-	-	1.5
+Dagger Blood +10	5	9	-	-	E	B	-	-	185	-	-	-	-	185	52	-	-	-	1.5
+Dagger Chaos +10	5	9	-	-	E	B	A	A	149	-	137	-	-	286	-	-	-	-	1.5
+Dagger Crystal +10	5	9	-	-	E	C	A	-	161	114	-	-	-	276	-	-	-	-	1.5
+Dagger Dark +10	5	9	-	-	E	B	A	A	149	-	-	-	137	286	-	-	-	-	1.5
+Dagger Deep +10	5	9	-	-	-	-	-	-	148	-	-	-	148	296	-	-	-	-	1.5
+Dagger Fire +10	5	9	-	-	-	-	-	-	148	-	148	-	-	296	-	-	-	-	1.5
+Dagger Heavy +10	5	9	-	-	A	-	-	-	232	-	-	-	-	232	-	-	-	-	1.5
+Dagger Hollow +10	5	9	-	-	E	B	-	-	243	-	-	-	-	243	-	-	-	-	1.5
+Dagger Lightning +10	5	9	-	-	E	C	-	A	161	-	-	122	-	284	-	-	-	-	1.5
+Dagger Poison +10	5	9	-	-	E	B	-	-	185	-	-	-	-	185	-	58	-	-	1.5
+Dagger Raw +10	5	9	-	-	-	-	-	-	195	-	-	-	-	195	-	-	-	-	1.5
+Dagger Refined +10	5	9	-	-	B	B	-	-	255	-	-	-	-	255	-	-	-	-	1.5
+Dagger Sharp +10	5	9	-	-	E	S	-	-	271	-	-	-	-	271	-	-	-	-	1.5
+Dagger Simple +10	5	9	-	-	E	B	S	-	151	102	-	-	-	254	-	-	-	-	1.5
+Dancer's Enchanted Swords  +5	12	20	9	9	D	D	D	D	236	194	205	-	-	636	-	-	-	-	8.5
+Dark Hand	-	-	-	-	C	C	D	D	177	-	-	-	178	356	-	-	-	-	0.0
+Dark Sword  +10	16	15	-	-	C	D	-	-	409	-	-	-	-	409	-	-	-	-	4.5
+Dark Sword Blessed +10	16	15	-	-	C	D	-	S	277	-	-	-	-	277	-	-	-	-	4.5
+Dark Sword Blood +10	16	15	-	-	C	D	-	-	317	-	-	-	-	317	52	-	-	-	4.5
+Dark Sword Chaos +10	16	15	-	-	C	D	A	A	211	-	193	-	-	405	-	-	-	-	4.5
+Dark Sword Crystal +10	16	15	-	-	C	D	A	-	228	160	-	-	-	389	-	-	-	-	4.5
+Dark Sword Dark +10	16	15	-	-	C	D	A	A	211	-	-	-	193	405	-	-	-	-	4.5
+Dark Sword Deep +10	16	15	-	-	-	-	-	-	194	-	-	-	194	388	-	-	-	-	4.5
+Dark Sword Fire +10	16	15	-	-	-	-	-	-	194	-	194	-	-	388	-	-	-	-	4.5
+Dark Sword Heavy +10	16	15	-	-	A	-	-	-	393	-	-	-	-	393	-	-	-	-	4.5
+Dark Sword Hollow +10	16	15	-	-	C	D	-	-	394	-	-	-	-	394	-	-	-	-	4.5
+Dark Sword Lightning +10	16	15	-	-	C	D	-	A	228	-	-	173	-	401	-	-	-	-	4.5
+Dark Sword Poison +10	16	15	-	-	C	D	-	-	317	-	-	-	-	317	-	58	-	-	4.5
+Dark Sword Raw +10	16	15	-	-	-	-	-	-	299	-	-	-	-	299	-	-	-	-	4.5
+Dark Sword Refined +10	16	15	-	-	B	B	-	-	428	-	-	-	-	428	-	-	-	-	4.5
+Dark Sword Sharp +10	16	15	-	-	E	A	-	-	405	-	-	-	-	405	-	-	-	-	4.5
+Dark Sword Simple +10	16	15	-	-	C	D	S	-	214	144	-	-	-	359	-	-	-	-	4.5
+Darkdrift  +5	10	28	-	-	D	C	-	-	383	-	-	-	-	383	34	-	-	-	3.5
+Darkmoon Longbow  +5	7	16	10	-	-	E	B	-	80	88	-	-	-	169	-	-	-	-	4.5
+Demon's Fist  +5	20	8	9	9	C	-	D	D	297	-	152	-	-	450	-	-	-	-	5.5
+Demon's Greataxe  +5	28	-	12	12	B	E	D	D	508	-	96	-	-	604	-	-	-	-	14.5
+Demon's Scar  +5	-	16	17	17	-	E	C	C	-	-	108	-	-	108	-	-	-	20	0.5
+Dragon Crest Shield  +5	14	-	-	-	D	-	-	-	220	-	-	-	-	220	-	-	-	-	5.0
+Dragon Tooth  +5	40	-	-	-	B	-	-	-	568	-	-	-	-	568	-	-	-	-	21.0
+Dragonhead Greatshield  +5	35	-	-	15	D	-	-	E	361	-	-	-	-	361	-	-	-	-	18.0
+Dragonhead Shield  +5	12	-	11	12	D	-	E	D	268	-	23	-	-	291	-	-	-	-	4.5
+Dragonrider Bow  +5	19	15	-	-	D	E	-	-	296	-	-	-	-	296	-	-	-	-	6.5
+Dragonslayer Greataxe  +5	40	-	-	-	C	E	-	D	574	-	-	149	-	723	-	-	-	-	20.0
+Dragonslayer Greatbow  +5	20	20	-	-	D	C	-	-	416	-	-	-	-	416	-	-	-	-	10.0
+Dragonslayer Greatshield  +5	38	-	-	-	D	-	-	-	336	-	-	-	-	336	-	-	-	-	26.0
+Dragonslayer Spear  +5	20	20	-	-	D	B	-	D	332	-	-	130	-	463	-	-	-	-	9.5
+Dragonslayer Swordspear  +5	16	22	-	18	D	C	-	C	430	-	-	37	-	467	-	-	-	-	14.5
+Dragonslayer's Axe  +10	18	14	-	-	D	E	-	-	284	-	-	210	-	494	-	-	-	-	4.0
+Dragonslayer's Axe Blessed +10	18	14	-	-	D	E	-	C	244	-	-	155	-	399	-	-	-	-	4.0
+Dragonslayer's Axe Blood +10	18	14	-	-	D	E	-	-	220	-	-	162	-	383	51	-	-	-	4.0
+Dragonslayer's Axe Chaos +10	18	14	-	-	D	E	D	D	180	-	180	115	-	476	-	-	-	-	4.0
+Dragonslayer's Axe Crystal +10	18	14	-	-	D	E	C	-	216	183	-	105	-	504	-	-	-	-	4.0
+Dragonslayer's Axe Dark +10	18	14	-	-	D	E	D	D	180	-	-	115	180	476	-	-	-	-	4.0
+Dragonslayer's Axe Deep +10	18	14	-	-	-	-	-	-	185	-	-	105	185	475	-	-	-	-	4.0
+Dragonslayer's Axe Fire +10	18	14	-	-	-	-	-	-	185	-	185	105	-	475	-	-	-	-	4.0
+Dragonslayer's Axe Heavy +10	18	14	-	-	C	-	-	-	285	-	-	210	-	495	-	-	-	-	4.0
+Dragonslayer's Axe Hollow +10	18	14	-	-	D	E	-	-	272	-	-	199	-	471	-	-	-	-	4.0
+Dragonslayer's Axe Lightning +10	18	14	-	-	D	E	-	B	158	-	-	257	-	415	-	-	-	-	4.0
+Dragonslayer's Axe Poison +10	18	14	-	-	D	E	-	-	220	-	-	162	-	383	-	57	-	-	4.0
+Dragonslayer's Axe Raw +10	18	14	-	-	-	-	-	-	273	-	-	210	-	483	-	-	-	-	4.0
+Dragonslayer's Axe Refined +10	18	14	-	-	D	D	-	-	285	-	-	210	-	495	-	-	-	-	4.0
+Dragonslayer's Axe Sharp +10	18	14	-	-	E	C	-	-	303	-	-	210	-	513	-	-	-	-	4.0
+Dragonslayer's Axe Simple +10	18	14	-	-	D	E	C	-	194	163	-	105	-	462	-	-	-	-	4.0
+Drakeblood Greatsword  +10	18	16	-	-	D	D	-	-	290	142	-	142	-	574	-	-	-	-	6.0
+Drakeblood Greatsword Blessed +10	18	16	-	-	D	D	-	A	278	92	-	112	-	482	-	-	-	-	6.0
+Drakeblood Greatsword Blood +10	18	16	-	-	D	D	-	-	224	110	-	110	-	444	61	-	-	-	6.0
+Drakeblood Greatsword Chaos +10	18	16	-	-	D	D	C	C	213	78	200	81	-	575	-	-	-	-	6.0
+Drakeblood Greatsword Crystal +10	18	16	-	-	D	D	B	-	172	242	-	71	-	486	-	-	-	-	6.0
+Drakeblood Greatsword Dark +10	18	16	-	-	D	D	C	C	213	78	-	81	200	575	-	-	-	-	6.0
+Drakeblood Greatsword Deep +10	18	16	-	-	-	-	-	-	220	71	-	71	220	582	-	-	-	-	6.0
+Drakeblood Greatsword Fire +10	18	16	-	-	-	-	-	-	220	71	220	71	-	582	-	-	-	-	6.0
+Drakeblood Greatsword Heavy +10	18	16	-	-	B	-	-	-	277	142	-	142	-	561	-	-	-	-	6.0
+Drakeblood Greatsword Hollow +10	18	16	-	-	D	D	-	-	278	134	-	134	-	548	-	-	-	-	6.0
+Drakeblood Greatsword Lightning +10	18	16	-	-	D	D	-	B	172	71	-	256	-	500	-	-	-	-	6.0
+Drakeblood Greatsword Poison +10	18	16	-	-	D	D	-	-	224	110	-	110	-	444	-	72	-	-	6.0
+Drakeblood Greatsword Raw +10	18	16	-	-	-	-	-	-	231	142	-	142	-	515	-	-	-	-	6.0
+Drakeblood Greatsword Refined +10	18	16	-	-	C	C	-	-	303	142	-	142	-	587	-	-	-	-	6.0
+Drakeblood Greatsword Sharp +10	18	16	-	-	D	B	-	-	305	142	-	142	-	589	-	-	-	-	6.0
+Drakeblood Greatsword Simple +10	18	16	-	-	D	D	A	-	159	216	-	71	-	447	-	-	-	-	6.0
+Drang Hammers  +10	18	16	-	-	C	E	-	-	370	-	-	-	-	370	-	-	-	-	9.0
+Drang Hammers Blessed +10	18	16	-	-	C	E	-	A	266	-	-	-	-	266	-	-	-	-	9.0
+Drang Hammers Blood +10	18	16	-	-	C	E	-	-	286	-	-	-	-	286	51	-	-	-	9.0
+Drang Hammers Chaos +10	18	16	-	-	C	E	B	B	206	-	192	-	-	398	-	-	-	-	9.0
+Drang Hammers Crystal +10	18	16	-	-	C	E	A	-	225	167	-	-	-	393	-	-	-	-	9.0
+Drang Hammers Dark +10	18	16	-	-	C	E	B	B	206	-	-	-	192	398	-	-	-	-	9.0
+Drang Hammers Deep +10	18	16	-	-	-	-	-	-	203	-	-	-	203	407	-	-	-	-	9.0
+Drang Hammers Fire +10	18	16	-	-	-	-	-	-	203	-	203	-	-	407	-	-	-	-	9.0
+Drang Hammers Heavy +10	18	16	-	-	A	-	-	-	393	-	-	-	-	393	-	-	-	-	9.0
+Drang Hammers Hollow +10	18	16	-	-	C	E	-	-	354	-	-	-	-	354	-	-	-	-	9.0
+Drang Hammers Lightning +10	18	16	-	-	C	E	-	A	225	-	-	178	-	403	-	-	-	-	9.0
+Drang Hammers Poison +10	18	16	-	-	C	E	-	-	286	-	-	-	-	286	-	57	-	-	9.0
+Drang Hammers Raw +10	18	16	-	-	-	-	-	-	312	-	-	-	-	312	-	-	-	-	9.0
+Drang Hammers Refined +10	18	16	-	-	B	B	-	-	420	-	-	-	-	420	-	-	-	-	9.0
+Drang Hammers Sharp +10	18	16	-	-	E	A	-	-	396	-	-	-	-	396	-	-	-	-	9.0
+Drang Hammers Simple +10	18	16	-	-	C	E	A	-	209	150	-	-	-	359	-	-	-	-	9.0
+Drang Twinspears  +10	14	20	-	-	D	C	-	-	382	-	-	-	-	382	-	-	-	-	8.0
+Drang Twinspears Blessed +10	14	20	-	-	D	C	-	S	258	-	-	-	-	258	-	-	-	-	8.0
+Drang Twinspears Blood +10	14	20	-	-	D	C	-	-	296	-	-	-	-	296	52	-	-	-	8.0
+Drang Twinspears Chaos +10	14	20	-	-	D	C	A	A	196	-	179	-	-	376	-	-	-	-	8.0
+Drang Twinspears Crystal +10	14	20	-	-	D	C	S	-	212	146	-	-	-	359	-	-	-	-	8.0
+Drang Twinspears Dark +10	14	20	-	-	D	C	A	A	196	-	-	-	179	376	-	-	-	-	8.0
+Drang Twinspears Deep +10	14	20	-	-	-	-	-	-	185	-	-	-	185	370	-	-	-	-	8.0
+Drang Twinspears Fire +10	14	20	-	-	-	-	-	-	185	-	185	-	-	370	-	-	-	-	8.0
+Drang Twinspears Heavy +10	14	20	-	-	A	-	-	-	340	-	-	-	-	340	-	-	-	-	8.0
+Drang Twinspears Hollow +10	14	20	-	-	D	C	-	-	368	-	-	-	-	368	-	-	-	-	8.0
+Drang Twinspears Lightning +10	14	20	-	-	D	C	-	S	212	-	-	158	-	370	-	-	-	-	8.0
+Drang Twinspears Poison +10	14	20	-	-	D	C	-	-	296	-	-	-	-	296	-	58	-	-	8.0
+Drang Twinspears Raw +10	14	20	-	-	-	-	-	-	286	-	-	-	-	286	-	-	-	-	8.0
+Drang Twinspears Refined +10	14	20	-	-	C	C	-	-	373	-	-	-	-	373	-	-	-	-	8.0
+Drang Twinspears Sharp +10	14	20	-	-	D	A	-	-	377	-	-	-	-	377	-	-	-	-	8.0
+Drang Twinspears Simple +10	14	20	-	-	D	C	S	-	199	131	-	-	-	331	-	-	-	-	8.0
+Earth Seeker  +5	24	-	-	15	B	-	-	C	503	-	-	-	-	503	-	-	-	-	17.0
+East-West Shield  +10	8	-	-	-	D	-	-	-	198	-	-	-	-	198	-	-	-	-	2.0
+East-West Shield Blessed +10	8	-	-	-	D	-	-	C	150	-	-	-	-	150	-	-	-	-	2.0
+East-West Shield Blood +10	8	-	-	-	D	-	-	-	153	-	-	-	-	153	51	-	-	-	2.0
+East-West Shield Chaos +10	8	-	-	-	D	-	D	D	120	-	118	-	-	239	-	-	-	-	2.0
+East-West Shield Crystal +10	8	-	-	-	D	-	D	-	136	117	-	-	-	254	-	-	-	-	2.0
+East-West Shield Dark +10	8	-	-	-	D	-	D	D	120	-	-	-	118	239	-	-	-	-	2.0
+East-West Shield Deep +10	8	-	-	-	-	-	-	-	122	-	-	-	122	244	-	-	-	-	2.0
+East-West Shield Fire +10	8	-	-	-	-	-	-	-	122	-	122	-	-	244	-	-	-	-	2.0
+East-West Shield Heavy +10	8	-	-	-	C	-	-	-	220	-	-	-	-	220	-	-	-	-	2.0
+East-West Shield Hollow +10	8	-	-	-	D	-	-	-	189	-	-	-	-	189	-	-	-	-	2.0
+East-West Shield Lightning +10	8	-	-	-	D	-	-	D	136	-	-	120	-	257	-	-	-	-	2.0
+East-West Shield Poison +10	8	-	-	-	D	-	-	-	153	-	-	-	-	153	-	57	-	-	2.0
+East-West Shield Raw +10	8	-	-	-	-	-	-	-	197	-	-	-	-	197	-	-	-	-	2.0
+East-West Shield Refined +10	8	-	-	-	D	D	-	-	210	-	-	-	-	210	-	-	-	-	2.0
+East-West Shield Sharp +10	8	-	-	-	D	-	-	-	174	-	-	-	-	174	-	-	-	-	2.0
+East-West Shield Simple +10	8	-	-	-	D	-	C	-	121	104	-	-	-	226	-	-	-	-	2.0
+Eastern Iron Shield  +10	8	-	-	-	D	-	-	-	197	-	-	-	-	197	-	-	-	-	3.0
+Eastern Iron Shield Blessed +10	8	-	-	-	D	-	-	D	147	-	-	-	-	147	-	-	-	-	3.0
+Eastern Iron Shield Blood +10	8	-	-	-	D	-	-	-	153	-	-	-	-	153	51	-	-	-	3.0
+Eastern Iron Shield Chaos +10	8	-	-	-	D	-	D	D	120	-	119	-	-	239	-	-	-	-	3.0
+Eastern Iron Shield Crystal +10	8	-	-	-	D	-	D	-	137	122	-	-	-	259	-	-	-	-	3.0
+Eastern Iron Shield Dark +10	8	-	-	-	D	-	D	D	120	-	-	-	119	239	-	-	-	-	3.0
+Eastern Iron Shield Deep +10	8	-	-	-	-	-	-	-	131	-	-	-	131	262	-	-	-	-	3.0
+Eastern Iron Shield Fire +10	8	-	-	-	-	-	-	-	131	-	131	-	-	262	-	-	-	-	3.0
+Eastern Iron Shield Heavy +10	8	-	-	-	C	-	-	-	211	-	-	-	-	211	-	-	-	-	3.0
+Eastern Iron Shield Hollow +10	8	-	-	-	D	-	-	-	188	-	-	-	-	188	-	-	-	-	3.0
+Eastern Iron Shield Lightning +10	8	-	-	-	D	-	-	D	137	-	-	125	-	262	-	-	-	-	3.0
+Eastern Iron Shield Poison +10	8	-	-	-	D	-	-	-	153	-	-	-	-	153	-	57	-	-	3.0
+Eastern Iron Shield Raw +10	8	-	-	-	-	-	-	-	210	-	-	-	-	210	-	-	-	-	3.0
+Eastern Iron Shield Refined +10	8	-	-	-	D	D	-	-	211	-	-	-	-	211	-	-	-	-	3.0
+Eastern Iron Shield Sharp +10	8	-	-	-	D	-	-	-	175	-	-	-	-	175	-	-	-	-	3.0
+Eastern Iron Shield Simple +10	8	-	-	-	D	-	D	-	120	108	-	-	-	229	-	-	-	-	3.0
+Eleonora  +5	20	8	-	-	D	E	-	-	421	-	-	-	-	421	-	-	-	-	6.5
+Elkhorn Round Shield  +10	8	-	-	-	D	-	-	-	166	-	-	-	-	166	-	-	-	-	1.5
+Elkhorn Round Shield Blessed +10	8	-	-	-	D	-	-	D	126	-	-	-	-	126	-	-	-	-	1.5
+Elkhorn Round Shield Blood +10	8	-	-	-	D	-	-	-	129	-	-	-	-	129	51	-	-	-	1.5
+Elkhorn Round Shield Chaos +10	8	-	-	-	D	-	D	D	103	-	102	-	-	206	-	-	-	-	1.5
+Elkhorn Round Shield Crystal +10	8	-	-	-	D	-	D	-	118	105	-	-	-	223	-	-	-	-	1.5
+Elkhorn Round Shield Dark +10	8	-	-	-	D	-	D	D	103	-	-	-	102	206	-	-	-	-	1.5
+Elkhorn Round Shield Deep +10	8	-	-	-	-	-	-	-	109	-	-	-	109	218	-	-	-	-	1.5
+Elkhorn Round Shield Fire +10	8	-	-	-	-	-	-	-	109	-	109	-	-	218	-	-	-	-	1.5
+Elkhorn Round Shield Heavy +10	8	-	-	-	C	-	-	-	177	-	-	-	-	177	-	-	-	-	1.5
+Elkhorn Round Shield Hollow +10	8	-	-	-	D	-	-	-	159	-	-	-	-	159	-	-	-	-	1.5
+Elkhorn Round Shield Lightning +10	8	-	-	-	D	-	-	D	118	-	-	108	-	226	-	-	-	-	1.5
+Elkhorn Round Shield Poison +10	8	-	-	-	D	-	-	-	129	-	-	-	-	129	-	57	-	-	1.5
+Elkhorn Round Shield Raw +10	8	-	-	-	-	-	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Elkhorn Round Shield Refined +10	8	-	-	-	D	D	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Elkhorn Round Shield Sharp +10	8	-	-	-	D	-	-	-	148	-	-	-	-	148	-	-	-	-	1.5
+Elkhorn Round Shield Simple +10	8	-	-	-	D	-	D	-	103	93	-	-	-	197	-	-	-	-	1.5
+Estoc  +10	10	12	-	-	D	C	-	-	375	-	-	-	-	375	-	-	-	-	3.5
+Estoc Blessed +10	10	12	-	-	D	C	-	A	244	-	-	-	-	244	-	-	-	-	3.5
+Estoc Blood +10	10	12	-	-	D	C	-	-	290	-	-	-	-	290	52	-	-	-	3.5
+Estoc Chaos +10	10	12	-	-	D	C	B	B	187	-	173	-	-	361	-	-	-	-	3.5
+Estoc Crystal +10	10	12	-	-	D	C	A	-	204	146	-	-	-	350	-	-	-	-	3.5
+Estoc Dark +10	10	12	-	-	D	C	B	B	187	-	-	-	173	361	-	-	-	-	3.5
+Estoc Deep +10	10	12	-	-	-	-	-	-	183	-	-	-	183	366	-	-	-	-	3.5
+Estoc Fire +10	10	12	-	-	-	-	-	-	183	-	183	-	-	366	-	-	-	-	3.5
+Estoc Heavy +10	10	12	-	-	B	-	-	-	334	-	-	-	-	334	-	-	-	-	3.5
+Estoc Hollow +10	10	12	-	-	D	C	-	-	361	-	-	-	-	361	-	-	-	-	3.5
+Estoc Lightning +10	10	12	-	-	D	C	-	A	204	-	-	157	-	361	-	-	-	-	3.5
+Estoc Poison +10	10	12	-	-	D	C	-	-	290	-	-	-	-	290	-	58	-	-	3.5
+Estoc Raw +10	10	12	-	-	-	-	-	-	270	-	-	-	-	270	-	-	-	-	3.5
+Estoc Refined +10	10	12	-	-	C	C	-	-	377	-	-	-	-	377	-	-	-	-	3.5
+Estoc Sharp +10	10	12	-	-	E	A	-	-	386	-	-	-	-	386	-	-	-	-	3.5
+Estoc Simple +10	10	12	-	-	D	C	A	-	190	131	-	-	-	322	-	-	-	-	3.5
+Ethereal Oak Shield  +5	12	-	-	-	D	-	-	-	236	-	-	-	-	236	-	-	-	-	5.0
+Executioner's Greatsword  +10	19	13	-	-	B	D	-	-	495	-	-	-	-	495	-	-	-	-	9.0
+Exile Greatsword  +10	24	16	-	-	B	D	-	-	560	-	-	-	-	560	-	-	-	-	17.0
+Exile Greatsword Blessed +10	24	16	-	-	C	D	-	S	395	-	-	-	-	395	-	-	-	-	17.0
+Exile Greatsword Blood +10	24	16	-	-	B	D	-	-	434	-	-	-	-	434	74	-	-	-	17.0
+Exile Greatsword Chaos +10	24	16	-	-	B	D	A	A	300	-	275	-	-	576	-	-	-	-	17.0
+Exile Greatsword Crystal +10	24	16	-	-	C	D	A	-	325	226	-	-	-	551	-	-	-	-	17.0
+Exile Greatsword Dark +10	24	16	-	-	B	D	A	A	300	-	-	-	275	576	-	-	-	-	17.0
+Exile Greatsword Deep +10	24	16	-	-	-	-	-	-	264	-	-	-	264	529	-	-	-	-	17.0
+Exile Greatsword Fire +10	24	16	-	-	-	-	-	-	264	-	264	-	-	529	-	-	-	-	17.0
+Exile Greatsword Heavy +10	24	16	-	-	A	-	-	-	562	-	-	-	-	562	-	-	-	-	17.0
+Exile Greatsword Hollow +10	24	16	-	-	B	D	-	-	539	-	-	-	-	539	-	-	-	-	17.0
+Exile Greatsword Lightning +10	24	16	-	-	C	D	-	A	325	-	-	244	-	569	-	-	-	-	17.0
+Exile Greatsword Poison +10	24	16	-	-	B	D	-	-	434	-	-	-	-	434	-	98	-	-	17.0
+Exile Greatsword Raw +10	24	16	-	-	-	-	-	-	423	-	-	-	-	423	-	-	-	-	17.0
+Exile Greatsword Refined +10	24	16	-	-	B	B	-	-	576	-	-	-	-	576	-	-	-	-	17.0
+Exile Greatsword Sharp +10	24	16	-	-	C	C	-	-	544	-	-	-	-	544	-	-	-	-	17.0
+Exile Greatsword Simple +10	24	16	-	-	B	D	S	-	306	203	-	-	-	509	-	-	-	-	17.0
+Falchion  +10	9	13	-	-	D	C	-	-	405	-	-	-	-	405	-	-	-	-	4.0
+Falchion Blessed +10	9	13	-	-	D	C	-	A	280	-	-	-	-	280	-	-	-	-	4.0
+Falchion Blood +10	9	13	-	-	D	C	-	-	314	-	-	-	-	314	52	-	-	-	4.0
+Falchion Chaos +10	9	13	-	-	D	C	B	B	216	-	200	-	-	416	-	-	-	-	4.0
+Falchion Crystal +10	9	13	-	-	D	D	A	-	235	172	-	-	-	408	-	-	-	-	4.0
+Falchion Dark +10	9	13	-	-	D	C	B	B	216	-	-	-	200	416	-	-	-	-	4.0
+Falchion Deep +10	9	13	-	-	-	-	-	-	212	-	-	-	212	425	-	-	-	-	4.0
+Falchion Fire +10	9	13	-	-	-	-	-	-	212	-	212	-	-	425	-	-	-	-	4.0
+Falchion Heavy +10	9	13	-	-	B	-	-	-	376	-	-	-	-	376	-	-	-	-	4.0
+Falchion Hollow +10	9	13	-	-	D	C	-	-	390	-	-	-	-	390	-	-	-	-	4.0
+Falchion Lightning +10	9	13	-	-	D	D	-	A	235	-	-	183	-	419	-	-	-	-	4.0
+Falchion Poison +10	9	13	-	-	D	C	-	-	314	-	-	-	-	314	-	58	-	-	4.0
+Falchion Raw +10	9	13	-	-	-	-	-	-	338	-	-	-	-	338	-	-	-	-	4.0
+Falchion Refined +10	9	13	-	-	C	C	-	-	422	-	-	-	-	422	-	-	-	-	4.0
+Falchion Sharp +10	9	13	-	-	E	A	-	-	420	-	-	-	-	420	-	-	-	-	4.0
+Falchion Simple +10	9	13	-	-	D	C	A	-	219	154	-	-	-	373	-	-	-	-	4.0
+Farron Greatsword  +5	18	20	-	-	C	A	-	-	566	-	-	-	-	566	-	-	-	-	12.5
+Firelink Greatsword  +5	20	10	10	10	D	D	-	-	381	-	162	-	-	543	-	-	-	-	9.0
+Flamberge  +10	15	14	-	-	D	D	-	-	468	-	-	-	-	468	36	-	-	-	8.5
+Flamberge Blessed +10	15	14	-	-	D	D	-	B	315	-	-	-	-	315	36	-	-	-	8.5
+Flamberge Blood +10	15	14	-	-	D	D	-	-	363	-	-	-	-	363	71	-	-	-	8.5
+Flamberge Chaos +10	15	14	-	-	D	D	C	C	248	-	237	-	-	485	36	-	-	-	8.5
+Flamberge Crystal +10	15	14	-	-	D	D	C	-	281	224	-	-	-	506	36	-	-	-	8.5
+Flamberge Dark +10	15	14	-	-	D	D	C	C	248	-	-	-	237	485	36	-	-	-	8.5
+Flamberge Deep +10	15	14	-	-	-	-	-	-	227	-	-	-	227	455	36	-	-	-	8.5
+Flamberge Fire +10	15	14	-	-	-	-	-	-	227	-	227	-	-	455	36	-	-	-	8.5
+Flamberge Heavy +10	15	14	-	-	C	-	-	-	463	-	-	-	-	463	36	-	-	-	8.5
+Flamberge Hollow +10	15	14	-	-	D	D	-	-	449	-	-	-	-	449	36	-	-	-	8.5
+Flamberge Lightning +10	15	14	-	-	D	D	-	C	276	-	-	230	-	506	36	-	-	-	8.5
+Flamberge Poison +10	15	14	-	-	D	D	-	-	363	-	-	-	-	363	36	71	-	-	8.5
+Flamberge Raw +10	15	14	-	-	-	-	-	-	371	-	-	-	-	371	36	-	-	-	8.5
+Flamberge Refined +10	15	14	-	-	C	C	-	-	494	-	-	-	-	494	36	-	-	-	8.5
+Flamberge Sharp +10	15	14	-	-	E	B	-	-	499	-	-	-	-	499	36	-	-	-	8.5
+Flamberge Simple +10	15	14	-	-	D	D	B	-	256	200	-	-	-	456	36	-	-	-	8.5
+Follower Javelin  +10	12	12	-	-	B	D	-	-	390	-	-	-	-	390	-	-	-	-	4.0
+Follower Javelin Blessed +10	12	12	-	-	C	D	-	S	263	-	-	-	-	263	-	-	-	-	4.0
+Follower Javelin Blood +10	12	12	-	-	B	D	-	-	302	-	-	-	-	302	52	-	-	-	4.0
+Follower Javelin Chaos +10	12	12	-	-	B	D	A	A	201	-	184	-	-	385	-	-	-	-	4.0
+Follower Javelin Crystal +10	12	12	-	-	C	D	A	-	217	154	-	-	-	372	-	-	-	-	4.0
+Follower Javelin Dark +10	12	12	-	-	B	D	A	A	201	-	-	-	184	385	-	-	-	-	4.0
+Follower Javelin Deep +10	12	12	-	-	-	-	-	-	196	-	-	-	196	392	-	-	-	-	4.0
+Follower Javelin Fire +10	12	12	-	-	-	-	-	-	196	-	196	-	-	392	-	-	-	-	4.0
+Follower Javelin Heavy +10	12	12	-	-	A	-	-	-	387	-	-	-	-	387	-	-	-	-	4.0
+Follower Javelin Hollow +10	12	12	-	-	B	D	-	-	375	-	-	-	-	375	-	-	-	-	4.0
+Follower Javelin Lightning +10	12	12	-	-	C	D	-	A	217	-	-	165	-	383	-	-	-	-	4.0
+Follower Javelin Poison +10	12	12	-	-	B	D	-	-	302	-	-	-	-	302	-	58	-	-	4.0
+Follower Javelin Raw +10	12	12	-	-	-	-	-	-	301	-	-	-	-	301	-	-	-	-	4.0
+Follower Javelin Refined +10	12	12	-	-	B	C	-	-	404	-	-	-	-	404	-	-	-	-	4.0
+Follower Javelin Sharp +10	12	12	-	-	E	A	-	-	396	-	-	-	-	396	-	-	-	-	4.0
+Follower Javelin Simple +10	12	12	-	-	B	D	S	-	204	138	-	-	-	342	-	-	-	-	4.0
+Follower Sabre  +10	9	14	-	-	D	C	-	-	397	-	-	-	-	397	-	-	-	-	4.0
+Follower Sabre Blessed +10	9	14	-	-	D	C	-	S	268	-	-	-	-	268	-	-	-	-	4.0
+Follower Sabre Blood +10	9	14	-	-	D	C	-	-	308	-	-	-	-	308	52	-	-	-	4.0
+Follower Sabre Chaos +10	9	14	-	-	D	C	A	A	205	-	188	-	-	393	-	-	-	-	4.0
+Follower Sabre Crystal +10	9	14	-	-	D	D	A	-	222	157	-	-	-	379	-	-	-	-	4.0
+Follower Sabre Dark +10	9	14	-	-	D	C	A	A	205	-	-	-	188	393	-	-	-	-	4.0
+Follower Sabre Deep +10	9	14	-	-	-	-	-	-	190	-	-	-	190	381	-	-	-	-	4.0
+Follower Sabre Fire +10	9	14	-	-	-	-	-	-	190	-	190	-	-	381	-	-	-	-	4.0
+Follower Sabre Heavy +10	9	14	-	-	A	-	-	-	359	-	-	-	-	359	-	-	-	-	4.0
+Follower Sabre Hollow +10	9	14	-	-	D	C	-	-	382	-	-	-	-	382	-	-	-	-	4.0
+Follower Sabre Lightning +10	9	14	-	-	D	D	-	A	222	-	-	168	-	391	-	-	-	-	4.0
+Follower Sabre Poison +10	9	14	-	-	D	C	-	-	308	-	-	-	-	308	-	58	-	-	4.0
+Follower Sabre Raw +10	9	14	-	-	-	-	-	-	280	-	-	-	-	280	-	-	-	-	4.0
+Follower Sabre Refined +10	9	14	-	-	C	C	-	-	401	-	-	-	-	401	-	-	-	-	4.0
+Follower Sabre Sharp +10	9	14	-	-	E	A	-	-	394	-	-	-	-	394	-	-	-	-	4.0
+Follower Sabre Simple +10	9	14	-	-	D	C	S	-	208	141	-	-	-	349	-	-	-	-	4.0
+Follower Shield  +10	9	-	-	-	D	-	-	-	217	-	-	-	-	217	-	-	-	-	3.5
+Follower Shield Blessed +10	9	-	-	-	D	-	-	D	163	-	-	-	-	163	-	-	-	-	3.5
+Follower Shield Blood +10	9	-	-	-	D	-	-	-	168	-	-	-	-	168	51	-	-	-	3.5
+Follower Shield Chaos +10	9	-	-	-	D	-	D	D	131	-	129	-	-	260	-	-	-	-	3.5
+Follower Shield Crystal +10	9	-	-	-	D	-	D	-	148	128	-	-	-	277	-	-	-	-	3.5
+Follower Shield Dark +10	9	-	-	-	D	-	D	D	131	-	-	-	129	260	-	-	-	-	3.5
+Follower Shield Deep +10	9	-	-	-	-	-	-	-	136	-	-	-	136	273	-	-	-	-	3.5
+Follower Shield Fire +10	9	-	-	-	-	-	-	-	136	-	136	-	-	273	-	-	-	-	3.5
+Follower Shield Heavy +10	9	-	-	-	C	-	-	-	240	-	-	-	-	240	-	-	-	-	3.5
+Follower Shield Hollow +10	9	-	-	-	D	-	-	-	207	-	-	-	-	207	-	-	-	-	3.5
+Follower Shield Lightning +10	9	-	-	-	D	-	-	D	148	-	-	131	-	280	-	-	-	-	3.5
+Follower Shield Poison +10	9	-	-	-	D	-	-	-	168	-	-	-	-	168	-	57	-	-	3.5
+Follower Shield Raw +10	9	-	-	-	-	-	-	-	218	-	-	-	-	218	-	-	-	-	3.5
+Follower Shield Refined +10	9	-	-	-	D	D	-	-	232	-	-	-	-	232	-	-	-	-	3.5
+Follower Shield Sharp +10	9	-	-	-	C	-	-	-	224	-	-	-	-	224	-	-	-	-	3.5
+Follower Shield Simple +10	9	-	-	-	D	-	D	-	132	114	-	-	-	246	-	-	-	-	3.5
+Follower Torch  +10	14	-	10	10	C	D	D	D	294	-	142	-	-	436	-	-	-	-	6.0
+Four-Pronged Plow  +10	13	11	-	-	D	C	-	-	388	-	-	-	-	388	-	-	-	-	6.5
+Four-Pronged Plow Blessed +10	13	11	-	-	D	C	-	S	280	-	-	-	-	280	-	-	-	-	6.5
+Four-Pronged Plow Blood +10	13	11	-	-	D	C	-	-	301	-	-	-	-	301	52	-	-	-	6.5
+Four-Pronged Plow Chaos +10	13	11	-	-	D	C	A	A	214	-	196	-	-	410	-	-	-	-	6.5
+Four-Pronged Plow Crystal +10	13	11	-	-	D	C	A	-	232	163	-	-	-	395	-	-	-	-	6.5
+Four-Pronged Plow Dark +10	13	11	-	-	D	C	A	A	214	-	-	-	196	410	-	-	-	-	6.5
+Four-Pronged Plow Deep +10	13	11	-	-	-	-	-	-	203	-	-	-	203	407	-	-	-	-	6.5
+Four-Pronged Plow Fire +10	13	11	-	-	-	-	-	-	203	-	203	-	-	407	-	-	-	-	6.5
+Four-Pronged Plow Heavy +10	13	11	-	-	A	-	-	-	360	-	-	-	-	360	-	-	-	-	6.5
+Four-Pronged Plow Hollow +10	13	11	-	-	D	C	-	-	374	-	-	-	-	374	-	-	-	-	6.5
+Four-Pronged Plow Lightning +10	13	11	-	-	D	C	-	A	232	-	-	175	-	407	-	-	-	-	6.5
+Four-Pronged Plow Poison +10	13	11	-	-	D	C	-	-	301	-	-	-	-	301	-	58	-	-	6.5
+Four-Pronged Plow Raw +10	13	11	-	-	-	-	-	-	312	-	-	-	-	312	-	-	-	-	6.5
+Four-Pronged Plow Refined +10	13	11	-	-	C	C	-	-	400	-	-	-	-	400	-	-	-	-	6.5
+Four-Pronged Plow Sharp +10	13	11	-	-	D	A	-	-	392	-	-	-	-	392	-	-	-	-	6.5
+Four-Pronged Plow Simple +10	13	11	-	-	D	C	S	-	217	146	-	-	-	364	-	-	-	-	6.5
+Frayed Blade  +5	11	40	-	-	D	A	-	-	396	-	-	-	76	472	34	-	-	-	8.0
+Friede's Great Scythe  +5	12	16	12	11	E	A	A	E	405	84	-	-	-	489	-	-	45	-	13.0
+Fume Ultra Greatsword  +5	50	10	-	-	S	E	-	-	156	-	-	-	-	156	-	-	-	-	25.5
+Gael's Greatsword  +5	19	13	-	-	C	D	-	-	504	-	-	-	-	504	-	-	-	-	9.0
+Gargoyle Flame Hammer  +10	22	-	9	9	C	-	D	D	372	-	218	-	-	590	-	-	-	-	11.0
+Gargoyle Flame Spear  +10	15	18	9	9	D	D	D	D	283	-	181	-	-	465	-	-	-	-	9.5
+Ghru Rotshield  +10	5	-	-	-	D	-	-	-	188	-	-	-	-	188	-	36	-	-	1.5
+Ghru Rotshield Blessed +10	5	-	-	-	D	-	-	D	141	-	-	-	-	141	-	36	-	-	1.5
+Ghru Rotshield Blood +10	5	-	-	-	D	-	-	-	146	-	-	-	-	146	51	44	-	-	1.5
+Ghru Rotshield Chaos +10	5	-	-	-	D	-	D	D	115	-	114	-	-	229	-	36	-	-	1.5
+Ghru Rotshield Crystal +10	5	-	-	-	D	-	D	-	131	118	-	-	-	249	-	36	-	-	1.5
+Ghru Rotshield Dark +10	5	-	-	-	D	-	D	D	115	-	-	-	114	229	-	36	-	-	1.5
+Ghru Rotshield Deep +10	5	-	-	-	-	-	-	-	125	-	-	-	125	251	-	36	-	-	1.5
+Ghru Rotshield Fire +10	5	-	-	-	-	-	-	-	125	-	125	-	-	251	-	36	-	-	1.5
+Ghru Rotshield Heavy +10	5	-	-	-	C	-	-	-	200	-	-	-	-	200	-	36	-	-	1.5
+Ghru Rotshield Hollow +10	5	-	-	-	D	-	-	-	179	-	-	-	-	179	-	36	-	-	1.5
+Ghru Rotshield Lightning +10	5	-	-	-	D	-	-	D	131	-	-	120	-	252	-	36	-	-	1.5
+Ghru Rotshield Poison +10	5	-	-	-	D	-	-	-	146	-	-	-	-	146	-	57	-	-	1.5
+Ghru Rotshield Raw +10	5	-	-	-	-	-	-	-	202	-	-	-	-	202	-	36	-	-	1.5
+Ghru Rotshield Refined +10	5	-	-	-	D	D	-	-	203	-	-	-	-	203	-	36	-	-	1.5
+Ghru Rotshield Sharp +10	5	-	-	-	D	-	-	-	191	-	-	-	-	191	-	36	-	-	1.5
+Ghru Rotshield Simple +10	5	-	-	-	D	-	D	-	115	104	-	-	-	220	-	36	-	-	1.5
+Giant Door Shield  +10	45	-	-	-	B	-	-	-	128	-	-	-	-	128	-	-	-	-	21.5
+Giant Door Shield Blessed +10	45	-	-	-	C	-	-	A	88	-	-	-	-	88	-	-	-	-	21.5
+Giant Door Shield Blood +10	45	-	-	-	B	-	-	-	99	-	-	-	-	99	61	-	-	-	21.5
+Giant Door Shield Chaos +10	45	-	-	-	B	-	C	C	75	-	189	-	-	264	-	-	-	-	21.5
+Giant Door Shield Crystal +10	45	-	-	-	C	-	B	-	88	167	-	-	-	256	-	-	-	-	21.5
+Giant Door Shield Dark +10	45	-	-	-	B	-	C	C	75	-	-	-	189	264	-	-	-	-	21.5
+Giant Door Shield Deep +10	45	-	-	-	-	-	-	-	120	-	-	-	201	322	-	-	-	-	21.5
+Giant Door Shield Fire +10	45	-	-	-	-	-	-	-	120	-	201	-	-	322	-	-	-	-	21.5
+Giant Door Shield Heavy +10	45	-	-	-	A	-	-	-	118	-	-	-	-	118	-	-	-	-	21.5
+Giant Door Shield Hollow +10	45	-	-	-	B	-	-	-	121	-	-	-	-	121	-	-	-	-	21.5
+Giant Door Shield Lightning +10	45	-	-	-	C	-	-	B	88	-	-	177	-	266	-	-	-	-	21.5
+Giant Door Shield Poison +10	45	-	-	-	B	-	-	-	99	-	-	-	-	99	-	71	-	-	21.5
+Giant Door Shield Raw +10	45	-	-	-	-	-	-	-	201	-	-	-	-	201	-	-	-	-	21.5
+Giant Door Shield Refined +10	45	-	-	-	C	C	-	-	115	-	-	-	-	115	-	-	-	-	21.5
+Giant Door Shield Sharp +10	45	-	-	-	D	A	-	-	118	-	-	-	-	118	-	-	-	-	21.5
+Giant Door Shield Simple +10	45	-	-	-	B	-	A	-	75	149	-	-	-	225	-	-	-	-	21.5
+Glaive  +10	17	11	-	-	C	E	-	-	447	-	-	-	-	447	-	-	-	-	11.0
+Glaive Blessed +10	17	11	-	-	D	E	-	B	307	-	-	-	-	307	-	-	-	-	11.0
+Glaive Blood +10	17	11	-	-	C	E	-	-	347	-	-	-	-	347	61	-	-	-	11.0
+Glaive Chaos +10	17	11	-	-	C	E	C	C	239	-	225	-	-	465	-	-	-	-	11.0
+Glaive Crystal +10	17	11	-	-	D	E	B	-	264	202	-	-	-	466	-	-	-	-	11.0
+Glaive Dark +10	17	11	-	-	C	E	C	C	239	-	-	-	225	465	-	-	-	-	11.0
+Glaive Deep +10	17	11	-	-	-	-	-	-	223	-	-	-	223	447	-	-	-	-	11.0
+Glaive Fire +10	17	11	-	-	-	-	-	-	223	-	223	-	-	447	-	-	-	-	11.0
+Glaive Heavy +10	17	11	-	-	B	-	-	-	454	-	-	-	-	454	-	-	-	-	11.0
+Glaive Hollow +10	17	11	-	-	C	E	-	-	429	-	-	-	-	429	-	-	-	-	11.0
+Glaive Lightning +10	17	11	-	-	D	E	-	B	264	-	-	213	-	477	-	-	-	-	11.0
+Glaive Poison +10	17	11	-	-	C	E	-	-	347	-	-	-	-	347	-	71	-	-	11.0
+Glaive Raw +10	17	11	-	-	-	-	-	-	366	-	-	-	-	366	-	-	-	-	11.0
+Glaive Refined +10	17	11	-	-	C	C	-	-	483	-	-	-	-	483	-	-	-	-	11.0
+Glaive Sharp +10	17	11	-	-	D	B	-	-	475	-	-	-	-	475	-	-	-	-	11.0
+Glaive Simple +10	17	11	-	-	C	E	B	-	242	181	-	-	-	423	-	-	-	-	11.0
+Golden Falcon Shield  +10	10	-	-	-	D	-	-	-	180	-	-	-	-	180	-	-	-	-	2.5
+Golden Falcon Shield Blessed +10	10	-	-	-	D	-	-	D	136	-	-	-	-	136	-	-	-	-	2.5
+Golden Falcon Shield Blood +10	10	-	-	-	D	-	-	-	139	-	-	-	-	139	51	-	-	-	2.5
+Golden Falcon Shield Chaos +10	10	-	-	-	D	-	D	D	110	-	110	-	-	220	-	-	-	-	2.5
+Golden Falcon Shield Crystal +10	10	-	-	-	D	-	D	-	126	112	-	-	-	239	-	-	-	-	2.5
+Golden Falcon Shield Dark +10	10	-	-	-	D	-	D	D	110	-	-	-	110	220	-	-	-	-	2.5
+Golden Falcon Shield Deep +10	10	-	-	-	-	-	-	-	118	-	-	-	118	236	-	-	-	-	2.5
+Golden Falcon Shield Fire +10	10	-	-	-	-	-	-	-	118	-	118	-	-	236	-	-	-	-	2.5
+Golden Falcon Shield Heavy +10	10	-	-	-	C	-	-	-	192	-	-	-	-	192	-	-	-	-	2.5
+Golden Falcon Shield Hollow +10	10	-	-	-	D	-	-	-	172	-	-	-	-	172	-	-	-	-	2.5
+Golden Falcon Shield Lightning +10	10	-	-	-	D	-	-	D	126	-	-	115	-	241	-	-	-	-	2.5
+Golden Falcon Shield Poison +10	10	-	-	-	D	-	-	-	139	-	-	-	-	139	-	57	-	-	2.5
+Golden Falcon Shield Raw +10	10	-	-	-	-	-	-	-	192	-	-	-	-	192	-	-	-	-	2.5
+Golden Falcon Shield Refined +10	10	-	-	-	D	D	-	-	192	-	-	-	-	192	-	-	-	-	2.5
+Golden Falcon Shield Sharp +10	10	-	-	-	D	-	-	-	160	-	-	-	-	160	-	-	-	-	2.5
+Golden Falcon Shield Simple +10	10	-	-	-	D	-	D	-	111	100	-	-	-	211	-	-	-	-	2.5
+Golden Ritual Spear  +5	10	10	18	14	E	C	-	A	197	134	-	-	-	331	-	-	-	60	3.0
+Golden Wing Crest Shield  +5	14	-	-	-	D	-	-	-	235	-	-	-	-	235	-	-	-	-	5.5
+Gotthard Twinswords  +10	12	18	-	-	C	C	-	-	378	-	-	-	-	378	-	-	-	-	6.5
+Gotthard Twinswords Blessed +10	12	18	-	-	C	D	-	S	268	-	-	-	-	268	-	-	-	-	6.5
+Gotthard Twinswords Blood +10	12	18	-	-	C	C	-	-	293	-	-	-	-	293	52	-	-	-	6.5
+Gotthard Twinswords Chaos +10	12	18	-	-	C	C	A	A	204	-	187	-	-	391	-	-	-	-	6.5
+Gotthard Twinswords Crystal +10	12	18	-	-	D	D	A	-	221	154	-	-	-	375	-	-	-	-	6.5
+Gotthard Twinswords Dark +10	12	18	-	-	C	C	A	A	204	-	-	-	187	391	-	-	-	-	6.5
+Gotthard Twinswords Deep +10	12	18	-	-	-	-	-	-	188	-	-	-	188	377	-	-	-	-	6.5
+Gotthard Twinswords Fire +10	12	18	-	-	-	-	-	-	188	-	188	-	-	377	-	-	-	-	6.5
+Gotthard Twinswords Heavy +10	12	18	-	-	A	-	-	-	347	-	-	-	-	347	-	-	-	-	6.5
+Gotthard Twinswords Hollow +10	12	18	-	-	C	C	-	-	364	-	-	-	-	364	-	-	-	-	6.5
+Gotthard Twinswords Lightning +10	12	18	-	-	D	D	-	A	221	-	-	166	-	387	-	-	-	-	6.5
+Gotthard Twinswords Poison +10	12	18	-	-	C	C	-	-	293	-	-	-	-	293	-	58	-	-	6.5
+Gotthard Twinswords Raw +10	12	18	-	-	-	-	-	-	283	-	-	-	-	283	-	-	-	-	6.5
+Gotthard Twinswords Refined +10	12	18	-	-	B	B	-	-	389	-	-	-	-	389	-	-	-	-	6.5
+Gotthard Twinswords Sharp +10	12	18	-	-	D	A	-	-	387	-	-	-	-	387	-	-	-	-	6.5
+Gotthard Twinswords Simple +10	12	18	-	-	C	C	S	-	208	138	-	-	-	346	-	-	-	-	6.5
+Grass Crest Shield  +5	10	-	-	-	D	-	-	-	210	-	-	-	-	210	-	-	-	-	4.5
+Great Club  +10	28	-	-	-	B	-	-	-	517	-	-	-	-	517	-	-	-	-	12.0
+Great Club Blessed +10	28	-	-	-	C	-	-	A	351	-	-	-	-	351	-	-	-	-	12.0
+Great Club Blood +10	28	-	-	-	B	-	-	-	401	-	-	-	-	401	74	-	-	-	12.0
+Great Club Chaos +10	28	-	-	-	B	-	B	B	271	-	252	-	-	524	-	-	-	-	12.0
+Great Club Crystal +10	28	-	-	-	C	-	A	-	296	219	-	-	-	515	-	-	-	-	12.0
+Great Club Dark +10	28	-	-	-	B	-	B	B	271	-	-	-	252	524	-	-	-	-	12.0
+Great Club Deep +10	28	-	-	-	-	-	-	-	264	-	-	-	264	529	-	-	-	-	12.0
+Great Club Fire +10	28	-	-	-	-	-	-	-	264	-	264	-	-	529	-	-	-	-	12.0
+Great Club Heavy +10	28	-	-	-	A	-	-	-	551	-	-	-	-	551	-	-	-	-	12.0
+Great Club Hollow +10	28	-	-	-	B	-	-	-	498	-	-	-	-	498	-	-	-	-	12.0
+Great Club Lightning +10	28	-	-	-	C	-	-	A	296	-	-	232	-	529	-	-	-	-	12.0
+Great Club Poison +10	28	-	-	-	B	-	-	-	401	-	-	-	-	401	-	97	-	-	12.0
+Great Club Raw +10	28	-	-	-	-	-	-	-	449	-	-	-	-	449	-	-	-	-	12.0
+Great Club Refined +10	28	-	-	-	C	C	-	-	559	-	-	-	-	559	-	-	-	-	12.0
+Great Club Sharp +10	28	-	-	-	E	A	-	-	541	-	-	-	-	541	-	-	-	-	12.0
+Great Club Simple +10	28	-	-	-	B	-	A	-	275	196	-	-	-	471	-	-	-	-	12.0
+Great Corvian Scythe  +10	16	18	-	-	C	B	-	-	409	-	-	-	-	409	38	-	-	-	9.0
+Great Corvian Scythe Blessed +10	16	18	-	-	D	C	-	S	294	-	-	-	-	294	38	-	-	-	9.0
+Great Corvian Scythe Blood +10	16	18	-	-	C	B	-	-	317	-	-	-	-	317	60	-	-	-	9.0
+Great Corvian Scythe Chaos +10	16	18	-	-	C	B	A	A	221	-	198	-	-	420	38	-	-	-	9.0
+Great Corvian Scythe Crystal +10	16	18	-	-	D	C	S	-	236	155	-	-	-	391	38	-	-	-	9.0
+Great Corvian Scythe Dark +10	16	18	-	-	C	B	A	A	221	-	-	-	198	420	38	-	-	-	9.0
+Great Corvian Scythe Deep +10	16	18	-	-	-	-	-	-	207	-	-	-	207	414	38	-	-	-	9.0
+Great Corvian Scythe Fire +10	16	18	-	-	-	-	-	-	207	-	207	-	-	414	38	-	-	-	9.0
+Great Corvian Scythe Heavy +10	16	18	-	-	A	-	-	-	343	-	-	-	-	343	38	-	-	-	9.0
+Great Corvian Scythe Hollow +10	16	18	-	-	C	B	-	-	395	-	-	-	-	395	38	-	-	-	9.0
+Great Corvian Scythe Lightning +10	16	18	-	-	D	C	-	S	236	-	-	169	-	406	38	-	-	-	9.0
+Great Corvian Scythe Poison +10	16	18	-	-	C	B	-	-	317	-	-	-	-	317	39	58	-	-	9.0
+Great Corvian Scythe Raw +10	16	18	-	-	-	-	-	-	317	-	-	-	-	317	38	-	-	-	9.0
+Great Corvian Scythe Refined +10	16	18	-	-	B	B	-	-	420	-	-	-	-	420	38	-	-	-	9.0
+Great Corvian Scythe Sharp +10	16	18	-	-	D	S	-	-	422	-	-	-	-	422	38	-	-	-	9.0
+Great Corvian Scythe Simple +10	16	18	-	-	C	B	S	-	225	139	-	-	-	365	38	-	-	-	9.0
+Great Mace  +10	32	-	-	-	C	-	-	-	564	-	-	-	-	564	-	-	-	-	18.0
+Great Mace Blessed +10	32	-	-	-	C	-	-	B	370	-	-	-	-	370	-	-	-	-	18.0
+Great Mace Blood +10	32	-	-	-	C	-	-	-	437	-	-	-	-	437	74	-	-	-	18.0
+Great Mace Chaos +10	32	-	-	-	C	-	C	C	289	-	275	-	-	565	-	-	-	-	18.0
+Great Mace Crystal +10	32	-	-	-	C	-	B	-	321	252	-	-	-	573	-	-	-	-	18.0
+Great Mace Dark +10	32	-	-	-	C	-	C	C	289	-	-	-	275	565	-	-	-	-	18.0
+Great Mace Deep +10	32	-	-	-	-	-	-	-	296	-	-	-	296	592	-	-	-	-	18.0
+Great Mace Fire +10	32	-	-	-	-	-	-	-	296	-	296	-	-	592	-	-	-	-	18.0
+Great Mace Heavy +10	32	-	-	-	B	-	-	-	573	-	-	-	-	573	-	-	-	-	18.0
+Great Mace Hollow +10	32	-	-	-	C	-	-	-	541	-	-	-	-	541	-	-	-	-	18.0
+Great Mace Lightning +10	32	-	-	-	C	-	-	B	330	-	-	272	-	602	-	-	-	-	18.0
+Great Mace Poison +10	32	-	-	-	C	-	-	-	437	-	-	-	-	437	-	97	-	-	18.0
+Great Mace Raw +10	32	-	-	-	-	-	-	-	494	-	-	-	-	494	-	-	-	-	18.0
+Great Mace Refined +10	32	-	-	-	D	D	-	-	557	-	-	-	-	557	-	-	-	-	18.0
+Great Mace Sharp +10	32	-	-	-	E	B	-	-	580	-	-	-	-	580	-	-	-	-	18.0
+Great Mace Simple +10	32	-	-	-	C	-	B	-	293	225	-	-	-	518	-	-	-	-	18.0
+Great Machete  +10	24	10	-	-	C	D	-	-	544	-	-	-	-	544	-	-	-	-	14.0
+Great Machete Blessed +10	24	10	-	-	C	E	-	A	357	-	-	-	-	357	-	-	-	-	14.0
+Great Machete Blood +10	24	10	-	-	C	D	-	-	421	-	-	-	-	421	74	-	-	-	14.0
+Great Machete Chaos +10	24	10	-	-	C	D	C	C	277	-	260	-	-	538	-	-	-	-	14.0
+Great Machete Crystal +10	24	10	-	-	D	E	B	-	305	230	-	-	-	535	-	-	-	-	14.0
+Great Machete Dark +10	24	10	-	-	C	D	C	C	277	-	-	-	260	538	-	-	-	-	14.0
+Great Machete Deep +10	24	10	-	-	-	-	-	-	271	-	-	-	271	543	-	-	-	-	14.0
+Great Machete Fire +10	24	10	-	-	-	-	-	-	271	-	271	-	-	543	-	-	-	-	14.0
+Great Machete Heavy +10	24	10	-	-	A	-	-	-	555	-	-	-	-	555	-	-	-	-	14.0
+Great Machete Hollow +10	24	10	-	-	C	D	-	-	523	-	-	-	-	523	-	-	-	-	14.0
+Great Machete Lightning +10	24	10	-	-	D	E	-	B	305	-	-	244	-	549	-	-	-	-	14.0
+Great Machete Poison +10	24	10	-	-	C	D	-	-	421	-	-	-	-	421	-	97	-	-	14.0
+Great Machete Raw +10	24	10	-	-	-	-	-	-	439	-	-	-	-	439	-	-	-	-	14.0
+Great Machete Refined +10	24	10	-	-	C	C	-	-	568	-	-	-	-	568	-	-	-	-	14.0
+Great Machete Sharp +10	24	10	-	-	D	B	-	-	577	-	-	-	-	577	-	-	-	-	14.0
+Great Machete Simple +10	24	10	-	-	C	D	A	-	281	206	-	-	-	487	-	-	-	-	14.0
+Great Scythe  +10	14	14	-	-	D	B	-	-	386	-	-	-	-	386	30	-	-	-	7.0
+Great Scythe Blessed +10	14	14	-	-	D	C	-	S	268	-	-	-	-	268	30	-	-	-	7.0
+Great Scythe Blood +10	14	14	-	-	D	B	-	-	299	-	-	-	-	299	60	-	-	-	7.0
+Great Scythe Chaos +10	14	14	-	-	D	B	A	A	205	-	188	-	-	393	30	-	-	-	7.0
+Great Scythe Crystal +10	14	14	-	-	D	C	A	-	222	157	-	-	-	379	30	-	-	-	7.0
+Great Scythe Dark +10	14	14	-	-	D	B	A	A	205	-	-	-	188	393	30	-	-	-	7.0
+Great Scythe Deep +10	14	14	-	-	-	-	-	-	203	-	-	-	203	407	30	-	-	-	7.0
+Great Scythe Fire +10	14	14	-	-	-	-	-	-	203	-	203	-	-	407	30	-	-	-	7.0
+Great Scythe Heavy +10	14	14	-	-	A	-	-	-	345	-	-	-	-	345	30	-	-	-	7.0
+Great Scythe Hollow +10	14	14	-	-	D	B	-	-	372	-	-	-	-	372	30	-	-	-	7.0
+Great Scythe Lightning +10	14	14	-	-	D	C	-	A	222	-	-	168	-	391	30	-	-	-	7.0
+Great Scythe Poison +10	14	14	-	-	D	B	-	-	299	-	-	-	-	299	30	58	-	-	7.0
+Great Scythe Raw +10	14	14	-	-	-	-	-	-	299	-	-	-	-	299	30	-	-	-	7.0
+Great Scythe Refined +10	14	14	-	-	C	C	-	-	400	-	-	-	-	400	30	-	-	-	7.0
+Great Scythe Sharp +10	14	14	-	-	E	A	-	-	398	-	-	-	-	398	30	-	-	-	7.0
+Great Scythe Simple +10	14	14	-	-	D	B	S	-	208	141	-	-	-	349	30	-	-	-	7.0
+Great Wooden Hammer  +10	18	-	-	-	B	-	-	-	410	-	-	-	-	410	-	-	-	-	6.0
+Great Wooden Hammer Blessed +10	18	-	-	-	C	-	-	A	298	-	-	-	-	298	-	-	-	-	6.0
+Great Wooden Hammer Blood +10	18	-	-	-	B	-	-	-	317	-	-	-	-	317	74	-	-	-	6.0
+Great Wooden Hammer Chaos +10	18	-	-	-	B	-	C	C	231	-	216	-	-	448	-	-	-	-	6.0
+Great Wooden Hammer Crystal +10	18	-	-	-	C	-	B	-	254	191	-	-	-	445	-	-	-	-	6.0
+Great Wooden Hammer Dark +10	18	-	-	-	B	-	C	C	231	-	-	-	216	448	-	-	-	-	6.0
+Great Wooden Hammer Deep +10	18	-	-	-	-	-	-	-	240	-	-	-	240	481	-	-	-	-	6.0
+Great Wooden Hammer Fire +10	18	-	-	-	-	-	-	-	240	-	240	-	-	481	-	-	-	-	6.0
+Great Wooden Hammer Heavy +10	18	-	-	-	A	-	-	-	442	-	-	-	-	442	-	-	-	-	6.0
+Great Wooden Hammer Hollow +10	18	-	-	-	B	-	-	-	394	-	-	-	-	394	-	-	-	-	6.0
+Great Wooden Hammer Lightning +10	18	-	-	-	C	-	-	B	254	-	-	202	-	456	-	-	-	-	6.0
+Great Wooden Hammer Poison +10	18	-	-	-	B	-	-	-	317	-	-	-	-	317	-	97	-	-	6.0
+Great Wooden Hammer Raw +10	18	-	-	-	-	-	-	-	390	-	-	-	-	390	-	-	-	-	6.0
+Great Wooden Hammer Refined +10	18	-	-	-	C	C	-	-	425	-	-	-	-	425	-	-	-	-	6.0
+Great Wooden Hammer Sharp +10	18	-	-	-	E	A	-	-	438	-	-	-	-	438	-	-	-	-	6.0
+Great Wooden Hammer Simple +10	18	-	-	-	B	-	A	-	234	171	-	-	-	405	-	-	-	-	6.0
+Greataxe  +10	32	8	-	-	C	E	-	-	612	-	-	-	-	612	-	-	-	-	16.0
+Greataxe Blessed +10	32	8	-	-	C	E	-	A	399	-	-	-	-	399	-	-	-	-	16.0
+Greataxe Blood +10	32	8	-	-	C	E	-	-	474	-	-	-	-	474	74	-	-	-	16.0
+Greataxe Chaos +10	32	8	-	-	C	E	C	C	309	-	290	-	-	599	-	-	-	-	16.0
+Greataxe Crystal +10	32	8	-	-	D	E	B	-	340	257	-	-	-	597	-	-	-	-	16.0
+Greataxe Dark +10	32	8	-	-	C	E	C	C	309	-	-	-	290	599	-	-	-	-	16.0
+Greataxe Deep +10	32	8	-	-	-	-	-	-	283	-	-	-	283	566	-	-	-	-	16.0
+Greataxe Fire +10	32	8	-	-	-	-	-	-	283	-	283	-	-	566	-	-	-	-	16.0
+Greataxe Heavy +10	32	8	-	-	B	-	-	-	599	-	-	-	-	599	-	-	-	-	16.0
+Greataxe Hollow +10	32	8	-	-	C	E	-	-	589	-	-	-	-	589	-	-	-	-	16.0
+Greataxe Lightning +10	32	8	-	-	D	E	-	B	340	-	-	272	-	612	-	-	-	-	16.0
+Greataxe Poison +10	32	8	-	-	C	E	-	-	474	-	-	-	-	474	-	97	-	-	16.0
+Greataxe Raw +10	32	8	-	-	-	-	-	-	501	-	-	-	-	501	-	-	-	-	16.0
+Greataxe Refined +10	32	8	-	-	C	C	-	-	619	-	-	-	-	619	-	-	-	-	16.0
+Greataxe Sharp +10	32	8	-	-	E	B	-	-	621	-	-	-	-	621	-	-	-	-	16.0
+Greataxe Simple +10	32	8	-	-	C	E	A	-	313	229	-	-	-	543	-	-	-	-	16.0
+Greatlance  +10	21	16	-	-	C	D	-	-	463	-	-	-	-	463	-	-	-	-	10.5
+Greatlance Blessed +10	21	16	-	-	C	D	-	A	310	-	-	-	-	310	-	-	-	-	10.5
+Greatlance Blood +10	21	16	-	-	C	D	-	-	359	-	-	-	-	359	52	-	-	-	10.5
+Greatlance Chaos +10	21	16	-	-	C	D	B	B	237	-	219	-	-	456	-	-	-	-	10.5
+Greatlance Crystal +10	21	16	-	-	D	D	A	-	258	184	-	-	-	442	-	-	-	-	10.5
+Greatlance Dark +10	21	16	-	-	C	D	B	B	237	-	-	-	219	456	-	-	-	-	10.5
+Greatlance Deep +10	21	16	-	-	-	-	-	-	220	-	-	-	220	440	-	-	-	-	10.5
+Greatlance Fire +10	21	16	-	-	-	-	-	-	220	-	220	-	-	440	-	-	-	-	10.5
+Greatlance Heavy +10	21	16	-	-	A	-	-	-	452	-	-	-	-	452	-	-	-	-	10.5
+Greatlance Hollow +10	21	16	-	-	C	D	-	-	446	-	-	-	-	446	-	-	-	-	10.5
+Greatlance Lightning +10	21	16	-	-	D	D	-	A	266	-	-	204	-	470	-	-	-	-	10.5
+Greatlance Poison +10	21	16	-	-	C	D	-	-	359	-	-	-	-	359	-	58	-	-	10.5
+Greatlance Raw +10	21	16	-	-	-	-	-	-	361	-	-	-	-	361	-	-	-	-	10.5
+Greatlance Refined +10	21	16	-	-	C	C	-	-	470	-	-	-	-	470	-	-	-	-	10.5
+Greatlance Sharp +10	21	16	-	-	D	B	-	-	473	-	-	-	-	473	-	-	-	-	10.5
+Greatlance Simple +10	21	16	-	-	C	D	A	-	241	165	-	-	-	406	-	-	-	-	10.5
+Greatshield of Glory  +5	40	-	-	-	D	-	-	-	322	-	-	-	-	322	-	-	-	-	18.5
+Greatsword  +10	28	10	-	-	C	D	-	-	585	-	-	-	-	585	-	-	-	-	20.0
+Greatsword Blessed +10	28	10	-	-	C	D	-	S	401	-	-	-	-	401	-	-	-	-	20.0
+Greatsword Blood +10	28	10	-	-	C	D	-	-	453	-	-	-	-	453	74	-	-	-	20.0
+Greatsword Chaos +10	28	10	-	-	C	D	A	A	306	-	281	-	-	588	-	-	-	-	20.0
+Greatsword Crystal +10	28	10	-	-	C	D	A	-	332	235	-	-	-	567	-	-	-	-	20.0
+Greatsword Dark +10	28	10	-	-	C	D	A	A	306	-	-	-	281	588	-	-	-	-	20.0
+Greatsword Deep +10	28	10	-	-	-	-	-	-	284	-	-	-	284	569	-	-	-	-	20.0
+Greatsword Fire +10	28	10	-	-	-	-	-	-	284	-	284	-	-	569	-	-	-	-	20.0
+Greatsword Heavy +10	28	10	-	-	A	-	-	-	580	-	-	-	-	580	-	-	-	-	20.0
+Greatsword Hollow +10	28	10	-	-	C	D	-	-	563	-	-	-	-	563	-	-	-	-	20.0
+Greatsword Lightning +10	28	10	-	-	C	D	-	A	332	-	-	252	-	584	-	-	-	-	20.0
+Greatsword Poison +10	28	10	-	-	C	D	-	-	453	-	-	-	-	453	-	98	-	-	20.0
+Greatsword Raw +10	28	10	-	-	-	-	-	-	478	-	-	-	-	478	-	-	-	-	20.0
+Greatsword Refined +10	28	10	-	-	C	C	-	-	590	-	-	-	-	590	-	-	-	-	20.0
+Greatsword Sharp +10	28	10	-	-	E	A	-	-	579	-	-	-	-	579	-	-	-	-	20.0
+Greatsword Simple +10	28	10	-	-	C	D	S	-	311	210	-	-	-	522	-	-	-	-	20.0
+Greatsword of Judgment  +5	17	15	12	-	D	D	C	-	349	94	-	-	-	443	-	-	-	-	9.0
+Gundyr's Halberd  +5	30	15	-	-	B	E	-	-	477	-	-	-	-	477	-	-	-	-	13.0
+Halberd  +10	16	12	-	-	D	C	-	-	460	-	-	-	-	460	-	-	-	-	8.0
+Halberd Blessed +10	16	12	-	-	D	C	-	S	312	-	-	-	-	312	-	-	-	-	8.0
+Halberd Blood +10	16	12	-	-	D	C	-	-	356	-	-	-	-	356	62	-	-	-	8.0
+Halberd Chaos +10	16	12	-	-	D	C	A	A	238	-	219	-	-	458	-	-	-	-	8.0
+Halberd Crystal +10	16	12	-	-	D	C	A	-	258	183	-	-	-	442	-	-	-	-	8.0
+Halberd Dark +10	16	12	-	-	D	C	A	A	238	-	-	-	219	458	-	-	-	-	8.0
+Halberd Deep +10	16	12	-	-	-	-	-	-	222	-	-	-	222	444	-	-	-	-	8.0
+Halberd Fire +10	16	12	-	-	-	-	-	-	222	-	222	-	-	444	-	-	-	-	8.0
+Halberd Heavy +10	16	12	-	-	A	-	-	-	416	-	-	-	-	416	-	-	-	-	8.0
+Halberd Hollow +10	16	12	-	-	D	C	-	-	442	-	-	-	-	442	-	-	-	-	8.0
+Halberd Lightning +10	16	12	-	-	D	C	-	A	258	-	-	196	-	455	-	-	-	-	8.0
+Halberd Poison +10	16	12	-	-	D	C	-	-	356	-	-	-	-	356	-	72	-	-	8.0
+Halberd Raw +10	16	12	-	-	-	-	-	-	364	-	-	-	-	364	-	-	-	-	8.0
+Halberd Refined +10	16	12	-	-	C	C	-	-	477	-	-	-	-	477	-	-	-	-	8.0
+Halberd Sharp +10	16	12	-	-	E	A	-	-	466	-	-	-	-	466	-	-	-	-	8.0
+Halberd Simple +10	16	12	-	-	D	C	S	-	242	164	-	-	-	407	-	-	-	-	8.0
+Hand Axe  +10	9	8	-	-	C	D	-	-	404	-	-	-	-	404	-	-	-	-	2.5
+Hand Axe Blessed +10	9	8	-	-	C	D	-	S	278	-	-	-	-	278	-	-	-	-	2.5
+Hand Axe Blood +10	9	8	-	-	C	D	-	-	313	-	-	-	-	313	51	-	-	-	2.5
+Hand Axe Chaos +10	9	8	-	-	C	D	A	A	213	-	195	-	-	408	-	-	-	-	2.5
+Hand Axe Crystal +10	9	8	-	-	C	D	A	-	230	163	-	-	-	394	-	-	-	-	2.5
+Hand Axe Dark +10	9	8	-	-	C	D	A	A	213	-	-	-	195	408	-	-	-	-	2.5
+Hand Axe Deep +10	9	8	-	-	-	-	-	-	207	-	-	-	207	414	-	-	-	-	2.5
+Hand Axe Fire +10	9	8	-	-	-	-	-	-	207	-	207	-	-	414	-	-	-	-	2.5
+Hand Axe Heavy +10	9	8	-	-	A	-	-	-	386	-	-	-	-	386	-	-	-	-	2.5
+Hand Axe Hollow +10	9	8	-	-	C	D	-	-	389	-	-	-	-	389	-	-	-	-	2.5
+Hand Axe Lightning +10	9	8	-	-	C	D	-	A	230	-	-	175	-	406	-	-	-	-	2.5
+Hand Axe Poison +10	9	8	-	-	C	D	-	-	313	-	-	-	-	313	-	58	-	-	2.5
+Hand Axe Raw +10	9	8	-	-	-	-	-	-	304	-	-	-	-	304	-	-	-	-	2.5
+Hand Axe Refined +10	9	8	-	-	C	C	-	-	410	-	-	-	-	410	-	-	-	-	2.5
+Hand Axe Sharp +10	9	8	-	-	D	A	-	-	398	-	-	-	-	398	-	-	-	-	2.5
+Hand Axe Simple +10	9	8	-	-	C	D	S	-	216	146	-	-	-	363	-	-	-	-	2.5
+Handmaid's Dagger  +10	4	8	-	-	E	D	-	-	225	-	-	-	-	225	-	-	-	-	0.5
+Harald Curved Greatsword  +10	22	18	-	-	C	C	-	-	529	-	-	-	-	529	-	-	-	-	14.0
+Harald Curved Greatsword Blessed +10	22	18	-	-	D	C	-	S	389	-	-	-	-	389	-	-	-	-	14.0
+Harald Curved Greatsword Blood +10	22	18	-	-	C	C	-	-	410	-	-	-	-	410	62	-	-	-	14.0
+Harald Curved Greatsword Chaos +10	22	18	-	-	C	C	A	A	296	-	271	-	-	568	-	-	-	-	14.0
+Harald Curved Greatsword Crystal +10	22	18	-	-	D	D	A	-	320	223	-	-	-	544	-	-	-	-	14.0
+Harald Curved Greatsword Dark +10	22	18	-	-	C	C	A	A	296	-	-	-	271	568	-	-	-	-	14.0
+Harald Curved Greatsword Deep +10	22	18	-	-	-	-	-	-	259	-	-	-	259	518	-	-	-	-	14.0
+Harald Curved Greatsword Fire +10	22	18	-	-	-	-	-	-	259	-	259	-	-	518	-	-	-	-	14.0
+Harald Curved Greatsword Heavy +10	22	18	-	-	S	-	-	-	536	-	-	-	-	536	-	-	-	-	14.0
+Harald Curved Greatsword Hollow +10	22	18	-	-	C	C	-	-	510	-	-	-	-	510	-	-	-	-	14.0
+Harald Curved Greatsword Lightning +10	22	18	-	-	D	D	-	A	320	-	-	240	-	561	-	-	-	-	14.0
+Harald Curved Greatsword Poison +10	22	18	-	-	C	C	-	-	410	-	-	-	-	410	-	72	-	-	14.0
+Harald Curved Greatsword Raw +10	22	18	-	-	-	-	-	-	442	-	-	-	-	442	-	-	-	-	14.0
+Harald Curved Greatsword Refined +10	22	18	-	-	B	B	-	-	545	-	-	-	-	545	-	-	-	-	14.0
+Harald Curved Greatsword Sharp +10	22	18	-	-	D	A	-	-	540	-	-	-	-	540	-	-	-	-	14.0
+Harald Curved Greatsword Simple +10	22	18	-	-	C	C	S	-	301	200	-	-	-	502	-	-	-	-	14.0
+Harpe  +10	8	10	-	-	E	B	-	-	222	-	-	-	-	222	-	-	-	-	1.5
+Harpe Blessed +10	8	10	-	-	E	C	-	A	232	-	-	-	-	232	-	-	-	-	1.5
+Harpe Blood +10	8	10	-	-	E	B	-	-	172	-	-	-	-	172	52	-	-	-	1.5
+Harpe Chaos +10	8	10	-	-	E	B	B	B	145	-	134	-	-	280	-	-	-	-	1.5
+Harpe Crystal +10	8	10	-	-	E	C	A	-	158	113	-	-	-	272	-	-	-	-	1.5
+Harpe Dark +10	8	10	-	-	E	B	B	B	145	-	-	-	134	280	-	-	-	-	1.5
+Harpe Deep +10	8	10	-	-	-	-	-	-	142	-	-	-	142	284	-	-	-	-	1.5
+Harpe Fire +10	8	10	-	-	-	-	-	-	142	-	142	-	-	284	-	-	-	-	1.5
+Harpe Heavy +10	8	10	-	-	A	-	-	-	215	-	-	-	-	215	-	-	-	-	1.5
+Harpe Hollow +10	8	10	-	-	E	B	-	-	226	-	-	-	-	226	-	-	-	-	1.5
+Harpe Lightning +10	8	10	-	-	E	C	-	A	158	-	-	121	-	280	-	-	-	-	1.5
+Harpe Poison +10	8	10	-	-	E	B	-	-	172	-	-	-	-	172	-	58	-	-	1.5
+Harpe Raw +10	8	10	-	-	-	-	-	-	187	-	-	-	-	187	-	-	-	-	1.5
+Harpe Refined +10	8	10	-	-	B	B	-	-	244	-	-	-	-	244	-	-	-	-	1.5
+Harpe Sharp +10	8	10	-	-	E	S	-	-	251	-	-	-	-	251	-	-	-	-	1.5
+Harpe Simple +10	8	10	-	-	E	B	A	-	148	101	-	-	-	250	-	-	-	-	1.5
+Havel's Greatshield  +5	40	-	-	-	C	-	-	-	347	-	-	-	-	347	-	-	-	-	28.0
+Hawkwood's Shield  +10	5	-	-	-	D	-	-	-	174	-	-	-	-	174	-	-	-	-	2.0
+Hawkwood's Shield Blessed +10	5	-	-	-	D	-	-	D	131	-	-	-	-	131	-	-	-	-	2.0
+Hawkwood's Shield Blood +10	5	-	-	-	D	-	-	-	135	-	-	-	-	135	51	-	-	-	2.0
+Hawkwood's Shield Chaos +10	5	-	-	-	D	-	D	D	107	-	106	-	-	214	-	-	-	-	2.0
+Hawkwood's Shield Crystal +10	5	-	-	-	D	-	D	-	122	109	-	-	-	232	-	-	-	-	2.0
+Hawkwood's Shield Dark +10	5	-	-	-	D	-	D	D	107	-	-	-	106	214	-	-	-	-	2.0
+Hawkwood's Shield Deep +10	5	-	-	-	-	-	-	-	114	-	-	-	114	229	-	-	-	-	2.0
+Hawkwood's Shield Fire +10	5	-	-	-	-	-	-	-	114	-	114	-	-	229	-	-	-	-	2.0
+Hawkwood's Shield Heavy +10	5	-	-	-	C	-	-	-	185	-	-	-	-	185	-	-	-	-	2.0
+Hawkwood's Shield Hollow +10	5	-	-	-	D	-	-	-	166	-	-	-	-	166	-	-	-	-	2.0
+Hawkwood's Shield Lightning +10	5	-	-	-	D	-	-	D	122	-	-	112	-	234	-	-	-	-	2.0
+Hawkwood's Shield Poison +10	5	-	-	-	D	-	-	-	135	-	-	-	-	135	-	57	-	-	2.0
+Hawkwood's Shield Raw +10	5	-	-	-	-	-	-	-	187	-	-	-	-	187	-	-	-	-	2.0
+Hawkwood's Shield Refined +10	5	-	-	-	D	D	-	-	187	-	-	-	-	187	-	-	-	-	2.0
+Hawkwood's Shield Sharp +10	5	-	-	-	D	-	-	-	177	-	-	-	-	177	-	-	-	-	2.0
+Hawkwood's Shield Simple +10	5	-	-	-	D	-	D	-	107	97	-	-	-	205	-	-	-	-	2.0
+Heavy Crossbow  +10	14	8	-	-	-	-	-	-	252	-	-	-	-	252	-	-	-	-	4.5
+Heretic's Staff  +10	8	-	16	-	D	-	A	-	173	-	-	-	-	173	-	-	-	60	3.0
+Heysel Pick  +5	12	10	19	-	D	E	A	-	231	73	-	-	-	304	-	-	-	60	4.5
+Hollowslayer Greatsword  +5	14	18	-	-	D	C	-	-	516	-	-	-	-	516	-	-	-	-	8.5
+Immolation Tinder  +5	18	18	12	12	D	C	A	-	370	-	79	-	-	449	-	-	-	60	10.0
+Irithyll Rapier  +5	10	16	-	-	C	C	-	-	395	-	-	-	-	395	-	-	55	-	3.0
+Irithyll Straight Sword  +5	12	14	-	-	C	D	-	-	388	-	-	-	-	388	-	-	55	-	4.0
+Iron Round Shield  +10	5	-	-	-	D	-	-	-	171	-	-	-	-	171	-	-	-	-	2.0
+Iron Round Shield Blessed +10	5	-	-	-	D	-	-	D	130	-	-	-	-	130	-	-	-	-	2.0
+Iron Round Shield Blood +10	5	-	-	-	D	-	-	-	133	-	-	-	-	133	51	-	-	-	2.0
+Iron Round Shield Chaos +10	5	-	-	-	D	-	D	D	105	-	105	-	-	211	-	-	-	-	2.0
+Iron Round Shield Crystal +10	5	-	-	-	D	-	D	-	121	108	-	-	-	229	-	-	-	-	2.0
+Iron Round Shield Dark +10	5	-	-	-	D	-	D	D	105	-	-	-	105	211	-	-	-	-	2.0
+Iron Round Shield Deep +10	5	-	-	-	-	-	-	-	112	-	-	-	112	225	-	-	-	-	2.0
+Iron Round Shield Fire +10	5	-	-	-	-	-	-	-	112	-	112	-	-	225	-	-	-	-	2.0
+Iron Round Shield Heavy +10	5	-	-	-	C	-	-	-	182	-	-	-	-	182	-	-	-	-	2.0
+Iron Round Shield Hollow +10	5	-	-	-	D	-	-	-	163	-	-	-	-	163	-	-	-	-	2.0
+Iron Round Shield Lightning +10	5	-	-	-	D	-	-	D	121	-	-	110	-	231	-	-	-	-	2.0
+Iron Round Shield Poison +10	5	-	-	-	D	-	-	-	133	-	-	-	-	133	-	57	-	-	2.0
+Iron Round Shield Raw +10	5	-	-	-	-	-	-	-	184	-	-	-	-	184	-	-	-	-	2.0
+Iron Round Shield Refined +10	5	-	-	-	D	D	-	-	185	-	-	-	-	185	-	-	-	-	2.0
+Iron Round Shield Sharp +10	5	-	-	-	D	-	-	-	174	-	-	-	-	174	-	-	-	-	2.0
+Iron Round Shield Simple +10	5	-	-	-	D	-	D	-	106	96	-	-	-	202	-	-	-	-	2.0
+Izalith Staff  +5	12	-	14	10	D	D	A	C	344	-	-	-	-	344	-	-	-	60	3.0
+Kite Shield  +10	12	-	-	-	D	-	-	-	210	-	-	-	-	210	-	-	-	-	4.5
+Kite Shield Blessed +10	12	-	-	-	D	-	-	C	159	-	-	-	-	159	-	-	-	-	4.5
+Kite Shield Blood +10	12	-	-	-	D	-	-	-	163	-	-	-	-	163	51	-	-	-	4.5
+Kite Shield Chaos +10	12	-	-	-	D	-	D	D	127	-	125	-	-	252	-	-	-	-	4.5
+Kite Shield Crystal +10	12	-	-	-	D	-	D	-	144	123	-	-	-	267	-	-	-	-	4.5
+Kite Shield Dark +10	12	-	-	-	D	-	D	D	127	-	-	-	125	252	-	-	-	-	4.5
+Kite Shield Deep +10	12	-	-	-	-	-	-	-	129	-	-	-	129	259	-	-	-	-	4.5
+Kite Shield Fire +10	12	-	-	-	-	-	-	-	129	-	129	-	-	259	-	-	-	-	4.5
+Kite Shield Heavy +10	12	-	-	-	C	-	-	-	234	-	-	-	-	234	-	-	-	-	4.5
+Kite Shield Hollow +10	12	-	-	-	D	-	-	-	200	-	-	-	-	200	-	-	-	-	4.5
+Kite Shield Lightning +10	12	-	-	-	D	-	-	D	144	-	-	127	-	271	-	-	-	-	4.5
+Kite Shield Poison +10	12	-	-	-	D	-	-	-	163	-	-	-	-	163	-	57	-	-	4.5
+Kite Shield Raw +10	12	-	-	-	-	-	-	-	208	-	-	-	-	208	-	-	-	-	4.5
+Kite Shield Refined +10	12	-	-	-	D	D	-	-	224	-	-	-	-	224	-	-	-	-	4.5
+Kite Shield Sharp +10	12	-	-	-	C	-	-	-	221	-	-	-	-	221	-	-	-	-	4.5
+Kite Shield Simple +10	12	-	-	-	D	-	C	-	128	109	-	-	-	238	-	-	-	-	4.5
+Knight Shield  +10	13	-	-	-	D	-	-	-	206	-	-	-	-	206	-	-	-	-	4.5
+Knight Shield Blessed +10	13	-	-	-	D	-	-	C	156	-	-	-	-	156	-	-	-	-	4.5
+Knight Shield Blood +10	13	-	-	-	D	-	-	-	159	-	-	-	-	159	51	-	-	-	4.5
+Knight Shield Chaos +10	13	-	-	-	D	-	D	D	125	-	122	-	-	248	-	-	-	-	4.5
+Knight Shield Crystal +10	13	-	-	-	D	-	D	-	141	121	-	-	-	263	-	-	-	-	4.5
+Knight Shield Dark +10	13	-	-	-	D	-	D	D	125	-	-	-	122	248	-	-	-	-	4.5
+Knight Shield Deep +10	13	-	-	-	-	-	-	-	127	-	-	-	127	255	-	-	-	-	4.5
+Knight Shield Fire +10	13	-	-	-	-	-	-	-	127	-	127	-	-	255	-	-	-	-	4.5
+Knight Shield Heavy +10	13	-	-	-	C	-	-	-	228	-	-	-	-	228	-	-	-	-	4.5
+Knight Shield Hollow +10	13	-	-	-	D	-	-	-	196	-	-	-	-	196	-	-	-	-	4.5
+Knight Shield Lightning +10	13	-	-	-	D	-	-	D	141	-	-	125	-	267	-	-	-	-	4.5
+Knight Shield Poison +10	13	-	-	-	D	-	-	-	159	-	-	-	-	159	-	57	-	-	4.5
+Knight Shield Raw +10	13	-	-	-	-	-	-	-	205	-	-	-	-	205	-	-	-	-	4.5
+Knight Shield Refined +10	13	-	-	-	D	D	-	-	218	-	-	-	-	218	-	-	-	-	4.5
+Knight Shield Sharp +10	13	-	-	-	D	-	-	-	181	-	-	-	-	181	-	-	-	-	4.5
+Knight Shield Simple +10	13	-	-	-	D	-	C	-	126	108	-	-	-	234	-	-	-	-	4.5
+Knight's Crossbow  +10	12	8	-	-	-	-	-	-	140	-	-	140	-	280	-	-	-	-	4.0
+Large Club  +10	22	-	-	-	B	-	-	-	476	-	-	-	-	476	-	-	-	-	10.0
+Large Club Blessed +10	22	-	-	-	C	-	-	A	316	-	-	-	-	316	-	-	-	-	10.0
+Large Club Blood +10	22	-	-	-	B	-	-	-	369	-	-	-	-	369	74	-	-	-	10.0
+Large Club Chaos +10	22	-	-	-	C	-	C	C	246	-	231	-	-	477	-	-	-	-	10.0
+Large Club Crystal +10	22	-	-	-	C	-	B	-	271	206	-	-	-	477	-	-	-	-	10.0
+Large Club Dark +10	22	-	-	-	C	-	C	C	246	-	-	-	231	477	-	-	-	-	10.0
+Large Club Deep +10	22	-	-	-	-	-	-	-	236	-	-	-	236	473	-	-	-	-	10.0
+Large Club Fire +10	22	-	-	-	-	-	-	-	236	-	236	-	-	473	-	-	-	-	10.0
+Large Club Heavy +10	22	-	-	-	A	-	-	-	499	-	-	-	-	499	-	-	-	-	10.0
+Large Club Hollow +10	22	-	-	-	B	-	-	-	457	-	-	-	-	457	-	-	-	-	10.0
+Large Club Lightning +10	22	-	-	-	C	-	-	B	271	-	-	218	-	489	-	-	-	-	10.0
+Large Club Poison +10	22	-	-	-	B	-	-	-	369	-	-	-	-	369	-	97	-	-	10.0
+Large Club Raw +10	22	-	-	-	-	-	-	-	397	-	-	-	-	397	-	-	-	-	10.0
+Large Club Refined +10	22	-	-	-	C	C	-	-	494	-	-	-	-	494	-	-	-	-	10.0
+Large Club Sharp +10	22	-	-	-	E	A	-	-	506	-	-	-	-	506	-	-	-	-	10.0
+Large Club Simple +10	22	-	-	-	B	-	A	-	249	184	-	-	-	434	-	-	-	-	10.0
+Large Leather Shield  +10	8	-	-	-	D	-	-	-	205	-	-	-	-	205	-	-	-	-	3.5
+Large Leather Shield Blessed +10	8	-	-	-	D	-	-	C	155	-	-	-	-	155	-	-	-	-	3.5
+Large Leather Shield Blood +10	8	-	-	-	D	-	-	-	158	-	-	-	-	158	51	-	-	-	3.5
+Large Leather Shield Chaos +10	8	-	-	-	D	-	D	D	124	-	122	-	-	246	-	-	-	-	3.5
+Large Leather Shield Crystal +10	8	-	-	-	D	-	D	-	141	120	-	-	-	261	-	-	-	-	3.5
+Large Leather Shield Dark +10	8	-	-	-	D	-	D	D	124	-	-	-	122	246	-	-	-	-	3.5
+Large Leather Shield Deep +10	8	-	-	-	-	-	-	-	125	-	-	-	125	251	-	-	-	-	3.5
+Large Leather Shield Fire +10	8	-	-	-	-	-	-	-	125	-	125	-	-	251	-	-	-	-	3.5
+Large Leather Shield Heavy +10	8	-	-	-	C	-	-	-	228	-	-	-	-	228	-	-	-	-	3.5
+Large Leather Shield Hollow +10	8	-	-	-	D	-	-	-	195	-	-	-	-	195	-	-	-	-	3.5
+Large Leather Shield Lightning +10	8	-	-	-	D	-	-	D	141	-	-	124	-	265	-	-	-	-	3.5
+Large Leather Shield Poison +10	8	-	-	-	D	-	-	-	158	-	-	-	-	158	-	57	-	-	3.5
+Large Leather Shield Raw +10	8	-	-	-	-	-	-	-	202	-	-	-	-	202	-	-	-	-	3.5
+Large Leather Shield Refined +10	8	-	-	-	D	D	-	-	219	-	-	-	-	219	-	-	-	-	3.5
+Large Leather Shield Sharp +10	8	-	-	-	C	-	-	-	215	-	-	-	-	215	-	-	-	-	3.5
+Large Leather Shield Simple +10	8	-	-	-	D	-	C	-	125	107	-	-	-	233	-	-	-	-	3.5
+Leather Shield  +10	7	-	-	-	D	-	-	-	166	-	-	-	-	166	-	-	-	-	1.5
+Leather Shield Blessed +10	7	-	-	-	D	-	-	D	126	-	-	-	-	126	-	-	-	-	1.5
+Leather Shield Blood +10	7	-	-	-	D	-	-	-	129	-	-	-	-	129	51	-	-	-	1.5
+Leather Shield Chaos +10	7	-	-	-	D	-	D	D	103	-	102	-	-	206	-	-	-	-	1.5
+Leather Shield Crystal +10	7	-	-	-	D	-	D	-	118	105	-	-	-	223	-	-	-	-	1.5
+Leather Shield Dark +10	7	-	-	-	D	-	D	D	103	-	-	-	102	206	-	-	-	-	1.5
+Leather Shield Deep +10	7	-	-	-	-	-	-	-	109	-	-	-	109	218	-	-	-	-	1.5
+Leather Shield Fire +10	7	-	-	-	-	-	-	-	109	-	109	-	-	218	-	-	-	-	1.5
+Leather Shield Heavy +10	7	-	-	-	C	-	-	-	177	-	-	-	-	177	-	-	-	-	1.5
+Leather Shield Hollow +10	7	-	-	-	D	-	-	-	159	-	-	-	-	159	-	-	-	-	1.5
+Leather Shield Lightning +10	7	-	-	-	D	-	-	D	118	-	-	108	-	226	-	-	-	-	1.5
+Leather Shield Poison +10	7	-	-	-	D	-	-	-	129	-	-	-	-	129	-	57	-	-	1.5
+Leather Shield Raw +10	7	-	-	-	-	-	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Leather Shield Refined +10	7	-	-	-	D	D	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Leather Shield Sharp +10	7	-	-	-	D	-	-	-	148	-	-	-	-	148	-	-	-	-	1.5
+Leather Shield Simple +10	7	-	-	-	D	-	D	-	103	93	-	-	-	197	-	-	-	-	1.5
+Ledo's Great Hammer  +5	60	-	-	-	A	-	-	-	177	-	-	-	-	177	-	-	-	-	28.0
+Light Crossbow  +10	10	8	-	-	-	-	-	-	224	-	-	-	-	224	-	-	-	-	3.0
+Llewellyn Shield  +10	12	-	-	-	D	-	-	-	185	-	-	-	-	185	-	-	-	-	3.0
+Llewellyn Shield Blessed +10	12	-	-	-	D	-	-	D	139	-	-	-	-	139	-	-	-	-	3.0
+Llewellyn Shield Blood +10	12	-	-	-	D	-	-	-	143	-	-	-	-	143	51	-	-	-	3.0
+Llewellyn Shield Chaos +10	12	-	-	-	D	-	D	D	113	-	112	-	-	226	-	-	-	-	3.0
+Llewellyn Shield Crystal +10	12	-	-	-	D	-	D	-	129	115	-	-	-	245	-	-	-	-	3.0
+Llewellyn Shield Dark +10	12	-	-	-	D	-	D	D	113	-	-	-	112	226	-	-	-	-	3.0
+Llewellyn Shield Deep +10	12	-	-	-	-	-	-	-	122	-	-	-	122	244	-	-	-	-	3.0
+Llewellyn Shield Fire +10	12	-	-	-	-	-	-	-	122	-	122	-	-	244	-	-	-	-	3.0
+Llewellyn Shield Heavy +10	12	-	-	-	C	-	-	-	198	-	-	-	-	198	-	-	-	-	3.0
+Llewellyn Shield Hollow +10	12	-	-	-	D	-	-	-	177	-	-	-	-	177	-	-	-	-	3.0
+Llewellyn Shield Lightning +10	12	-	-	-	D	-	-	D	129	-	-	118	-	247	-	-	-	-	3.0
+Llewellyn Shield Poison +10	12	-	-	-	D	-	-	-	143	-	-	-	-	143	-	57	-	-	3.0
+Llewellyn Shield Raw +10	12	-	-	-	-	-	-	-	197	-	-	-	-	197	-	-	-	-	3.0
+Llewellyn Shield Refined +10	12	-	-	-	D	D	-	-	198	-	-	-	-	198	-	-	-	-	3.0
+Llewellyn Shield Sharp +10	12	-	-	-	D	-	-	-	164	-	-	-	-	164	-	-	-	-	3.0
+Llewellyn Shield Simple +10	12	-	-	-	D	-	D	-	114	102	-	-	-	216	-	-	-	-	3.0
+Long Sword  +10	10	10	-	-	C	D	-	-	416	-	-	-	-	416	-	-	-	-	3.0
+Long Sword Blessed +10	10	10	-	-	C	D	-	S	284	-	-	-	-	284	-	-	-	-	3.0
+Long Sword Blood +10	10	10	-	-	C	D	-	-	322	-	-	-	-	322	52	-	-	-	3.0
+Long Sword Chaos +10	10	10	-	-	C	D	A	A	216	-	198	-	-	415	-	-	-	-	3.0
+Long Sword Crystal +10	10	10	-	-	C	D	A	-	234	163	-	-	-	397	-	-	-	-	3.0
+Long Sword Dark +10	10	10	-	-	C	D	A	A	216	-	-	-	198	415	-	-	-	-	3.0
+Long Sword Deep +10	10	10	-	-	-	-	-	-	203	-	-	-	203	407	-	-	-	-	3.0
+Long Sword Fire +10	10	10	-	-	-	-	-	-	203	-	203	-	-	407	-	-	-	-	3.0
+Long Sword Heavy +10	10	10	-	-	A	-	-	-	382	-	-	-	-	382	-	-	-	-	3.0
+Long Sword Hollow +10	10	10	-	-	C	D	-	-	401	-	-	-	-	401	-	-	-	-	3.0
+Long Sword Lightning +10	10	10	-	-	C	D	-	A	234	-	-	176	-	410	-	-	-	-	3.0
+Long Sword Poison +10	10	10	-	-	C	D	-	-	322	-	-	-	-	322	-	58	-	-	3.0
+Long Sword Raw +10	10	10	-	-	-	-	-	-	309	-	-	-	-	309	-	-	-	-	3.0
+Long Sword Refined +10	10	10	-	-	B	B	-	-	428	-	-	-	-	428	-	-	-	-	3.0
+Long Sword Sharp +10	10	10	-	-	E	A	-	-	419	-	-	-	-	419	-	-	-	-	3.0
+Long Sword Simple +10	10	10	-	-	C	D	S	-	220	146	-	-	-	367	-	-	-	-	3.0
+Longbow  +10	9	14	-	-	E	D	-	-	241	-	-	-	-	241	-	-	-	-	4.0
+Lorian's Greatsword  +5	26	10	-	-	C	D	D	D	496	-	164	-	-	660	-	-	-	-	14.0
+Lothric Knight Greatshield  +10	36	-	-	-	D	-	-	-	303	-	-	-	-	303	-	-	-	-	15.0
+Lothric Knight Greatshield Blessed +10	36	-	-	-	D	-	-	C	217	-	-	-	-	217	-	-	-	-	15.0
+Lothric Knight Greatshield Blood +10	36	-	-	-	D	-	-	-	235	-	-	-	-	235	61	-	-	-	15.0
+Lothric Knight Greatshield Chaos +10	36	-	-	-	D	-	D	D	172	-	167	-	-	340	-	-	-	-	15.0
+Lothric Knight Greatshield Crystal +10	36	-	-	-	D	-	C	-	194	162	-	-	-	356	-	-	-	-	15.0
+Lothric Knight Greatshield Dark +10	36	-	-	-	D	-	D	D	172	-	-	-	167	340	-	-	-	-	15.0
+Lothric Knight Greatshield Deep +10	36	-	-	-	-	-	-	-	177	-	-	-	177	355	-	-	-	-	15.0
+Lothric Knight Greatshield Fire +10	36	-	-	-	-	-	-	-	177	-	177	-	-	355	-	-	-	-	15.0
+Lothric Knight Greatshield Heavy +10	36	-	-	-	B	-	-	-	345	-	-	-	-	345	-	-	-	-	15.0
+Lothric Knight Greatshield Hollow +10	36	-	-	-	D	-	-	-	289	-	-	-	-	289	-	-	-	-	15.0
+Lothric Knight Greatshield Lightning +10	36	-	-	-	D	-	-	C	194	-	-	168	-	362	-	-	-	-	15.0
+Lothric Knight Greatshield Poison +10	36	-	-	-	D	-	-	-	235	-	-	-	-	235	-	71	-	-	15.0
+Lothric Knight Greatshield Raw +10	36	-	-	-	-	-	-	-	288	-	-	-	-	288	-	-	-	-	15.0
+Lothric Knight Greatshield Refined +10	36	-	-	-	D	D	-	-	320	-	-	-	-	320	-	-	-	-	15.0
+Lothric Knight Greatshield Sharp +10	36	-	-	-	D	-	-	-	264	-	-	-	-	264	-	-	-	-	15.0
+Lothric Knight Greatshield Simple +10	36	-	-	-	D	-	C	-	174	144	-	-	-	319	-	-	-	-	15.0
+Lothric Knight Greatsword  +10	24	16	-	-	D	C	-	-	471	-	-	174	-	645	-	-	-	-	16.5
+Lothric Knight Greatsword Blessed +10	24	16	-	-	D	C	-	A	363	-	-	143	-	507	-	-	-	-	16.5
+Lothric Knight Greatsword Blood +10	24	16	-	-	D	C	-	-	365	-	-	134	-	499	74	-	-	-	16.5
+Lothric Knight Greatsword Chaos +10	24	16	-	-	D	C	B	B	262	-	242	104	-	609	-	-	-	-	16.5
+Lothric Knight Greatsword Crystal +10	24	16	-	-	D	D	A	-	302	216	-	87	-	606	-	-	-	-	16.5
+Lothric Knight Greatsword Dark +10	24	16	-	-	D	C	B	B	262	-	-	104	242	609	-	-	-	-	16.5
+Lothric Knight Greatsword Deep +10	24	16	-	-	-	-	-	-	251	-	-	87	251	590	-	-	-	-	16.5
+Lothric Knight Greatsword Fire +10	24	16	-	-	-	-	-	-	251	-	251	87	-	590	-	-	-	-	16.5
+Lothric Knight Greatsword Heavy +10	24	16	-	-	A	-	-	-	455	-	-	174	-	629	-	-	-	-	16.5
+Lothric Knight Greatsword Hollow +10	24	16	-	-	D	C	-	-	453	-	-	165	-	618	-	-	-	-	16.5
+Lothric Knight Greatsword Lightning +10	24	16	-	-	D	D	-	A	255	-	-	288	-	544	-	-	-	-	16.5
+Lothric Knight Greatsword Poison +10	24	16	-	-	D	C	-	-	365	-	-	134	-	499	-	98	-	-	16.5
+Lothric Knight Greatsword Raw +10	24	16	-	-	-	-	-	-	340	-	-	174	-	514	-	-	-	-	16.5
+Lothric Knight Greatsword Refined +10	24	16	-	-	C	C	-	-	476	-	-	174	-	650	-	-	-	-	16.5
+Lothric Knight Greatsword Sharp +10	24	16	-	-	D	A	-	-	498	-	-	174	-	672	-	-	-	-	16.5
+Lothric Knight Greatsword Simple +10	24	16	-	-	D	C	A	-	282	194	-	87	-	564	-	-	-	-	16.5
+Lothric Knight Long Spear  +10	14	20	-	-	D	C	-	-	414	-	-	-	-	414	-	-	-	-	8.0
+Lothric Knight Long Spear Blessed +10	14	20	-	-	D	C	-	S	283	-	-	-	-	283	-	-	-	-	8.0
+Lothric Knight Long Spear Blood +10	14	20	-	-	D	C	-	-	321	-	-	-	-	321	52	-	-	-	8.0
+Lothric Knight Long Spear Chaos +10	14	20	-	-	D	C	A	A	216	-	198	-	-	414	-	-	-	-	8.0
+Lothric Knight Long Spear Crystal +10	14	20	-	-	D	C	A	-	234	165	-	-	-	399	-	-	-	-	8.0
+Lothric Knight Long Spear Dark +10	14	20	-	-	D	C	A	A	216	-	-	-	198	414	-	-	-	-	8.0
+Lothric Knight Long Spear Deep +10	14	20	-	-	-	-	-	-	196	-	-	-	196	392	-	-	-	-	8.0
+Lothric Knight Long Spear Fire +10	14	20	-	-	-	-	-	-	196	-	196	-	-	392	-	-	-	-	8.0
+Lothric Knight Long Spear Heavy +10	14	20	-	-	B	-	-	-	352	-	-	-	-	352	-	-	-	-	8.0
+Lothric Knight Long Spear Hollow +10	14	20	-	-	D	C	-	-	399	-	-	-	-	399	-	-	-	-	8.0
+Lothric Knight Long Spear Lightning +10	14	20	-	-	D	C	-	A	234	-	-	177	-	411	-	-	-	-	8.0
+Lothric Knight Long Spear Poison +10	14	20	-	-	D	C	-	-	321	-	-	-	-	321	-	58	-	-	8.0
+Lothric Knight Long Spear Raw +10	14	20	-	-	-	-	-	-	301	-	-	-	-	301	-	-	-	-	8.0
+Lothric Knight Long Spear Refined +10	14	20	-	-	C	C	-	-	427	-	-	-	-	427	-	-	-	-	8.0
+Lothric Knight Long Spear Sharp +10	14	20	-	-	D	A	-	-	429	-	-	-	-	429	-	-	-	-	8.0
+Lothric Knight Long Spear Simple +10	14	20	-	-	D	C	S	-	219	148	-	-	-	367	-	-	-	-	8.0
+Lothric Knight Shield  +10	18	-	-	-	D	-	-	-	218	-	-	-	-	218	-	-	-	-	6.0
+Lothric Knight Shield Blessed +10	18	-	-	-	D	-	-	C	164	-	-	-	-	164	-	-	-	-	6.0
+Lothric Knight Shield Blood +10	18	-	-	-	D	-	-	-	169	-	-	-	-	169	51	-	-	-	6.0
+Lothric Knight Shield Chaos +10	18	-	-	-	D	-	D	D	131	-	129	-	-	261	-	-	-	-	6.0
+Lothric Knight Shield Crystal +10	18	-	-	-	D	-	D	-	149	127	-	-	-	276	-	-	-	-	6.0
+Lothric Knight Shield Dark +10	18	-	-	-	D	-	D	D	131	-	-	-	129	261	-	-	-	-	6.0
+Lothric Knight Shield Deep +10	18	-	-	-	-	-	-	-	135	-	-	-	135	270	-	-	-	-	6.0
+Lothric Knight Shield Fire +10	18	-	-	-	-	-	-	-	135	-	135	-	-	270	-	-	-	-	6.0
+Lothric Knight Shield Heavy +10	18	-	-	-	C	-	-	-	243	-	-	-	-	243	-	-	-	-	6.0
+Lothric Knight Shield Hollow +10	18	-	-	-	D	-	-	-	208	-	-	-	-	208	-	-	-	-	6.0
+Lothric Knight Shield Lightning +10	18	-	-	-	D	-	-	D	149	-	-	131	-	280	-	-	-	-	6.0
+Lothric Knight Shield Poison +10	18	-	-	-	D	-	-	-	169	-	-	-	-	169	-	57	-	-	6.0
+Lothric Knight Shield Raw +10	18	-	-	-	-	-	-	-	215	-	-	-	-	215	-	-	-	-	6.0
+Lothric Knight Shield Refined +10	18	-	-	-	D	D	-	-	233	-	-	-	-	233	-	-	-	-	6.0
+Lothric Knight Shield Sharp +10	18	-	-	-	D	-	-	-	191	-	-	-	-	191	-	-	-	-	6.0
+Lothric Knight Shield Simple +10	18	-	-	-	D	-	C	-	133	113	-	-	-	246	-	-	-	-	6.0
+Lothric Knight Sword  +10	11	18	-	-	C	C	-	-	402	-	-	-	-	402	-	-	-	-	4.0
+Lothric Knight Sword Blessed +10	11	18	-	-	D	C	-	S	287	-	-	-	-	287	-	-	-	-	4.0
+Lothric Knight Sword Blood +10	11	18	-	-	C	C	-	-	312	-	-	-	-	312	52	-	-	-	4.0
+Lothric Knight Sword Chaos +10	11	18	-	-	C	C	A	A	217	-	198	-	-	415	-	-	-	-	4.0
+Lothric Knight Sword Crystal +10	11	18	-	-	D	C	S	-	234	160	-	-	-	394	-	-	-	-	4.0
+Lothric Knight Sword Dark +10	11	18	-	-	C	C	A	A	217	-	-	-	198	415	-	-	-	-	4.0
+Lothric Knight Sword Deep +10	11	18	-	-	-	-	-	-	199	-	-	-	199	399	-	-	-	-	4.0
+Lothric Knight Sword Fire +10	11	18	-	-	-	-	-	-	199	-	199	-	-	399	-	-	-	-	4.0
+Lothric Knight Sword Heavy +10	11	18	-	-	A	-	-	-	357	-	-	-	-	357	-	-	-	-	4.0
+Lothric Knight Sword Hollow +10	11	18	-	-	C	C	-	-	388	-	-	-	-	388	-	-	-	-	4.0
+Lothric Knight Sword Lightning +10	11	18	-	-	D	C	-	S	234	-	-	173	-	408	-	-	-	-	4.0
+Lothric Knight Sword Poison +10	11	18	-	-	C	C	-	-	312	-	-	-	-	312	-	58	-	-	4.0
+Lothric Knight Sword Raw +10	11	18	-	-	-	-	-	-	299	-	-	-	-	299	-	-	-	-	4.0
+Lothric Knight Sword Refined +10	11	18	-	-	B	B	-	-	413	-	-	-	-	413	-	-	-	-	4.0
+Lothric Knight Sword Sharp +10	11	18	-	-	E	S	-	-	411	-	-	-	-	411	-	-	-	-	4.0
+Lothric Knight Sword Simple +10	11	18	-	-	C	C	S	-	221	144	-	-	-	365	-	-	-	-	4.0
+Lothric War Banner  +10	14	14	-	-	C	C	-	-	378	-	-	-	-	378	-	-	-	-	5.0
+Lothric War Banner Blessed +10	14	14	-	-	C	D	-	S	268	-	-	-	-	268	-	-	-	-	5.0
+Lothric War Banner Blood +10	14	14	-	-	C	C	-	-	293	-	-	-	-	293	52	-	-	-	5.0
+Lothric War Banner Chaos +10	14	14	-	-	C	C	A	A	204	-	187	-	-	391	-	-	-	-	5.0
+Lothric War Banner Crystal +10	14	14	-	-	D	D	A	-	221	154	-	-	-	375	-	-	-	-	5.0
+Lothric War Banner Dark +10	14	14	-	-	C	C	A	A	204	-	-	-	187	391	-	-	-	-	5.0
+Lothric War Banner Deep +10	14	14	-	-	-	-	-	-	185	-	-	-	185	370	-	-	-	-	5.0
+Lothric War Banner Fire +10	14	14	-	-	-	-	-	-	185	-	185	-	-	370	-	-	-	-	5.0
+Lothric War Banner Heavy +10	14	14	-	-	A	-	-	-	347	-	-	-	-	347	-	-	-	-	5.0
+Lothric War Banner Hollow +10	14	14	-	-	C	C	-	-	364	-	-	-	-	364	-	-	-	-	5.0
+Lothric War Banner Lightning +10	14	14	-	-	D	D	-	A	221	-	-	166	-	387	-	-	-	-	5.0
+Lothric War Banner Poison +10	14	14	-	-	C	C	-	-	293	-	-	-	-	293	-	58	-	-	5.0
+Lothric War Banner Raw +10	14	14	-	-	-	-	-	-	286	-	-	-	-	286	-	-	-	-	5.0
+Lothric War Banner Refined +10	14	14	-	-	B	B	-	-	389	-	-	-	-	389	-	-	-	-	5.0
+Lothric War Banner Sharp +10	14	14	-	-	D	A	-	-	392	-	-	-	-	392	-	-	-	-	5.0
+Lothric War Banner Simple +10	14	14	-	-	C	C	S	-	208	138	-	-	-	346	-	-	-	-	5.0
+Lothric's Holy Sword  +5	10	18	-	14	D	C	-	E	363	-	-	-	-	363	-	-	-	-	4.0
+Lucerne  +10	15	13	-	-	D	C	-	-	453	-	-	-	-	453	-	-	-	-	7.5
+Lucerne Blessed +10	15	13	-	-	D	D	-	A	307	-	-	-	-	307	-	-	-	-	7.5
+Lucerne Blood +10	15	13	-	-	D	C	-	-	351	-	-	-	-	351	62	-	-	-	7.5
+Lucerne Chaos +10	15	13	-	-	D	C	B	B	235	-	217	-	-	452	-	-	-	-	7.5
+Lucerne Crystal +10	15	13	-	-	D	D	A	-	255	183	-	-	-	439	-	-	-	-	7.5
+Lucerne Dark +10	15	13	-	-	D	C	B	B	235	-	-	-	217	452	-	-	-	-	7.5
+Lucerne Deep +10	15	13	-	-	-	-	-	-	223	-	-	-	223	447	-	-	-	-	7.5
+Lucerne Fire +10	15	13	-	-	-	-	-	-	223	-	223	-	-	447	-	-	-	-	7.5
+Lucerne Heavy +10	15	13	-	-	A	-	-	-	419	-	-	-	-	419	-	-	-	-	7.5
+Lucerne Hollow +10	15	13	-	-	D	C	-	-	435	-	-	-	-	435	-	-	-	-	7.5
+Lucerne Lightning +10	15	13	-	-	D	D	-	A	255	-	-	196	-	452	-	-	-	-	7.5
+Lucerne Poison +10	15	13	-	-	D	C	-	-	351	-	-	-	-	351	-	72	-	-	7.5
+Lucerne Raw +10	15	13	-	-	-	-	-	-	353	-	-	-	-	353	-	-	-	-	7.5
+Lucerne Refined +10	15	13	-	-	C	C	-	-	470	-	-	-	-	470	-	-	-	-	7.5
+Lucerne Sharp +10	15	13	-	-	D	A	-	-	471	-	-	-	-	471	-	-	-	-	7.5
+Lucerne Simple +10	15	13	-	-	D	C	A	-	239	164	-	-	-	403	-	-	-	-	7.5
+Mace  +10	12	7	-	-	B	E	-	-	399	-	-	-	-	399	-	-	-	-	5.0
+Mace Blessed +10	12	7	-	-	C	E	-	A	293	-	-	-	-	293	-	-	-	-	5.0
+Mace Blood +10	12	7	-	-	B	E	-	-	309	-	-	-	-	309	51	-	-	-	5.0
+Mace Chaos +10	12	7	-	-	B	E	B	B	225	-	209	-	-	434	-	-	-	-	5.0
+Mace Crystal +10	12	7	-	-	C	E	A	-	246	179	-	-	-	425	-	-	-	-	5.0
+Mace Dark +10	12	7	-	-	B	E	B	B	225	-	-	-	209	434	-	-	-	-	5.0
+Mace Deep +10	12	7	-	-	-	-	-	-	212	-	-	-	212	425	-	-	-	-	5.0
+Mace Fire +10	12	7	-	-	-	-	-	-	212	-	212	-	-	425	-	-	-	-	5.0
+Mace Heavy +10	12	7	-	-	A	-	-	-	428	-	-	-	-	428	-	-	-	-	5.0
+Mace Hollow +10	12	7	-	-	B	E	-	-	382	-	-	-	-	382	-	-	-	-	5.0
+Mace Lightning +10	12	7	-	-	C	E	-	A	256	-	-	199	-	456	-	-	-	-	5.0
+Mace Poison +10	12	7	-	-	B	E	-	-	309	-	-	-	-	309	-	57	-	-	5.0
+Mace Raw +10	12	7	-	-	-	-	-	-	351	-	-	-	-	351	-	-	-	-	5.0
+Mace Refined +10	12	7	-	-	B	B	-	-	454	-	-	-	-	454	-	-	-	-	5.0
+Mace Sharp +10	12	7	-	-	D	B	-	-	425	-	-	-	-	425	-	-	-	-	5.0
+Mace Simple +10	12	7	-	-	B	E	A	-	229	160	-	-	-	390	-	-	-	-	5.0
+Mail Breaker  +10	7	12	-	-	E	D	-	-	243	-	-	-	-	243	-	-	-	-	1.5
+Mail Breaker Blessed +10	7	12	-	-	E	D	-	C	181	-	-	-	-	181	-	-	-	-	1.5
+Mail Breaker Blood +10	7	12	-	-	E	D	-	-	188	-	-	-	-	188	51	-	-	-	1.5
+Mail Breaker Chaos +10	7	12	-	-	E	D	D	D	144	-	140	-	-	284	-	-	-	-	1.5
+Mail Breaker Crystal +10	7	12	-	-	E	D	C	-	162	135	-	-	-	298	-	-	-	-	1.5
+Mail Breaker Dark +10	7	12	-	-	E	D	D	D	144	-	-	-	140	284	-	-	-	-	1.5
+Mail Breaker Deep +10	7	12	-	-	-	-	-	-	142	-	-	-	142	284	-	-	-	-	1.5
+Mail Breaker Fire +10	7	12	-	-	-	-	-	-	142	-	142	-	-	284	-	-	-	-	1.5
+Mail Breaker Heavy +10	7	12	-	-	D	-	-	-	219	-	-	-	-	219	-	-	-	-	1.5
+Mail Breaker Hollow +10	7	12	-	-	E	D	-	-	233	-	-	-	-	233	-	-	-	-	1.5
+Mail Breaker Lightning +10	7	12	-	-	E	D	-	C	162	-	-	140	-	303	-	-	-	-	1.5
+Mail Breaker Poison +10	7	12	-	-	E	D	-	-	188	-	-	-	-	188	-	57	-	-	1.5
+Mail Breaker Raw +10	7	12	-	-	-	-	-	-	200	-	-	-	-	200	-	-	-	-	1.5
+Mail Breaker Refined +10	7	12	-	-	D	D	-	-	239	-	-	-	-	239	-	-	-	-	1.5
+Mail Breaker Sharp +10	7	12	-	-	E	C	-	-	253	-	-	-	-	253	-	-	-	-	1.5
+Mail Breaker Simple +10	7	12	-	-	E	D	C	-	145	120	-	-	-	266	-	-	-	-	1.5
+Man Serpent Hatchet  +10	16	13	-	-	C	D	-	-	433	-	-	-	-	433	-	-	-	-	4.0
+Man Serpent Hatchet Blessed +10	16	13	-	-	C	D	-	A	293	-	-	-	-	293	-	-	-	-	4.0
+Man Serpent Hatchet Blood +10	16	13	-	-	C	D	-	-	336	-	-	-	-	336	51	-	-	-	4.0
+Man Serpent Hatchet Chaos +10	16	13	-	-	C	D	B	B	225	-	209	-	-	434	-	-	-	-	4.0
+Man Serpent Hatchet Crystal +10	16	13	-	-	D	D	A	-	246	179	-	-	-	425	-	-	-	-	4.0
+Man Serpent Hatchet Dark +10	16	13	-	-	C	D	B	B	225	-	-	-	209	434	-	-	-	-	4.0
+Man Serpent Hatchet Deep +10	16	13	-	-	-	-	-	-	212	-	-	-	212	425	-	-	-	-	4.0
+Man Serpent Hatchet Fire +10	16	13	-	-	-	-	-	-	212	-	212	-	-	425	-	-	-	-	4.0
+Man Serpent Hatchet Heavy +10	16	13	-	-	A	-	-	-	410	-	-	-	-	410	-	-	-	-	4.0
+Man Serpent Hatchet Hollow +10	16	13	-	-	C	D	-	-	416	-	-	-	-	416	-	-	-	-	4.0
+Man Serpent Hatchet Lightning +10	16	13	-	-	D	D	-	A	246	-	-	191	-	437	-	-	-	-	4.0
+Man Serpent Hatchet Poison +10	16	13	-	-	C	D	-	-	336	-	-	-	-	336	-	57	-	-	4.0
+Man Serpent Hatchet Raw +10	16	13	-	-	-	-	-	-	325	-	-	-	-	325	-	-	-	-	4.0
+Man Serpent Hatchet Refined +10	16	13	-	-	C	C	-	-	425	-	-	-	-	425	-	-	-	-	4.0
+Man Serpent Hatchet Sharp +10	16	13	-	-	D	B	-	-	444	-	-	-	-	444	-	-	-	-	4.0
+Man Serpent Hatchet Simple +10	16	13	-	-	C	D	A	-	229	160	-	-	-	390	-	-	-	-	4.0
+Man-grub's Staff  +5	9	-	18	-	D	-	-	-	192	-	-	-	-	192	-	-	-	60	3.0
+Manikin Claws  +10	8	18	-	-	E	B	-	-	284	-	-	-	-	284	30	-	-	-	1.5
+Manikin Claws Blessed +10	8	18	-	-	E	C	-	A	215	-	-	-	-	215	30	-	-	-	1.5
+Manikin Claws Blood +10	8	18	-	-	E	B	-	-	220	-	-	-	-	220	60	-	-	-	1.5
+Manikin Claws Chaos +10	8	18	-	-	E	C	B	B	165	-	153	-	-	318	30	-	-	-	1.5
+Manikin Claws Crystal +10	8	18	-	-	E	C	A	-	180	130	-	-	-	311	30	-	-	-	1.5
+Manikin Claws Dark +10	8	18	-	-	E	C	B	B	165	-	-	-	153	318	30	-	-	-	1.5
+Manikin Claws Deep +10	8	18	-	-	-	-	-	-	164	-	-	-	164	329	30	-	-	-	1.5
+Manikin Claws Fire +10	8	18	-	-	-	-	-	-	164	-	164	-	-	329	30	-	-	-	1.5
+Manikin Claws Heavy +10	8	18	-	-	A	-	-	-	275	-	-	-	-	275	30	-	-	-	1.5
+Manikin Claws Hollow +10	8	18	-	-	E	B	-	-	273	-	-	-	-	273	30	-	-	-	1.5
+Manikin Claws Lightning +10	8	18	-	-	E	C	-	A	180	-	-	139	-	319	30	-	-	-	1.5
+Manikin Claws Poison +10	8	18	-	-	E	B	-	-	220	-	-	-	-	220	30	58	-	-	1.5
+Manikin Claws Raw +10	8	18	-	-	-	-	-	-	239	-	-	-	-	239	30	-	-	-	1.5
+Manikin Claws Refined +10	8	18	-	-	B	B	-	-	312	-	-	-	-	312	30	-	-	-	1.5
+Manikin Claws Sharp +10	8	18	-	-	E	A	-	-	307	-	-	-	-	307	30	-	-	-	1.5
+Manikin Claws Simple +10	8	18	-	-	E	B	A	-	168	117	-	-	-	285	30	-	-	-	1.5
+Mendicant's Staff  +10	7	-	18	-	D	-	A	-	166	-	-	-	-	166	-	-	-	60	2.5
+Millwood Battle Axe  +10	15	10	-	-	C	E	-	-	454	-	-	-	-	454	-	-	-	-	6.5
+Millwood Battle Axe Blessed +10	15	10	-	-	C	E	-	A	307	-	-	-	-	307	-	-	-	-	6.5
+Millwood Battle Axe Blood +10	15	10	-	-	C	E	-	-	352	-	-	-	-	352	51	-	-	-	6.5
+Millwood Battle Axe Chaos +10	15	10	-	-	C	E	B	B	237	-	221	-	-	458	-	-	-	-	6.5
+Millwood Battle Axe Crystal +10	15	10	-	-	C	E	A	-	259	192	-	-	-	452	-	-	-	-	6.5
+Millwood Battle Axe Dark +10	15	10	-	-	C	E	B	B	237	-	-	-	221	458	-	-	-	-	6.5
+Millwood Battle Axe Deep +10	15	10	-	-	-	-	-	-	222	-	-	-	222	444	-	-	-	-	6.5
+Millwood Battle Axe Fire +10	15	10	-	-	-	-	-	-	222	-	222	-	-	444	-	-	-	-	6.5
+Millwood Battle Axe Heavy +10	15	10	-	-	A	-	-	-	468	-	-	-	-	468	-	-	-	-	6.5
+Millwood Battle Axe Hollow +10	15	10	-	-	C	E	-	-	435	-	-	-	-	435	-	-	-	-	6.5
+Millwood Battle Axe Lightning +10	15	10	-	-	C	E	-	A	259	-	-	204	-	464	-	-	-	-	6.5
+Millwood Battle Axe Poison +10	15	10	-	-	C	E	-	-	352	-	-	-	-	352	-	57	-	-	6.5
+Millwood Battle Axe Raw +10	15	10	-	-	-	-	-	-	351	-	-	-	-	351	-	-	-	-	6.5
+Millwood Battle Axe Refined +10	15	10	-	-	C	C	-	-	482	-	-	-	-	482	-	-	-	-	6.5
+Millwood Battle Axe Sharp +10	15	10	-	-	E	A	-	-	466	-	-	-	-	466	-	-	-	-	6.5
+Millwood Battle Axe Simple +10	15	10	-	-	C	E	A	-	240	172	-	-	-	413	-	-	-	-	6.5
+Millwood Greatbow  +5	28	12	-	-	A	E	-	-	457	-	-	-	-	457	-	-	-	-	9.0
+Moaning Shield  +5	50	-	-	-	C	-	-	-	142	-	-	-	-	142	-	-	-	-	21.5
+Moonlight Greatsword  +5	16	11	26	-	E	-	B	-	143	142	-	-	-	285	-	-	-	-	10.5
+Morion Blade  +5	12	17	-	-	C	D	-	-	397	-	-	-	-	397	34	-	-	-	4.0
+Morne's Great Hammer  +5	50	-	-	30	C	-	-	D	208	-	-	-	-	208	-	-	-	-	24.0
+Morning Star  +10	11	9	-	-	C	E	-	-	382	-	-	-	-	382	30	-	-	-	5.0
+Morning Star Blessed +10	11	9	-	-	C	E	-	B	277	-	-	-	-	277	30	-	-	-	5.0
+Morning Star Blood +10	11	9	-	-	C	E	-	-	296	-	-	-	-	296	59	-	-	-	5.0
+Morning Star Chaos +10	11	9	-	-	C	E	C	C	216	-	204	-	-	420	30	-	-	-	5.0
+Morning Star Crystal +10	11	9	-	-	D	E	B	-	238	184	-	-	-	423	30	-	-	-	5.0
+Morning Star Dark +10	11	9	-	-	C	E	C	C	216	-	-	-	204	420	30	-	-	-	5.0
+Morning Star Deep +10	11	9	-	-	-	-	-	-	207	-	-	-	207	414	30	-	-	-	5.0
+Morning Star Fire +10	11	9	-	-	-	-	-	-	207	-	207	-	-	414	30	-	-	-	5.0
+Morning Star Heavy +10	11	9	-	-	A	-	-	-	414	-	-	-	-	414	30	-	-	-	5.0
+Morning Star Hollow +10	11	9	-	-	C	E	-	-	366	-	-	-	-	366	30	-	-	-	5.0
+Morning Star Lightning +10	11	9	-	-	D	E	-	B	248	-	-	201	-	449	30	-	-	-	5.0
+Morning Star Poison +10	11	9	-	-	C	E	-	-	296	-	-	-	-	296	30	57	-	-	5.0
+Morning Star Raw +10	11	9	-	-	-	-	-	-	330	-	-	-	-	330	30	-	-	-	5.0
+Morning Star Refined +10	11	9	-	-	C	C	-	-	426	-	-	-	-	426	30	-	-	-	5.0
+Morning Star Sharp +10	11	9	-	-	E	A	-	-	407	-	-	-	-	407	30	-	-	-	5.0
+Morning Star Simple +10	11	9	-	-	C	E	B	-	218	164	-	-	-	383	30	-	-	-	5.0
+Murakumo  +10	20	18	-	-	C	C	-	-	527	-	-	-	-	527	-	-	-	-	11.0
+Murakumo Blessed +10	20	18	-	-	D	C	-	S	356	-	-	-	-	356	-	-	-	-	11.0
+Murakumo Blood +10	20	18	-	-	C	C	-	-	408	-	-	-	-	408	62	-	-	-	11.0
+Murakumo Chaos +10	20	18	-	-	C	C	A	A	269	-	244	-	-	514	-	-	-	-	11.0
+Murakumo Crystal +10	20	18	-	-	D	C	S	-	289	196	-	-	-	486	-	-	-	-	11.0
+Murakumo Dark +10	20	18	-	-	C	C	A	A	269	-	-	-	244	514	-	-	-	-	11.0
+Murakumo Deep +10	20	18	-	-	-	-	-	-	244	-	-	-	244	488	-	-	-	-	11.0
+Murakumo Fire +10	20	18	-	-	-	-	-	-	244	-	244	-	-	488	-	-	-	-	11.0
+Murakumo Heavy +10	20	18	-	-	A	-	-	-	468	-	-	-	-	468	-	-	-	-	11.0
+Murakumo Hollow +10	20	18	-	-	C	C	-	-	508	-	-	-	-	508	-	-	-	-	11.0
+Murakumo Lightning +10	20	18	-	-	D	C	-	S	289	-	-	212	-	502	-	-	-	-	11.0
+Murakumo Poison +10	20	18	-	-	C	C	-	-	408	-	-	-	-	408	-	72	-	-	11.0
+Murakumo Raw +10	20	18	-	-	-	-	-	-	408	-	-	-	-	408	-	-	-	-	11.0
+Murakumo Refined +10	20	18	-	-	B	B	-	-	527	-	-	-	-	527	-	-	-	-	11.0
+Murakumo Sharp +10	20	18	-	-	E	S	-	-	544	-	-	-	-	544	-	-	-	-	11.0
+Murakumo Simple +10	20	18	-	-	C	C	S	-	274	176	-	-	-	450	-	-	-	-	11.0
+Murky Hand Scythe  +10	6	11	11	11	D	C	E	E	242	-	-	-	47	289	-	-	-	-	2.0
+Murky Hand Scythe Blessed +10	6	11	11	11	D	D	D	A	170	-	-	-	36	206	-	-	-	-	2.0
+Murky Hand Scythe Blood +10	6	11	11	11	D	C	E	E	187	-	-	-	36	224	51	-	-	-	2.0
+Murky Hand Scythe Chaos +10	6	11	11	11	D	C	B	B	149	-	139	-	28	317	-	-	-	-	2.0
+Murky Hand Scythe Crystal +10	6	11	11	11	D	D	A	D	163	121	-	-	26	311	-	-	-	-	2.0
+Murky Hand Scythe Dark +10	6	11	11	11	D	C	B	B	113	-	-	-	151	264	-	-	-	-	2.0
+Murky Hand Scythe Deep +10	6	11	11	11	-	-	-	-	123	-	-	-	173	297	-	-	-	-	2.0
+Murky Hand Scythe Fire +10	6	11	11	11	-	-	-	-	133	-	133	-	22	288	-	-	-	-	2.0
+Murky Hand Scythe Heavy +10	6	11	11	11	A	-	E	E	242	-	-	-	47	289	-	-	-	-	2.0
+Murky Hand Scythe Hollow +10	6	11	11	11	D	C	E	E	232	-	-	-	44	277	-	-	-	-	2.0
+Murky Hand Scythe Lightning +10	6	11	11	11	D	D	D	A	163	-	-	129	27	320	-	-	-	-	2.0
+Murky Hand Scythe Poison +10	6	11	11	11	D	C	E	E	187	-	-	-	36	224	-	58	-	-	2.0
+Murky Hand Scythe Raw +10	6	11	11	11	-	-	-	-	187	-	-	-	44	231	-	-	-	-	2.0
+Murky Hand Scythe Refined +10	6	11	11	11	C	C	E	E	258	-	-	-	47	305	-	-	-	-	2.0
+Murky Hand Scythe Sharp +10	6	11	11	11	E	A	E	E	261	-	-	-	47	308	-	-	-	-	2.0
+Murky Hand Scythe Simple +10	6	11	11	11	D	C	A	D	133	95	-	-	26	255	-	-	-	-	2.0
+Murky Longstaff  +10	6	-	12	-	D	D	A	E	318	-	-	-	28	346	-	-	-	60	3.0
+Notched Whip  +10	6	19	-	-	-	C	-	-	279	-	-	-	-	279	30	-	-	-	2.0
+Notched Whip Blessed +10	6	19	-	-	-	C	-	C	205	-	-	-	-	205	30	-	-	-	2.0
+Notched Whip Blood +10	6	19	-	-	-	C	-	-	216	-	-	-	-	216	59	-	-	-	2.0
+Notched Whip Chaos +10	6	19	-	-	-	C	C	C	161	-	154	-	-	316	30	-	-	-	2.0
+Notched Whip Crystal +10	6	19	-	-	-	D	C	-	180	144	-	-	-	324	30	-	-	-	2.0
+Notched Whip Dark +10	6	19	-	-	-	C	C	C	161	-	-	-	154	316	30	-	-	-	2.0
+Notched Whip Deep +10	6	19	-	-	-	-	-	-	166	-	-	-	166	333	30	-	-	-	2.0
+Notched Whip Fire +10	6	19	-	-	-	-	-	-	166	-	166	-	-	333	30	-	-	-	2.0
+Notched Whip Heavy +10	6	19	-	-	C	-	-	-	275	-	-	-	-	275	30	-	-	-	2.0
+Notched Whip Hollow +10	6	19	-	-	-	C	-	-	268	-	-	-	-	268	30	-	-	-	2.0
+Notched Whip Lightning +10	6	19	-	-	-	D	-	C	180	-	-	150	-	330	30	-	-	-	2.0
+Notched Whip Poison +10	6	19	-	-	-	C	-	-	216	-	-	-	-	216	30	57	-	-	2.0
+Notched Whip Raw +10	6	19	-	-	-	-	-	-	247	-	-	-	-	247	30	-	-	-	2.0
+Notched Whip Refined +10	6	19	-	-	D	D	-	-	285	-	-	-	-	285	30	-	-	-	2.0
+Notched Whip Sharp +10	6	19	-	-	-	B	-	-	298	-	-	-	-	298	30	-	-	-	2.0
+Notched Whip Simple +10	6	19	-	-	-	C	C	-	163	128	-	-	-	292	30	-	-	-	2.0
+Old King's Great Hammer  +5	30	-	10	10	C	-	D	D	472	-	146	-	-	619	-	-	-	-	18.5
+Old Wolf Curved Sword  +5	19	25	-	-	D	B	-	-	533	-	-	-	-	533	-	-	-	-	13.0
+Onikiri and Ubadachi  +10	13	25	-	-	C	C	-	-	406	-	-	-	-	406	30	-	-	-	8.5
+Onikiri and Ubadachi Blessed +10	13	25	-	-	D	C	-	S	275	-	-	-	-	275	30	-	-	-	8.5
+Onikiri and Ubadachi Blood +10	13	25	-	-	C	C	-	-	315	-	-	-	-	315	60	-	-	-	8.5
+Onikiri and Ubadachi Chaos +10	13	25	-	-	C	C	A	A	209	-	190	-	-	399	30	-	-	-	8.5
+Onikiri and Ubadachi Crystal +10	13	25	-	-	D	C	S	-	225	154	-	-	-	379	30	-	-	-	8.5
+Onikiri and Ubadachi Dark +10	13	25	-	-	C	C	A	A	209	-	-	-	190	399	30	-	-	-	8.5
+Onikiri and Ubadachi Deep +10	13	25	-	-	-	-	-	-	192	-	-	-	192	384	30	-	-	-	8.5
+Onikiri and Ubadachi Fire +10	13	25	-	-	-	-	-	-	192	-	192	-	-	384	30	-	-	-	8.5
+Onikiri and Ubadachi Heavy +10	13	25	-	-	A	-	-	-	361	-	-	-	-	361	30	-	-	-	8.5
+Onikiri and Ubadachi Hollow +10	13	25	-	-	C	C	-	-	391	-	-	-	-	391	30	-	-	-	8.5
+Onikiri and Ubadachi Lightning +10	13	25	-	-	D	C	-	S	225	-	-	166	-	392	30	-	-	-	8.5
+Onikiri and Ubadachi Poison +10	13	25	-	-	C	C	-	-	315	-	-	-	-	315	30	58	-	-	8.5
+Onikiri and Ubadachi Raw +10	13	25	-	-	-	-	-	-	296	-	-	-	-	296	30	-	-	-	8.5
+Onikiri and Ubadachi Refined +10	13	25	-	-	C	C	-	-	386	-	-	-	-	386	30	-	-	-	8.5
+Onikiri and Ubadachi Sharp +10	13	25	-	-	D	A	-	-	404	-	-	-	-	404	30	-	-	-	8.5
+Onikiri and Ubadachi Simple +10	13	25	-	-	C	C	S	-	212	138	-	-	-	351	30	-	-	-	8.5
+Onislayer Greatbow  +5	18	24	-	-	E	B	-	-	348	-	-	-	-	348	-	-	-	-	7.5
+Onyx Blade  +5	14	12	15	15	D	D	C	C	198	-	-	-	120	318	-	-	-	-	9.0
+Painting Guardian's Curved Sword  +10	7	19	-	-	E	A	-	-	347	-	-	-	-	347	30	-	-	-	1.5
+Painting Guardian's Curved Sword Blessed +10	7	19	-	-	E	A	-	S	253	-	-	-	-	253	30	-	-	-	1.5
+Painting Guardian's Curved Sword Blood +10	7	19	-	-	E	A	-	-	269	-	-	-	-	269	60	-	-	-	1.5
+Painting Guardian's Curved Sword Chaos +10	7	19	-	-	E	A	A	A	185	-	168	-	-	354	30	-	-	-	1.5
+Painting Guardian's Curved Sword Crystal +10	7	19	-	-	E	B	S	-	206	140	-	-	-	347	30	-	-	-	1.5
+Painting Guardian's Curved Sword Dark +10	7	19	-	-	E	A	A	A	185	-	-	-	168	354	30	-	-	-	1.5
+Painting Guardian's Curved Sword Deep +10	7	19	-	-	-	-	-	-	190	-	-	-	190	381	30	-	-	-	1.5
+Painting Guardian's Curved Sword Fire +10	7	19	-	-	-	-	-	-	190	-	190	-	-	381	30	-	-	-	1.5
+Painting Guardian's Curved Sword Heavy +10	7	19	-	-	A	-	-	-	324	-	-	-	-	324	30	-	-	-	1.5
+Painting Guardian's Curved Sword Hollow +10	7	19	-	-	E	A	-	-	335	-	-	-	-	335	30	-	-	-	1.5
+Painting Guardian's Curved Sword Lightning +10	7	19	-	-	E	B	-	S	206	-	-	152	-	359	30	-	-	-	1.5
+Painting Guardian's Curved Sword Poison +10	7	19	-	-	E	A	-	-	269	-	-	-	-	269	30	58	-	-	1.5
+Painting Guardian's Curved Sword Raw +10	7	19	-	-	-	-	-	-	293	-	-	-	-	293	30	-	-	-	1.5
+Painting Guardian's Curved Sword Refined +10	7	19	-	-	B	B	-	-	357	-	-	-	-	357	30	-	-	-	1.5
+Painting Guardian's Curved Sword Sharp +10	7	19	-	-	E	S	-	-	364	-	-	-	-	364	30	-	-	-	1.5
+Painting Guardian's Curved Sword Simple +10	7	19	-	-	E	A	S	-	195	126	-	-	-	322	30	-	-	-	1.5
+Parrying Dagger  +10	5	14	-	-	E	B	-	-	217	-	-	-	-	217	-	-	-	-	1.0
+Parrying Dagger Blessed +10	5	14	-	-	E	B	-	A	227	-	-	-	-	227	-	-	-	-	1.0
+Parrying Dagger Blood +10	5	14	-	-	E	B	-	-	168	-	-	-	-	168	52	-	-	-	1.0
+Parrying Dagger Chaos +10	5	14	-	-	E	B	B	B	142	-	131	-	-	274	-	-	-	-	1.0
+Parrying Dagger Crystal +10	5	14	-	-	E	C	A	-	155	110	-	-	-	266	-	-	-	-	1.0
+Parrying Dagger Dark +10	5	14	-	-	E	B	B	B	142	-	-	-	131	274	-	-	-	-	1.0
+Parrying Dagger Deep +10	5	14	-	-	-	-	-	-	138	-	-	-	138	277	-	-	-	-	1.0
+Parrying Dagger Fire +10	5	14	-	-	-	-	-	-	138	-	138	-	-	277	-	-	-	-	1.0
+Parrying Dagger Heavy +10	5	14	-	-	A	-	-	-	210	-	-	-	-	210	-	-	-	-	1.0
+Parrying Dagger Hollow +10	5	14	-	-	E	B	-	-	220	-	-	-	-	220	-	-	-	-	1.0
+Parrying Dagger Lightning +10	5	14	-	-	E	C	-	A	155	-	-	118	-	273	-	-	-	-	1.0
+Parrying Dagger Poison +10	5	14	-	-	E	B	-	-	168	-	-	-	-	168	-	58	-	-	1.0
+Parrying Dagger Raw +10	5	14	-	-	-	-	-	-	182	-	-	-	-	182	-	-	-	-	1.0
+Parrying Dagger Refined +10	5	14	-	-	C	C	-	-	224	-	-	-	-	224	-	-	-	-	1.0
+Parrying Dagger Sharp +10	5	14	-	-	E	S	-	-	245	-	-	-	-	245	-	-	-	-	1.0
+Parrying Dagger Simple +10	5	14	-	-	E	B	A	-	145	99	-	-	-	244	-	-	-	-	1.0
+Partizan  +10	14	12	-	-	D	C	-	-	399	-	-	-	-	399	-	-	-	-	6.5
+Partizan Blessed +10	14	12	-	-	D	C	-	S	275	-	-	-	-	275	-	-	-	-	6.5
+Partizan Blood +10	14	12	-	-	D	C	-	-	309	-	-	-	-	309	52	-	-	-	6.5
+Partizan Chaos +10	14	12	-	-	D	C	A	A	210	-	193	-	-	403	-	-	-	-	6.5
+Partizan Crystal +10	14	12	-	-	D	D	A	-	227	160	-	-	-	388	-	-	-	-	6.5
+Partizan Dark +10	14	12	-	-	D	C	A	A	210	-	-	-	193	403	-	-	-	-	6.5
+Partizan Deep +10	14	12	-	-	-	-	-	-	199	-	-	-	199	399	-	-	-	-	6.5
+Partizan Fire +10	14	12	-	-	-	-	-	-	199	-	199	-	-	399	-	-	-	-	6.5
+Partizan Heavy +10	14	12	-	-	A	-	-	-	371	-	-	-	-	371	-	-	-	-	6.5
+Partizan Hollow +10	14	12	-	-	D	C	-	-	385	-	-	-	-	385	-	-	-	-	6.5
+Partizan Lightning +10	14	12	-	-	D	D	-	A	227	-	-	172	-	400	-	-	-	-	6.5
+Partizan Poison +10	14	12	-	-	D	C	-	-	309	-	-	-	-	309	-	58	-	-	6.5
+Partizan Raw +10	14	12	-	-	-	-	-	-	306	-	-	-	-	306	-	-	-	-	6.5
+Partizan Refined +10	14	12	-	-	C	C	-	-	412	-	-	-	-	412	-	-	-	-	6.5
+Partizan Sharp +10	14	12	-	-	D	A	-	-	400	-	-	-	-	400	-	-	-	-	6.5
+Partizan Simple +10	14	12	-	-	D	C	S	-	213	144	-	-	-	357	-	-	-	-	6.5
+Pickaxe  +10	18	9	-	-	B	-	-	-	453	-	-	-	-	453	-	-	-	-	8.0
+Pickaxe Blessed +10	18	9	-	-	C	-	-	A	305	-	-	-	-	305	-	-	-	-	8.0
+Pickaxe Blood +10	18	9	-	-	B	-	-	-	351	-	-	-	-	351	74	-	-	-	8.0
+Pickaxe Chaos +10	18	9	-	-	C	-	C	C	237	-	222	-	-	460	-	-	-	-	8.0
+Pickaxe Crystal +10	18	9	-	-	C	-	B	-	260	198	-	-	-	459	-	-	-	-	8.0
+Pickaxe Dark +10	18	9	-	-	C	-	C	C	237	-	-	-	222	460	-	-	-	-	8.0
+Pickaxe Deep +10	18	9	-	-	-	-	-	-	240	-	-	-	240	481	-	-	-	-	8.0
+Pickaxe Fire +10	18	9	-	-	-	-	-	-	240	-	240	-	-	481	-	-	-	-	8.0
+Pickaxe Heavy +10	18	9	-	-	A	-	-	-	488	-	-	-	-	488	-	-	-	-	8.0
+Pickaxe Hollow +10	18	9	-	-	B	-	-	-	435	-	-	-	-	435	-	-	-	-	8.0
+Pickaxe Lightning +10	18	9	-	-	C	-	-	B	260	-	-	209	-	470	-	-	-	-	8.0
+Pickaxe Poison +10	18	9	-	-	B	-	-	-	351	-	-	-	-	351	-	97	-	-	8.0
+Pickaxe Raw +10	18	9	-	-	-	-	-	-	390	-	-	-	-	390	-	-	-	-	8.0
+Pickaxe Refined +10	18	9	-	-	C	C	-	-	472	-	-	-	-	472	-	-	-	-	8.0
+Pickaxe Sharp +10	18	9	-	-	E	A	-	-	484	-	-	-	-	484	-	-	-	-	8.0
+Pickaxe Simple +10	18	9	-	-	B	-	A	-	240	177	-	-	-	417	-	-	-	-	8.0
+Pierce Shield  +10	10	-	-	-	D	-	-	-	230	-	-	-	-	230	-	-	-	-	3.5
+Pierce Shield Blessed +10	10	-	-	-	D	-	-	C	173	-	-	-	-	173	-	-	-	-	3.5
+Pierce Shield Blood +10	10	-	-	-	D	-	-	-	178	-	-	-	-	178	51	-	-	-	3.5
+Pierce Shield Chaos +10	10	-	-	-	D	-	D	D	138	-	135	-	-	274	-	-	-	-	3.5
+Pierce Shield Crystal +10	10	-	-	-	D	-	C	-	156	133	-	-	-	289	-	-	-	-	3.5
+Pierce Shield Dark +10	10	-	-	-	D	-	D	D	138	-	-	-	135	274	-	-	-	-	3.5
+Pierce Shield Deep +10	10	-	-	-	-	-	-	-	142	-	-	-	142	284	-	-	-	-	3.5
+Pierce Shield Fire +10	10	-	-	-	-	-	-	-	142	-	142	-	-	284	-	-	-	-	3.5
+Pierce Shield Heavy +10	10	-	-	-	C	-	-	-	258	-	-	-	-	258	-	-	-	-	3.5
+Pierce Shield Hollow +10	10	-	-	-	D	-	-	-	220	-	-	-	-	220	-	-	-	-	3.5
+Pierce Shield Lightning +10	10	-	-	-	D	-	-	C	156	-	-	137	-	294	-	-	-	-	3.5
+Pierce Shield Poison +10	10	-	-	-	D	-	-	-	178	-	-	-	-	178	-	57	-	-	3.5
+Pierce Shield Raw +10	10	-	-	-	-	-	-	-	226	-	-	-	-	226	-	-	-	-	3.5
+Pierce Shield Refined +10	10	-	-	-	D	D	-	-	244	-	-	-	-	244	-	-	-	-	3.5
+Pierce Shield Sharp +10	10	-	-	-	D	-	-	-	202	-	-	-	-	202	-	-	-	-	3.5
+Pierce Shield Simple +10	10	-	-	-	D	-	C	-	139	118	-	-	-	258	-	-	-	-	3.5
+Pike  +10	18	14	-	-	D	C	-	-	388	-	-	-	-	388	-	-	-	-	7.5
+Pike Blessed +10	18	14	-	-	D	C	-	S	278	-	-	-	-	278	-	-	-	-	7.5
+Pike Blood +10	18	14	-	-	D	C	-	-	301	-	-	-	-	301	52	-	-	-	7.5
+Pike Chaos +10	18	14	-	-	D	C	A	A	212	-	194	-	-	407	-	-	-	-	7.5
+Pike Crystal +10	18	14	-	-	D	C	A	-	229	162	-	-	-	392	-	-	-	-	7.5
+Pike Dark +10	18	14	-	-	D	C	A	A	212	-	-	-	194	407	-	-	-	-	7.5
+Pike Deep +10	18	14	-	-	-	-	-	-	205	-	-	-	205	410	-	-	-	-	7.5
+Pike Fire +10	18	14	-	-	-	-	-	-	205	-	205	-	-	410	-	-	-	-	7.5
+Pike Heavy +10	18	14	-	-	A	-	-	-	360	-	-	-	-	360	-	-	-	-	7.5
+Pike Hollow +10	18	14	-	-	D	C	-	-	374	-	-	-	-	374	-	-	-	-	7.5
+Pike Lightning +10	18	14	-	-	D	C	-	A	229	-	-	174	-	404	-	-	-	-	7.5
+Pike Poison +10	18	14	-	-	D	C	-	-	301	-	-	-	-	301	-	58	-	-	7.5
+Pike Raw +10	18	14	-	-	-	-	-	-	314	-	-	-	-	314	-	-	-	-	7.5
+Pike Refined +10	18	14	-	-	C	C	-	-	400	-	-	-	-	400	-	-	-	-	7.5
+Pike Sharp +10	18	14	-	-	E	A	-	-	406	-	-	-	-	406	-	-	-	-	7.5
+Pike Simple +10	18	14	-	-	D	C	S	-	215	145	-	-	-	361	-	-	-	-	7.5
+Plank Shield  +10	8	-	-	-	D	-	-	-	127	-	-	-	-	127	-	-	-	-	1.0
+Plank Shield Blessed +10	8	-	-	-	D	-	-	D	104	-	-	-	-	104	-	-	-	-	1.0
+Plank Shield Blood +10	8	-	-	-	D	-	-	-	98	-	-	-	-	98	51	-	-	-	1.0
+Plank Shield Chaos +10	8	-	-	-	D	-	D	D	85	-	85	-	-	170	-	-	-	-	1.0
+Plank Shield Crystal +10	8	-	-	-	E	-	D	-	97	88	-	-	-	185	-	-	-	-	1.0
+Plank Shield Dark +10	8	-	-	-	D	-	D	D	85	-	-	-	85	170	-	-	-	-	1.0
+Plank Shield Deep +10	8	-	-	-	-	-	-	-	83	-	-	-	83	166	-	-	-	-	1.0
+Plank Shield Fire +10	8	-	-	-	-	-	-	-	83	-	83	-	-	166	-	-	-	-	1.0
+Plank Shield Heavy +10	8	-	-	-	D	-	-	-	134	-	-	-	-	134	-	-	-	-	1.0
+Plank Shield Hollow +10	8	-	-	-	D	-	-	-	121	-	-	-	-	121	-	-	-	-	1.0
+Plank Shield Lightning +10	8	-	-	-	E	-	-	D	97	-	-	89	-	187	-	-	-	-	1.0
+Plank Shield Poison +10	8	-	-	-	D	-	-	-	98	-	-	-	-	98	-	57	-	-	1.0
+Plank Shield Raw +10	8	-	-	-	-	-	-	-	137	-	-	-	-	137	-	-	-	-	1.0
+Plank Shield Refined +10	8	-	-	-	D	D	-	-	136	-	-	-	-	136	-	-	-	-	1.0
+Plank Shield Sharp +10	8	-	-	-	E	-	-	-	113	-	-	-	-	113	-	-	-	-	1.0
+Plank Shield Simple +10	8	-	-	-	D	-	D	-	85	78	-	-	-	163	-	-	-	-	1.0
+Pontiff Knight Curved Sword  +5	12	18	10	-	D	C	-	-	393	-	-	-	-	393	-	-	-	-	3.5
+Pontiff Knight Great Scythe  +5	14	19	-	12	E	S	-	-	402	-	-	-	-	402	30	-	-	-	7.5
+Pontiff Knight Shield  +5	8	12	-	-	D	-	-	-	138	-	-	-	-	138	-	-	-	-	3.5
+Porcine Shield  +10	8	-	-	-	D	-	-	-	223	-	-	-	-	223	-	-	-	-	4.5
+Porcine Shield Blessed +10	8	-	-	-	D	-	-	C	168	-	-	-	-	168	-	-	-	-	4.5
+Porcine Shield Blood +10	8	-	-	-	D	-	-	-	173	-	-	-	-	173	51	-	-	-	4.5
+Porcine Shield Chaos +10	8	-	-	-	D	-	D	D	134	-	132	-	-	266	-	-	-	-	4.5
+Porcine Shield Crystal +10	8	-	-	-	D	-	D	-	152	130	-	-	-	282	-	-	-	-	4.5
+Porcine Shield Dark +10	8	-	-	-	D	-	D	D	134	-	-	-	132	266	-	-	-	-	4.5
+Porcine Shield Deep +10	8	-	-	-	-	-	-	-	138	-	-	-	138	277	-	-	-	-	4.5
+Porcine Shield Fire +10	8	-	-	-	-	-	-	-	138	-	138	-	-	277	-	-	-	-	4.5
+Porcine Shield Heavy +10	8	-	-	-	C	-	-	-	249	-	-	-	-	249	-	-	-	-	4.5
+Porcine Shield Hollow +10	8	-	-	-	D	-	-	-	213	-	-	-	-	213	-	-	-	-	4.5
+Porcine Shield Lightning +10	8	-	-	-	D	-	-	D	152	-	-	134	-	286	-	-	-	-	4.5
+Porcine Shield Poison +10	8	-	-	-	D	-	-	-	173	-	-	-	-	173	-	57	-	-	4.5
+Porcine Shield Raw +10	8	-	-	-	-	-	-	-	221	-	-	-	-	221	-	-	-	-	4.5
+Porcine Shield Refined +10	8	-	-	-	D	D	-	-	238	-	-	-	-	238	-	-	-	-	4.5
+Porcine Shield Sharp +10	8	-	-	-	D	-	-	-	196	-	-	-	-	196	-	-	-	-	4.5
+Porcine Shield Simple +10	8	-	-	-	D	-	C	-	135	115	-	-	-	251	-	-	-	-	4.5
+Preacher's Right Arm  +5	12	-	14	-	D	-	S	-	229	-	-	-	-	229	-	-	-	60	2.0
+Priest's Chime  +10	3	-	-	10	D	-	-	A	141	-	-	-	-	141	-	-	-	118	0.5
+Profaned Greatsword  +5	22	10	-	-	C	C	-	-	605	-	-	-	-	605	-	-	-	-	13.5
+Pyromancer's Parting Flame  +10	15	-	13	13	-	-	C	C	-	-	118	-	-	118	-	-	-	72	0.0
+Pyromancy Flame  +10	-	-	-	-	-	-	C	C	-	-	222	-	-	222	-	-	-	123	0.0
+Quakestone Hammer  +5	40	-	-	-	A	-	-	-	538	-	-	-	-	538	-	-	-	-	15.0
+Rapier  +10	7	12	-	-	D	B	-	-	349	-	-	-	-	349	-	-	-	-	2.0
+Rapier Blessed +10	7	12	-	-	D	C	-	S	242	-	-	-	-	242	-	-	-	-	2.0
+Rapier Blood +10	7	12	-	-	D	B	-	-	270	-	-	-	-	270	52	-	-	-	2.0
+Rapier Chaos +10	7	12	-	-	D	B	A	A	185	-	170	-	-	355	-	-	-	-	2.0
+Rapier Crystal +10	7	12	-	-	D	C	A	-	200	142	-	-	-	342	-	-	-	-	2.0
+Rapier Dark +10	7	12	-	-	D	B	A	A	185	-	-	-	170	355	-	-	-	-	2.0
+Rapier Deep +10	7	12	-	-	-	-	-	-	185	-	-	-	185	370	-	-	-	-	2.0
+Rapier Fire +10	7	12	-	-	-	-	-	-	185	-	185	-	-	370	-	-	-	-	2.0
+Rapier Heavy +10	7	12	-	-	A	-	-	-	312	-	-	-	-	312	-	-	-	-	2.0
+Rapier Hollow +10	7	12	-	-	D	B	-	-	336	-	-	-	-	336	-	-	-	-	2.0
+Rapier Lightning +10	7	12	-	-	D	C	-	A	200	-	-	152	-	353	-	-	-	-	2.0
+Rapier Poison +10	7	12	-	-	D	B	-	-	270	-	-	-	-	270	-	58	-	-	2.0
+Rapier Raw +10	7	12	-	-	-	-	-	-	273	-	-	-	-	273	-	-	-	-	2.0
+Rapier Refined +10	7	12	-	-	C	C	-	-	352	-	-	-	-	352	-	-	-	-	2.0
+Rapier Sharp +10	7	12	-	-	E	A	-	-	360	-	-	-	-	360	-	-	-	-	2.0
+Rapier Simple +10	7	12	-	-	D	B	S	-	188	127	-	-	-	315	-	-	-	-	2.0
+Red Hilted Halberd  +10	14	14	-	-	D	C	-	-	464	-	-	-	-	464	-	-	-	-	8.0
+Red Hilted Halberd Blessed +10	14	14	-	-	D	D	-	A	303	-	-	-	-	303	-	-	-	-	8.0
+Red Hilted Halberd Blood +10	14	14	-	-	D	C	-	-	360	-	-	-	-	360	62	-	-	-	8.0
+Red Hilted Halberd Chaos +10	14	14	-	-	D	C	B	B	232	-	214	-	-	446	-	-	-	-	8.0
+Red Hilted Halberd Crystal +10	14	14	-	-	D	D	A	-	252	181	-	-	-	434	-	-	-	-	8.0
+Red Hilted Halberd Dark +10	14	14	-	-	D	C	B	B	232	-	-	-	214	446	-	-	-	-	8.0
+Red Hilted Halberd Deep +10	14	14	-	-	-	-	-	-	222	-	-	-	222	444	-	-	-	-	8.0
+Red Hilted Halberd Fire +10	14	14	-	-	-	-	-	-	222	-	222	-	-	444	-	-	-	-	8.0
+Red Hilted Halberd Heavy +10	14	14	-	-	A	-	-	-	423	-	-	-	-	423	-	-	-	-	8.0
+Red Hilted Halberd Hollow +10	14	14	-	-	D	C	-	-	447	-	-	-	-	447	-	-	-	-	8.0
+Red Hilted Halberd Lightning +10	14	14	-	-	D	D	-	A	252	-	-	194	-	446	-	-	-	-	8.0
+Red Hilted Halberd Poison +10	14	14	-	-	D	C	-	-	360	-	-	-	-	360	-	72	-	-	8.0
+Red Hilted Halberd Raw +10	14	14	-	-	-	-	-	-	351	-	-	-	-	351	-	-	-	-	8.0
+Red Hilted Halberd Refined +10	14	14	-	-	C	C	-	-	480	-	-	-	-	480	-	-	-	-	8.0
+Red Hilted Halberd Sharp +10	14	14	-	-	D	A	-	-	482	-	-	-	-	482	-	-	-	-	8.0
+Red Hilted Halberd Simple +10	14	14	-	-	D	C	A	-	235	162	-	-	-	398	-	-	-	-	8.0
+Red and White Shield  +10	10	-	-	-	D	-	-	-	166	-	-	-	-	166	-	-	-	-	1.5
+Red and White Shield Blessed +10	10	-	-	-	D	-	-	D	126	-	-	-	-	126	-	-	-	-	1.5
+Red and White Shield Blood +10	10	-	-	-	D	-	-	-	129	-	-	-	-	129	51	-	-	-	1.5
+Red and White Shield Chaos +10	10	-	-	-	D	-	D	D	103	-	102	-	-	206	-	-	-	-	1.5
+Red and White Shield Crystal +10	10	-	-	-	D	-	D	-	118	105	-	-	-	223	-	-	-	-	1.5
+Red and White Shield Dark +10	10	-	-	-	D	-	D	D	103	-	-	-	102	206	-	-	-	-	1.5
+Red and White Shield Deep +10	10	-	-	-	-	-	-	-	109	-	-	-	109	218	-	-	-	-	1.5
+Red and White Shield Fire +10	10	-	-	-	-	-	-	-	109	-	109	-	-	218	-	-	-	-	1.5
+Red and White Shield Heavy +10	10	-	-	-	C	-	-	-	177	-	-	-	-	177	-	-	-	-	1.5
+Red and White Shield Hollow +10	10	-	-	-	D	-	-	-	159	-	-	-	-	159	-	-	-	-	1.5
+Red and White Shield Lightning +10	10	-	-	-	D	-	-	D	118	-	-	108	-	226	-	-	-	-	1.5
+Red and White Shield Poison +10	10	-	-	-	D	-	-	-	129	-	-	-	-	129	-	57	-	-	1.5
+Red and White Shield Raw +10	10	-	-	-	-	-	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Red and White Shield Refined +10	10	-	-	-	D	D	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Red and White Shield Sharp +10	10	-	-	-	D	-	-	-	148	-	-	-	-	148	-	-	-	-	1.5
+Red and White Shield Simple +10	10	-	-	-	D	-	D	-	103	93	-	-	-	197	-	-	-	-	1.5
+Reinforced Club  +10	12	-	-	-	B	-	-	-	372	-	-	-	-	372	30	-	-	-	4.0
+Reinforced Club Blessed +10	12	-	-	-	C	-	-	A	273	-	-	-	-	273	30	-	-	-	4.0
+Reinforced Club Blood +10	12	-	-	-	B	-	-	-	288	-	-	-	-	288	59	-	-	-	4.0
+Reinforced Club Chaos +10	12	-	-	-	B	-	B	B	211	-	196	-	-	407	30	-	-	-	4.0
+Reinforced Club Crystal +10	12	-	-	-	C	-	A	-	230	171	-	-	-	401	30	-	-	-	4.0
+Reinforced Club Dark +10	12	-	-	-	B	-	B	B	211	-	-	-	196	407	30	-	-	-	4.0
+Reinforced Club Deep +10	12	-	-	-	-	-	-	-	203	-	-	-	203	407	30	-	-	-	4.0
+Reinforced Club Fire +10	12	-	-	-	-	-	-	-	203	-	203	-	-	407	30	-	-	-	4.0
+Reinforced Club Heavy +10	12	-	-	-	A	-	-	-	404	-	-	-	-	404	30	-	-	-	4.0
+Reinforced Club Hollow +10	12	-	-	-	B	-	-	-	356	-	-	-	-	356	30	-	-	-	4.0
+Reinforced Club Lightning +10	12	-	-	-	C	-	-	A	230	-	-	181	-	412	30	-	-	-	4.0
+Reinforced Club Poison +10	12	-	-	-	B	-	-	-	288	-	-	-	-	288	30	57	-	-	4.0
+Reinforced Club Raw +10	12	-	-	-	-	-	-	-	325	-	-	-	-	325	30	-	-	-	4.0
+Reinforced Club Refined +10	12	-	-	-	C	C	-	-	388	-	-	-	-	388	30	-	-	-	4.0
+Reinforced Club Sharp +10	12	-	-	-	E	A	-	-	400	-	-	-	-	400	30	-	-	-	4.0
+Reinforced Club Simple +10	12	-	-	-	B	-	A	-	214	153	-	-	-	367	30	-	-	-	4.0
+Repeating Crossbow  +5	16	20	-	-	-	-	-	-	228	-	-	-	-	228	-	-	-	-	7.5
+Ricard's Rapier  +10	8	20	-	-	D	B	-	-	358	-	-	-	-	358	-	-	-	-	2.5
+Ricard's Rapier Blessed +10	8	20	-	-	D	C	-	S	249	-	-	-	-	249	-	-	-	-	2.5
+Ricard's Rapier Blood +10	8	20	-	-	D	B	-	-	278	-	-	-	-	278	52	-	-	-	2.5
+Ricard's Rapier Chaos +10	8	20	-	-	D	B	A	A	190	-	174	-	-	364	-	-	-	-	2.5
+Ricard's Rapier Crystal +10	8	20	-	-	D	C	A	-	206	145	-	-	-	351	-	-	-	-	2.5
+Ricard's Rapier Dark +10	8	20	-	-	D	B	A	A	190	-	-	-	174	364	-	-	-	-	2.5
+Ricard's Rapier Deep +10	8	20	-	-	-	-	-	-	188	-	-	-	188	377	-	-	-	-	2.5
+Ricard's Rapier Fire +10	8	20	-	-	-	-	-	-	188	-	188	-	-	377	-	-	-	-	2.5
+Ricard's Rapier Heavy +10	8	20	-	-	A	-	-	-	319	-	-	-	-	319	-	-	-	-	2.5
+Ricard's Rapier Hollow +10	8	20	-	-	D	B	-	-	345	-	-	-	-	345	-	-	-	-	2.5
+Ricard's Rapier Lightning +10	8	20	-	-	D	C	-	A	206	-	-	156	-	362	-	-	-	-	2.5
+Ricard's Rapier Poison +10	8	20	-	-	D	B	-	-	278	-	-	-	-	278	-	58	-	-	2.5
+Ricard's Rapier Raw +10	8	20	-	-	-	-	-	-	278	-	-	-	-	278	-	-	-	-	2.5
+Ricard's Rapier Refined +10	8	20	-	-	C	C	-	-	360	-	-	-	-	360	-	-	-	-	2.5
+Ricard's Rapier Sharp +10	8	20	-	-	E	A	-	-	368	-	-	-	-	368	-	-	-	-	2.5
+Ricard's Rapier Simple +10	8	20	-	-	D	B	S	-	193	130	-	-	-	323	-	-	-	-	2.5
+Ringed Knight Paired Greatswords  +5	40	15	-	-	C	D	E	E	575	-	20	-	-	596	-	-	-	-	22.5
+Ringed Knight Spear  +5	15	17	-	-	C	D	E	E	393	-	23	-	-	416	-	-	-	-	9.0
+Ringed Knight Straight Sword  +5	17	15	-	-	B	D	E	E	397	-	20	-	-	418	-	-	-	-	4.5
+Rose of Ariandel  +5	10	12	-	17	C	E	-	A	86	-	-	-	-	86	34	-	-	60	3.5
+Rotten Ghru Curved Sword  +10	10	13	-	-	E	B	-	-	363	-	-	-	-	363	-	36	-	-	2.0
+Rotten Ghru Curved Sword Blessed +10	10	13	-	-	E	C	-	A	256	-	-	-	-	256	-	36	-	-	2.0
+Rotten Ghru Curved Sword Blood +10	10	13	-	-	E	B	-	-	282	-	-	-	-	282	52	36	-	-	2.0
+Rotten Ghru Curved Sword Chaos +10	10	13	-	-	E	C	B	B	197	-	182	-	-	379	-	36	-	-	2.0
+Rotten Ghru Curved Sword Crystal +10	10	13	-	-	E	C	A	-	214	155	-	-	-	369	-	36	-	-	2.0
+Rotten Ghru Curved Sword Dark +10	10	13	-	-	E	C	B	B	197	-	-	-	182	379	-	36	-	-	2.0
+Rotten Ghru Curved Sword Deep +10	10	13	-	-	-	-	-	-	190	-	-	-	190	381	-	36	-	-	2.0
+Rotten Ghru Curved Sword Fire +10	10	13	-	-	-	-	-	-	190	-	190	-	-	381	-	36	-	-	2.0
+Rotten Ghru Curved Sword Heavy +10	10	13	-	-	A	-	-	-	339	-	-	-	-	339	-	36	-	-	2.0
+Rotten Ghru Curved Sword Hollow +10	10	13	-	-	E	B	-	-	350	-	-	-	-	350	-	36	-	-	2.0
+Rotten Ghru Curved Sword Lightning +10	10	13	-	-	E	C	-	A	214	-	-	165	-	380	-	36	-	-	2.0
+Rotten Ghru Curved Sword Poison +10	10	13	-	-	E	B	-	-	282	-	-	-	-	282	-	70	-	-	2.0
+Rotten Ghru Curved Sword Raw +10	10	13	-	-	-	-	-	-	293	-	-	-	-	293	-	36	-	-	2.0
+Rotten Ghru Curved Sword Refined +10	10	13	-	-	C	C	-	-	376	-	-	-	-	376	-	36	-	-	2.0
+Rotten Ghru Curved Sword Sharp +10	10	13	-	-	E	A	-	-	384	-	-	-	-	384	-	36	-	-	2.0
+Rotten Ghru Curved Sword Simple +10	10	13	-	-	E	B	A	-	200	139	-	-	-	339	-	36	-	-	2.0
+Rotten Ghru Dagger  +10	10	8	-	-	E	B	-	-	228	-	-	-	-	228	-	36	-	-	2.0
+Rotten Ghru Dagger Blessed +10	10	8	-	-	E	C	-	A	236	-	-	-	-	236	-	36	-	-	2.0
+Rotten Ghru Dagger Blood +10	10	8	-	-	E	B	-	-	177	-	-	-	-	177	52	36	-	-	2.0
+Rotten Ghru Dagger Chaos +10	10	8	-	-	E	B	B	B	149	-	137	-	-	286	-	36	-	-	2.0
+Rotten Ghru Dagger Crystal +10	10	8	-	-	E	C	A	-	162	116	-	-	-	278	-	36	-	-	2.0
+Rotten Ghru Dagger Dark +10	10	8	-	-	E	B	B	B	149	-	-	-	137	286	-	36	-	-	2.0
+Rotten Ghru Dagger Deep +10	10	8	-	-	-	-	-	-	146	-	-	-	146	292	-	36	-	-	2.0
+Rotten Ghru Dagger Fire +10	10	8	-	-	-	-	-	-	146	-	146	-	-	292	-	36	-	-	2.0
+Rotten Ghru Dagger Heavy +10	10	8	-	-	A	-	-	-	222	-	-	-	-	222	-	36	-	-	2.0
+Rotten Ghru Dagger Hollow +10	10	8	-	-	E	B	-	-	232	-	-	-	-	232	-	36	-	-	2.0
+Rotten Ghru Dagger Lightning +10	10	8	-	-	E	C	-	A	162	-	-	124	-	286	-	36	-	-	2.0
+Rotten Ghru Dagger Poison +10	10	8	-	-	E	B	-	-	177	-	-	-	-	177	-	70	-	-	2.0
+Rotten Ghru Dagger Raw +10	10	8	-	-	-	-	-	-	179	-	-	-	-	179	-	36	-	-	2.0
+Rotten Ghru Dagger Refined +10	10	8	-	-	B	B	-	-	249	-	-	-	-	249	-	36	-	-	2.0
+Rotten Ghru Dagger Sharp +10	10	8	-	-	E	S	-	-	257	-	-	-	-	257	-	36	-	-	2.0
+Rotten Ghru Dagger Simple +10	10	8	-	-	E	B	A	-	151	104	-	-	-	255	-	36	-	-	2.0
+Rotten Ghru Spear  +10	10	12	-	-	D	C	-	-	384	-	-	-	-	384	-	36	-	-	5.5
+Rotten Ghru Spear Blessed +10	10	12	-	-	D	C	-	S	272	-	-	-	-	272	-	36	-	-	5.5
+Rotten Ghru Spear Blood +10	10	12	-	-	D	C	-	-	298	-	-	-	-	298	52	36	-	-	5.5
+Rotten Ghru Spear Chaos +10	10	12	-	-	D	C	A	A	208	-	191	-	-	399	-	36	-	-	5.5
+Rotten Ghru Spear Crystal +10	10	12	-	-	D	C	A	-	225	159	-	-	-	384	-	36	-	-	5.5
+Rotten Ghru Spear Dark +10	10	12	-	-	D	C	A	A	208	-	-	-	191	399	-	36	-	-	5.5
+Rotten Ghru Spear Deep +10	10	12	-	-	-	-	-	-	192	-	-	-	192	384	-	36	-	-	5.5
+Rotten Ghru Spear Fire +10	10	12	-	-	-	-	-	-	192	-	192	-	-	384	-	36	-	-	5.5
+Rotten Ghru Spear Heavy +10	10	12	-	-	A	-	-	-	357	-	-	-	-	357	-	36	-	-	5.5
+Rotten Ghru Spear Hollow +10	10	12	-	-	D	C	-	-	370	-	-	-	-	370	-	36	-	-	5.5
+Rotten Ghru Spear Lightning +10	10	12	-	-	D	C	-	A	225	-	-	170	-	396	-	36	-	-	5.5
+Rotten Ghru Spear Poison +10	10	12	-	-	D	C	-	-	298	-	-	-	-	298	-	70	-	-	5.5
+Rotten Ghru Spear Raw +10	10	12	-	-	-	-	-	-	296	-	-	-	-	296	-	36	-	-	5.5
+Rotten Ghru Spear Refined +10	10	12	-	-	C	C	-	-	396	-	-	-	-	396	-	36	-	-	5.5
+Rotten Ghru Spear Sharp +10	10	12	-	-	D	A	-	-	389	-	-	-	-	389	-	36	-	-	5.5
+Rotten Ghru Spear Simple +10	10	12	-	-	D	C	S	-	211	142	-	-	-	354	-	36	-	-	5.5
+Round Shield  +10	8	-	-	-	D	-	-	-	207	-	-	-	-	207	-	-	-	-	3.5
+Round Shield Blessed +10	8	-	-	-	D	-	-	C	153	-	-	-	-	153	-	-	-	-	3.5
+Round Shield Blood +10	8	-	-	-	D	-	-	-	161	-	-	-	-	161	51	-	-	-	3.5
+Round Shield Chaos +10	8	-	-	-	D	-	D	D	123	-	120	-	-	244	-	-	-	-	3.5
+Round Shield Crystal +10	8	-	-	-	D	-	D	-	139	119	-	-	-	258	-	-	-	-	3.5
+Round Shield Dark +10	8	-	-	-	D	-	D	D	123	-	-	-	120	244	-	-	-	-	3.5
+Round Shield Deep +10	8	-	-	-	-	-	-	-	127	-	-	-	127	255	-	-	-	-	3.5
+Round Shield Fire +10	8	-	-	-	-	-	-	-	127	-	127	-	-	255	-	-	-	-	3.5
+Round Shield Heavy +10	8	-	-	-	C	-	-	-	231	-	-	-	-	231	-	-	-	-	3.5
+Round Shield Hollow +10	8	-	-	-	D	-	-	-	198	-	-	-	-	198	-	-	-	-	3.5
+Round Shield Lightning +10	8	-	-	-	D	-	-	D	139	-	-	122	-	262	-	-	-	-	3.5
+Round Shield Poison +10	8	-	-	-	D	-	-	-	161	-	-	-	-	161	-	57	-	-	3.5
+Round Shield Raw +10	8	-	-	-	-	-	-	-	205	-	-	-	-	205	-	-	-	-	3.5
+Round Shield Refined +10	8	-	-	-	D	D	-	-	221	-	-	-	-	221	-	-	-	-	3.5
+Round Shield Sharp +10	8	-	-	-	C	-	-	-	218	-	-	-	-	218	-	-	-	-	3.5
+Round Shield Simple +10	8	-	-	-	D	-	C	-	124	105	-	-	-	230	-	-	-	-	3.5
+Sacred Bloom Shield  +5	10	-	-	-	D	-	-	-	175	-	-	-	-	175	-	-	-	-	1.5
+Sacred Chime of Filianore  +5	4	-	-	18	D	-	-	A	157	-	-	-	-	157	-	-	-	60	0.5
+Sage's Crystal Staff  +5	7	-	24	-	D	-	A	-	186	-	-	-	-	186	-	-	-	60	2.5
+Saint Bident  +10	12	12	-	16	D	E	-	C	117	-	-	-	-	117	-	-	-	-	8.5
+Saint Bident Blessed +10	12	12	-	16	D	E	-	A	84	-	-	-	-	84	-	-	-	-	8.5
+Saint Bident Blood +10	12	12	-	16	D	E	-	C	91	-	-	-	-	91	51	-	-	-	8.5
+Saint Bident Chaos +10	12	12	-	16	D	E	C	B	71	-	74	-	-	145	-	-	-	-	8.5
+Saint Bident Crystal +10	12	12	-	16	D	E	C	B	82	149	-	-	-	232	-	-	-	-	8.5
+Saint Bident Dark +10	12	12	-	16	D	E	C	B	71	-	-	-	74	145	-	-	-	-	8.5
+Saint Bident Deep +10	12	12	-	16	-	-	-	-	119	-	-	-	119	239	-	-	-	-	8.5
+Saint Bident Fire +10	12	12	-	16	-	-	-	-	119	-	119	-	-	239	-	-	-	-	8.5
+Saint Bident Heavy +10	12	12	-	16	C	-	-	C	108	-	-	-	-	108	-	-	-	-	8.5
+Saint Bident Hollow +10	12	12	-	16	D	E	-	C	111	-	-	-	-	111	-	-	-	-	8.5
+Saint Bident Lightning +10	12	12	-	16	D	E	-	A	72	-	-	72	-	145	-	-	-	-	8.5
+Saint Bident Poison +10	12	12	-	16	D	E	-	C	91	-	-	-	-	91	-	57	-	-	8.5
+Saint Bident Raw +10	12	12	-	16	-	-	-	-	184	-	-	-	-	184	-	-	-	-	8.5
+Saint Bident Refined +10	12	12	-	16	D	D	-	C	105	-	-	-	-	105	-	-	-	-	8.5
+Saint Bident Sharp +10	12	12	-	16	E	B	-	C	108	-	-	-	-	108	-	-	-	-	8.5
+Saint Bident Simple +10	12	12	-	16	D	E	C	B	69	133	-	-	-	203	-	-	-	-	8.5
+Saint's Talisman  +10	4	-	-	16	D	-	-	S	147	-	-	-	-	147	-	-	-	60	0.5
+Saint-tree Bellvine  +10	3	-	-	18	D	-	-	A	141	-	-	-	-	141	-	-	-	60	0.5
+Scholar's Candlestick  +10	7	-	-	16	E	C	-	-	224	-	-	-	-	224	-	-	-	-	1.5
+Scimitar  +10	7	13	-	-	E	A	-	-	353	-	-	-	-	353	-	-	-	-	2.5
+Scimitar Blessed +10	7	13	-	-	E	A	-	S	257	-	-	-	-	257	-	-	-	-	2.5
+Scimitar Blood +10	7	13	-	-	E	A	-	-	274	-	-	-	-	274	52	-	-	-	2.5
+Scimitar Chaos +10	7	13	-	-	E	A	A	A	189	-	171	-	-	361	-	-	-	-	2.5
+Scimitar Crystal +10	7	13	-	-	E	B	S	-	210	143	-	-	-	353	-	-	-	-	2.5
+Scimitar Dark +10	7	13	-	-	E	A	A	A	189	-	-	-	171	361	-	-	-	-	2.5
+Scimitar Deep +10	7	13	-	-	-	-	-	-	194	-	-	-	194	388	-	-	-	-	2.5
+Scimitar Fire +10	7	13	-	-	-	-	-	-	194	-	194	-	-	388	-	-	-	-	2.5
+Scimitar Heavy +10	7	13	-	-	A	-	-	-	315	-	-	-	-	315	-	-	-	-	2.5
+Scimitar Hollow +10	7	13	-	-	E	A	-	-	341	-	-	-	-	341	-	-	-	-	2.5
+Scimitar Lightning +10	7	13	-	-	E	B	-	S	210	-	-	155	-	365	-	-	-	-	2.5
+Scimitar Poison +10	7	13	-	-	E	A	-	-	274	-	-	-	-	274	-	58	-	-	2.5
+Scimitar Raw +10	7	13	-	-	-	-	-	-	299	-	-	-	-	299	-	-	-	-	2.5
+Scimitar Refined +10	7	13	-	-	B	B	-	-	365	-	-	-	-	365	-	-	-	-	2.5
+Scimitar Sharp +10	7	13	-	-	E	S	-	-	369	-	-	-	-	369	-	-	-	-	2.5
+Scimitar Simple +10	7	13	-	-	E	A	S	-	198	128	-	-	-	327	-	-	-	-	2.5
+Sellsword Twinblades  +10	10	16	-	-	E	B	-	-	349	-	-	-	-	349	-	-	-	-	5.5
+Sellsword Twinblades Blessed +10	10	16	-	-	E	C	-	A	246	-	-	-	-	246	-	-	-	-	5.5
+Sellsword Twinblades Blood +10	10	16	-	-	E	B	-	-	271	-	-	-	-	271	52	-	-	-	5.5
+Sellsword Twinblades Chaos +10	10	16	-	-	E	C	B	B	189	-	175	-	-	364	-	-	-	-	5.5
+Sellsword Twinblades Crystal +10	10	16	-	-	E	C	A	-	206	149	-	-	-	355	-	-	-	-	5.5
+Sellsword Twinblades Dark +10	10	16	-	-	E	C	B	B	189	-	-	-	175	364	-	-	-	-	5.5
+Sellsword Twinblades Deep +10	10	16	-	-	-	-	-	-	183	-	-	-	183	366	-	-	-	-	5.5
+Sellsword Twinblades Fire +10	10	16	-	-	-	-	-	-	183	-	183	-	-	366	-	-	-	-	5.5
+Sellsword Twinblades Heavy +10	10	16	-	-	A	-	-	-	326	-	-	-	-	326	-	-	-	-	5.5
+Sellsword Twinblades Hollow +10	10	16	-	-	E	B	-	-	336	-	-	-	-	336	-	-	-	-	5.5
+Sellsword Twinblades Lightning +10	10	16	-	-	E	C	-	A	206	-	-	159	-	365	-	-	-	-	5.5
+Sellsword Twinblades Poison +10	10	16	-	-	E	B	-	-	271	-	-	-	-	271	-	58	-	-	5.5
+Sellsword Twinblades Raw +10	10	16	-	-	-	-	-	-	270	-	-	-	-	270	-	-	-	-	5.5
+Sellsword Twinblades Refined +10	10	16	-	-	C	C	-	-	361	-	-	-	-	361	-	-	-	-	5.5
+Sellsword Twinblades Sharp +10	10	16	-	-	E	A	-	-	369	-	-	-	-	369	-	-	-	-	5.5
+Sellsword Twinblades Simple +10	10	16	-	-	E	B	A	-	192	133	-	-	-	326	-	-	-	-	5.5
+Shield of Want  +5	18	-	-	-	D	-	-	-	251	-	-	-	-	251	-	-	-	-	5.5
+Short Bow  +10	7	12	-	-	E	D	-	-	228	-	-	-	-	228	-	-	-	-	2.0
+Shortsword  +10	8	10	-	-	C	C	-	-	387	-	-	-	-	387	-	-	-	-	2.0
+Shortsword Blessed +10	8	10	-	-	D	C	-	S	275	-	-	-	-	275	-	-	-	-	2.0
+Shortsword Blood +10	8	10	-	-	C	C	-	-	300	-	-	-	-	300	52	-	-	-	2.0
+Shortsword Chaos +10	8	10	-	-	C	C	A	A	209	-	190	-	-	399	-	-	-	-	2.0
+Shortsword Crystal +10	8	10	-	-	D	C	S	-	225	154	-	-	-	379	-	-	-	-	2.0
+Shortsword Dark +10	8	10	-	-	C	C	A	A	209	-	-	-	190	399	-	-	-	-	2.0
+Shortsword Deep +10	8	10	-	-	-	-	-	-	192	-	-	-	192	384	-	-	-	-	2.0
+Shortsword Fire +10	8	10	-	-	-	-	-	-	192	-	192	-	-	384	-	-	-	-	2.0
+Shortsword Heavy +10	8	10	-	-	A	-	-	-	343	-	-	-	-	343	-	-	-	-	2.0
+Shortsword Hollow +10	8	10	-	-	C	C	-	-	373	-	-	-	-	373	-	-	-	-	2.0
+Shortsword Lightning +10	8	10	-	-	D	C	-	S	225	-	-	166	-	392	-	-	-	-	2.0
+Shortsword Poison +10	8	10	-	-	C	C	-	-	300	-	-	-	-	300	-	58	-	-	2.0
+Shortsword Raw +10	8	10	-	-	-	-	-	-	283	-	-	-	-	283	-	-	-	-	2.0
+Shortsword Refined +10	8	10	-	-	B	B	-	-	397	-	-	-	-	397	-	-	-	-	2.0
+Shortsword Sharp +10	8	10	-	-	D	A	-	-	391	-	-	-	-	391	-	-	-	-	2.0
+Shortsword Simple +10	8	10	-	-	C	C	S	-	212	138	-	-	-	351	-	-	-	-	2.0
+Shotel  +10	9	14	-	-	E	B	-	-	367	-	-	-	-	367	-	-	-	-	2.5
+Shotel Blessed +10	9	14	-	-	E	C	-	A	246	-	-	-	-	246	-	-	-	-	2.5
+Shotel Blood +10	9	14	-	-	E	B	-	-	284	-	-	-	-	284	52	-	-	-	2.5
+Shotel Chaos +10	9	14	-	-	E	C	B	B	198	-	184	-	-	383	-	-	-	-	2.5
+Shotel Crystal +10	9	14	-	-	E	C	A	-	216	156	-	-	-	373	-	-	-	-	2.5
+Shotel Dark +10	9	14	-	-	E	C	B	B	198	-	-	-	184	383	-	-	-	-	2.5
+Shotel Deep +10	9	14	-	-	-	-	-	-	183	-	-	-	183	366	-	-	-	-	2.5
+Shotel Fire +10	9	14	-	-	-	-	-	-	183	-	183	-	-	366	-	-	-	-	2.5
+Shotel Heavy +10	9	14	-	-	B	-	-	-	319	-	-	-	-	319	-	-	-	-	2.5
+Shotel Hollow +10	9	14	-	-	E	B	-	-	353	-	-	-	-	353	-	-	-	-	2.5
+Shotel Lightning +10	9	14	-	-	E	C	-	A	216	-	-	167	-	384	-	-	-	-	2.5
+Shotel Poison +10	9	14	-	-	E	B	-	-	284	-	-	-	-	284	-	58	-	-	2.5
+Shotel Raw +10	9	14	-	-	-	-	-	-	283	-	-	-	-	283	-	-	-	-	2.5
+Shotel Refined +10	9	14	-	-	C	C	-	-	369	-	-	-	-	369	-	-	-	-	2.5
+Shotel Sharp +10	9	14	-	-	E	A	-	-	372	-	-	-	-	372	-	-	-	-	2.5
+Shotel Simple +10	9	14	-	-	E	B	A	-	192	133	-	-	-	326	-	-	-	-	2.5
+Silver Eagle Kite Shield  +10	11	-	-	-	D	-	-	-	229	-	-	-	-	229	-	-	-	-	5.0
+Silver Eagle Kite Shield Blessed +10	11	-	-	-	D	-	-	C	172	-	-	-	-	172	-	-	-	-	5.0
+Silver Eagle Kite Shield Blood +10	11	-	-	-	D	-	-	-	177	-	-	-	-	177	51	-	-	-	5.0
+Silver Eagle Kite Shield Chaos +10	11	-	-	-	D	-	D	D	138	-	135	-	-	273	-	-	-	-	5.0
+Silver Eagle Kite Shield Crystal +10	11	-	-	-	D	-	D	-	156	134	-	-	-	290	-	-	-	-	5.0
+Silver Eagle Kite Shield Dark +10	11	-	-	-	D	-	D	D	138	-	-	-	135	273	-	-	-	-	5.0
+Silver Eagle Kite Shield Deep +10	11	-	-	-	-	-	-	-	144	-	-	-	144	288	-	-	-	-	5.0
+Silver Eagle Kite Shield Fire +10	11	-	-	-	-	-	-	-	144	-	144	-	-	288	-	-	-	-	5.0
+Silver Eagle Kite Shield Heavy +10	11	-	-	-	C	-	-	-	254	-	-	-	-	254	-	-	-	-	5.0
+Silver Eagle Kite Shield Hollow +10	11	-	-	-	D	-	-	-	219	-	-	-	-	219	-	-	-	-	5.0
+Silver Eagle Kite Shield Lightning +10	11	-	-	-	D	-	-	D	156	-	-	138	-	294	-	-	-	-	5.0
+Silver Eagle Kite Shield Poison +10	11	-	-	-	D	-	-	-	177	-	-	-	-	177	-	57	-	-	5.0
+Silver Eagle Kite Shield Raw +10	11	-	-	-	-	-	-	-	228	-	-	-	-	228	-	-	-	-	5.0
+Silver Eagle Kite Shield Refined +10	11	-	-	-	D	D	-	-	243	-	-	-	-	243	-	-	-	-	5.0
+Silver Eagle Kite Shield Sharp +10	11	-	-	-	D	-	-	-	201	-	-	-	-	201	-	-	-	-	5.0
+Silver Eagle Kite Shield Simple +10	11	-	-	-	D	-	C	-	139	119	-	-	-	258	-	-	-	-	5.0
+Silver Knight Shield  +5	16	-	-	-	D	-	-	-	227	-	-	-	-	227	-	-	-	-	6.5
+Small Leather Shield  +10	7	-	-	-	D	-	-	-	169	-	-	-	-	169	-	-	-	-	2.0
+Small Leather Shield Blessed +10	7	-	-	-	D	-	-	D	125	-	-	-	-	125	-	-	-	-	2.0
+Small Leather Shield Blood +10	7	-	-	-	D	-	-	-	131	-	-	-	-	131	51	-	-	-	2.0
+Small Leather Shield Chaos +10	7	-	-	-	D	-	D	D	101	-	101	-	-	203	-	-	-	-	2.0
+Small Leather Shield Crystal +10	7	-	-	-	D	-	D	-	116	104	-	-	-	221	-	-	-	-	2.0
+Small Leather Shield Dark +10	7	-	-	-	D	-	D	D	101	-	-	-	101	203	-	-	-	-	2.0
+Small Leather Shield Deep +10	7	-	-	-	-	-	-	-	111	-	-	-	111	222	-	-	-	-	2.0
+Small Leather Shield Fire +10	7	-	-	-	-	-	-	-	111	-	111	-	-	222	-	-	-	-	2.0
+Small Leather Shield Heavy +10	7	-	-	-	C	-	-	-	180	-	-	-	-	180	-	-	-	-	2.0
+Small Leather Shield Hollow +10	7	-	-	-	D	-	-	-	161	-	-	-	-	161	-	-	-	-	2.0
+Small Leather Shield Lightning +10	7	-	-	-	D	-	-	D	116	-	-	106	-	223	-	-	-	-	2.0
+Small Leather Shield Poison +10	7	-	-	-	D	-	-	-	131	-	-	-	-	131	-	57	-	-	2.0
+Small Leather Shield Raw +10	7	-	-	-	-	-	-	-	182	-	-	-	-	182	-	-	-	-	2.0
+Small Leather Shield Refined +10	7	-	-	-	D	D	-	-	182	-	-	-	-	182	-	-	-	-	2.0
+Small Leather Shield Sharp +10	7	-	-	-	D	-	-	-	172	-	-	-	-	172	-	-	-	-	2.0
+Small Leather Shield Simple +10	7	-	-	-	D	-	D	-	102	92	-	-	-	195	-	-	-	-	2.0
+Smough's Great Hammer  +5	45	-	-	-	B	-	-	-	214	-	-	-	-	214	-	-	-	-	24.0
+Sniper Crossbow  +10	18	16	-	-	-	-	-	-	245	-	-	-	-	245	-	-	-	-	7.5
+Soldering Iron  +10	10	12	-	-	D	C	-	-	132	-	192	-	-	324	-	-	-	-	5.0
+Sorcerer's Staff  +10	6	-	10	-	D	-	A	-	163	-	-	-	-	163	-	-	-	100	2.0
+Spear  +10	11	10	-	-	D	C	-	-	384	-	-	-	-	384	-	-	-	-	4.5
+Spear Blessed +10	11	10	-	-	D	C	-	S	264	-	-	-	-	264	-	-	-	-	4.5
+Spear Blood +10	11	10	-	-	D	C	-	-	298	-	-	-	-	298	52	-	-	-	4.5
+Spear Chaos +10	11	10	-	-	D	C	A	A	202	-	185	-	-	387	-	-	-	-	4.5
+Spear Crystal +10	11	10	-	-	D	C	A	-	219	154	-	-	-	373	-	-	-	-	4.5
+Spear Dark +10	11	10	-	-	D	C	A	A	202	-	-	-	185	387	-	-	-	-	4.5
+Spear Deep +10	11	10	-	-	-	-	-	-	192	-	-	-	192	384	-	-	-	-	4.5
+Spear Fire +10	11	10	-	-	-	-	-	-	192	-	192	-	-	384	-	-	-	-	4.5
+Spear Heavy +10	11	10	-	-	A	-	-	-	357	-	-	-	-	357	-	-	-	-	4.5
+Spear Hollow +10	11	10	-	-	D	C	-	-	370	-	-	-	-	370	-	-	-	-	4.5
+Spear Lightning +10	11	10	-	-	D	C	-	A	219	-	-	166	-	385	-	-	-	-	4.5
+Spear Poison +10	11	10	-	-	D	C	-	-	298	-	-	-	-	298	-	58	-	-	4.5
+Spear Raw +10	11	10	-	-	-	-	-	-	296	-	-	-	-	296	-	-	-	-	4.5
+Spear Refined +10	11	10	-	-	C	C	-	-	396	-	-	-	-	396	-	-	-	-	4.5
+Spear Sharp +10	11	10	-	-	E	A	-	-	400	-	-	-	-	400	-	-	-	-	4.5
+Spear Simple +10	11	10	-	-	D	C	S	-	205	138	-	-	-	344	-	-	-	-	4.5
+Spider Shield  +10	10	-	-	-	D	-	-	-	231	-	-	-	-	231	-	-	-	-	3.5
+Spider Shield Blessed +10	10	-	-	-	D	-	-	C	173	-	-	-	-	173	-	-	-	-	3.5
+Spider Shield Blood +10	10	-	-	-	D	-	-	-	179	-	-	-	-	179	51	-	-	-	3.5
+Spider Shield Chaos +10	10	-	-	-	D	-	D	D	139	-	136	-	-	275	-	-	-	-	3.5
+Spider Shield Crystal +10	10	-	-	-	D	-	D	-	157	134	-	-	-	291	-	-	-	-	3.5
+Spider Shield Dark +10	10	-	-	-	D	-	D	D	139	-	-	-	136	275	-	-	-	-	3.5
+Spider Shield Deep +10	10	-	-	-	-	-	-	-	144	-	-	-	144	288	-	-	-	-	3.5
+Spider Shield Fire +10	10	-	-	-	-	-	-	-	144	-	144	-	-	288	-	-	-	-	3.5
+Spider Shield Heavy +10	10	-	-	-	C	-	-	-	258	-	-	-	-	258	-	-	-	-	3.5
+Spider Shield Hollow +10	10	-	-	-	D	-	-	-	220	-	-	-	-	220	-	-	-	-	3.5
+Spider Shield Lightning +10	10	-	-	-	D	-	-	D	157	-	-	138	-	295	-	-	-	-	3.5
+Spider Shield Poison +10	10	-	-	-	D	-	-	-	179	-	-	-	-	179	-	57	-	-	3.5
+Spider Shield Raw +10	10	-	-	-	-	-	-	-	228	-	-	-	-	228	-	-	-	-	3.5
+Spider Shield Refined +10	10	-	-	-	D	D	-	-	247	-	-	-	-	247	-	-	-	-	3.5
+Spider Shield Sharp +10	10	-	-	-	D	-	-	-	203	-	-	-	-	203	-	-	-	-	3.5
+Spider Shield Simple +10	10	-	-	-	D	-	C	-	140	119	-	-	-	259	-	-	-	-	3.5
+Spiked Mace  +10	21	13	-	-	B	-	-	-	485	-	-	-	-	485	43	-	-	-	16.0
+Spiked Mace Blessed +10	21	13	-	-	C	-	-	A	323	-	-	-	-	323	43	-	-	-	16.0
+Spiked Mace Blood +10	21	13	-	-	B	-	-	-	376	-	-	-	-	376	74	-	-	-	16.0
+Spiked Mace Chaos +10	21	13	-	-	B	-	C	C	251	-	235	-	-	486	43	-	-	-	16.0
+Spiked Mace Crystal +10	21	13	-	-	C	-	B	-	275	208	-	-	-	484	43	-	-	-	16.0
+Spiked Mace Dark +10	21	13	-	-	B	-	C	C	251	-	-	-	235	486	43	-	-	-	16.0
+Spiked Mace Deep +10	21	13	-	-	-	-	-	-	242	-	-	-	242	484	43	-	-	-	16.0
+Spiked Mace Fire +10	21	13	-	-	-	-	-	-	242	-	242	-	-	484	43	-	-	-	16.0
+Spiked Mace Heavy +10	21	13	-	-	A	-	-	-	523	-	-	-	-	523	43	-	-	-	16.0
+Spiked Mace Hollow +10	21	13	-	-	B	-	-	-	466	-	-	-	-	466	43	-	-	-	16.0
+Spiked Mace Lightning +10	21	13	-	-	C	-	-	B	275	-	-	220	-	496	43	-	-	-	16.0
+Spiked Mace Poison +10	21	13	-	-	B	-	-	-	376	-	-	-	-	376	43	97	-	-	16.0
+Spiked Mace Raw +10	21	13	-	-	-	-	-	-	405	-	-	-	-	405	43	-	-	-	16.0
+Spiked Mace Refined +10	21	13	-	-	C	C	-	-	507	-	-	-	-	507	43	-	-	-	16.0
+Spiked Mace Sharp +10	21	13	-	-	E	A	-	-	523	-	-	-	-	523	43	-	-	-	16.0
+Spiked Mace Simple +10	21	13	-	-	B	-	A	-	254	186	-	-	-	441	43	-	-	-	16.0
+Spiked Shield  +10	12	12	-	-	D	-	-	-	226	-	-	-	-	226	30	-	-	-	3.5
+Spiked Shield Blessed +10	12	12	-	-	D	-	-	C	170	-	-	-	-	170	30	-	-	-	3.5
+Spiked Shield Blood +10	12	12	-	-	D	-	-	-	175	-	-	-	-	175	59	-	-	-	3.5
+Spiked Shield Chaos +10	12	12	-	-	D	-	D	D	136	-	133	-	-	269	30	-	-	-	3.5
+Spiked Shield Crystal +10	12	12	-	-	D	-	D	-	154	131	-	-	-	285	30	-	-	-	3.5
+Spiked Shield Dark +10	12	12	-	-	D	-	D	D	136	-	-	-	133	269	30	-	-	-	3.5
+Spiked Shield Deep +10	12	12	-	-	-	-	-	-	140	-	-	-	140	281	30	-	-	-	3.5
+Spiked Shield Fire +10	12	12	-	-	-	-	-	-	140	-	140	-	-	281	30	-	-	-	3.5
+Spiked Shield Heavy +10	12	12	-	-	C	-	-	-	252	-	-	-	-	252	30	-	-	-	3.5
+Spiked Shield Hollow +10	12	12	-	-	D	-	-	-	215	-	-	-	-	215	30	-	-	-	3.5
+Spiked Shield Lightning +10	12	12	-	-	D	-	-	D	154	-	-	135	-	289	30	-	-	-	3.5
+Spiked Shield Poison +10	12	12	-	-	D	-	-	-	175	-	-	-	-	175	30	57	-	-	3.5
+Spiked Shield Raw +10	12	12	-	-	-	-	-	-	223	-	-	-	-	223	30	-	-	-	3.5
+Spiked Shield Refined +10	12	12	-	-	D	D	-	-	241	-	-	-	-	241	30	-	-	-	3.5
+Spiked Shield Sharp +10	12	12	-	-	D	-	-	-	198	-	-	-	-	198	30	-	-	-	3.5
+Spiked Shield Simple +10	12	12	-	-	D	-	C	-	137	117	-	-	-	254	30	-	-	-	3.5
+Spirit Tree Crest Shield  +5	14	-	-	-	D	-	-	-	220	-	-	-	-	220	-	-	-	-	5.0
+Splitleaf Greatsword  +10	26	16	-	-	C	E	-	-	460	-	-	-	-	460	-	-	-	-	13.5
+Splitleaf Greatsword Blessed +10	26	16	-	-	C	E	-	A	332	-	-	-	-	332	-	-	-	-	13.5
+Splitleaf Greatsword Blood +10	26	16	-	-	C	E	-	-	357	-	-	-	-	357	61	-	-	-	13.5
+Splitleaf Greatsword Chaos +10	26	16	-	-	C	E	B	B	255	-	236	-	-	491	-	-	-	-	13.5
+Splitleaf Greatsword Crystal +10	26	16	-	-	C	E	A	-	278	202	-	-	-	480	-	-	-	-	13.5
+Splitleaf Greatsword Dark +10	26	16	-	-	C	E	B	B	255	-	-	-	236	491	-	-	-	-	13.5
+Splitleaf Greatsword Deep +10	26	16	-	-	-	-	-	-	238	-	-	-	238	477	-	-	-	-	13.5
+Splitleaf Greatsword Fire +10	26	16	-	-	-	-	-	-	238	-	238	-	-	477	-	-	-	-	13.5
+Splitleaf Greatsword Heavy +10	26	16	-	-	S	-	-	-	510	-	-	-	-	510	-	-	-	-	13.5
+Splitleaf Greatsword Hollow +10	26	16	-	-	C	E	-	-	442	-	-	-	-	442	-	-	-	-	13.5
+Splitleaf Greatsword Lightning +10	26	16	-	-	C	E	-	A	278	-	-	216	-	494	-	-	-	-	13.5
+Splitleaf Greatsword Poison +10	26	16	-	-	C	E	-	-	357	-	-	-	-	357	-	72	-	-	13.5
+Splitleaf Greatsword Raw +10	26	16	-	-	-	-	-	-	400	-	-	-	-	400	-	-	-	-	13.5
+Splitleaf Greatsword Refined +10	26	16	-	-	C	C	-	-	503	-	-	-	-	503	-	-	-	-	13.5
+Splitleaf Greatsword Sharp +10	26	16	-	-	D	A	-	-	515	-	-	-	-	515	-	-	-	-	13.5
+Splitleaf Greatsword Simple +10	26	16	-	-	C	E	A	-	259	181	-	-	-	440	-	-	-	-	13.5
+Spotted Whip  +10	9	20	-	-	-	C	-	-	300	-	-	-	-	300	-	36	-	-	2.5
+Stone Greatshield  +10	38	-	-	-	D	-	-	-	316	-	-	-	-	316	-	-	-	-	18.0
+Stone Greatshield Blessed +10	38	-	-	-	D	-	-	C	219	-	-	-	-	219	-	-	-	-	18.0
+Stone Greatshield Blood +10	38	-	-	-	D	-	-	-	237	-	-	-	-	237	61	-	-	-	18.0
+Stone Greatshield Chaos +10	38	-	-	-	D	-	D	D	174	-	168	-	-	342	-	-	-	-	18.0
+Stone Greatshield Crystal +10	38	-	-	-	D	-	C	-	195	162	-	-	-	358	-	-	-	-	18.0
+Stone Greatshield Dark +10	38	-	-	-	D	-	D	D	174	-	-	-	168	342	-	-	-	-	18.0
+Stone Greatshield Deep +10	38	-	-	-	-	-	-	-	177	-	-	-	177	355	-	-	-	-	18.0
+Stone Greatshield Fire +10	38	-	-	-	-	-	-	-	177	-	177	-	-	355	-	-	-	-	18.0
+Stone Greatshield Heavy +10	38	-	-	-	B	-	-	-	349	-	-	-	-	349	-	-	-	-	18.0
+Stone Greatshield Hollow +10	38	-	-	-	D	-	-	-	292	-	-	-	-	292	-	-	-	-	18.0
+Stone Greatshield Lightning +10	38	-	-	-	D	-	-	C	195	-	-	168	-	364	-	-	-	-	18.0
+Stone Greatshield Poison +10	38	-	-	-	D	-	-	-	237	-	-	-	-	237	-	71	-	-	18.0
+Stone Greatshield Raw +10	38	-	-	-	-	-	-	-	288	-	-	-	-	288	-	-	-	-	18.0
+Stone Greatshield Refined +10	38	-	-	-	D	D	-	-	325	-	-	-	-	325	-	-	-	-	18.0
+Stone Greatshield Sharp +10	38	-	-	-	D	-	-	-	266	-	-	-	-	266	-	-	-	-	18.0
+Stone Greatshield Simple +10	38	-	-	-	D	-	C	-	175	144	-	-	-	320	-	-	-	-	18.0
+Stone Parma  +10	17	-	-	-	D	-	-	-	247	-	-	-	-	247	-	-	-	-	7.0
+Stone Parma Blessed +10	17	-	-	-	D	-	-	C	184	-	-	-	-	184	-	-	-	-	7.0
+Stone Parma Blood +10	17	-	-	-	D	-	-	-	191	-	-	-	-	191	51	-	-	-	7.0
+Stone Parma Chaos +10	17	-	-	-	D	-	D	D	147	-	144	-	-	292	-	-	-	-	7.0
+Stone Parma Crystal +10	17	-	-	-	D	-	D	-	167	142	-	-	-	309	-	-	-	-	7.0
+Stone Parma Dark +10	17	-	-	-	D	-	D	D	147	-	-	-	144	292	-	-	-	-	7.0
+Stone Parma Deep +10	17	-	-	-	-	-	-	-	155	-	-	-	155	310	-	-	-	-	7.0
+Stone Parma Fire +10	17	-	-	-	-	-	-	-	155	-	155	-	-	310	-	-	-	-	7.0
+Stone Parma Heavy +10	17	-	-	-	C	-	-	-	275	-	-	-	-	275	-	-	-	-	7.0
+Stone Parma Hollow +10	17	-	-	-	D	-	-	-	236	-	-	-	-	236	-	-	-	-	7.0
+Stone Parma Lightning +10	17	-	-	-	D	-	-	D	167	-	-	147	-	314	-	-	-	-	7.0
+Stone Parma Poison +10	17	-	-	-	D	-	-	-	191	-	-	-	-	191	-	57	-	-	7.0
+Stone Parma Raw +10	17	-	-	-	-	-	-	-	244	-	-	-	-	244	-	-	-	-	7.0
+Stone Parma Refined +10	17	-	-	-	D	D	-	-	263	-	-	-	-	263	-	-	-	-	7.0
+Stone Parma Sharp +10	17	-	-	-	D	-	-	-	216	-	-	-	-	216	-	-	-	-	7.0
+Stone Parma Simple +10	17	-	-	-	D	-	C	-	148	126	-	-	-	275	-	-	-	-	7.0
+Storm Curved Sword  +5	14	20	-	-	D	B	-	-	370	-	-	-	-	370	-	-	-	-	5.0
+Storm Ruler  +5	-	-	-	-	C	D	-	-	485	-	-	-	-	485	-	-	-	-	8.0
+Storyteller's Staff  +10	6	-	12	-	D	-	A	-	165	-	-	-	-	165	-	-	-	60	2.5
+Sunless Talisman  +5	4	-	-	24	D	-	A	A	157	-	-	-	-	157	-	-	-	60	0.5
+Sunlight Shield  +10	12	-	-	-	D	-	-	-	215	-	-	-	-	215	-	-	-	-	5.5
+Sunlight Shield Blessed +10	12	-	-	-	D	-	-	C	162	-	-	-	-	162	-	-	-	-	5.5
+Sunlight Shield Blood +10	12	-	-	-	D	-	-	-	167	-	-	-	-	167	51	-	-	-	5.5
+Sunlight Shield Chaos +10	12	-	-	-	D	-	D	D	130	-	127	-	-	258	-	-	-	-	5.5
+Sunlight Shield Crystal +10	12	-	-	-	D	-	D	-	147	126	-	-	-	273	-	-	-	-	5.5
+Sunlight Shield Dark +10	12	-	-	-	D	-	D	D	130	-	-	-	127	258	-	-	-	-	5.5
+Sunlight Shield Deep +10	12	-	-	-	-	-	-	-	133	-	-	-	133	266	-	-	-	-	5.5
+Sunlight Shield Fire +10	12	-	-	-	-	-	-	-	133	-	133	-	-	266	-	-	-	-	5.5
+Sunlight Shield Heavy +10	12	-	-	-	C	-	-	-	240	-	-	-	-	240	-	-	-	-	5.5
+Sunlight Shield Hollow +10	12	-	-	-	D	-	-	-	205	-	-	-	-	205	-	-	-	-	5.5
+Sunlight Shield Lightning +10	12	-	-	-	D	-	-	D	147	-	-	129	-	277	-	-	-	-	5.5
+Sunlight Shield Poison +10	12	-	-	-	D	-	-	-	167	-	-	-	-	167	-	57	-	-	5.5
+Sunlight Shield Raw +10	12	-	-	-	-	-	-	-	213	-	-	-	-	213	-	-	-	-	5.5
+Sunlight Shield Refined +10	12	-	-	-	D	D	-	-	230	-	-	-	-	230	-	-	-	-	5.5
+Sunlight Shield Sharp +10	12	-	-	-	D	-	-	-	189	-	-	-	-	189	-	-	-	-	5.5
+Sunlight Shield Simple +10	12	-	-	-	D	-	C	-	131	112	-	-	-	243	-	-	-	-	5.5
+Sunlight Straight Sword  +5	12	12	-	16	D	D	-	B	117	-	-	-	-	117	-	-	-	-	3.0
+Sunlight Talisman  +10	4	-	-	14	D	-	-	A	147	-	-	-	-	147	-	-	-	100	0.5
+Sunset Shield  +10	12	-	-	-	D	-	-	-	215	-	-	-	-	215	-	-	-	-	5.0
+Sunset Shield Blessed +10	12	-	-	-	D	-	-	C	162	-	-	-	-	162	-	-	-	-	5.0
+Sunset Shield Blood +10	12	-	-	-	D	-	-	-	167	-	-	-	-	167	51	-	-	-	5.0
+Sunset Shield Chaos +10	12	-	-	-	D	-	D	D	130	-	127	-	-	258	-	-	-	-	5.0
+Sunset Shield Crystal +10	12	-	-	-	D	-	D	-	147	126	-	-	-	273	-	-	-	-	5.0
+Sunset Shield Dark +10	12	-	-	-	D	-	D	D	130	-	-	-	127	258	-	-	-	-	5.0
+Sunset Shield Deep +10	12	-	-	-	-	-	-	-	133	-	-	-	133	266	-	-	-	-	5.0
+Sunset Shield Fire +10	12	-	-	-	-	-	-	-	133	-	133	-	-	266	-	-	-	-	5.0
+Sunset Shield Heavy +10	12	-	-	-	C	-	-	-	240	-	-	-	-	240	-	-	-	-	5.0
+Sunset Shield Hollow +10	12	-	-	-	D	-	-	-	205	-	-	-	-	205	-	-	-	-	5.0
+Sunset Shield Lightning +10	12	-	-	-	D	-	-	D	147	-	-	129	-	277	-	-	-	-	5.0
+Sunset Shield Poison +10	12	-	-	-	D	-	-	-	167	-	-	-	-	167	-	57	-	-	5.0
+Sunset Shield Raw +10	12	-	-	-	-	-	-	-	213	-	-	-	-	213	-	-	-	-	5.0
+Sunset Shield Refined +10	12	-	-	-	D	D	-	-	230	-	-	-	-	230	-	-	-	-	5.0
+Sunset Shield Sharp +10	12	-	-	-	D	-	-	-	189	-	-	-	-	189	-	-	-	-	5.0
+Sunset Shield Simple +10	12	-	-	-	D	-	C	-	131	112	-	-	-	243	-	-	-	-	5.0
+Tailbone Short Sword  +5	8	14	-	-	E	D	-	-	255	-	-	-	-	255	-	-	-	-	2.0
+Tailbone Spear  +5	13	15	-	-	D	C	-	-	354	-	-	-	-	354	-	-	-	-	4.5
+Talisman  +10	4	-	-	10	D	-	-	A	141	-	-	-	-	141	-	-	-	100	0.5
+Target Shield  +10	8	11	-	-	D	-	-	-	166	-	-	-	-	166	-	-	-	-	2.0
+Target Shield Blessed +10	8	11	-	-	D	-	-	D	126	-	-	-	-	126	-	-	-	-	2.0
+Target Shield Blood +10	8	11	-	-	D	-	-	-	129	-	-	-	-	129	51	-	-	-	2.0
+Target Shield Chaos +10	8	11	-	-	D	-	D	D	103	-	102	-	-	206	-	-	-	-	2.0
+Target Shield Crystal +10	8	11	-	-	D	-	D	-	118	105	-	-	-	223	-	-	-	-	2.0
+Target Shield Dark +10	8	11	-	-	D	-	D	D	103	-	-	-	102	206	-	-	-	-	2.0
+Target Shield Deep +10	8	11	-	-	-	-	-	-	109	-	-	-	109	218	-	-	-	-	2.0
+Target Shield Fire +10	8	11	-	-	-	-	-	-	109	-	109	-	-	218	-	-	-	-	2.0
+Target Shield Heavy +10	8	11	-	-	C	-	-	-	177	-	-	-	-	177	-	-	-	-	2.0
+Target Shield Hollow +10	8	11	-	-	D	-	-	-	159	-	-	-	-	159	-	-	-	-	2.0
+Target Shield Lightning +10	8	11	-	-	D	-	-	D	118	-	-	108	-	226	-	-	-	-	2.0
+Target Shield Poison +10	8	11	-	-	D	-	-	-	129	-	-	-	-	129	-	57	-	-	2.0
+Target Shield Raw +10	8	11	-	-	-	-	-	-	179	-	-	-	-	179	-	-	-	-	2.0
+Target Shield Refined +10	8	11	-	-	D	D	-	-	179	-	-	-	-	179	-	-	-	-	2.0
+Target Shield Sharp +10	8	11	-	-	D	-	-	-	147	-	-	-	-	147	-	-	-	-	2.0
+Target Shield Simple +10	8	11	-	-	D	-	D	-	103	93	-	-	-	197	-	-	-	-	2.0
+Thrall Axe  +10	8	8	-	-	C	C	-	-	384	-	-	-	-	384	-	-	-	-	1.5
+Thrall Axe Blessed +10	8	8	-	-	C	D	-	S	272	-	-	-	-	272	-	-	-	-	1.5
+Thrall Axe Blood +10	8	8	-	-	C	C	-	-	298	-	-	-	-	298	52	-	-	-	1.5
+Thrall Axe Chaos +10	8	8	-	-	C	C	A	A	208	-	191	-	-	399	-	-	-	-	1.5
+Thrall Axe Crystal +10	8	8	-	-	D	D	A	-	225	159	-	-	-	384	-	-	-	-	1.5
+Thrall Axe Dark +10	8	8	-	-	C	C	A	A	208	-	-	-	191	399	-	-	-	-	1.5
+Thrall Axe Deep +10	8	8	-	-	-	-	-	-	192	-	-	-	192	384	-	-	-	-	1.5
+Thrall Axe Fire +10	8	8	-	-	-	-	-	-	192	-	192	-	-	384	-	-	-	-	1.5
+Thrall Axe Heavy +10	8	8	-	-	A	-	-	-	348	-	-	-	-	348	-	-	-	-	1.5
+Thrall Axe Hollow +10	8	8	-	-	C	C	-	-	370	-	-	-	-	370	-	-	-	-	1.5
+Thrall Axe Lightning +10	8	8	-	-	D	D	-	A	225	-	-	170	-	396	-	-	-	-	1.5
+Thrall Axe Poison +10	8	8	-	-	C	C	-	-	298	-	-	-	-	298	-	58	-	-	1.5
+Thrall Axe Raw +10	8	8	-	-	-	-	-	-	283	-	-	-	-	283	-	-	-	-	1.5
+Thrall Axe Refined +10	8	8	-	-	C	C	-	-	388	-	-	-	-	388	-	-	-	-	1.5
+Thrall Axe Sharp +10	8	8	-	-	D	C	-	-	368	-	-	-	-	368	-	-	-	-	1.5
+Thrall Axe Simple +10	8	8	-	-	C	C	S	-	211	142	-	-	-	354	-	-	-	-	1.5
+Torch  +10	5	-	-	-	D	-	-	-	95	-	160	-	-	255	-	-	-	-	1.0
+Twin Dragon Greatshield  +10	16	-	-	-	D	-	-	-	289	-	-	-	-	289	-	-	-	-	7.0
+Twin Dragon Greatshield Blessed +10	16	-	-	-	D	-	-	C	207	-	-	-	-	207	-	-	-	-	7.0
+Twin Dragon Greatshield Blood +10	16	-	-	-	D	-	-	-	224	-	-	-	-	224	61	-	-	-	7.0
+Twin Dragon Greatshield Chaos +10	16	-	-	-	D	-	D	D	165	-	160	-	-	326	-	-	-	-	7.0
+Twin Dragon Greatshield Crystal +10	16	-	-	-	D	-	C	-	185	155	-	-	-	341	-	-	-	-	7.0
+Twin Dragon Greatshield Dark +10	16	-	-	-	D	-	D	D	165	-	-	-	160	326	-	-	-	-	7.0
+Twin Dragon Greatshield Deep +10	16	-	-	-	-	-	-	-	168	-	-	-	168	336	-	-	-	-	7.0
+Twin Dragon Greatshield Fire +10	16	-	-	-	-	-	-	-	168	-	168	-	-	336	-	-	-	-	7.0
+Twin Dragon Greatshield Heavy +10	16	-	-	-	B	-	-	-	329	-	-	-	-	329	-	-	-	-	7.0
+Twin Dragon Greatshield Hollow +10	16	-	-	-	D	-	-	-	276	-	-	-	-	276	-	-	-	-	7.0
+Twin Dragon Greatshield Lightning +10	16	-	-	-	D	-	-	C	185	-	-	160	-	346	-	-	-	-	7.0
+Twin Dragon Greatshield Poison +10	16	-	-	-	D	-	-	-	224	-	-	-	-	224	-	71	-	-	7.0
+Twin Dragon Greatshield Raw +10	16	-	-	-	-	-	-	-	275	-	-	-	-	275	-	-	-	-	7.0
+Twin Dragon Greatshield Refined +10	16	-	-	-	D	D	-	-	306	-	-	-	-	306	-	-	-	-	7.0
+Twin Dragon Greatshield Sharp +10	16	-	-	-	D	-	-	-	252	-	-	-	-	252	-	-	-	-	7.0
+Twin Dragon Greatshield Simple +10	16	-	-	-	D	-	C	-	166	138	-	-	-	305	-	-	-	-	7.0
+Twin Princes' Greatsword  +5	22	14	-	-	D	D	D	D	377	-	170	-	-	547	-	-	-	-	9.5
+Uchigatana  +10	11	16	-	-	E	C	-	-	386	-	-	-	-	386	30	-	-	-	5.5
+Uchigatana Blessed +10	11	16	-	-	E	C	-	A	255	-	-	-	-	255	30	-	-	-	5.5
+Uchigatana Blood +10	11	16	-	-	E	C	-	-	299	-	-	-	-	299	60	-	-	-	5.5
+Uchigatana Chaos +10	11	16	-	-	E	C	B	B	196	-	183	-	-	380	30	-	-	-	5.5
+Uchigatana Crystal +10	11	16	-	-	E	C	A	-	215	160	-	-	-	376	30	-	-	-	5.5
+Uchigatana Dark +10	11	16	-	-	E	C	B	B	196	-	-	-	183	380	30	-	-	-	5.5
+Uchigatana Deep +10	11	16	-	-	-	-	-	-	194	-	-	-	194	388	30	-	-	-	5.5
+Uchigatana Fire +10	11	16	-	-	-	-	-	-	194	-	194	-	-	388	30	-	-	-	5.5
+Uchigatana Heavy +10	11	16	-	-	B	-	-	-	345	-	-	-	-	345	30	-	-	-	5.5
+Uchigatana Hollow +10	11	16	-	-	E	C	-	-	372	-	-	-	-	372	30	-	-	-	5.5
+Uchigatana Lightning +10	11	16	-	-	E	C	-	A	215	-	-	170	-	385	30	-	-	-	5.5
+Uchigatana Poison +10	11	16	-	-	E	C	-	-	299	-	-	-	-	299	30	58	-	-	5.5
+Uchigatana Raw +10	11	16	-	-	-	-	-	-	286	-	-	-	-	286	30	-	-	-	5.5
+Uchigatana Refined +10	11	16	-	-	C	C	-	-	378	-	-	-	-	378	30	-	-	-	5.5
+Uchigatana Sharp +10	11	16	-	-	E	A	-	-	396	-	-	-	-	396	30	-	-	-	5.5
+Uchigatana Simple +10	11	16	-	-	E	C	A	-	199	143	-	-	-	343	30	-	-	-	5.5
+Valorheart  +5	12	12	-	-	D	C	-	-	386	-	-	-	-	386	-	-	-	-	5.5
+Vordt's Great Hammer  +5	30	-	-	-	B	-	-	-	524	-	-	-	-	524	-	-	110	-	17.0
+Warden Twinblades  +10	10	18	-	-	D	C	-	-	334	-	-	-	-	334	30	-	-	-	6.5
+Warden Twinblades Blessed +10	10	18	-	-	D	C	-	A	236	-	-	-	-	236	30	-	-	-	6.5
+Warden Twinblades Blood +10	10	18	-	-	D	C	-	-	259	-	-	-	-	259	60	-	-	-	6.5
+Warden Twinblades Chaos +10	10	18	-	-	D	C	B	B	181	-	167	-	-	348	30	-	-	-	6.5
+Warden Twinblades Crystal +10	10	18	-	-	D	D	A	-	196	140	-	-	-	337	30	-	-	-	6.5
+Warden Twinblades Dark +10	10	18	-	-	D	C	B	B	181	-	-	-	167	348	30	-	-	-	6.5
+Warden Twinblades Deep +10	10	18	-	-	-	-	-	-	172	-	-	-	172	344	30	-	-	-	6.5
+Warden Twinblades Fire +10	10	18	-	-	-	-	-	-	172	-	172	-	-	344	30	-	-	-	6.5
+Warden Twinblades Heavy +10	10	18	-	-	A	-	-	-	309	-	-	-	-	309	30	-	-	-	6.5
+Warden Twinblades Hollow +10	10	18	-	-	D	C	-	-	322	-	-	-	-	322	30	-	-	-	6.5
+Warden Twinblades Lightning +10	10	18	-	-	D	D	-	A	196	-	-	150	-	347	30	-	-	-	6.5
+Warden Twinblades Poison +10	10	18	-	-	D	C	-	-	259	-	-	-	-	259	30	58	-	-	6.5
+Warden Twinblades Raw +10	10	18	-	-	-	-	-	-	254	-	-	-	-	254	30	-	-	-	6.5
+Warden Twinblades Refined +10	10	18	-	-	C	C	-	-	338	-	-	-	-	338	30	-	-	-	6.5
+Warden Twinblades Sharp +10	10	18	-	-	E	A	-	-	347	-	-	-	-	347	30	-	-	-	6.5
+Warden Twinblades Simple +10	10	18	-	-	D	C	A	-	183	126	-	-	-	310	30	-	-	-	6.5
+Wargod Wooden Shield  +10	12	-	-	-	D	-	-	-	231	-	-	-	-	231	-	-	-	-	4.0
+Wargod Wooden Shield Blessed +10	12	-	-	-	D	-	-	C	173	-	-	-	-	173	-	-	-	-	4.0
+Wargod Wooden Shield Blood +10	12	-	-	-	D	-	-	-	179	-	-	-	-	179	51	-	-	-	4.0
+Wargod Wooden Shield Chaos +10	12	-	-	-	D	-	D	D	139	-	136	-	-	275	-	-	-	-	4.0
+Wargod Wooden Shield Crystal +10	12	-	-	-	D	-	D	-	157	134	-	-	-	291	-	-	-	-	4.0
+Wargod Wooden Shield Dark +10	12	-	-	-	D	-	D	D	139	-	-	-	136	275	-	-	-	-	4.0
+Wargod Wooden Shield Deep +10	12	-	-	-	-	-	-	-	144	-	-	-	144	288	-	-	-	-	4.0
+Wargod Wooden Shield Fire +10	12	-	-	-	-	-	-	-	144	-	144	-	-	288	-	-	-	-	4.0
+Wargod Wooden Shield Heavy +10	12	-	-	-	C	-	-	-	258	-	-	-	-	258	-	-	-	-	4.0
+Wargod Wooden Shield Hollow +10	12	-	-	-	D	-	-	-	220	-	-	-	-	220	-	-	-	-	4.0
+Wargod Wooden Shield Lightning +10	12	-	-	-	D	-	-	D	157	-	-	138	-	295	-	-	-	-	4.0
+Wargod Wooden Shield Poison +10	12	-	-	-	D	-	-	-	179	-	-	-	-	179	-	57	-	-	4.0
+Wargod Wooden Shield Raw +10	12	-	-	-	-	-	-	-	228	-	-	-	-	228	-	-	-	-	4.0
+Wargod Wooden Shield Refined +10	12	-	-	-	D	D	-	-	247	-	-	-	-	247	-	-	-	-	4.0
+Wargod Wooden Shield Sharp +10	12	-	-	-	D	-	-	-	203	-	-	-	-	203	-	-	-	-	4.0
+Wargod Wooden Shield Simple +10	12	-	-	-	D	-	C	-	140	119	-	-	-	259	-	-	-	-	4.0
+Warpick  +10	12	10	-	-	B	E	-	-	392	-	-	-	-	392	-	-	-	-	4.5
+Warpick Blessed +10	12	10	-	-	C	E	-	A	288	-	-	-	-	288	-	-	-	-	4.5
+Warpick Blood +10	12	10	-	-	B	E	-	-	303	-	-	-	-	303	51	-	-	-	4.5
+Warpick Chaos +10	12	10	-	-	C	E	B	B	221	-	205	-	-	427	-	-	-	-	4.5
+Warpick Crystal +10	12	10	-	-	C	E	A	-	241	176	-	-	-	418	-	-	-	-	4.5
+Warpick Dark +10	12	10	-	-	C	E	B	B	221	-	-	-	205	427	-	-	-	-	4.5
+Warpick Deep +10	12	10	-	-	-	-	-	-	209	-	-	-	209	418	-	-	-	-	4.5
+Warpick Fire +10	12	10	-	-	-	-	-	-	209	-	209	-	-	418	-	-	-	-	4.5
+Warpick Heavy +10	12	10	-	-	A	-	-	-	429	-	-	-	-	429	-	-	-	-	4.5
+Warpick Hollow +10	12	10	-	-	B	E	-	-	375	-	-	-	-	375	-	-	-	-	4.5
+Warpick Lightning +10	12	10	-	-	C	E	-	A	241	-	-	188	-	430	-	-	-	-	4.5
+Warpick Poison +10	12	10	-	-	B	E	-	-	303	-	-	-	-	303	-	57	-	-	4.5
+Warpick Raw +10	12	10	-	-	-	-	-	-	332	-	-	-	-	332	-	-	-	-	4.5
+Warpick Refined +10	12	10	-	-	B	B	-	-	446	-	-	-	-	446	-	-	-	-	4.5
+Warpick Sharp +10	12	10	-	-	D	A	-	-	454	-	-	-	-	454	-	-	-	-	4.5
+Warpick Simple +10	12	10	-	-	B	E	A	-	225	158	-	-	-	383	-	-	-	-	4.5
+Warrior's Round Shield  +10	10	-	-	-	D	-	-	-	179	-	-	-	-	179	-	-	-	-	1.5
+Warrior's Round Shield Blessed +10	10	-	-	-	D	-	-	D	135	-	-	-	-	135	-	-	-	-	1.5
+Warrior's Round Shield Blood +10	10	-	-	-	D	-	-	-	138	-	-	-	-	138	51	-	-	-	1.5
+Warrior's Round Shield Chaos +10	10	-	-	-	D	-	D	D	109	-	109	-	-	219	-	-	-	-	1.5
+Warrior's Round Shield Crystal +10	10	-	-	-	D	-	D	-	125	112	-	-	-	238	-	-	-	-	1.5
+Warrior's Round Shield Dark +10	10	-	-	-	D	-	D	D	109	-	-	-	109	219	-	-	-	-	1.5
+Warrior's Round Shield Deep +10	10	-	-	-	-	-	-	-	118	-	-	-	118	236	-	-	-	-	1.5
+Warrior's Round Shield Fire +10	10	-	-	-	-	-	-	-	118	-	118	-	-	236	-	-	-	-	1.5
+Warrior's Round Shield Heavy +10	10	-	-	-	C	-	-	-	190	-	-	-	-	190	-	-	-	-	1.5
+Warrior's Round Shield Hollow +10	10	-	-	-	D	-	-	-	170	-	-	-	-	170	-	-	-	-	1.5
+Warrior's Round Shield Lightning +10	10	-	-	-	D	-	-	D	125	-	-	114	-	240	-	-	-	-	1.5
+Warrior's Round Shield Poison +10	10	-	-	-	D	-	-	-	138	-	-	-	-	138	-	57	-	-	1.5
+Warrior's Round Shield Raw +10	10	-	-	-	-	-	-	-	192	-	-	-	-	192	-	-	-	-	1.5
+Warrior's Round Shield Refined +10	10	-	-	-	D	D	-	-	192	-	-	-	-	192	-	-	-	-	1.5
+Warrior's Round Shield Sharp +10	10	-	-	-	D	-	-	-	159	-	-	-	-	159	-	-	-	-	1.5
+Warrior's Round Shield Simple +10	10	-	-	-	D	-	D	-	110	99	-	-	-	210	-	-	-	-	1.5
+Washing Pole  +10	18	20	-	-	E	C	-	-	407	-	-	-	-	407	30	-	-	-	8.5
+Washing Pole Blessed +10	18	20	-	-	E	C	-	A	257	-	-	-	-	257	30	-	-	-	8.5
+Washing Pole Blood +10	18	20	-	-	E	C	-	-	315	-	-	-	-	315	60	-	-	-	8.5
+Washing Pole Chaos +10	18	20	-	-	E	C	B	B	198	-	185	-	-	384	30	-	-	-	8.5
+Washing Pole Crystal +10	18	20	-	-	E	C	A	-	217	161	-	-	-	379	30	-	-	-	8.5
+Washing Pole Dark +10	18	20	-	-	E	C	B	B	198	-	-	-	185	384	30	-	-	-	8.5
+Washing Pole Deep +10	18	20	-	-	-	-	-	-	192	-	-	-	192	384	30	-	-	-	8.5
+Washing Pole Fire +10	18	20	-	-	-	-	-	-	192	-	192	-	-	384	30	-	-	-	8.5
+Washing Pole Heavy +10	18	20	-	-	B	-	-	-	363	-	-	-	-	363	30	-	-	-	8.5
+Washing Pole Hollow +10	18	20	-	-	E	C	-	-	391	-	-	-	-	391	30	-	-	-	8.5
+Washing Pole Lightning +10	18	20	-	-	E	C	-	A	217	-	-	171	-	389	30	-	-	-	8.5
+Washing Pole Poison +10	18	20	-	-	E	C	-	-	315	-	-	-	-	315	30	58	-	-	8.5
+Washing Pole Raw +10	18	20	-	-	-	-	-	-	283	-	-	-	-	283	30	-	-	-	8.5
+Washing Pole Refined +10	18	20	-	-	C	C	-	-	398	-	-	-	-	398	30	-	-	-	8.5
+Washing Pole Sharp +10	18	20	-	-	E	A	-	-	407	-	-	-	-	407	30	-	-	-	8.5
+Washing Pole Simple +10	18	20	-	-	E	C	A	-	201	144	-	-	-	346	30	-	-	-	8.5
+Whip  +10	6	14	-	-	-	B	-	-	293	-	-	-	-	293	-	-	-	-	2.0
+Whip Blessed +10	6	14	-	-	-	C	-	A	218	-	-	-	-	218	-	-	-	-	2.0
+Whip Blood +10	6	14	-	-	-	B	-	-	227	-	-	-	-	227	52	-	-	-	2.0
+Whip Chaos +10	6	14	-	-	-	B	C	C	169	-	159	-	-	329	-	-	-	-	2.0
+Whip Crystal +10	6	14	-	-	-	C	B	-	186	141	-	-	-	327	-	-	-	-	2.0
+Whip Dark +10	6	14	-	-	-	B	C	C	169	-	-	-	159	329	-	-	-	-	2.0
+Whip Deep +10	6	14	-	-	-	-	-	-	173	-	-	-	173	347	-	-	-	-	2.0
+Whip Fire +10	6	14	-	-	-	-	-	-	173	-	173	-	-	347	-	-	-	-	2.0
+Whip Heavy +10	6	14	-	-	A	-	-	-	293	-	-	-	-	293	-	-	-	-	2.0
+Whip Hollow +10	6	14	-	-	-	B	-	-	282	-	-	-	-	282	-	-	-	-	2.0
+Whip Lightning +10	6	14	-	-	-	C	-	B	186	-	-	149	-	335	-	-	-	-	2.0
+Whip Poison +10	6	14	-	-	-	B	-	-	227	-	-	-	-	227	-	58	-	-	2.0
+Whip Raw +10	6	14	-	-	-	-	-	-	257	-	-	-	-	257	-	-	-	-	2.0
+Whip Refined +10	6	14	-	-	C	C	-	-	307	-	-	-	-	307	-	-	-	-	2.0
+Whip Sharp +10	6	14	-	-	-	A	-	-	324	-	-	-	-	324	-	-	-	-	2.0
+Whip Simple +10	6	14	-	-	-	B	A	-	172	126	-	-	-	298	-	-	-	-	2.0
+White Birch Bow  +5	8	20	-	-	E	C	-	-	227	-	-	-	-	227	-	-	-	-	2.5
+White Hair Talisman  +5	4	-	16	20	D	-	D	C	154	-	82	-	-	237	-	-	-	20	0.5
+Winged Knight Halberd  +10	26	16	-	-	C	E	-	-	460	-	-	-	-	460	-	-	-	-	14.0
+Winged Knight Halberd Blessed +10	26	16	-	-	D	E	-	B	332	-	-	-	-	332	-	-	-	-	14.0
+Winged Knight Halberd Blood +10	26	16	-	-	C	E	-	-	356	-	-	-	-	356	61	-	-	-	14.0
+Winged Knight Halberd Chaos +10	26	16	-	-	C	E	C	C	258	-	243	-	-	502	-	-	-	-	14.0
+Winged Knight Halberd Crystal +10	26	16	-	-	D	E	B	-	285	218	-	-	-	503	-	-	-	-	14.0
+Winged Knight Halberd Dark +10	26	16	-	-	C	E	C	C	258	-	-	-	243	502	-	-	-	-	14.0
+Winged Knight Halberd Deep +10	26	16	-	-	-	-	-	-	246	-	-	-	246	492	-	-	-	-	14.0
+Winged Knight Halberd Fire +10	26	16	-	-	-	-	-	-	246	-	246	-	-	492	-	-	-	-	14.0
+Winged Knight Halberd Heavy +10	26	16	-	-	A	-	-	-	498	-	-	-	-	498	-	-	-	-	14.0
+Winged Knight Halberd Hollow +10	26	16	-	-	C	E	-	-	441	-	-	-	-	441	-	-	-	-	14.0
+Winged Knight Halberd Lightning +10	26	16	-	-	D	E	-	B	285	-	-	230	-	515	-	-	-	-	14.0
+Winged Knight Halberd Poison +10	26	16	-	-	C	E	-	-	356	-	-	-	-	356	-	71	-	-	14.0
+Winged Knight Halberd Raw +10	26	16	-	-	-	-	-	-	410	-	-	-	-	410	-	-	-	-	14.0
+Winged Knight Halberd Refined +10	26	16	-	-	C	C	-	-	512	-	-	-	-	512	-	-	-	-	14.0
+Winged Knight Halberd Sharp +10	26	16	-	-	E	A	-	-	501	-	-	-	-	501	-	-	-	-	14.0
+Winged Knight Halberd Simple +10	26	16	-	-	C	E	B	-	262	195	-	-	-	457	-	-	-	-	14.0
+Winged Knight Twinaxes  +10	20	12	-	-	C	D	-	-	423	-	-	-	-	423	-	-	-	-	8.5
+Winged Knight Twinaxes Blessed +10	20	12	-	-	C	D	-	A	280	-	-	-	-	280	-	-	-	-	8.5
+Winged Knight Twinaxes Blood +10	20	12	-	-	C	D	-	-	328	-	-	-	-	328	51	-	-	-	8.5
+Winged Knight Twinaxes Chaos +10	20	12	-	-	C	D	B	B	216	-	200	-	-	416	-	-	-	-	8.5
+Winged Knight Twinaxes Crystal +10	20	12	-	-	D	D	A	-	235	172	-	-	-	408	-	-	-	-	8.5
+Winged Knight Twinaxes Dark +10	20	12	-	-	C	D	B	B	216	-	-	-	200	416	-	-	-	-	8.5
+Winged Knight Twinaxes Deep +10	20	12	-	-	-	-	-	-	210	-	-	-	210	421	-	-	-	-	8.5
+Winged Knight Twinaxes Fire +10	20	12	-	-	-	-	-	-	210	-	210	-	-	421	-	-	-	-	8.5
+Winged Knight Twinaxes Heavy +10	20	12	-	-	A	-	-	-	400	-	-	-	-	400	-	-	-	-	8.5
+Winged Knight Twinaxes Hollow +10	20	12	-	-	C	D	-	-	406	-	-	-	-	406	-	-	-	-	8.5
+Winged Knight Twinaxes Lightning +10	20	12	-	-	D	D	-	A	235	-	-	183	-	419	-	-	-	-	8.5
+Winged Knight Twinaxes Poison +10	20	12	-	-	C	D	-	-	328	-	-	-	-	328	-	57	-	-	8.5
+Winged Knight Twinaxes Raw +10	20	12	-	-	-	-	-	-	314	-	-	-	-	314	-	-	-	-	8.5
+Winged Knight Twinaxes Refined +10	20	12	-	-	C	C	-	-	428	-	-	-	-	428	-	-	-	-	8.5
+Winged Knight Twinaxes Sharp +10	20	12	-	-	D	B	-	-	403	-	-	-	-	403	-	-	-	-	8.5
+Winged Knight Twinaxes Simple +10	20	12	-	-	C	D	A	-	219	154	-	-	-	373	-	-	-	-	8.5
+Winged Spear  +10	12	15	-	-	C	B	-	-	389	-	-	-	-	389	-	-	-	-	6.0
+Winged Spear Blessed +10	12	15	-	-	D	C	-	S	278	-	-	-	-	278	-	-	-	-	6.0
+Winged Spear Blood +10	12	15	-	-	C	B	-	-	301	-	-	-	-	301	52	-	-	-	6.0
+Winged Spear Chaos +10	12	15	-	-	C	B	A	A	210	-	189	-	-	400	-	-	-	-	6.0
+Winged Spear Crystal +10	12	15	-	-	D	C	S	-	225	150	-	-	-	375	-	-	-	-	6.0
+Winged Spear Dark +10	12	15	-	-	C	B	A	A	210	-	-	-	189	400	-	-	-	-	6.0
+Winged Spear Deep +10	12	15	-	-	-	-	-	-	194	-	-	-	194	388	-	-	-	-	6.0
+Winged Spear Fire +10	12	15	-	-	-	-	-	-	194	-	194	-	-	388	-	-	-	-	6.0
+Winged Spear Heavy +10	12	15	-	-	S	-	-	-	364	-	-	-	-	364	-	-	-	-	6.0
+Winged Spear Hollow +10	12	15	-	-	C	B	-	-	375	-	-	-	-	375	-	-	-	-	6.0
+Winged Spear Lightning +10	12	15	-	-	D	C	-	S	225	-	-	163	-	389	-	-	-	-	6.0
+Winged Spear Poison +10	12	15	-	-	C	B	-	-	301	-	-	-	-	301	-	58	-	-	6.0
+Winged Spear Raw +10	12	15	-	-	-	-	-	-	299	-	-	-	-	299	-	-	-	-	6.0
+Winged Spear Refined +10	12	15	-	-	B	B	-	-	400	-	-	-	-	400	-	-	-	-	6.0
+Winged Spear Sharp +10	12	15	-	-	D	S	-	-	404	-	-	-	-	404	-	-	-	-	6.0
+Winged Spear Simple +10	12	15	-	-	C	B	S	-	214	135	-	-	-	349	-	-	-	-	6.0
+Witch's Locks  +5	9	17	12	12	-	D	B	B	183	-	84	-	-	267	-	-	-	-	3.0
+Witchtree Branch  +10	7	-	18	-	D	-	B	-	156	-	-	-	-	156	-	-	-	60	2.0
+Wolf Knight's Greatshield  +5	30	-	-	-	D	-	-	-	297	-	-	-	-	297	-	-	-	-	11.0
+Wolf Knight's Greatsword  +5	24	18	-	-	C	C	-	-	523	-	-	-	-	523	-	-	-	-	11.5
+Wolnir's Holy Sword  +5	13	13	-	13	C	E	-	C	440	-	-	-	-	440	-	-	-	-	7.5
+Wooden Shield  +10	8	-	-	-	D	-	-	-	205	-	-	-	-	205	-	-	-	-	2.5
+Wooden Shield Blessed +10	8	-	-	-	D	-	-	C	155	-	-	-	-	155	-	-	-	-	2.5
+Wooden Shield Blood +10	8	-	-	-	D	-	-	-	158	-	-	-	-	158	51	-	-	-	2.5
+Wooden Shield Chaos +10	8	-	-	-	D	-	D	D	124	-	122	-	-	246	-	-	-	-	2.5
+Wooden Shield Crystal +10	8	-	-	-	D	-	D	-	141	120	-	-	-	261	-	-	-	-	2.5
+Wooden Shield Dark +10	8	-	-	-	D	-	D	D	124	-	-	-	122	246	-	-	-	-	2.5
+Wooden Shield Deep +10	8	-	-	-	-	-	-	-	125	-	-	-	125	251	-	-	-	-	2.5
+Wooden Shield Fire +10	8	-	-	-	-	-	-	-	125	-	125	-	-	251	-	-	-	-	2.5
+Wooden Shield Heavy +10	8	-	-	-	C	-	-	-	228	-	-	-	-	228	-	-	-	-	2.5
+Wooden Shield Hollow +10	8	-	-	-	D	-	-	-	195	-	-	-	-	195	-	-	-	-	2.5
+Wooden Shield Lightning +10	8	-	-	-	D	-	-	D	141	-	-	124	-	265	-	-	-	-	2.5
+Wooden Shield Poison +10	8	-	-	-	D	-	-	-	158	-	-	-	-	158	-	57	-	-	2.5
+Wooden Shield Raw +10	8	-	-	-	-	-	-	-	202	-	-	-	-	202	-	-	-	-	2.5
+Wooden Shield Refined +10	8	-	-	-	D	D	-	-	219	-	-	-	-	219	-	-	-	-	2.5
+Wooden Shield Sharp +10	8	-	-	-	C	-	-	-	215	-	-	-	-	215	-	-	-	-	2.5
+Wooden Shield Simple +10	8	-	-	-	D	-	C	-	125	107	-	-	-	233	-	-	-	-	2.5
+Yhorm's Great Machete  +5	38	10	-	-	A	-	-	-	590	-	-	-	-	590	-	-	-	-	19.0
+Yhorm's Greatshield  +5	40	-	-	-	D	-	-	-	330	-	-	-	-	330	-	-	-	-	20.5
+Yorshka's Chime  +10	3	-	-	30	D	-	-	S	149	-	-	-	-	149	-	-	-	60	0.5
+Yorshka's Spear  +5	18	14	-	13	C	C	-	C	379	-	-	-	-	379	-	-	-	-	6.5
+Zweihander  +10	19	11	-	-	C	D	-	-	548	-	-	-	-	548	-	-	-	-	10.0
+Zweihander Blessed +10	19	11	-	-	C	D	-	S	376	-	-	-	-	376	-	-	-	-	10.0
+Zweihander Blood +10	19	11	-	-	C	D	-	-	425	-	-	-	-	425	74	-	-	-	10.0
+Zweihander Chaos +10	19	11	-	-	C	D	A	A	286	-	262	-	-	548	-	-	-	-	10.0
+Zweihander Crystal +10	19	11	-	-	C	D	A	-	309	215	-	-	-	525	-	-	-	-	10.0
+Zweihander Dark +10	19	11	-	-	C	D	A	A	286	-	-	-	262	548	-	-	-	-	10.0
+Zweihander Deep +10	19	11	-	-	-	-	-	-	244	-	-	-	244	488	-	-	-	-	10.0
+Zweihander Fire +10	19	11	-	-	-	-	-	-	244	-	244	-	-	488	-	-	-	-	10.0
+Zweihander Heavy +10	19	11	-	-	A	-	-	-	519	-	-	-	-	519	-	-	-	-	10.0
+Zweihander Hollow +10	19	11	-	-	C	D	-	-	528	-	-	-	-	528	-	-	-	-	10.0
+Zweihander Lightning +10	19	11	-	-	C	D	-	A	309	-	-	232	-	542	-	-	-	-	10.0
+Zweihander Poison +10	19	11	-	-	C	D	-	-	425	-	-	-	-	425	-	98	-	-	10.0
+Zweihander Raw +10	19	11	-	-	-	-	-	-	408	-	-	-	-	408	-	-	-	-	10.0
+Zweihander Refined +10	19	11	-	-	B	C	-	-	550	-	-	-	-	550	-	-	-	-	10.0
+Zweihander Sharp +10	19	11	-	-	E	A	-	-	535	-	-	-	-	535	-	-	-	-	10.0
+Zweihander Simple +10	19	11	-	-	C	D	S	-	291	193	-	-	-	485	-	-	-	-	10.0

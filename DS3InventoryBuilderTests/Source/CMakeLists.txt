@@ -1,0 +1,20 @@
+target_sources(DS3InventoryBuilderTest
+	PRIVATE
+		"DarkTest.cpp"
+		"DarkUnoptimalTest.cpp"
+		"DexterityTest.cpp"
+		"DexterityUnoptimalTest.cpp"
+		"FaithTest.cpp"
+		"FaithUnoptimalTest.cpp"
+		"IntelligenceTest.cpp"
+		"IntelligenceUnoptimalTest.cpp"
+		"LowestTest.cpp"
+		"LuckTest.cpp"
+		"QualityTest.cpp"
+		"QualityUnoptimalTest.cpp"
+		"StartingDeprivedTest.cpp"
+		"StartingKnightTest.cpp"
+		"StrengthTest.cpp"
+		"StrengthUnoptimalTest.cpp"
+		"UnscaledShitterTest.cpp"
+)

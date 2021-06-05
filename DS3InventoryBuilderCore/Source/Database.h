@@ -29,6 +29,7 @@ namespace invbuilder
 		static auto Create() -> Database;
 
 		static bool IsCastingTool(const Weapon&);
+		static bool IsShield(const Weapon&);
 		static bool IsRanged(const Weapon&);
 
 		static auto ToString(const Weapon::Infusion) -> std::string;
