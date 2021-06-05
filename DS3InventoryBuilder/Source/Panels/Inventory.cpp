@@ -1,8 +1,28 @@
 #include "Inventory.h"
 
+#include <AppMain.h>
+#include <Context/IAttributesListener.h>
 #include <Context/IInventorySortingListener.h>
 #include <Context/ISelectionListener.h>
 #include <Context/IWeaponTransferListener.h>
+
+class Inventory::AttributesListener final : public IAttributesListener
+{
+	Inventory* const inventory;
+
+public:
+	AttributesListener(Inventory* const inventory) : inventory(inventory)
+	{
+	}
+
+	void OnUpdate(const int str, const int dex, const int int_, const int fth, const int lck) override
+	{
+		using Method = invbuilder::Weapon::Sorting::Method;
+
+		if (wxGetApp().GetSessionData().GetSorting().method == Method::AttackPower)
+			inventory->grid->Sort();
+	}
+};
 
 class Inventory::InventorySortingListener final : public IInventorySortingListener
 {
@@ -13,9 +33,9 @@ public:
 	{
 	}
 
-	void OnUpdate(const invbuilder::Weapon::Sorting& sorting) override
+	void OnUpdate(const invbuilder::Weapon::Sorting&) override
 	{
-		inventory->grid->SetSorting(sorting);
+		inventory->grid->Sort();
 	}
 };
 
@@ -48,7 +68,6 @@ public:
 	{
 		if (originGridID == inventory->grid->gridID)
 			inventory->grid->RemoveSelectedWeapons();
-
 		else
 			inventory->grid->AddSelectedWeapons(count);
 	}
@@ -56,11 +75,13 @@ public:
 
 Inventory::Inventory(wxWindow* parent)
 	: Title(parent, "Inventory")
+	, attributesListener(std::make_shared<AttributesListener>(this))
 	, inventorySortingListener(std::make_shared<InventorySortingListener>(this))
 	, weaponTransferListener(std::make_shared<WeaponTransferListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
 	, grid(new WeaponGrid(GetContent(), false))
 {
+	attributesListener->Register();
 	inventorySortingListener->Register();
 	weaponTransferListener->Register();
 	selectionListener->Register();

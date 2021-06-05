@@ -47,6 +47,7 @@ class SessionData final
 {
 public:
 	using SelectionVector = std::vector<std::weak_ptr<WeaponContext>>;
+	using Sorting = invbuilder::Weapon::Sorting;
 
 private:
 	struct Listeners final
@@ -62,6 +63,7 @@ private:
 	Listeners listeners;
 
 	struct { int str{18}, dex{18}, int_{10}, fth{10}, lck{7}; } attributes;
+	Sorting sorting{Sorting::Method::Default, false, false};
 	SelectionVector selection;
 	int lastSelectionGridID{-1};
 
@@ -73,9 +75,10 @@ public:
 	void UpdateSelection(const int gridID);
 	void UpdateSelection();
 	void UpdateWeaponTransfer(const int originGridID, const int count);
-	void UpdateInventorySorting(const invbuilder::Weapon::Sorting&);
+	void UpdateInventorySorting(Sorting);
 
 	auto GetAttributes() const -> invbuilder::PlayerAttributes;
+	auto GetSorting() const -> const Sorting&;
 	auto GetSelection() const -> const SelectionVector&;
 
 private:

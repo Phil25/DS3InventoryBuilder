@@ -72,6 +72,7 @@ namespace invbuilder
 
 			Method method;
 			bool reverse;
+			bool twoHanded;
 		};
 
 		using Properties = std::map<Infusion, const InfusionProperties>;

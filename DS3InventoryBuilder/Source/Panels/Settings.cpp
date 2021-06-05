@@ -42,19 +42,23 @@ class Settings::InventorySorting final : public wxPanel
 {
 	wxChoice* method;
 	wxCheckBox* reversed;
+	wxCheckBox* twoHanded;
 
 public:
 	InventorySorting(wxWindow* parent)
 		: wxPanel(parent)
 		, method(new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, GetSortingMethodChoices()))
 		, reversed(new wxCheckBox(this, wxID_ANY, wxT("Reversed")))
+		, twoHanded(new wxCheckBox(this, wxID_ANY, wxT("Two Handed")))
 	{
 		method->SetSelection(0);
+		twoHanded->Disable();
 
 		auto* sizer = new wxBoxSizer(wxHORIZONTAL);
 		sizer->Add(new wxStaticText(this, wxID_ANY, "Inventory Sorting Method:"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 10);
 		sizer->Add(method, 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 10);
-		sizer->Add(reversed, 0, wxALIGN_CENTER_VERTICAL);
+		sizer->Add(reversed, 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 10);
+		sizer->Add(twoHanded, 0, wxALIGN_CENTER_VERTICAL);
 		this->SetSizer(sizer);
 	}
 
@@ -62,8 +66,15 @@ public:
 	{
 		return {
 			static_cast<invbuilder::Weapon::Sorting::Method>(method->GetSelection()),
-			reversed->GetValue()
+			reversed->GetValue(),
+			twoHanded->GetValue()
 		};
+	}
+
+	void SetTwoHandedVisible(const bool set)
+	{
+		if (set) twoHanded->Enable();
+		else twoHanded->Disable();
 	}
 };
 
@@ -110,5 +121,7 @@ void Settings::UpdateAttributes(wxSpinEvent&)
 
 void Settings::UpdateSorting(wxCommandEvent&)
 {
-	wxGetApp().GetSessionData().UpdateInventorySorting(inventorySorting->GetInventorySorting());
+	auto sorting = inventorySorting->GetInventorySorting();
+	inventorySorting->SetTwoHandedVisible(sorting.method == invbuilder::Weapon::Sorting::Method::AttackPower);
+	wxGetApp().GetSessionData().UpdateInventorySorting(std::move(sorting));
 }

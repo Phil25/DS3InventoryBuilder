@@ -42,11 +42,9 @@ public:
 	void DiscardSelection();
 
 	void SetFiltering();
-	void SetSorting(const Sorting&);
-
-private:
 	void Sort();
 
+private:
 	void OnRender(wxPaintEvent& e);
 	void RenderCards(const bool fullRedraw=false);
 

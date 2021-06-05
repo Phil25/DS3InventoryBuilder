@@ -256,8 +256,6 @@ private:
 
 class WeaponGrid::SortingManager final
 {
-	Sorting current{Sorting::Method::Default, false};
-
 public:
 	SortingManager() = default;
 
@@ -280,19 +278,12 @@ public:
 
 	void Sort(std::vector<CardPtr>& cards)
 	{
-		if (current.reverse)
-			std::sort(cards.rbegin(), cards.rend(), GetComparator(current.method));
+		const auto& sorting = wxGetApp().GetSessionData().GetSorting();
+
+		if (sorting.reverse)
+			std::sort(cards.rbegin(), cards.rend(), GetComparator(sorting.method));
 		else
-			std::sort(cards.begin(), cards.end(), GetComparator(current.method));
-	}
-
-	bool Set(Sorting sorting)
-	{
-		if (current.method == sorting.method && current.reverse == sorting.reverse)
-			return false;
-
-		current = std::move(sorting);
-		return true;
+			std::sort(cards.begin(), cards.end(), GetComparator(sorting.method));
 	}
 
 private:
@@ -331,9 +322,9 @@ private:
 		const auto& w2 = wxGetApp().GetDatabase().GetWeapon(c2->GetName());
 
 		// DS3 always calculates two handed AR for bows/greatbows/crossbows
-		// TODO: add two-handing checkbox and OR it here
-		const bool twoHanded1 = invbuilder::Database::IsRanged(w1); 
-		const bool twoHanded2 = invbuilder::Database::IsRanged(w2);
+		const bool twoHanded = wxGetApp().GetSessionData().GetSorting().twoHanded;
+		const bool twoHanded1 = twoHanded || invbuilder::Database::IsRanged(w1); 
+		const bool twoHanded2 = twoHanded || invbuilder::Database::IsRanged(w2);
 
 		const auto& [damages1, _1] = invbuilder::calculator::AttackRating(
 			wxGetApp().GetDatabase(), c1->GetName().c_str(), c1->GetInfusion(), c1->GetLevel(), attribs, twoHanded1);
@@ -444,12 +435,6 @@ void WeaponGrid::SetFiltering(/*filtering options*/)
 
 	Consider using SetFiltering(some empty value) instead of InitializeBaseWeapons()
 	*/
-}
-
-void WeaponGrid::SetSorting(const Sorting& sorting)
-{
-	if (this->sorting->Set(sorting))
-		Sort();
 }
 
 void WeaponGrid::Sort()

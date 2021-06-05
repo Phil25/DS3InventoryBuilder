@@ -125,21 +125,28 @@ void SessionData::UpdateWeaponTransfer(const int originGridID, const int count)
 			ptr->OnUpdate(originGridID, count);
 }
 
-void SessionData::UpdateInventorySorting(const invbuilder::Weapon::Sorting& sorting)
+void SessionData::UpdateInventorySorting(invbuilder::Weapon::Sorting sorting)
 {
+	this->sorting = std::move(sorting);
+
 	for (const auto& weakPtr : listeners.inventorySorting)
 		if (const auto ptr = weakPtr.lock(); ptr)
-			ptr->OnUpdate(sorting);
-}
-
-auto SessionData::GetSelection() const -> const SelectionVector&
-{
-	return selection;
+			ptr->OnUpdate(this->sorting);
 }
 
 auto SessionData::GetAttributes() const -> invbuilder::PlayerAttributes
 {
 	return {1.f * attributes.str, 1.f * attributes.dex, 1.f * attributes.int_, 1.f * attributes.fth, 1.f * attributes.lck};
+}
+
+auto SessionData::GetSorting() const -> const Sorting&
+{
+	return sorting;
+}
+
+auto SessionData::GetSelection() const -> const SelectionVector&
+{
+	return selection;
 }
 
 void SessionData::RegisterAttributesListener(const std::weak_ptr<IAttributesListener>& listener)

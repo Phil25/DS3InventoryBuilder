@@ -316,7 +316,7 @@ class Preview::WeaponBook final : public wxNotebook
 			const auto attribs = wxGetApp().GetSessionData().GetAttributes();
 			const auto& [attack, status] = invbuilder::calculator::AttackRating(
 				wxGetApp().GetDatabase(), weapon.name.c_str(),
-				infusion, level, attribs);
+				infusion, level, attribs, wxGetApp().GetSessionData().GetSorting().twoHanded);
 			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
 
 			attackRating->AddWeapon({name,
