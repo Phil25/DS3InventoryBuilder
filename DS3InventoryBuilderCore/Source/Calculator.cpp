@@ -1,11 +1,101 @@
 #include "Calculator.h"
 
 #include <algorithm>
+#include <bitset>
 
 namespace calc = invbuilder::calculator;
 
 namespace
 {
+	inline auto HasElementalDamage(const invbuilder::DamageTypes& types)
+	{
+		return types.magic || types.fire || types.lightning || types.dark;
+	}
+
+	inline void RoundFloat(float& val)
+	{
+		val = std::round(val * 10000.f) / 10000.f;
+	}
+
+	namespace flags
+	{
+		enum Flags
+		{
+			StrDexScaleElemental = 0,
+			IntScalesPhysical,
+			FthScalesPhysical,
+			FthScalesMagic,
+			FthPenalizesPhysical,
+			FthPenalizesMagic,
+			LckScalesPhysical,
+			LckPhysicalMultiplierBonus,
+			Size,
+		};
+
+		inline bool GetStrDexScaleElemental(const invbuilder::Weapon& weapon)
+		{
+			return weapon.id == 16040000 // Dancer's Enchanted Swords 
+				|| weapon.id == 4130000; // Demon's Scar
+		}
+
+		inline bool GetIntScalesPhysical(const invbuilder::Weapon& weapon)
+		{
+			return weapon.id == 14130000; // Darkmoon Longbow
+		}
+
+		inline bool GetFthScalesPhysical(const invbuilder::Weapon& weapon, const invbuilder::Weapon::Infusion infusion, const invbuilder::DamageTypes& damages)
+		{
+			return infusion == invbuilder::Weapon::Infusion::Blessed
+				|| weapon.id == 10180000 // Friede's Scythe
+				|| weapon.id == 9260000 // Crucifix of the Mad King
+				|| weapon.id == 20310000 // Dragonhead Shield
+				|| weapon.id == 9180000 // Saint's Bident
+				|| (!HasElementalDamage(damages) && !invbuilder::Database::IsCastingTool(weapon) && !invbuilder::Database::IsShield(weapon));
+		}
+
+		inline bool GetFthScalesMagic(const invbuilder::Weapon& weapon)
+		{
+			return weapon.id == 13120000; // Golden Ritual Spear
+		}
+
+		inline bool GetFthPenalizesPhysical(const invbuilder::Weapon& weapon, const invbuilder::Weapon::Infusion infusion)
+		{
+			return infusion == invbuilder::Weapon::Infusion::Blessed
+				|| (weapon.id != 2200000 && weapon.id != 10070000); // Astora Straight Sword & Pontiff Knight Great Scythe
+		}
+
+		inline bool GetFthPenalizesMagic(const invbuilder::Weapon& weapon)
+		{
+			return weapon.id == 13120000; // Golden Ritual Spear
+		}
+
+		inline bool GetLckScalesPhysical(const invbuilder::Weapon& weapon)
+		{
+			return !invbuilder::Database::IsCastingTool(weapon);
+		}
+
+		inline bool GetLckPhysicalMultiplierBonus(const invbuilder::Weapon& weapon)
+		{
+			return weapon.id == 2200000; // Astora Straight Sword
+		}
+
+		using Bits = std::bitset<Flags::Size>;
+
+		inline auto Get(const invbuilder::Weapon& weapon, const invbuilder::Weapon::Infusion infusion, const invbuilder::DamageTypes& damages)
+		{
+			Bits flags;
+			flags.set(flags::StrDexScaleElemental, GetStrDexScaleElemental(weapon));
+			flags.set(flags::IntScalesPhysical, GetIntScalesPhysical(weapon));
+			flags.set(flags::FthScalesPhysical, GetFthScalesPhysical(weapon, infusion, damages));
+			flags.set(flags::FthScalesMagic, GetFthScalesMagic(weapon));
+			flags.set(flags::FthPenalizesPhysical, GetFthPenalizesPhysical(weapon, infusion));
+			flags.set(flags::FthPenalizesMagic, GetFthPenalizesMagic(weapon));
+			flags.set(flags::LckScalesPhysical, GetLckScalesPhysical(weapon));
+			flags.set(flags::LckPhysicalMultiplierBonus, GetLckPhysicalMultiplierBonus(weapon));
+			return flags;
+		}
+	}
+
 	struct Saturations final
 	{
 		// each attribute scales the following damage types
@@ -64,44 +154,26 @@ namespace
 		};
 	}
 
-	inline auto HasElementalDamage(const invbuilder::DamageTypes& types)
-	{
-		return types.magic || types.fire || types.lightning || types.dark;
-	}
-
-	inline auto IsFaithScalingException(const int id)
-	{
-		return id == 10180000 // Friede's Scythe
-			|| id == 9260000 // Crucifix of the Mad King
-			|| id == 20310000 // Dragonhead Shield
-			|| id == 9180000; // Saint's Bident
-	}
-
-	inline void RoundFloat(float& val)
-	{
-		val = std::round(val * 10000.f) / 10000.f;
-	}
-
-	inline auto IsPhysicalPenalized(const invbuilder::PlayerAttributes& attribs, const invbuilder::PlayerAttributes& requirements, const invbuilder::PlayerAttributes& scaling, const bool fthScalesPhysical, const bool intScalesPhysical, const bool fthLackPenalizesPhysical)
+	inline auto IsPhysicalPenalized(const invbuilder::PlayerAttributes& attribs, const invbuilder::PlayerAttributes& requirements, const invbuilder::PlayerAttributes& scaling, const flags::Bits flags)
 	{
 		return (attribs.strength < requirements.strength)
 			|| (attribs.dexterity < requirements.dexterity)
-			|| (attribs.intelligence < requirements.intelligence && intScalesPhysical)
-			|| (attribs.faith < requirements.faith && fthLackPenalizesPhysical && fthScalesPhysical);
+			|| (attribs.intelligence < requirements.intelligence && (flags.test(flags::IntScalesPhysical)))
+			|| (attribs.faith < requirements.faith && (flags.test(flags::FthPenalizesPhysical)) && (flags.test(flags::FthScalesPhysical)));
 	}
 
-	inline auto IsMagicPenalized(const invbuilder::PlayerAttributes& attribs, const invbuilder::PlayerAttributes& requirements, const invbuilder::PlayerAttributes& scaling, const bool strScalesElemental, const bool dexScalesElemental, const bool fthLackPenalizesMagic)
+	inline auto IsMagicPenalized(const invbuilder::PlayerAttributes& attribs, const invbuilder::PlayerAttributes& requirements, const invbuilder::PlayerAttributes& scaling, const flags::Bits flags)
 	{
-		return (attribs.strength < requirements.strength&& scaling.strength > 0.f && strScalesElemental)
-			|| (attribs.dexterity < requirements.dexterity&& scaling.dexterity > 0.f && dexScalesElemental)
+		return (attribs.strength < requirements.strength&& scaling.strength > 0.f && (flags.test(flags::StrDexScaleElemental)))
+			|| (attribs.dexterity < requirements.dexterity&& scaling.dexterity > 0.f && (flags.test(flags::StrDexScaleElemental)))
 			|| (attribs.intelligence < requirements.intelligence&& scaling.intelligence > 0.f)
-			|| (attribs.faith < requirements.faith && scaling.faith > 0.f && fthLackPenalizesMagic);
+			|| (attribs.faith < requirements.faith && scaling.faith > 0.f && (flags.test(flags::FthPenalizesMagic)));
 	}
 
-	inline auto IsFirePenalized(const invbuilder::PlayerAttributes& attribs, const invbuilder::PlayerAttributes& requirements, const invbuilder::PlayerAttributes& scaling, const bool strScalesElemental, const bool dexScalesElemental)
+	inline auto IsFirePenalized(const invbuilder::PlayerAttributes& attribs, const invbuilder::PlayerAttributes& requirements, const invbuilder::PlayerAttributes& scaling, const flags::Bits flags)
 	{
-		return (attribs.strength < requirements.strength && scaling.strength > 0.f && strScalesElemental)
-			|| (attribs.dexterity < requirements.dexterity && scaling.dexterity > 0.f && dexScalesElemental)
+		return (attribs.strength < requirements.strength && scaling.strength > 0.f && (flags.test(flags::StrDexScaleElemental)))
+			|| (attribs.dexterity < requirements.dexterity && scaling.dexterity > 0.f && (flags.test(flags::StrDexScaleElemental)))
 			|| (attribs.intelligence < requirements.intelligence)
 			|| (attribs.faith < requirements.faith);
 	}
@@ -134,40 +206,33 @@ auto calc::AttackRating(const Database& db, const char* name, const Weapon::Infu
 	auto damages = weapon.properties.at(infusion).level[level].damage;
 	auto status = weapon.properties.at(infusion).level[level].status;
 
-	const bool fthScalesPhysical = infusion == Weapon::Infusion::Blessed || IsFaithScalingException(weapon.id) || (!HasElementalDamage(damages) && !Database::IsCastingTool(weapon) && !Database::IsShield(weapon));
-	const bool lckScalesPhysical = !Database::IsCastingTool(weapon);
-	const bool intScalesPhysical = weapon.id == 14130000; // Darkmoon Longbow
-	const bool strScalesElemental = weapon.id == 16040000; // Dancer's Enchanted Swords
-	const bool dexScalesElemental = weapon.id == 16040000 || weapon.id == 4130000; // Dancer's Enchanted Swords || Demon's Scar
-	const bool fthScalesMagic = weapon.id == 13120000; // Golden Ritual Spear
-	const auto lckMultiplier = 1 + (1.35f * (weapon.id == 2200000)); // Astora Straight Sword
-	const bool fthLackPenalizesPhysical = infusion == Weapon::Infusion::Blessed || (weapon.id != 2200000 && weapon.id != 10070000); // Astora Straight Sword  Pontiff Knight Great Scythe
-	const bool fthLackPenalizesMagic = weapon.id == 13120000; // Golden Ritual Spear
+	const auto flags = flags::Get(weapon, infusion, damages);
+	const auto luckMultiplierBonus = 1 + (1.35f * (flags.test(flags::LckPhysicalMultiplierBonus)));
 
-	damages.physical *= IsPhysicalPenalized(attribs, requirements, scaling, fthScalesPhysical, intScalesPhysical, fthLackPenalizesPhysical)
+	damages.physical *= IsPhysicalPenalized(attribs, requirements, scaling, flags)
 		? 0.6f
 		: 1.f
 			+ scaling.strength / 100 * saturations.strength.physical / 100
 			+ scaling.dexterity / 100 * saturations.dexterity.physical / 100
-			+ scaling.intelligence / 100 * saturations.intelligence.physical / 100 * intScalesPhysical
-			+ scaling.faith / 100 * saturations.faith.physical / 100 * fthScalesPhysical
-			+ scaling.luck / 100 * saturations.luck.physical / 100 * lckScalesPhysical;
+			+ scaling.intelligence / 100 * saturations.intelligence.physical / 100 * (flags.test(flags::IntScalesPhysical))
+			+ scaling.faith / 100 * saturations.faith.physical / 100 * (flags.test(flags::FthScalesPhysical))
+			+ scaling.luck / 100 * saturations.luck.physical / 100 * (flags.test(flags::LckScalesPhysical));
 
-	damages.magic *= IsMagicPenalized(attribs, requirements, scaling, strScalesElemental, dexScalesElemental, fthLackPenalizesMagic)
+	damages.magic *= IsMagicPenalized(attribs, requirements, scaling, flags)
 		? 0.6f
 		: 1.f
 			+ scaling.intelligence / 100 * saturations.intelligence.magic / 100
-			+ scaling.strength / 100 * saturations.strength.magic / 100 * strScalesElemental
-			+ scaling.dexterity / 100 * saturations.dexterity.magic / 100 * dexScalesElemental
-			+ scaling.faith / 100 * saturations.faith.magic / 100 * fthScalesMagic;
+			+ scaling.strength / 100 * saturations.strength.magic / 100 * (flags.test(flags::StrDexScaleElemental))
+			+ scaling.dexterity / 100 * saturations.dexterity.magic / 100 * (flags.test(flags::StrDexScaleElemental))
+			+ scaling.faith / 100 * saturations.faith.magic / 100 * (flags.test(flags::FthScalesMagic));
 
-	damages.fire *= IsFirePenalized(attribs, requirements, scaling, strScalesElemental, dexScalesElemental)
+	damages.fire *= IsFirePenalized(attribs, requirements, scaling, flags)
 		? 0.6f
 		: 1.f
 			+ scaling.intelligence / 100 * saturations.intelligence.fire / 100
 			+ scaling.faith / 100 * saturations.faith.fire / 100
-			+ scaling.strength / 100 * saturations.strength.fire / 100 * strScalesElemental
-			+ scaling.dexterity / 100 * saturations.dexterity.fire / 100 * dexScalesElemental;
+			+ scaling.strength / 100 * saturations.strength.fire / 100 * (flags.test(flags::StrDexScaleElemental))
+			+ scaling.dexterity / 100 * saturations.dexterity.fire / 100 * (flags.test(flags::StrDexScaleElemental));
 
 	damages.lightning *= IsLightningPenalized(attribs, requirements, scaling)
 		? 0.6f
@@ -179,8 +244,8 @@ auto calc::AttackRating(const Database& db, const char* name, const Weapon::Infu
 			+ scaling.intelligence / 100 * saturations.intelligence.dark / 100
 			+ scaling.faith / 100 * saturations.faith.dark / 100;
 
-	status.bleed *= 1 + luckCoefficient / 100 * luckMod * saturations.luck.bleed / 100 * lckMultiplier;
-	status.poison *= 1 + luckCoefficient / 100 * luckMod * saturations.luck.poison / 100 * lckMultiplier;
+	status.bleed *= 1 + luckCoefficient / 100 * luckMod * saturations.luck.bleed / 100 * luckMultiplierBonus;
+	status.poison *= 1 + luckCoefficient / 100 * luckMod * saturations.luck.poison / 100 * luckMultiplierBonus;
 	// frost does not scale, use base damage
 
 	RoundFloat(damages.physical);
