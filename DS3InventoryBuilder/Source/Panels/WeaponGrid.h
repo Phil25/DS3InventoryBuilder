@@ -19,11 +19,13 @@ class WeaponGrid final : public wxPanel
 	class SelectionManager;
 	std::unique_ptr<SelectionManager> selection;
 
+	class SortingManager;
+	std::unique_ptr<SortingManager> sorting;
+
 	int mouseOver{-1};
 	int visibleRows{};
 	int cardSize{};
 	Range current{};
-	Sorting sorting{Sorting::Method::Default, false};
 
 	static int GridID;
 

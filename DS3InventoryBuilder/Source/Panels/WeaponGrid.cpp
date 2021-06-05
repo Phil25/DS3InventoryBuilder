@@ -2,6 +2,7 @@
 
 #include <AppMain.h>
 #include <Menus/WeaponPopup.h>
+#include <Calculator.h>
 #include <algorithm>
 
 #define RETURN_COMPARISON_ON_DIFFERENCE(a,b) \
@@ -122,46 +123,6 @@ struct WeaponGrid::Card final
 		}*/
 	}
 };
-
-bool ComparatorDefault(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
-{
-	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
-	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
-
-	RETURN_COMPARISON_ON_DIFFERENCE(data1.orderID, data2.orderID);
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetInfusion(), card2->context->GetInfusion());
-	RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetLevel(), card2->context->GetLevel());
-	return true; // weapons are the same
-}
-
-bool ComparatorWeight(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
-{
-	const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
-	const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
-
-	RETURN_COMPARISON_ON_DIFFERENCE(data1.weight, data2.weight);
-	return ComparatorDefault(card1, card2);
-}
-
-namespace
-{
-	inline auto* GetComparatorFunction(const invbuilder::Weapon::Sorting::Method method)
-	{
-		using M = invbuilder::Weapon::Sorting::Method;
-
-		switch (method)
-		{
-		case M::Default: return ComparatorDefault;
-		case M::Weight: return ComparatorWeight;
-		case M::AttackPower: return ComparatorDefault; // TODO
-		case M::GuardAbsorption: return ComparatorDefault; // TODO
-		case M::Effect: return ComparatorDefault; // TODO
-		}
-
-		assert(false && "invalid sorting method");
-		return ComparatorDefault;
-	}
-}
 
 class WeaponGrid::SelectionManager final
 {
@@ -293,9 +254,105 @@ private:
 	}
 };
 
+class WeaponGrid::SortingManager final
+{
+	Sorting current{Sorting::Method::Default, false};
+
+public:
+	SortingManager() = default;
+
+	static auto GetComparator(const Sorting::Method method)
+	{
+		using M = Sorting::Method;
+
+		switch (method)
+		{
+		case M::Default: return ComparatorDefault;
+		case M::Weight: return ComparatorWeight;
+		case M::AttackPower: return ComparatorAttackPower;
+		case M::GuardAbsorption: return ComparatorDefault; // TODO
+		case M::Effect: return ComparatorDefault; // TODO
+		}
+
+		assert(false && "invalid sorting method");
+		return ComparatorDefault;
+	}
+
+	void Sort(std::vector<CardPtr>& cards)
+	{
+		if (current.reverse)
+			std::sort(cards.rbegin(), cards.rend(), GetComparator(current.method));
+		else
+			std::sort(cards.begin(), cards.end(), GetComparator(current.method));
+	}
+
+	bool Set(Sorting sorting)
+	{
+		if (current.method == sorting.method && current.reverse == sorting.reverse)
+			return false;
+
+		current = std::move(sorting);
+		return true;
+	}
+
+private:
+	static bool ComparatorDefault(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
+	{
+		const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
+		const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
+
+		RETURN_COMPARISON_ON_DIFFERENCE(data1.orderID, data2.orderID);
+		RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetInfusion(), card2->context->GetInfusion());
+		RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetLevel(), card2->context->GetLevel());
+		return true; // weapons are the same
+	}
+
+	static bool ComparatorWeight(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
+	{
+		const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
+		const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
+
+		RETURN_COMPARISON_ON_DIFFERENCE(data1.weight, data2.weight);
+		return ComparatorDefault(card1, card2);
+	}
+
+	static bool ComparatorAttackPower(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
+	{
+		// TODO: this comparator is WRONG.
+		// DS3 does really weird things when comparing weapons with very similar AR, and I can't figure out what
+		// You can sometimes observe the order being ex. 62 > 61 > 62 even in-game, when checking out the value in the menu
+		// However, if the difference is big enough (~2 AR), this works fine
+
+		const auto attribs = wxGetApp().GetSessionData().GetAttributes();
+
+		const auto& c1 = card1->context;
+		const auto& c2 = card2->context;
+		const auto& w1 = wxGetApp().GetDatabase().GetWeapon(c1->GetName());
+		const auto& w2 = wxGetApp().GetDatabase().GetWeapon(c2->GetName());
+
+		// DS3 always calculates two handed AR for bows/greatbows/crossbows
+		// TODO: add two-handing checkbox and OR it here
+		const bool twoHanded1 = invbuilder::Database::IsRanged(w1); 
+		const bool twoHanded2 = invbuilder::Database::IsRanged(w2);
+
+		const auto& [damages1, _1] = invbuilder::calculator::AttackRating(
+			wxGetApp().GetDatabase(), c1->GetName().c_str(), c1->GetInfusion(), c1->GetLevel(), attribs, twoHanded1);
+
+		const auto& [damages2, _2] = invbuilder::calculator::AttackRating(
+			wxGetApp().GetDatabase(), c2->GetName().c_str(), c2->GetInfusion(), c2->GetLevel(), attribs, twoHanded2);
+
+		const auto ar1 = static_cast<int>(damages1.Total());
+		const auto ar2 = static_cast<int>(damages2.Total());
+
+		RETURN_COMPARISON_ON_DIFFERENCE(ar1, ar2);
+		return ComparatorDefault(card1, card2);
+	}
+};
+
 WeaponGrid::WeaponGrid(wxWindow* parent, const bool fixed)
 	: wxPanel(parent)
 	, selection(std::make_unique<SelectionManager>(this))
+	, sorting(std::make_unique<SortingManager>())
 	, gridID(++GridID)
 	, fixed(fixed)
 {
@@ -391,11 +448,8 @@ void WeaponGrid::SetFiltering(/*filtering options*/)
 
 void WeaponGrid::SetSorting(const Sorting& sorting)
 {
-	if (this->sorting.method == sorting.method && this->sorting.reverse == sorting.reverse)
-		return;
-
-	this->sorting = sorting;
-	Sort();
+	if (this->sorting->Set(sorting))
+		Sort();
 }
 
 void WeaponGrid::Sort()
@@ -404,10 +458,7 @@ void WeaponGrid::Sort()
 	std::vector<int> newSelection;
 	selection->Clear(false);
 
-	if (sorting.reverse)
-		std::sort(cards.rbegin(), cards.rend(), GetComparatorFunction(sorting.method));
-	else
-		std::sort(cards.begin(), cards.end(), GetComparatorFunction(sorting.method));
+	sorting->Sort(cards);
 
 	int cardID = 0;
 	for (auto& card : cards)
@@ -479,9 +530,14 @@ void WeaponGrid::OnMouseMotion(wxMouseEvent& e)
 
 void WeaponGrid::OnMouseLeave(wxMouseEvent&)
 {
-	// TODO: stop selecting here?
 	OnItemLeaveHover(mouseOver, true);
 	mouseOver = -1;
+
+	if (selection->IsSelecting())
+	{
+		selection->Clear(false);
+		selection->End();
+	}
 }
 
 void WeaponGrid::OnItemMouseLeft(wxMouseEvent& e)

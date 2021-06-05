@@ -358,6 +358,18 @@ auto Database::Create() -> Database
 	return Database(std::move(names), std::move(weapons), std::move(saturations));
 }
 
+bool invbuilder::Database::IsCastingTool(const Weapon& w)
+{
+	using T = Weapon::Type;
+	return w.type == T::PyromancyFlame || w.type == T::SacredChime || w.type == T::Staff || w.type == T::Talisman;
+}
+
+bool invbuilder::Database::IsRanged(const Weapon& w)
+{
+	using T = Weapon::Type;
+	return w.type == T::Bow || w.type == T::Greatbow || w.type == T::Crossbow;
+}
+
 auto Database::ToString(const Weapon::Infusion infusion) -> std::string
 {
 	using I = Weapon::Infusion;
