@@ -20,21 +20,20 @@ namespace
 		return (a < b) ? -1 : (a > b);
 	}
 
-	inline auto GetItemColor(const bool selected, const bool hovered)
+	inline auto GetItemColor(const bool selected, const bool hovered, const bool atPageFromSelection)
 	{
-		switch (selected + hovered * 2)
-		{
 		// Hufflepuff palette: https://www.color-hex.com/color-palette/816
-		case 0: return wxColor(114, 98, 85); // normal
-		case 1: return wxColor(240, 199, 94); // selected
-		case 2: return wxColor(55, 46, 41); // hovered
-		case 3: return wxColor(236, 185, 57); // selected + hovered
+		// Seafoam palette: https://www.color-hex.com/color-palette/1403
 
-		// blue tones
-		//case 0: return wxColor(200, 200, 200); // normal
-		//case 1: return wxColor(100, 255, 255); // selected
-		//case 2: return wxColor(150, 240, 240); // hovered
-		//case 3: return wxColor(100, 240, 240); // selected + hovered
+		if (selected)
+			return hovered ? wxColor(236, 185, 57) : wxColor(240, 199, 94);
+
+		switch (hovered + atPageFromSelection * 2)
+		{
+		case 0: return wxColor(114, 98, 85); // normal
+		case 1: return wxColor(55,46,41); // hovered
+		case 2: return wxColor(95,158,160); // at page
+		case 3: return wxColor(49,120,115); // hovered + at page
 		}
 
 		assert(false && "invalid highlight combo");
@@ -88,7 +87,7 @@ struct WeaponGrid::Card final
 
 	bool selected{false};
 	bool hovered{false};
-	int atPageFromSelection{0};
+	bool atPageFromSelection{false};
 	int missingRequirements{0};
 
 	wxPoint position{};
@@ -107,16 +106,10 @@ struct WeaponGrid::Card final
 
 	void Render(wxPaintDC& dc, const int size)
 	{
-		dc.SetBrush(GetItemColor(selected, hovered));
+		dc.SetBrush(GetItemColor(selected, hovered, atPageFromSelection));
 		dc.DrawRectangle(position, {size, size});
 
 		dc.DrawBitmap(wxGetApp().GetImage(context->GetName(), size), position, false);
-
-		switch (atPageFromSelection)
-		{
-		case -1: dc.DrawBitmap(wxGetApp().GetImage("Key_R2", size / 3), position.x + 2, position.y + 2, false); break;
-		case 1: dc.DrawBitmap(wxGetApp().GetImage("Key_L2", size / 3), position.x + 2, position.y + 2, false); break;
-		}
 
 		if (context->GetInfusion() != Infusion::None)
 		{
@@ -247,17 +240,17 @@ private:
 		grid->cards[id]->selected = true;
 
 		if (const auto pageUpID = GetPageUpID(id); pageUpID != id)
-			grid->cards[pageUpID]->atPageFromSelection = 1;
+			grid->cards[pageUpID]->atPageFromSelection = true;
 
 		if (const auto pageDownID = GetPageDownID(id, grid->cards.size()); pageDownID != id)
-			grid->cards[pageDownID]->atPageFromSelection = -1;
+			grid->cards[pageDownID]->atPageFromSelection = true;
 	}
 
 	void DeselectSingle(const int id)
 	{
 		grid->cards[id]->selected = false;
 		grid->cards[GetPageUpID(id)]->atPageFromSelection = 0;
-		grid->cards[GetPageDownID(id, grid->cards.size())]->atPageFromSelection = 0;
+		grid->cards[GetPageDownID(id, grid->cards.size())]->atPageFromSelection = false;
 	}
 
 	void Update()
