@@ -406,6 +406,48 @@ auto Database::ToString(const Weapon::Infusion infusion) -> std::string
 	return {};
 }
 
+auto Database::ToString(const Weapon::Type type) -> std::string
+{
+	using T = Weapon::Type;
+
+	switch (type)
+	{
+	case T::Dagger: return "Dagger";
+	case T::StraightSword: return "Straight Sword";
+	case T::Greatsword: return "Greatsword";
+	case T::UltraGreatsword: return "Ultra Greatsword";
+	case T::CurvedSword: return "Curved Sword";
+	case T::CurvedGreatsword: return "Curved Greatsword";
+	case T::ThrustingSword: return "Thrusting Sword";
+	case T::Katana: return "Katana";
+	case T::Axe: return "Axe";
+	case T::Greataxe: return "Greataxe";
+	case T::Hammer: return "Hammer";
+	case T::GreatHammer: return "Great Hammer";
+	case T::Spear: return "Spear";
+	case T::Pike: return "Pike";
+	case T::Halberd: return "Halberd";
+	case T::Reaper: return "Reaper";
+	case T::Whip: return "Whip";
+	case T::Fist: return "Fist";
+	case T::Claw: return "Claw";
+	case T::Bow: return "Bow";
+	case T::Greatbow: return "Greatbow";
+	case T::Crossbow: return "Crossbow";
+	case T::Staff: return "Staff";
+	case T::PyromancyFlame: return "Pyromancy Flame";
+	case T::Talisman: return "Talisman";
+	case T::SacredChime: return "Sacred Chime";
+	case T::Torch: return "Torch";
+	case T::SmallShield: return "Small Shield";
+	case T::Shield: return "Shield";
+	case T::Greatshield: return "Greatshield";
+	}
+
+	assert(false && "invalid weapon class");
+	return {};
+}
+
 auto Database::ToString(const Weapon::Sorting::Method sortingMethod) -> std::string
 {
 	using M = Weapon::Sorting::Method;
@@ -426,4 +468,15 @@ auto Database::ToString(const Weapon::Sorting::Method sortingMethod) -> std::str
 auto Database::GetDisplayLevel(const bool isUnique, const int level) -> int
 {
 	return isUnique ? level / 2 : level;
+}
+
+auto Database::GetScalingGrade(const float scaling) -> char
+{
+	if (scaling <= 0.f) return '-';
+	if (scaling < 22.5f) return 'E';
+	if (scaling < 50.f) return 'D';
+	if (scaling < 80.f) return 'C';
+	if (scaling < 100.f) return 'B';
+	if (scaling < 140.f) return 'A';
+	return 'S';
 }

@@ -6,6 +6,7 @@
 #include <Calculator.h>
 #include <wx/notebook.h>
 #include <wx/dataview.h>
+#include <wx/listctrl.h>
 #include <format>
 
 namespace
@@ -17,55 +18,27 @@ namespace
 		return *end == 0; // success
 	}
 
-	inline auto ToString(const float val) -> std::string
+	inline auto ToString(const float val, const char* whenZero="0") -> std::string
 	{
+		if (!val) return whenZero;
 		return std::format("{:.2f}", val);
+	}
+
+	inline auto ToString1AfterComma(const float val, const char* whenZero="0") -> std::string
+	{
+		if (!val) return whenZero;
+		return std::format("{:.1f}", val);
+	}
+
+	inline auto ToStringInt(const float val, const char* whenZero="0") -> std::string
+	{
+		if (!val) return whenZero;
+		return std::to_string(static_cast<int>(val));
 	}
 
 	inline auto ToString(const bool val) -> std::string
 	{
 		return val ? "Yes" : "No";
-	}
-
-	inline auto ToString(const invbuilder::Weapon::Type type) -> std::string
-	{
-		using T = invbuilder::Weapon::Type;
-		switch (type)
-		{
-		case T::Dagger: return "Dagger";
-		case T::StraightSword: return "Straight Sword";
-		case T::Greatsword: return "Greatsword";
-		case T::UltraGreatsword: return "Ultra Greatsword";
-		case T::CurvedSword: return "Curved Sword";
-		case T::CurvedGreatsword: return "Curved Greatsword";
-		case T::ThrustingSword: return "Thrusting Sword";
-		case T::Katana: return "Katana";
-		case T::Axe: return "Axe";
-		case T::Greataxe: return "Greataxe";
-		case T::Hammer: return "Hammer";
-		case T::GreatHammer: return "Great Hammer";
-		case T::Spear: return "Spear";
-		case T::Pike: return "Pike";
-		case T::Halberd: return "Halberd";
-		case T::Reaper: return "Reaper";
-		case T::Whip: return "Whip";
-		case T::Fist: return "Fist";
-		case T::Claw: return "Claw";
-		case T::Bow: return "Bow";
-		case T::Greatbow: return "Greatbow";
-		case T::Crossbow: return "Crossbow";
-		case T::Staff: return "Staff";
-		case T::PyromancyFlame: return "Pyromancy Flame";
-		case T::Talisman: return "Talisman";
-		case T::SacredChime: return "Sacred Chime";
-		case T::Torch: return "Torch";
-		case T::SmallShield: return "Small Shield";
-		case T::Shield: return "Shield";
-		case T::Greatshield: return "Greatshield";
-		}
-
-		assert(false && "invalid weapon class");
-		return "ERROR";
 	}
 
 	inline auto GetDisplayName(const std::string& name, const bool unique, const int level, const invbuilder::Weapon::Infusion infusion)
@@ -282,6 +255,330 @@ public:
 	}
 };
 
+class Preview::WeaponSimple final : public wxScrolledWindow
+{
+	class PropertyList final : public wxListView
+	{
+	public:
+		PropertyList(wxWindow* parent, const std::vector<wxString>& rows)
+			: wxListView(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT | wxLC_NO_HEADER | wxLC_HRULES)
+		{
+			AppendColumn("Property");
+			AppendColumn("Value");
+
+			int id = 0;
+			for (const auto& row : rows)
+			{
+				InsertItem(id, row);
+				SetItem(id, 1, "-");
+				++id;
+			}
+
+			auto font = GetItemFont(0);
+			font.SetWeight(wxFONTWEIGHT_BOLD);
+			SetItemFont(0, font);
+
+			SetItemTextColour(2, wxColor{66,139,202}); // magic
+			SetItemTextColour(3, wxColor{217,83,79}); // fire
+			SetItemTextColour(4, wxColor{255,191,0}); // lightning
+			SetItemTextColour(5, wxColor{85,85,85}); // dark
+			SetItemTextColour(6, wxColor{255,0,0}); // bleed
+			SetItemTextColour(7, wxColor{92,184,92}); // poison
+			SetItemTextColour(8, wxColor{91,192,222}); // frost
+
+			SetMinSize(wxSize{10, 200}); // originally too large width
+			SetColumnWidth(0, 150);
+		}
+	};
+
+	class Value final : public wxPanel
+	{
+		wxStaticText* label;
+		wxStaticText* value;
+		wxColour defaultForegroundColor;
+
+	public:
+		Value(wxWindow* parent, wxString labelText, wxString valueText=wxT("-"))
+			: wxPanel(parent)
+			, label(new wxStaticText(this, wxID_ANY, std::move(labelText), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT))
+			, value(new wxStaticText(this, wxID_ANY, std::move(valueText), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT))
+			, defaultForegroundColor(label->GetForegroundColour())
+		{
+			label->SetFont(wxFont{11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD});
+			value->SetFont(wxFont{11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_MEDIUM});
+
+			auto* sizer = new wxBoxSizer(wxHORIZONTAL);
+			sizer->Add(label, 1, wxEXPAND | wxALL, 3);
+			sizer->Add(value, 1, wxEXPAND | wxALL, 3);
+			this->SetSizer(sizer);
+		}
+
+		void SetLabelValue(wxString valueText)
+		{
+			value->SetLabelText(std::move(valueText));
+		}
+
+		void SetColorWarning(int degree=0)
+		{
+			auto color =
+				degree == 2 ? wxColor{204,51,0} :
+				degree == 1 ? wxColor{211,166,37} : defaultForegroundColor;
+
+			label->SetForegroundColour(color);
+			value->SetForegroundColour(color);
+
+			Update();
+			Refresh();
+		}
+	};
+
+	class Properties final : public wxPanel
+	{
+		Value* weight;
+		Value* buffable;
+		Value* infusable;
+
+	public:
+		Properties(wxWindow* parent)
+			: wxPanel(parent)
+			, weight(new Value(this, wxT("Weight")))
+			, buffable(new Value(this, wxT("Buffable")))
+			, infusable(new Value(this,wxT("Infusable")))
+		{
+			auto* sizer = new wxBoxSizer(wxVERTICAL);
+
+			auto* sizerProps = new wxBoxSizer(wxHORIZONTAL);
+			sizerProps->Add(weight, 1, wxEXPAND);
+			sizerProps->Add(buffable, 1, wxEXPAND);
+			sizerProps->Add(infusable, 1, wxEXPAND);
+
+			sizer->Add(new Preview::TextHeader(this, "Properties", 12), 0, wxEXPAND | wxALL, 3);
+			sizer->Add(sizerProps, 0, wxEXPAND | wxALL, 3);
+
+			this->SetSizer(sizer);
+		}
+
+		void UpdateWeapon(const invbuilder::Weapon& weapon)
+		{
+			weight->SetLabelValue(ToString1AfterComma(weapon.weight));
+			buffable->SetLabelValue(ToString(weapon.buffable));
+			infusable->SetLabelValue(ToString(weapon.infusable));
+		}
+	};
+
+	class AttackRating final : public wxPanel
+	{
+		Preview::TextHeader* header;
+		PropertyList* list;
+
+	public:
+		AttackRating(wxWindow* parent)
+			: wxPanel(parent)
+			, header(new Preview::TextHeader(this, "Attack Rating", 12))
+			, list(new PropertyList(this, {"Total", "Physical", "Magic", "Fire", "Lightning", "Dark", "Bleed", "Poison", "Frost"}))
+		{
+			auto* sizer = new wxBoxSizer(wxVERTICAL);
+
+			sizer->Add(header, 0, wxEXPAND);
+			sizer->Add(list, 0, wxEXPAND);
+
+			this->SetSizer(sizer);
+		}
+
+		void UpdateWeapon(const invbuilder::Weapon& weapon, const int level, const invbuilder::Weapon::Infusion infusion)
+		{
+			const auto attribs = wxGetApp().GetSessionData().GetAttributes();
+			const auto& [damage, status] = invbuilder::calculator::AttackRating(
+				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs);
+
+			list->SetItem(0, 1, ToStringInt(damage.Total(), "-"));
+			list->SetItem(1, 1, ToStringInt(damage.physical, "-"));
+			list->SetItem(2, 1, ToStringInt(damage.magic, "-"));
+			list->SetItem(3, 1, ToStringInt(damage.fire, "-"));
+			list->SetItem(4, 1, ToStringInt(damage.lightning, "-"));
+			list->SetItem(5, 1, ToStringInt(damage.dark, "-"));
+			list->SetItem(6, 1, ToStringInt(status.bleed, "-"));
+			list->SetItem(7, 1, ToStringInt(status.poison, "-"));
+			list->SetItem(8, 1, ToStringInt(status.frost, "-"));
+		}
+	};
+
+	class GuardAbsorption final : public wxPanel
+	{
+		Preview::TextHeader* header;
+		PropertyList* list;
+
+	public:
+		GuardAbsorption(wxWindow* parent)
+			: wxPanel(parent)
+			, header(new Preview::TextHeader(this, "Guard Absorption", 12))
+			, list(new PropertyList(this, {"Stability", "Physical", "Magic", "Fire", "Lightning", "Dark", "Bleed", "Poison", "Frost", "Curse"}))
+		{
+			auto* sizer = new wxBoxSizer(wxVERTICAL);
+
+			sizer->Add(header, 0, wxEXPAND);
+			sizer->Add(list, 0, wxEXPAND);
+
+			this->SetSizer(sizer);
+		}
+
+		void UpdateWeapon(const invbuilder::Weapon& weapon, const int level, const invbuilder::Weapon::Infusion infusion)
+		{
+			const auto& stability = weapon.properties.at(infusion).level[level].stability;
+			const auto& absorption = weapon.properties.at(infusion).level[level].absorption;
+			const auto& resistance = weapon.properties.at(infusion).level[level].resistance;
+
+			list->SetItem(0, 1, ToStringInt(stability, "-"));
+			list->SetItem(1, 1, ToString1AfterComma(absorption.physical, "-"));
+			list->SetItem(2, 1, ToString1AfterComma(absorption.magic, "-"));
+			list->SetItem(3, 1, ToString1AfterComma(absorption.fire, "-"));
+			list->SetItem(4, 1, ToString1AfterComma(absorption.lightning, "-"));
+			list->SetItem(5, 1, ToString1AfterComma(absorption.dark, "-"));
+			list->SetItem(6, 1, ToString1AfterComma(resistance.bleed, "-"));
+			list->SetItem(7, 1, ToString1AfterComma(resistance.poison, "-"));
+			list->SetItem(8, 1, ToString1AfterComma(resistance.frost, "-"));
+			list->SetItem(9, 1, ToString1AfterComma(resistance.curse, "-"));
+		}
+	};
+
+	class Scaling final : public wxPanel
+	{
+		Value* str;
+		Value* dex;
+		Value* int_;
+		Value* fth;
+		Value* lck;
+
+	public:
+		Scaling(wxWindow* parent)
+			: wxPanel(parent)
+			, str(new Value(this, wxT("STR")))
+			, dex(new Value(this, wxT("DEX")))
+			, int_(new Value(this,wxT("INT")))
+			, fth(new Value(this, wxT("FTH")))
+			, lck(new Value(this, wxT("LCK")))
+		{
+			auto* sizer = new wxBoxSizer(wxVERTICAL);
+
+			auto* sizerScaling = new wxBoxSizer(wxHORIZONTAL);
+			sizerScaling->Add(str, 1, wxEXPAND);
+			sizerScaling->Add(dex, 1, wxEXPAND);
+			sizerScaling->Add(int_, 1, wxEXPAND);
+			sizerScaling->Add(fth, 1, wxEXPAND);
+			sizerScaling->Add(lck, 1, wxEXPAND);
+
+			sizer->Add(new Preview::TextHeader(this, "Scaling", 12), 0, wxEXPAND | wxALL, 3);
+			sizer->Add(sizerScaling, 0, wxEXPAND | wxALL, 3);
+
+			this->SetSizer(sizer);
+		}
+
+		void UpdateWeapon(const invbuilder::Weapon& weapon, const int level, const invbuilder::Weapon::Infusion infusion)
+		{
+			using DB = invbuilder::Database;
+			const auto& scaling = weapon.properties.at(infusion).level[level].scaling;
+
+			str->SetLabelValue(DB::GetScalingGrade(scaling.strength));
+			dex->SetLabelValue(DB::GetScalingGrade(scaling.dexterity));
+			int_->SetLabelValue(DB::GetScalingGrade(scaling.intelligence));
+			fth->SetLabelValue(DB::GetScalingGrade(scaling.faith));
+			lck->SetLabelValue(DB::GetScalingGrade(scaling.luck));
+		}
+	};
+
+	class Requirements final : public wxPanel
+	{
+		Value* str;
+		Value* dex;
+		Value* int_;
+		Value* fth;
+
+	public:
+		Requirements(wxWindow* parent)
+			: wxPanel(parent)
+			, str(new Value(this, wxT("STR")))
+			, dex(new Value(this, wxT("DEX")))
+			, int_(new Value(this,wxT("INT")))
+			, fth(new Value(this, wxT("FTH")))
+		{
+			auto* sizer = new wxBoxSizer(wxVERTICAL);
+
+			auto* sizerReqs = new wxBoxSizer(wxHORIZONTAL);
+			sizerReqs->Add(str, 1, wxEXPAND);
+			sizerReqs->Add(dex, 1, wxEXPAND);
+			sizerReqs->Add(int_, 1, wxEXPAND);
+			sizerReqs->Add(fth, 1, wxEXPAND);
+
+			sizer->Add(new Preview::TextHeader(this, "Requirements", 12), 0, wxEXPAND | wxALL, 3);
+			sizer->Add(sizerReqs, 0, wxEXPAND | wxALL, 3);
+
+			this->SetSizer(sizer);
+		}
+
+		void UpdateWeapon(const invbuilder::Weapon& weapon)
+		{
+			const auto& reqs = weapon.requirements;
+			const auto& attribs = wxGetApp().GetSessionData().GetAttributes();
+
+			str->SetLabelValue(ToStringInt(reqs.strength, "-"));
+			dex->SetLabelValue(ToStringInt(reqs.dexterity, "-"));
+			int_->SetLabelValue(ToStringInt(reqs.intelligence, "-"));
+			fth->SetLabelValue(ToStringInt(reqs.faith, "-"));
+
+			if (attribs.strength >= reqs.strength)
+				str->SetColorWarning(0);
+			else if (attribs.strength * 1.5 >= reqs.strength)
+				str->SetColorWarning(1);
+			else
+				str->SetColorWarning(2);
+
+			dex->SetColorWarning(attribs.dexterity >= reqs.dexterity ? 0 : 2);
+			int_->SetColorWarning(attribs.intelligence >= reqs.intelligence ? 0 : 2);
+			fth->SetColorWarning(attribs.faith >= reqs.faith ? 0 : 2);
+		}
+	};
+
+	Properties* properties;
+	AttackRating* attackRating;
+	GuardAbsorption* guardAbsorption;
+	Scaling* scaling;
+	Requirements* requirements;
+
+public:
+	WeaponSimple(wxWindow* parent)
+		: wxScrolledWindow(parent)
+		, properties(new Properties(this))
+		, attackRating(new AttackRating(this))
+		, guardAbsorption(new GuardAbsorption(this))
+		, scaling(new Scaling(this))
+		, requirements(new Requirements(this))
+	{
+		auto* sizer = new wxBoxSizer(wxVERTICAL);
+
+		auto* sizerRatings = new wxBoxSizer(wxHORIZONTAL);
+		sizerRatings->Add(attackRating, 1, wxEXPAND | wxRIGHT, 3);
+		sizerRatings->Add(guardAbsorption, 1, wxEXPAND);
+
+		sizer->Add(properties, 0, wxEXPAND | wxALL, 5);
+		sizer->Add(sizerRatings, 0, wxEXPAND | wxALL, 5);
+		sizer->Add(scaling, 0, wxEXPAND | wxALL, 5);
+		sizer->Add(requirements, 0, wxEXPAND | wxALL, 5);
+
+		this->SetScrollRate(20, 20);
+		this->SetSizer(sizer);
+	}
+
+	void UpdateSelection(const std::shared_ptr<WeaponContext> context)
+	{
+		const auto& weapon = wxGetApp().GetDatabase().GetWeapon(context->GetName());
+		properties->UpdateWeapon(weapon);
+		attackRating->UpdateWeapon(weapon, context->GetLevel(), context->GetInfusion());
+		guardAbsorption->UpdateWeapon(weapon, context->GetLevel(), context->GetInfusion());
+		scaling->UpdateWeapon(weapon, context->GetLevel(), context->GetInfusion());
+		requirements->UpdateWeapon(weapon);
+	}
+};
+
 class Preview::WeaponBook final : public wxNotebook
 {
 	class PageOffensive final : public wxScrolledWindow
@@ -315,8 +612,7 @@ class Preview::WeaponBook final : public wxNotebook
 			// TODO: allow to pass const invbuilder::Weapon& instead of db and name cstr
 			const auto attribs = wxGetApp().GetSessionData().GetAttributes();
 			const auto& [attack, status] = invbuilder::calculator::AttackRating(
-				wxGetApp().GetDatabase(), weapon.name.c_str(),
-				infusion, level, attribs, wxGetApp().GetSessionData().GetSorting().twoHanded);
+				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs);
 			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
 
 			attackRating->AddWeapon({name,
@@ -369,19 +665,19 @@ class Preview::WeaponBook final : public wxNotebook
 			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
 
 			absorptions->AddWeapon({name,
-				ToString(data.stability),
-				ToString(data.absorption.physical),
-				ToString(data.absorption.magic),
-				ToString(data.absorption.fire),
-				ToString(data.absorption.lightning),
-				ToString(data.absorption.dark),
+				ToStringInt(data.stability),
+				ToString1AfterComma(data.absorption.physical),
+				ToString1AfterComma(data.absorption.magic),
+				ToString1AfterComma(data.absorption.fire),
+				ToString1AfterComma(data.absorption.lightning),
+				ToString1AfterComma(data.absorption.dark),
 			});
 
 			resistances->AddWeapon({name,
-				ToString(data.resistance.bleed),
-				ToString(data.resistance.poison),
-				ToString(data.resistance.frost),
-				ToString(data.resistance.curse),
+				ToString1AfterComma(data.resistance.bleed),
+				ToString1AfterComma(data.resistance.poison),
+				ToString1AfterComma(data.resistance.frost),
+				ToString1AfterComma(data.resistance.curse),
 			});
 		}
 	};
@@ -423,8 +719,8 @@ class Preview::WeaponBook final : public wxNotebook
 			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
 
 			generic->AddWeapon({name,
-				ToString(weapon.type),
-				ToString(weapon.weight),
+				invbuilder::Database::ToString(weapon.type),
+				ToString1AfterComma(weapon.weight),
 				ToString(weapon.infusable),
 				ToString(weapon.buffable),
 			});
@@ -438,10 +734,10 @@ class Preview::WeaponBook final : public wxNotebook
 			});
 
 			requirements->AddWeapon({name,
-				std::to_string(std::lround(weapon.requirements.strength)),
-				std::to_string(std::lround(weapon.requirements.dexterity)),
-				std::to_string(std::lround(weapon.requirements.intelligence)),
-				std::to_string(std::lround(weapon.requirements.faith))
+				ToStringInt(weapon.requirements.strength),
+				ToStringInt(weapon.requirements.dexterity),
+				ToStringInt(weapon.requirements.intelligence),
+				ToStringInt(weapon.requirements.faith)
 			});
 		}
 	};
@@ -534,9 +830,11 @@ Preview::Preview(wxWindow* parent)
 	: Title(parent, "Weapon Preview")
 	, attributesListener(std::make_shared<AttributesListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
+	, sizer(new wxBoxSizer{wxVERTICAL})
 	, label(new TextHeader{GetContent(), "No weapons selected"})
 	, icon(new PreviewIcon{GetContent()})
 	, book(new WeaponBook{GetContent()})
+	, simple(new WeaponSimple{GetContent()})
 {
 	attributesListener->Register();
 	selectionListener->Register();
@@ -546,11 +844,29 @@ Preview::Preview(wxWindow* parent)
 	top->AddStretchSpacer(1);
 	top->Add(icon);
 
-	auto* sizer = new wxBoxSizer(wxVERTICAL);
 	sizer->Add(top, 0, wxEXPAND | wxALL, 3);
+	sizer->Add(simple, 1, wxEXPAND | wxALL, 3);
 	sizer->Add(book, 1, wxEXPAND | wxALL, 3);
+	sizer->Hide(book);
 
+	SetShowSimple(true);
 	GetContent()->SetSizer(sizer);
+}
+
+void Preview::SetShowSimple(const bool set)
+{
+	if (set && sizer->IsShown(book))
+	{
+		sizer->Hide(book);
+		sizer->Show(simple);
+		Layout();
+	}
+	else if (!set && sizer->IsShown(simple))
+	{
+		sizer->Hide(simple);
+		sizer->Show(book);
+		Layout();
+	}
 }
 
 void Preview::OnSelectionUpdate()
@@ -573,19 +889,22 @@ void Preview::OnSelectionUpdate()
 	}
 	else if (selection.size() == 1)
 	{
+		SetShowSimple(true);
+
 		label->SetLabel(selection[0]->GetName());
 		icon->SetWeaponIcon(selection[0]->GetName());
+		simple->UpdateSelection(selection[0]);
 	}
 	else
 	{
-		label->SetLabel(std::format("{}x weapons selected", selection.size()));
+		SetShowSimple(false);
 
 		std::vector<std::string> weapons;
 		for (const auto& weapon : selection)
 			weapons.push_back(weapon->GetName());
 
+		label->SetLabel(std::format("{}x weapons selected", selection.size()));
 		icon->SetWeaponIcons(std::move(weapons));
+		book->UpdateSelection(selection);
 	}
-
-	book->UpdateSelection(selection);
 }
