@@ -21,6 +21,8 @@ public:
 
 		if (wxGetApp().GetSessionData().GetSorting().method == Method::AttackPower)
 			inventory->grid->Sort();
+
+		inventory->grid->UpdateRequirements();
 	}
 };
 

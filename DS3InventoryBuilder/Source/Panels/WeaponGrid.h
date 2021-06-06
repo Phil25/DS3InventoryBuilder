@@ -43,6 +43,7 @@ public:
 
 	void SetFiltering();
 	void Sort();
+	void UpdateRequirements();
 
 private:
 	void OnRender(wxPaintEvent& e);

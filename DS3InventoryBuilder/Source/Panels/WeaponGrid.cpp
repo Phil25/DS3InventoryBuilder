@@ -68,6 +68,14 @@ namespace
 		const auto rowsToBottom = (max - id) / 5;
 		return id + std::min(rowsToBottom, 5) * 5;
 	}
+
+	inline auto CompareRequirements(const invbuilder::PlayerAttributes& attr, const invbuilder::PlayerAttributes& reqs) noexcept
+	{
+		if (attr.strength * 1.5 >= reqs.strength && attr.dexterity >= reqs.dexterity && attr.intelligence >= reqs.intelligence && attr.faith >= reqs.faith)
+			return 1 + (attr.strength >= reqs.strength);
+		else
+			return 0;
+	}
 }
 
 struct WeaponGrid::Card final
@@ -81,16 +89,19 @@ struct WeaponGrid::Card final
 	bool selected{false};
 	bool hovered{false};
 	int atPageFromSelection{0};
+	int missingRequirements{0};
 
 	wxPoint position{};
 
 	Card(const int gridID, const int cardID, std::string name, const int level=10, const Infusion infusion=Infusion::None)
 		: context(std::make_shared<WeaponContext>(gridID, cardID, std::move(name), level, infusion))
+		, missingRequirements(CompareRequirements(wxGetApp().GetSessionData().GetAttributes(), wxGetApp().GetDatabase().GetWeapon(context->GetName()).requirements))
 	{
 	}
 
 	Card(const WeaponContextPtr& context)
 		: context(std::make_shared<WeaponContext>(*context))
+		, missingRequirements(CompareRequirements(wxGetApp().GetSessionData().GetAttributes(), wxGetApp().GetDatabase().GetWeapon(context->GetName()).requirements))
 	{
 	}
 
@@ -112,6 +123,12 @@ struct WeaponGrid::Card final
 			const int infusionSize = size / 4;
 			const int offset = size - infusionSize - 3;
 			dc.DrawBitmap(wxGetApp().GetImage(invbuilder::Database::ToString(context->GetInfusion()), infusionSize), position.x + offset, position.y + offset, false);
+		}
+
+		switch (missingRequirements)
+		{
+		case 0: dc.DrawBitmap(wxGetApp().GetImage("NoStats", size / 4), position.x + size - size / 4 - 2, position.y + 2, false); break;
+		case 1: dc.DrawBitmap(wxGetApp().GetImage("TwoHanded", size / 4), position.x + size - size / 4 - 2, position.y + 2, false); break;
 		}
 
 		/*{
@@ -457,6 +474,19 @@ void WeaponGrid::Sort()
 
 	selection->Set(std::move(newSelection));
 	RenderCards();
+}
+
+void WeaponGrid::UpdateRequirements()
+{
+	const auto& attr = wxGetApp().GetSessionData().GetAttributes();
+
+	for (auto& card : cards)
+	{
+		const auto& reqs = wxGetApp().GetDatabase().GetWeapon(card->context->GetName()).requirements;
+		card->missingRequirements = CompareRequirements(attr, reqs);
+	}
+
+	Refresh(false);
 }
 
 void WeaponGrid::OnRender(wxPaintEvent& e)
