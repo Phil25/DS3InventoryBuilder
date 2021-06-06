@@ -278,8 +278,8 @@ public:
 		case M::Default: return ComparatorDefault;
 		case M::Weight: return ComparatorWeight;
 		case M::AttackPower: return ComparatorAttackPower;
-		case M::GuardAbsorption: return ComparatorDefault; // TODO
-		case M::Effect: return ComparatorDefault; // TODO
+		case M::GuardAbsorption: return ComparatorGuardAbsorption;
+		case M::Effect: return ComparatorEffect;
 		}
 
 		assert(false && "invalid sorting method");
@@ -346,6 +346,35 @@ private:
 		const auto ar2 = static_cast<int>(damages2.Total());
 
 		RETURN_COMPARISON_ON_DIFFERENCE(ar1, ar2);
+		return ComparatorDefault(card1, card2);
+	}
+
+	static bool ComparatorGuardAbsorption(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
+	{
+		const auto& c1 = card1->context;
+		const auto& c2 = card2->context;
+		const auto& w1 = wxGetApp().GetDatabase().GetWeapon(c1->GetName());
+		const auto& w2 = wxGetApp().GetDatabase().GetWeapon(c2->GetName());
+
+		const auto& abs1 = w1.properties.at(c1->GetInfusion()).level[c1->GetLevel()].absorption;
+		const auto& abs2 = w2.properties.at(c2->GetInfusion()).level[c2->GetLevel()].absorption;
+
+		RETURN_COMPARISON_ON_DIFFERENCE(abs1.Total(), abs2.Total());
+		return ComparatorDefault(card1, card2);
+	}
+
+	static bool ComparatorEffect(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
+	{
+		using Infusion = invbuilder::Weapon::Infusion;
+
+		const auto inf1 = card1->context->GetInfusion();
+		const auto inf2 = card2->context->GetInfusion();
+
+		// the same as the default infusion order, but `none` is thrown at the end
+		const auto order1 = inf1 == Infusion::None ? 99 : static_cast<int>(inf1);
+		const auto order2 = inf2 == Infusion::None ? 99 : static_cast<int>(inf2);
+
+		RETURN_COMPARISON_ON_DIFFERENCE(order1, order2);
 		return ComparatorDefault(card1, card2);
 	}
 };
