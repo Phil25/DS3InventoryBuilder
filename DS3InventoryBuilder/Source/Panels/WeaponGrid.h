@@ -2,10 +2,16 @@
 
 #include <wx/wx.h>
 #include <Weapon.hpp>
+#include <set>
 
 class WeaponGrid final : public wxPanel
 {
 	using Sorting = invbuilder::Weapon::Sorting;
+	using Infusion = invbuilder::Weapon::Infusion;
+	using Type = invbuilder::Weapon::Type;
+
+	using TypeSet = std::set<Type>;
+	using InfusionSet = std::set<Infusion>;
 
 	struct Range final
 	{
@@ -15,6 +21,7 @@ class WeaponGrid final : public wxPanel
 	struct Card;
 	using CardPtr = std::unique_ptr<Card>;
 	std::vector<CardPtr> cards;
+	std::vector<CardPtr> fallback;
 
 	class SelectionManager;
 	std::unique_ptr<SelectionManager> selection;
@@ -35,14 +42,18 @@ public:
 
 	WeaponGrid(wxWindow* parent, const bool fixed=true);
 
-	void InitializeBaseWeapons();
+	void InitializeAllWeapons();
 
 	void AddSelectedWeapons(const int count);
 	void RemoveSelectedWeapons();
 	void DiscardSelection();
 
-	void SetFiltering();
+	bool MatchesFilters(const CardPtr&, const TypeSet&, const InfusionSet&) const;
+	void SetFiltering(const TypeSet&, const InfusionSet&, const Sorting&);
+
 	void Sort();
+	void Sort(const Sorting&);
+
 	void UpdateRequirements();
 
 private:

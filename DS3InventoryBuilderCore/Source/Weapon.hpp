@@ -52,7 +52,8 @@ namespace invbuilder
 			Dagger, StraightSword, Greatsword, UltraGreatsword, CurvedSword, CurvedGreatsword,
 			ThrustingSword, Katana, Axe, Greataxe, Hammer, GreatHammer, Spear, Pike, Halberd,
 			Reaper, Whip, Fist, Claw, Bow, Greatbow, Crossbow, Staff, PyromancyFlame, Talisman,
-			SacredChime, Torch, SmallShield, Shield, Greatshield
+			SacredChime, Torch, SmallShield, Shield, Greatshield,
+			Size
 		};
 
 		enum class Infusion

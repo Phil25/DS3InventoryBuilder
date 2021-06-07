@@ -33,12 +33,12 @@ WeaponPopup::WeaponPopup(const int gridID, const bool fixed, const int selectedL
 	else
 	{
 		this->Append(TransferSingle, wxT("Remove"));
+
+		this->AppendSeparator();
+
+		this->AppendSubMenu(levels, wxT("Level"));
+		this->AppendSubMenu(infusions, wxT("Infusion"));
 	}
-
-	this->AppendSeparator();
-
-	this->AppendSubMenu(levels, wxT("Level"));
-	this->AppendSubMenu(infusions, wxT("Infusion"));
 
 	this->Bind(wxEVT_COMMAND_MENU_SELECTED, &WeaponPopup::OnSelection, this);
 }

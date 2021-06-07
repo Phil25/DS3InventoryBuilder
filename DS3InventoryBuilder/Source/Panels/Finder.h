@@ -11,8 +11,14 @@ class Finder final : public Title
 	std::shared_ptr<AttributesListener> attributesListener;
 	std::shared_ptr<SelectionListener> selectionListener;
 
+	class FilterControls;
+	FilterControls* controls;
+
 	WeaponGrid* grid;
+	invbuilder::Weapon::Sorting sorting{};
 
 public:
 	Finder(wxWindow* parent);
+
+	void OnFilterControlsUpdate();
 };

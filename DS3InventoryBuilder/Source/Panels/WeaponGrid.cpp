@@ -286,10 +286,8 @@ public:
 		return ComparatorDefault;
 	}
 
-	void Sort(std::vector<CardPtr>& cards)
+	void Sort(std::vector<CardPtr>& cards, const Sorting& sorting)
 	{
-		const auto& sorting = wxGetApp().GetSessionData().GetSorting();
-
 		if (sorting.reverse)
 			std::sort(cards.rbegin(), cards.rend(), GetComparator(sorting.method));
 		else
@@ -403,11 +401,19 @@ WeaponGrid::WeaponGrid(wxWindow* parent, const bool fixed)
 	this->Bind(wxEVT_PAINT, &WeaponGrid::OnRender, this);
 }
 
-void WeaponGrid::InitializeBaseWeapons()
+void WeaponGrid::InitializeAllWeapons()
 {
+	using Infusion = invbuilder::Weapon::Infusion;
+
 	int cardID = 0;
 	for (const auto& name : wxGetApp().GetDatabase().GetNames())
-		cards.emplace_back(std::make_unique<Card>(gridID, cardID++, name));
+	{
+		fallback.emplace_back(std::make_unique<Card>(gridID, cardID++, name));
+
+		if (wxGetApp().GetDatabase().GetWeapon(name).infusable)
+			for (int infusion = 1; infusion < static_cast<int>(Infusion::Size); ++infusion)
+				fallback.emplace_back(std::make_unique<Card>(gridID, cardID++, name, 10, static_cast<Infusion>(infusion)));
+	}
 
 	Sort();
 }
@@ -457,32 +463,49 @@ void WeaponGrid::DiscardSelection()
 	}
 }
 
-void WeaponGrid::SetFiltering(/*filtering options*/)
+bool WeaponGrid::MatchesFilters(const CardPtr& card, const TypeSet& types, const InfusionSet& infusions) const
 {
-	//assert(fallback && "cannot use filtering with uninitialized fallback vector");
+	// TODO: cache type
+	const auto& weapon = wxGetApp().GetDatabase().GetWeapon(card->context->GetName());
+	return types.contains(weapon.type) && infusions.contains(card->context->GetInfusion());
+}
 
-	/*
-	I.  Add optional<vector<CardPtr>> as a vector to keep getting cards from (CardPtr = shared)
-	II. Pass a const bool to ctor to create it
+void WeaponGrid::SetFiltering(const TypeSet& types, const InfusionSet& infusions, const Sorting& sortingOverride)
+{
+	selection->Clear();
 
-	1. ClearSelection()
-	2. cards.clean()
-	3. Iterate fallback and copy CardPtr of revelant weapons
-	5. Sort()
+	std::move(cards.begin(), cards.end(), std::back_inserter(fallback));
+	cards.clear();
 
-	But then cardIDs don't match... Gotta rethink this again later
+	for (auto it = fallback.begin(); it != fallback.end();)
+	{
+		auto& card = *it;
 
-	Consider using SetFiltering(some empty value) instead of InitializeBaseWeapons()
-	*/
+		if (MatchesFilters(card, types, infusions))
+		{
+			cards.emplace_back(std::move(card));
+			it = fallback.erase(it);
+		}
+		else ++it;
+	}
+
+	Sort(sortingOverride);
 }
 
 void WeaponGrid::Sort()
+{
+	// fixed grids should not use session sorting
+	if (!fixed)
+		Sort(wxGetApp().GetSessionData().GetSorting());
+}
+
+void WeaponGrid::Sort(const Sorting& desiredSorting)
 {
 	const auto prev = selection->Get();
 	std::vector<int> newSelection;
 	selection->Clear(false);
 
-	sorting->Sort(cards);
+	sorting->Sort(cards, desiredSorting);
 
 	int cardID = 0;
 	for (auto& card : cards)

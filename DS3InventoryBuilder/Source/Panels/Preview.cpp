@@ -274,10 +274,7 @@ class Preview::WeaponSimple final : public wxScrolledWindow
 				++id;
 			}
 
-			auto font = GetItemFont(0);
-			font.SetWeight(wxFONTWEIGHT_BOLD);
-			SetItemFont(0, font);
-
+			SetItemFont(0, GetItemFont(0).MakeBold());
 			SetItemTextColour(2, wxColor{66,139,202}); // magic
 			SetItemTextColour(3, wxColor{217,83,79}); // fire
 			SetItemTextColour(4, wxColor{255,191,0}); // lightning
