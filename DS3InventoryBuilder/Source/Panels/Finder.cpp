@@ -371,6 +371,7 @@ class Finder::FilterControls final : public wxPanel
 	InfusionFilter* infusionFilter;
 	SortingFilter* sortingFilter;
 
+	std::string filterText;
 	std::set<Type> types{};
 	std::set<Infusion> infusions{Infusion::None};
 	Sorting sorting{};
@@ -396,6 +397,10 @@ public:
 
 		this->SetMaxSize(wxSize{128 * 5, 99999});
 
+		filter->SetFocus();
+		filter->SetDescriptiveText(wxT("Filter..."));
+		filter->Bind(wxEVT_TEXT, &FilterControls::OnFilter, this);
+
 		openTypeFilter->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) { this->ShowPopup(typeFilter, openTypeFilter); });
 		typeFilter->Bind(wxEVT_CHECKBOX, &FilterControls::OnType, this);
 
@@ -407,9 +412,6 @@ public:
 		sortingFilter->Bind(wxEVT_RADIOBOX, &FilterControls::OnSorting, this);
 
 		levels->Bind(wxEVT_CHOICE, &FilterControls::OnLevel, this);
-
-		filter->SetFocus();
-		filter->SetDescriptiveText(wxT("Filter..."));
 
 		auto* sizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -423,6 +425,11 @@ public:
 		sizer->Add(levels, 1, wxALIGN_CENTRE_VERTICAL);
 
 		this->SetSizer(sizer);
+	}
+
+	const auto& GetWeaponFilter() const
+	{
+		return filterText;
 	}
 
 	const auto& GetWeaponTypes() const
@@ -446,6 +453,12 @@ private:
 		auto pos = button->GetScreenPosition() + wxSize{0, button->GetSize().y};
 		window->SetPosition(pos);
 		window->Show();
+	}
+
+	void OnFilter(wxCommandEvent&)
+	{
+		filterText = filter->GetValue();
+		finder->OnFilterControlsUpdate();
 	}
 
 	void OnType(wxCommandEvent&)
@@ -501,5 +514,5 @@ Finder::Finder(wxWindow* parent)
 void Finder::OnFilterControlsUpdate()
 {
 	sorting = controls->GetWeaponSorting();
-	grid->SetFiltering(controls->GetWeaponTypes(), controls->GetWeaponInfusions(), sorting);
+	grid->SetFiltering(controls->GetWeaponFilter(), controls->GetWeaponTypes(), controls->GetWeaponInfusions(), sorting);
 }

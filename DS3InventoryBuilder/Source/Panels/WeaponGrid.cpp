@@ -64,6 +64,14 @@ namespace
 		else
 			return 0;
 	}
+
+	inline bool MatchString(const std::string& filter, const std::string& name)
+	{
+		return name.end() != std::search(
+			name.begin(), name.end(), filter.begin(), filter.end(),
+			[](char c1, char c2) { return std::toupper(c1) == c2; }
+		);
+	}
 }
 
 struct WeaponGrid::Card final
@@ -448,25 +456,27 @@ void WeaponGrid::DiscardSelection()
 	}
 }
 
-bool WeaponGrid::MatchesFilters(const CardPtr& card, const TypeSet& types, const InfusionSet& infusions) const
+bool WeaponGrid::MatchesFilters(const std::string& filter, const CardPtr& card, const TypeSet& types, const InfusionSet& infusions) const
 {
-	// TODO: cache type
-	const auto& weapon = wxGetApp().GetDatabase().GetWeapon(card->context->GetName());
-	return types.contains(weapon.type) && infusions.contains(card->context->GetInfusion());
+	const auto& name = card->context->GetName();
+	const auto& weapon = wxGetApp().GetDatabase().GetWeapon(name); // TODO: cache type
+	return types.contains(weapon.type) && infusions.contains(card->context->GetInfusion()) && (filter.empty() || MatchString(filter, name));
 }
 
-void WeaponGrid::SetFiltering(const TypeSet& types, const InfusionSet& infusions, const Sorting& sortingOverride)
+void WeaponGrid::SetFiltering(std::string filter, const TypeSet& types, const InfusionSet& infusions, const Sorting& sortingOverride)
 {
 	selection->Clear();
 
 	std::move(cards.begin(), cards.end(), std::back_inserter(fallback));
 	cards.clear();
 
+	std::transform(filter.begin(), filter.end(), filter.begin(), ::toupper);
+
 	for (auto it = fallback.begin(); it != fallback.end();)
 	{
 		auto& card = *it;
 
-		if (MatchesFilters(card, types, infusions))
+		if (MatchesFilters(filter, card, types, infusions))
 		{
 			cards.emplace_back(std::move(card));
 			it = fallback.erase(it);

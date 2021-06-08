@@ -48,8 +48,8 @@ public:
 	void RemoveSelectedWeapons();
 	void DiscardSelection();
 
-	bool MatchesFilters(const CardPtr&, const TypeSet&, const InfusionSet&) const;
-	void SetFiltering(const TypeSet&, const InfusionSet&, const Sorting&);
+	bool MatchesFilters(const std::string& filter, const CardPtr&, const TypeSet&, const InfusionSet&) const;
+	void SetFiltering(std::string filter, const TypeSet&, const InfusionSet&, const Sorting&);
 
 	void Sort();
 	void Sort(const Sorting&);
