@@ -68,7 +68,10 @@ namespace invbuilder
 			enum class Method
 			{
 				Default, Weight, AttackPower, GuardAbsorption, Effect,
-				Size
+				Size, // in-game only
+				AttackPowerPrecise, AttackPowerPreciseTwoHanded, AttackPowerPreciseTwoHandedIfRequired,
+				Stability, StabilityThenGuardAbsorption,
+				SizeFull
 			};
 
 			Method method;

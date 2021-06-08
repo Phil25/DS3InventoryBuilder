@@ -3,23 +3,12 @@
 #include <AppMain.h>
 #include <Menus/WeaponPopup.h>
 #include <Calculator.h>
+#include <Comparators.h>
 #include <algorithm>
 
-#define RETURN_COMPARISON_ON_DIFFERENCE(a,b) \
-	switch (Compare(a, b)) \
-	{ \
-	case -1: return true; \
-	case 1: return false; \
-	} \
 
 namespace
 {
-	template <typename T>
-	constexpr int Compare(const T& a, const T& b) noexcept
-	{
-		return (a < b) ? -1 : (a > b);
-	}
-
 	inline auto GetItemColor(const bool selected, const bool hovered, const bool atPageFromSelection)
 	{
 		// Hufflepuff palette: https://www.color-hex.com/color-palette/816
@@ -266,24 +255,31 @@ private:
 
 class WeaponGrid::SortingManager final
 {
+	using Method = Sorting::Method;
+
 public:
 	SortingManager() = default;
 
-	static auto GetComparator(const Sorting::Method method)
+	static auto GetComparator(const Method method)
 	{
-		using M = Sorting::Method;
+		using M = Method;
 
 		switch (method)
 		{
-		case M::Default: return ComparatorDefault;
-		case M::Weight: return ComparatorWeight;
-		case M::AttackPower: return ComparatorAttackPower;
-		case M::GuardAbsorption: return ComparatorGuardAbsorption;
-		case M::Effect: return ComparatorEffect;
+		case M::Default: return Comparator<M::Default>;
+		case M::Weight: return Comparator<M::Weight>;
+		case M::AttackPower: return Comparator<M::AttackPower>;
+		case M::GuardAbsorption: return Comparator<M::GuardAbsorption>;
+		case M::Effect: return Comparator<M::Effect>;
+		case M::AttackPowerPrecise: return Comparator<M::AttackPowerPrecise>;
+		case M::AttackPowerPreciseTwoHanded: return Comparator<M::AttackPowerPreciseTwoHanded>;
+		case M::AttackPowerPreciseTwoHandedIfRequired: return Comparator<M::AttackPowerPreciseTwoHandedIfRequired>;
+		case M::Stability: return Comparator<M::Stability>;
+		case M::StabilityThenGuardAbsorption: return Comparator<M::StabilityThenGuardAbsorption>;
 		}
 
 		assert(false && "invalid sorting method");
-		return ComparatorDefault;
+		return Comparator<M::Default>;
 	}
 
 	void Sort(std::vector<CardPtr>& cards, const Sorting& sorting)
@@ -295,85 +291,74 @@ public:
 	}
 
 private:
-	static bool ComparatorDefault(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
+	template <Method M>
+	static bool Comparator(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
 	{
-		const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
-		const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
+		namespace comps = invbuilder::comparators;
 
-		RETURN_COMPARISON_ON_DIFFERENCE(data1.orderID, data2.orderID);
-		RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetInfusion(), card2->context->GetInfusion());
-		RETURN_COMPARISON_ON_DIFFERENCE(card1->context->GetLevel(), card2->context->GetLevel());
-		return true; // weapons are the same
-	}
+		const auto& weap1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
+		const auto& inf1 = card1->context->GetInfusion();
+		const auto& lvl1 = card1->context->GetLevel();
 
-	static bool ComparatorWeight(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
-	{
-		const auto& data1 = wxGetApp().GetDatabase().GetWeapon(card1->context->GetName());
-		const auto& data2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
+		const auto& weap2 = wxGetApp().GetDatabase().GetWeapon(card2->context->GetName());
+		const auto& inf2 = card2->context->GetInfusion();
+		const auto& lvl2 = card2->context->GetLevel();
 
-		RETURN_COMPARISON_ON_DIFFERENCE(data1.weight, data2.weight);
-		return ComparatorDefault(card1, card2);
-	}
+		if constexpr (M == Method::Default)
+		{
+			return comps::Default(weap1, inf1, lvl1, weap2, inf2, lvl2);
+		}
+		else if constexpr (M == Method::Weight)
+		{
+			return comps::Weight(weap1, inf1, lvl1, weap2, inf2, lvl2);
+		}
+		else if constexpr (M == Method::AttackPower)
+		{
+			const auto& db = wxGetApp().GetDatabase();
+			const auto& attribs = wxGetApp().GetSessionData().GetAttributes();
+			const bool twoHanded = wxGetApp().GetSessionData().GetSorting().twoHanded;
+			return comps::AttackPower(weap1, inf1, lvl1, weap2, inf2, lvl2, db, attribs, twoHanded);
+		}
+		else if constexpr (M == Method::GuardAbsorption)
+		{
+			return comps::GuardAbsorption(weap1, inf1, lvl1, weap2, inf2, lvl2);
+		}
+		else if constexpr (M == Method::Effect)
+		{
+			return comps::Effect(weap1, inf1, lvl1, weap2, inf2, lvl2);
+		}
+		else if constexpr (M == Method::AttackPowerPrecise)
+		{
+			const auto& db = wxGetApp().GetDatabase();
+			const auto& attribs = wxGetApp().GetSessionData().GetAttributes();
+			return comps::AttackPowerPrecise(weap1, inf1, lvl1, weap2, inf2, lvl2, db, attribs);
+		}
+		else if constexpr (M == Method::AttackPowerPreciseTwoHanded)
+		{
+			const auto& db = wxGetApp().GetDatabase();
+			const auto& attribs = wxGetApp().GetSessionData().GetAttributes();
+			return comps::AttackPowerPreciseTwoHanded(weap1, inf1, lvl1, weap2, inf2, lvl2, db, attribs);
+		}
+		else if constexpr (M == Method::AttackPowerPreciseTwoHandedIfRequired)
+		{
+			const auto& db = wxGetApp().GetDatabase();
+			const auto& attribs = wxGetApp().GetSessionData().GetAttributes();
+			return comps::AttackPowerPreciseTwoHandedIfRequired(weap1, inf1, lvl1, weap2, inf2, lvl2, db, attribs);
+		}
+		else if constexpr (M == Method::Stability)
+		{
+			return comps::Stability(weap1, inf1, lvl1, weap2, inf2, lvl2);
+		}
+		else if constexpr (M == Method::StabilityThenGuardAbsorption)
+		{
+			return comps::StabilityThenGuardAbsorption(weap1, inf1, lvl1, weap2, inf2, lvl2);
+		}
+		else
+		{
+			static_assert(false, "Unsupported sorting method");
+		}
 
-	static bool ComparatorAttackPower(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
-	{
-		// TODO: this comparator is WRONG.
-		// DS3 does really weird things when comparing weapons with very similar AR, and I can't figure out what
-		// You can sometimes observe the order being ex. 62 > 61 > 62 even in-game, when checking out the value in the menu
-		// However, if the difference is big enough (~2 AR), this works fine
-
-		const auto attribs = wxGetApp().GetSessionData().GetAttributes();
-
-		const auto& c1 = card1->context;
-		const auto& c2 = card2->context;
-		const auto& w1 = wxGetApp().GetDatabase().GetWeapon(c1->GetName());
-		const auto& w2 = wxGetApp().GetDatabase().GetWeapon(c2->GetName());
-
-		// DS3 always calculates two handed AR for bows/greatbows/crossbows
-		const bool twoHanded = wxGetApp().GetSessionData().GetSorting().twoHanded;
-		const bool twoHanded1 = twoHanded || invbuilder::Database::IsRanged(w1); 
-		const bool twoHanded2 = twoHanded || invbuilder::Database::IsRanged(w2);
-
-		const auto& [damages1, _1] = invbuilder::calculator::AttackRating(
-			wxGetApp().GetDatabase(), c1->GetName().c_str(), c1->GetInfusion(), c1->GetLevel(), attribs, twoHanded1);
-
-		const auto& [damages2, _2] = invbuilder::calculator::AttackRating(
-			wxGetApp().GetDatabase(), c2->GetName().c_str(), c2->GetInfusion(), c2->GetLevel(), attribs, twoHanded2);
-
-		const auto ar1 = static_cast<int>(damages1.Total());
-		const auto ar2 = static_cast<int>(damages2.Total());
-
-		RETURN_COMPARISON_ON_DIFFERENCE(ar1, ar2);
-		return ComparatorDefault(card1, card2);
-	}
-
-	static bool ComparatorGuardAbsorption(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
-	{
-		const auto& c1 = card1->context;
-		const auto& c2 = card2->context;
-		const auto& w1 = wxGetApp().GetDatabase().GetWeapon(c1->GetName());
-		const auto& w2 = wxGetApp().GetDatabase().GetWeapon(c2->GetName());
-
-		const auto& abs1 = w1.properties.at(c1->GetInfusion()).level[c1->GetLevel()].absorption;
-		const auto& abs2 = w2.properties.at(c2->GetInfusion()).level[c2->GetLevel()].absorption;
-
-		RETURN_COMPARISON_ON_DIFFERENCE(abs1.Total(), abs2.Total());
-		return ComparatorDefault(card1, card2);
-	}
-
-	static bool ComparatorEffect(const WeaponGrid::CardPtr& card1, const WeaponGrid::CardPtr& card2)
-	{
-		using Infusion = invbuilder::Weapon::Infusion;
-
-		const auto inf1 = card1->context->GetInfusion();
-		const auto inf2 = card2->context->GetInfusion();
-
-		// the same as the default infusion order, but `none` is thrown at the end
-		const auto order1 = inf1 == Infusion::None ? 99 : static_cast<int>(inf1);
-		const auto order2 = inf2 == Infusion::None ? 99 : static_cast<int>(inf2);
-
-		RETURN_COMPARISON_ON_DIFFERENCE(order1, order2);
-		return ComparatorDefault(card1, card2);
+		return true;
 	}
 };
 
@@ -526,6 +511,12 @@ void WeaponGrid::UpdateRequirements()
 	const auto& attr = wxGetApp().GetSessionData().GetAttributes();
 
 	for (auto& card : cards)
+	{
+		const auto& reqs = wxGetApp().GetDatabase().GetWeapon(card->context->GetName()).requirements;
+		card->missingRequirements = CompareRequirements(attr, reqs);
+	}
+
+	for (auto& card : fallback)
 	{
 		const auto& reqs = wxGetApp().GetDatabase().GetWeapon(card->context->GetName()).requirements;
 		card->missingRequirements = CompareRequirements(attr, reqs);

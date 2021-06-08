@@ -18,6 +18,13 @@ public:
 
 	void OnUpdate(const int str, const int dex, const int int_, const int fth, const int lck) override
 	{
+		using M = invbuilder::Weapon::Sorting::Method;
+		const auto& method = finder->sorting.method;
+
+		if (method == M::AttackPower || method == M::AttackPowerPrecise ||
+			method == M::AttackPowerPreciseTwoHanded || method == M::AttackPowerPreciseTwoHandedIfRequired)
+			finder->grid->Sort(finder->sorting);
+
 		finder->grid->UpdateRequirements();
 	}
 };
@@ -196,16 +203,164 @@ class Finder::FilterControls final : public wxPanel
 		}
 	};
 
+	class SortingFilter final : public wxPopupTransientWindow
+	{
+		auto GetMethods()
+		{
+			using M = Sorting::Method;
+			wxArrayString choices;
+
+			for (int m = 0; m < static_cast<int>(M::Size); ++m)
+				choices.Add(DB::ToString(static_cast<M>(m)));
+
+			return choices;
+		}
+
+		auto GetARCalculations()
+		{
+			wxArrayString choices;
+			choices.Add(wxT("In-Game, as Inventory"));
+			choices.Add(wxT("Precise, One Handed"));
+			choices.Add(wxT("Precise, Two Handed"));
+			choices.Add(wxT("Precise, Two Handed If Required"));
+			return choices;
+		}
+
+		wxRadioBox* methods;
+
+		wxCheckBox* reverse;
+		wxCheckBox* stability;
+		wxRadioBox* arCalculation;
+
+		Sorting::Method attackPowerMethod{Sorting::Method::AttackPower};
+		Sorting::Method guardAbsorptionMethod{Sorting::Method::GuardAbsorption};
+		Sorting sorting{};
+
+	public:
+		SortingFilter(wxWindow* parent)
+			: wxPopupTransientWindow(parent, wxBORDER_THEME)
+			, methods(new wxRadioBox(this, wxID_ANY, wxT("Methods"), wxDefaultPosition, wxDefaultSize, GetMethods(), 1))
+			, reverse(new wxCheckBox(this, wxID_ANY, wxT("Reversed")))
+			, stability(new wxCheckBox(this, wxID_ANY, wxT("Stability First")))
+			, arCalculation(new wxRadioBox(this, wxID_ANY, wxT("AR Calculation"), wxDefaultPosition, wxDefaultSize, GetARCalculations(), 1))
+		{
+			stability->Disable();
+			arCalculation->Disable();
+
+			reverse->Bind(wxEVT_CHECKBOX, &SortingFilter::OnReverse, this);
+			methods->Bind(wxEVT_RADIOBOX, &SortingFilter::OnMethod, this);
+			stability->Bind(wxEVT_CHECKBOX, &SortingFilter::OnStability, this);
+			arCalculation->Bind(wxEVT_RADIOBOX, &SortingFilter::OnARCalculation, this);
+
+			auto* options = new wxBoxSizer(wxVERTICAL);
+			options->Add(reverse, 0, wxLEFT, 5);
+			options->Add(stability, 0, wxLEFT, 5);
+			options->Add(arCalculation, 0, wxTOP | wxTOP, 5);
+
+			auto* sizer = new wxBoxSizer(wxHORIZONTAL);
+			sizer->Add(methods, 1, wxEXPAND | wxALL, 5);
+			sizer->Add(options, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
+
+			this->SetSizerAndFit(sizer);
+		}
+
+		const auto& GetWeaponSorting()
+		{
+			return sorting;
+		}
+
+	private:
+		void OnReverse(wxCommandEvent& e)
+		{
+			sorting.reverse = reverse->IsChecked();
+			e.Skip(true);
+		}
+
+		void OnMethod(wxCommandEvent& e)
+		{
+			using M = Sorting::Method;
+
+			const int selection = methods->GetSelection();
+			assert(0 <= selection && selection < static_cast<int>(M::Size) && "invalid finder sorting method selection");
+
+			const auto method = static_cast<M>(selection);
+			switch (method)
+			{
+			case M::AttackPower:
+				arCalculation->Enable();
+				stability->Disable();
+				sorting.method = attackPowerMethod;
+				break;
+
+			case M::GuardAbsorption:
+				stability->Enable();
+				arCalculation->Disable();
+				sorting.method = guardAbsorptionMethod;
+				break;
+
+			default:
+				stability->Disable();
+				arCalculation->Disable();
+				sorting.method = method;
+				break;
+			}
+
+			e.Skip(true);
+		}
+
+		void OnStability(wxCommandEvent& e)
+		{
+			using M = Sorting::Method;
+
+			guardAbsorptionMethod = stability->IsChecked() ? M::StabilityThenGuardAbsorption : M::GuardAbsorption;
+			sorting.method = guardAbsorptionMethod;
+
+			e.Skip(true);
+		}
+
+		void OnARCalculation(wxCommandEvent& e)
+		{
+			using M = Sorting::Method;
+
+			switch (arCalculation->GetSelection())
+			{
+			case 0:
+				attackPowerMethod = M::AttackPower;
+				break;
+
+			case 1:
+				attackPowerMethod = M::AttackPowerPrecise;
+				break;
+
+			case 2:
+				attackPowerMethod = M::AttackPowerPreciseTwoHanded;
+				break;
+
+			case 3:
+				attackPowerMethod = M::AttackPowerPreciseTwoHandedIfRequired;
+				break;
+
+			default:
+				assert(false && "invalid AR calculation method");
+			}
+
+			sorting.method = attackPowerMethod;
+
+			e.Skip(true);
+		}
+	};
+
 	Finder* const finder;
 
 	wxSearchCtrl* filter;
 	wxButton* openTypeFilter;
 	wxButton* openInfusionFilter;
-	wxButton* order;
+	wxButton* openSorting;
 	wxButton* level;
 
 	TypeFilter* typeFilter;
 	InfusionFilter* infusionFilter;
+	SortingFilter* sortingFilter;
 
 	std::set<Type> types{};
 	std::set<Infusion> infusions{Infusion::None};
@@ -216,12 +371,13 @@ public:
 		: wxPanel(parent)
 		, finder(finder)
 		, filter(new wxSearchCtrl(this, wxID_ANY))
-		, order(new wxButton(this, wxID_ANY, wxT("Order")))
 		, openTypeFilter(new wxButton(this, wxID_ANY, wxT("Classes")))
 		, openInfusionFilter(new wxButton(this, wxID_ANY, wxT("Infusions")))
+		, openSorting(new wxButton(this, wxID_ANY, wxT("Sorting")))
 		, level(new wxButton(this, wxID_ANY, wxT("+10")))
 		, typeFilter(new TypeFilter(this))
 		, infusionFilter(new InfusionFilter(this))
+		, sortingFilter(new SortingFilter(this))
 	{
 		for (int type = 0; type < static_cast<int>(Type::Size); ++type)
 			types.emplace(static_cast<Type>(type));
@@ -234,6 +390,10 @@ public:
 		openInfusionFilter->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) { this->ShowPopup(infusionFilter, openInfusionFilter); });
 		infusionFilter->Bind(wxEVT_CHECKBOX, &FilterControls::OnInfusion, this);
 
+		openSorting->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) { this->ShowPopup(sortingFilter, openSorting); });
+		sortingFilter->Bind(wxEVT_CHECKBOX, &FilterControls::OnSorting, this);
+		sortingFilter->Bind(wxEVT_RADIOBOX, &FilterControls::OnSorting, this);
+
 		filter->SetFocus();
 		filter->SetDescriptiveText(wxT("Filter..."));
 
@@ -244,7 +404,7 @@ public:
 		sizer->Add(openTypeFilter, 4, wxALIGN_CENTRE_VERTICAL);
 		sizer->Add(openInfusionFilter, 4, wxALIGN_CENTRE_VERTICAL);
 		sizer->AddStretchSpacer(1);
-		sizer->Add(order, 4, wxALIGN_CENTRE_VERTICAL);
+		sizer->Add(openSorting, 4, wxALIGN_CENTRE_VERTICAL);
 		sizer->Add(level, 1, wxALIGN_CENTRE_VERTICAL);
 
 		this->SetSizer(sizer);
@@ -284,6 +444,12 @@ private:
 		infusions = infusionFilter->GetWeaponInfusions();
 		finder->OnFilterControlsUpdate();
 	}
+
+	void OnSorting(wxCommandEvent&)
+	{
+		sorting = sortingFilter->GetWeaponSorting();
+		finder->OnFilterControlsUpdate();
+	}
 };
 
 Finder::Finder(wxWindow* parent)
@@ -314,9 +480,6 @@ Finder::Finder(wxWindow* parent)
 
 void Finder::OnFilterControlsUpdate()
 {
-	grid->SetFiltering(
-		controls->GetWeaponTypes(),
-		controls->GetWeaponInfusions(),
-		controls->GetWeaponSorting()
-	);
+	sorting = controls->GetWeaponSorting();
+	grid->SetFiltering(controls->GetWeaponTypes(), controls->GetWeaponInfusions(), sorting);
 }

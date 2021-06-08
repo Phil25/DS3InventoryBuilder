@@ -459,6 +459,13 @@ auto Database::ToString(const Weapon::Sorting::Method sortingMethod) -> std::str
 	case M::AttackPower: return "Attack Power";
 	case M::GuardAbsorption: return "Guard Absorption";
 	case M::Effect: return "Effect";
+
+	case M::AttackPowerPrecise: return "Attack Power (precise)";
+	case M::AttackPowerPreciseTwoHanded: return "Attack Power (precise, two handed)";
+	case M::AttackPowerPreciseTwoHandedIfRequired: return "Attack Power (precise, two handed if required)";
+
+	case M::Stability: return "Stability";
+	case M::StabilityThenGuardAbsorption: return "Stability then Guard Absorption";
 	}
 
 	assert(false && "invalid sorting method");
