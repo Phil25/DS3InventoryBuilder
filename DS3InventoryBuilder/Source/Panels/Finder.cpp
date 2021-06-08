@@ -6,6 +6,7 @@
 #include <Database.h>
 #include <wx/popupwin.h>
 #include <wx/srchctrl.h>
+#include <format>
 
 class Finder::AttributesListener final : public IAttributesListener
 {
@@ -350,13 +351,21 @@ class Finder::FilterControls final : public wxPanel
 		}
 	};
 
+	auto GetLevels()
+	{
+		wxArrayString levels;
+		for (int i = 0; i <= 10; ++i)
+			levels.Add(std::format("+{}", i));
+		return levels;
+	}
+
 	Finder* const finder;
 
 	wxSearchCtrl* filter;
 	wxButton* openTypeFilter;
 	wxButton* openInfusionFilter;
 	wxButton* openSorting;
-	wxButton* level;
+	wxChoice* levels;
 
 	TypeFilter* typeFilter;
 	InfusionFilter* infusionFilter;
@@ -374,13 +383,16 @@ public:
 		, openTypeFilter(new wxButton(this, wxID_ANY, wxT("Classes")))
 		, openInfusionFilter(new wxButton(this, wxID_ANY, wxT("Infusions")))
 		, openSorting(new wxButton(this, wxID_ANY, wxT("Sorting")))
-		, level(new wxButton(this, wxID_ANY, wxT("+10")))
+		, levels(new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, GetLevels()))
 		, typeFilter(new TypeFilter(this))
 		, infusionFilter(new InfusionFilter(this))
 		, sortingFilter(new SortingFilter(this))
 	{
 		for (int type = 0; type < static_cast<int>(Type::Size); ++type)
 			types.emplace(static_cast<Type>(type));
+
+		assert(levels->GetCount() == 11 && "invalid level count");
+		levels->SetSelection(10);
 
 		this->SetMaxSize(wxSize{128 * 5, 99999});
 
@@ -394,6 +406,8 @@ public:
 		sortingFilter->Bind(wxEVT_CHECKBOX, &FilterControls::OnSorting, this);
 		sortingFilter->Bind(wxEVT_RADIOBOX, &FilterControls::OnSorting, this);
 
+		levels->Bind(wxEVT_CHOICE, &FilterControls::OnLevel, this);
+
 		filter->SetFocus();
 		filter->SetDescriptiveText(wxT("Filter..."));
 
@@ -405,7 +419,8 @@ public:
 		sizer->Add(openInfusionFilter, 4, wxALIGN_CENTRE_VERTICAL);
 		sizer->AddStretchSpacer(1);
 		sizer->Add(openSorting, 4, wxALIGN_CENTRE_VERTICAL);
-		sizer->Add(level, 1, wxALIGN_CENTRE_VERTICAL);
+		sizer->AddStretchSpacer(1);
+		sizer->Add(levels, 1, wxALIGN_CENTRE_VERTICAL);
 
 		this->SetSizer(sizer);
 	}
@@ -449,6 +464,11 @@ private:
 	{
 		sorting = sortingFilter->GetWeaponSorting();
 		finder->OnFilterControlsUpdate();
+	}
+
+	void OnLevel(wxCommandEvent&)
+	{
+		finder->grid->SetAllLevel(levels->GetSelection(), sorting);
 	}
 };
 

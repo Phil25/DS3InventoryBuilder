@@ -54,6 +54,7 @@ public:
 	void Sort();
 	void Sort(const Sorting&);
 
+	void SetAllLevel(const int level, const Sorting&);
 	void UpdateRequirements();
 
 private:

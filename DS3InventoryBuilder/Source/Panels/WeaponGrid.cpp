@@ -506,6 +506,19 @@ void WeaponGrid::Sort(const Sorting& desiredSorting)
 	RenderCards();
 }
 
+void WeaponGrid::SetAllLevel(const int level, const Sorting& sortingOverride)
+{
+	selection->Clear();
+
+	for (auto& card : cards)
+		card->context->SetLevel(level);
+
+	for (auto& card : fallback)
+		card->context->SetLevel(level);
+
+	Sort(sortingOverride);
+}
+
 void WeaponGrid::UpdateRequirements()
 {
 	const auto& attr = wxGetApp().GetSessionData().GetAttributes();
