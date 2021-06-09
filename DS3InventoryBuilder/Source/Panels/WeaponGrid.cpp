@@ -2,10 +2,10 @@
 
 #include <AppMain.h>
 #include <Menus/WeaponPopup.h>
+#include <Utils/DrawWeapon.h>
 #include <Calculator.h>
 #include <Comparators.h>
 #include <algorithm>
-
 
 namespace
 {
@@ -15,27 +15,19 @@ namespace
 		// Seafoam palette: https://www.color-hex.com/color-palette/1403
 
 		if (selected)
-			return hovered ? wxColor(236, 185, 57) : wxColor(240, 199, 94);
+			return hovered ? wxColor{236, 185, 57} : wxColor{240, 199, 94};
 
 		switch (hovered + atPageFromSelection * 2)
 		{
-		case 0: return wxColor(114, 98, 85); // normal
-		case 1: return wxColor(55,46,41); // hovered
-		case 2: return wxColor(95,158,160); // at page
-		case 3: return wxColor(49,120,115); // hovered + at page
+		case 0: return wxColor{114,98,85}; // normal
+		case 1: return wxColor{55,46,41}; // hovered
+		case 2: return wxColor{95,158,160}; // at page
+		case 3: return wxColor{49,120,115}; // hovered + at page
 		}
 
 		assert(false && "invalid highlight combo");
 		return wxColor{};
 	}
-
-	/*inline auto GetUniquenessColor(const bool unique)
-	{
-		// cool blue palette: https://www.color-hex.com/color-palette/30415
-		return unique
-			? wxColor(16, 125, 172)
-			: wxColor(113, 199, 236);
-	}*/
 
 	inline int GetIDFromPosition(const int x, const int y, const int startingCardID, const int cardSize) noexcept
 	{
@@ -65,6 +57,22 @@ namespace
 			return 0;
 	}
 
+	inline auto GetRequirementsStatus(const std::string& name)
+	{
+		const auto& attribs = wxGetApp().GetSessionData().GetAttributes();
+		const auto& reqs = wxGetApp().GetDatabase().GetWeapon(name).requirements;
+
+		switch (CompareRequirements(attribs, reqs))
+		{
+		case 0: return WeaponContext::RequirementsStatus::NotMet;
+		case 1: return WeaponContext::RequirementsStatus::TwoHanded;
+		case 2: return WeaponContext::RequirementsStatus::Met;
+		}
+
+		assert(false && "invalid requirement status result");
+		return WeaponContext::RequirementsStatus::NotMet;
+	}
+
 	inline bool MatchString(const std::string& filter, const std::string& name)
 	{
 		return name.end() != std::search(
@@ -78,6 +86,7 @@ struct WeaponGrid::Card final
 {
 	using Weapon = invbuilder::Weapon;
 	using Infusion = Weapon::Infusion;
+	using RequirementsStatus = WeaponContext::RequirementsStatus;
 
 	using WeaponContextPtr = std::shared_ptr<WeaponContext>;
 	const WeaponContextPtr context;
@@ -85,49 +94,23 @@ struct WeaponGrid::Card final
 	bool selected{false};
 	bool hovered{false};
 	bool atPageFromSelection{false};
-	int missingRequirements{0};
 
 	wxPoint position{};
 
-	Card(const int gridID, const int cardID, std::string name, const int level=10, const Infusion infusion=Infusion::None)
-		: context(std::make_shared<WeaponContext>(gridID, cardID, std::move(name), level, infusion))
-		, missingRequirements(CompareRequirements(wxGetApp().GetSessionData().GetAttributes(), wxGetApp().GetDatabase().GetWeapon(context->GetName()).requirements))
+	Card(const int gridID, const int cardID, const std::string& name, const int level=10, const Infusion infusion=Infusion::None)
+		: context(std::make_shared<WeaponContext>(gridID, cardID, name, level, infusion, GetRequirementsStatus(name)))
 	{
 	}
 
 	Card(const WeaponContextPtr& context)
 		: context(std::make_shared<WeaponContext>(*context))
-		, missingRequirements(CompareRequirements(wxGetApp().GetSessionData().GetAttributes(), wxGetApp().GetDatabase().GetWeapon(context->GetName()).requirements))
 	{
 	}
 
 	void Render(wxPaintDC& dc, const int size)
 	{
 		dc.SetBrush(GetItemColor(selected, hovered, atPageFromSelection));
-		dc.DrawRectangle(position, {size, size});
-
-		dc.DrawBitmap(wxGetApp().GetImage(context->GetName(), size), position, false);
-
-		if (context->GetInfusion() != Infusion::None)
-		{
-			const int infusionSize = size / 4;
-			const int offset = size - infusionSize - 3;
-			dc.DrawBitmap(wxGetApp().GetImage(invbuilder::Database::ToString(context->GetInfusion()), infusionSize), position.x + offset, position.y + offset, false);
-		}
-
-		switch (missingRequirements)
-		{
-		case 0: dc.DrawBitmap(wxGetApp().GetImage("NoStats", size / 4), position.x + size - size / 4 - 2, position.y + 2, false); break;
-		case 1: dc.DrawBitmap(wxGetApp().GetImage("TwoHanded", size / 4), position.x + size - size / 4 - 2, position.y + 2, false); break;
-		}
-
-		/*{
-			const int levelWidth = size / 5 + 5;
-			dc.SetBrush(GetUniquenessColor(context->IsUnique()));
-			dc.DrawRectangle({position.x + size - levelWidth, position.y}, {levelWidth, levelWidth / 2});
-			dc.SetFont(wxFont{size / 10, wxFONTFAMILY_MODERN, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD});
-			dc.DrawText(std::to_string(context->GetLevel(true)), position.x + size - size / 5, position.y);
-		}*/
+		DrawWeapon(&dc, size, context->GetName(), context->GetInfusion(), position, static_cast<int>(context->GetRequirementsStatus()));
 	}
 };
 
@@ -252,7 +235,7 @@ private:
 
 	void Update()
 	{
-		SessionData::SelectionVector v;
+		WeaponContext::Vector v;
 
 		for (const int i : selection)
 			v.push_back(grid->cards[i]->context);
@@ -534,18 +517,22 @@ void WeaponGrid::UpdateRequirements()
 	const auto& attr = wxGetApp().GetSessionData().GetAttributes();
 
 	for (auto& card : cards)
-	{
-		const auto& reqs = wxGetApp().GetDatabase().GetWeapon(card->context->GetName()).requirements;
-		card->missingRequirements = CompareRequirements(attr, reqs);
-	}
+		card->context->SetRequirementsStatus(GetRequirementsStatus(card->context->GetName()));
 
 	for (auto& card : fallback)
-	{
-		const auto& reqs = wxGetApp().GetDatabase().GetWeapon(card->context->GetName()).requirements;
-		card->missingRequirements = CompareRequirements(attr, reqs);
-	}
+		card->context->SetRequirementsStatus(GetRequirementsStatus(card->context->GetName()));
 
 	Refresh(false);
+}
+
+auto WeaponGrid::Retrieve() const -> WeaponContext::Vector
+{
+	WeaponContext::Vector v;
+
+	for (const auto& card : cards)
+		v.push_back(card->context);
+
+	return v;
 }
 
 void WeaponGrid::OnRender(wxPaintEvent& e)

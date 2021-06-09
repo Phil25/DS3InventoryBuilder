@@ -2,6 +2,7 @@
 
 #include <wx/wx.h>
 #include <Weapon.hpp>
+#include <Context/WeaponContext.h>
 #include <set>
 
 class WeaponGrid final : public wxPanel
@@ -56,6 +57,8 @@ public:
 
 	void SetAllLevel(const int level, const Sorting&);
 	void UpdateRequirements();
+
+	auto Retrieve() const -> WeaponContext::Vector;
 
 private:
 	void OnRender(wxPaintEvent& e);

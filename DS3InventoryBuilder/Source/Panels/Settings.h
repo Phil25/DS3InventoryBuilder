@@ -20,4 +20,6 @@ public:
 private:
 	void UpdateAttributes(wxSpinEvent&);
 	void UpdateSorting(wxCommandEvent&);
+
+	void OnExport(wxCommandEvent&);
 };

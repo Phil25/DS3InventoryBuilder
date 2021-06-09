@@ -5,70 +5,8 @@
 #include <Context/IInventorySortingListener.h>
 #include <Context/ISelectionListener.h>
 #include <Context/IWeaponTransferListener.h>
+#include <Context/IInventoryRetriever.h>
 #include <cassert>
-
-namespace
-{
-	inline auto GetWeaponInfusable(const std::string& name)
-	{
-		return wxGetApp().GetDatabase().GetWeapon(name).infusable;
-	}
-
-	inline auto GetWeaponUnique(const std::string& name)
-	{
-		return wxGetApp().GetDatabase().GetWeapon(name).unique;
-	}
-}
-
-WeaponContext::WeaponContext(const int gridID, const int cardID, std::string name, const int level, const Infusion infusion) noexcept
-	: gridID(gridID), cardID(cardID), name(std::move(name))
-	, isUnique(GetWeaponUnique(this->name)), isInfusable(GetWeaponInfusable(this->name))
-	, level(level), infusion(isInfusable ? infusion : invbuilder::Weapon::Infusion::None)
-{
-}
-
-auto WeaponContext::GetCardID() const noexcept -> int
-{
-	return cardID;
-}
-
-void WeaponContext::SetCardID(const int cardID, const int useCount)
-{
-	// this should be done only after sorting, and before that selection should be emptied, removing the preview
-	assert(useCount == 1 && "only this card should own the weapon context at this time");
-	this->cardID = cardID;
-}
-
-auto WeaponContext::GetName() const noexcept -> const std::string&
-{
-	return name;
-}
-
-bool WeaponContext::IsUnique() const noexcept
-{
-	return isUnique;
-}
-
-auto WeaponContext::GetLevel(const bool display) const noexcept -> int
-{
-	return display ? invbuilder::Database::GetDisplayLevel(isUnique, level) : level;
-}
-
-void WeaponContext::SetLevel(const int level) noexcept
-{
-	assert(0 <= level && level <= 10 && "illegal weapon level");
-	this->level = level;
-}
-
-auto WeaponContext::GetInfusion() const noexcept -> Infusion
-{
-	return infusion;
-}
-
-void WeaponContext::SetInfusion(const Infusion infusion) noexcept
-{
-	this->infusion = isInfusable ? infusion : invbuilder::Weapon::Infusion::None;
-}
 
 void SessionData::UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck)
 {
@@ -134,6 +72,13 @@ void SessionData::UpdateInventorySorting(invbuilder::Weapon::Sorting sorting)
 			ptr->OnUpdate(this->sorting);
 }
 
+auto SessionData::GetInventory() const -> WeaponContext::Vector
+{
+	const auto& ptr = inventoryRetriever.lock();
+	assert(ptr && "no inventory retriever registered");
+	return ptr ? ptr->Get() : WeaponContext::Vector{};
+}
+
 auto SessionData::GetAttributes() const -> invbuilder::PlayerAttributes
 {
 	return {1.f * attributes.str, 1.f * attributes.dex, 1.f * attributes.int_, 1.f * attributes.fth, 1.f * attributes.lck};
@@ -144,7 +89,7 @@ auto SessionData::GetSorting() const -> const Sorting&
 	return sorting;
 }
 
-auto SessionData::GetSelection() const -> const SelectionVector&
+auto SessionData::GetSelection() const -> const WeaponContext::Vector&
 {
 	return selection;
 }
@@ -152,16 +97,6 @@ auto SessionData::GetSelection() const -> const SelectionVector&
 void SessionData::RegisterAttributesListener(const std::weak_ptr<IAttributesListener>& listener)
 {
 	listeners.attributes.push_back(listener);
-}
-
-void SessionData::RegisterFinderOptionsListener(const std::weak_ptr<IFinderOptionsListener>& listener)
-{
-	listeners.finderOptions.push_back(listener);
-}
-
-void SessionData::RegisterFinderSortingListener(const std::weak_ptr<IFinderSortingListener>& listener)
-{
-	listeners.finderSorting.push_back(listener);
 }
 
 void SessionData::RegisterInventorySortingListener(const std::weak_ptr<IInventorySortingListener>& listener)
@@ -177,4 +112,10 @@ void SessionData::RegisterSelectionListener(const std::weak_ptr<ISelectionListen
 void SessionData::RegisterWeaponTransferListener(const std::weak_ptr<IWeaponTransferListener>& listener)
 {
 	listeners.weaponTransfer.push_back(listener);
+}
+
+void SessionData::RegisterInventoryRetriever(std::weak_ptr<IInventoryRetriever> retriever)
+{
+	assert(inventoryRetriever.expired() && "only one inventory retriever may be registered");
+	inventoryRetriever = std::move(retriever);
 }

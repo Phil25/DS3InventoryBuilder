@@ -5,6 +5,7 @@
 #include <Context/IInventorySortingListener.h>
 #include <Context/ISelectionListener.h>
 #include <Context/IWeaponTransferListener.h>
+#include <Context/IInventoryRetriever.h>
 
 class Inventory::AttributesListener final : public IAttributesListener
 {
@@ -75,18 +76,35 @@ public:
 	}
 };
 
+class Inventory::InventoryRetriever final : public IInventoryRetriever
+{
+	Inventory* const inventory;
+
+public:
+	InventoryRetriever(Inventory* const inventory) : inventory(inventory)
+	{
+	}
+
+	auto Get() const -> WeaponContext::Vector override
+	{
+		return inventory->grid->Retrieve();
+	}
+};
+
 Inventory::Inventory(wxWindow* parent)
 	: Title(parent, "Inventory")
 	, attributesListener(std::make_shared<AttributesListener>(this))
 	, inventorySortingListener(std::make_shared<InventorySortingListener>(this))
 	, weaponTransferListener(std::make_shared<WeaponTransferListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
+	, inventoryRetriever(std::make_shared<InventoryRetriever>(this))
 	, grid(new WeaponGrid(GetContent(), false))
 {
 	attributesListener->Register();
 	inventorySortingListener->Register();
 	weaponTransferListener->Register();
 	selectionListener->Register();
+	inventoryRetriever->Register();
 
 	auto* sizer = new wxBoxSizer(wxHORIZONTAL);
 	sizer->AddStretchSpacer(1);

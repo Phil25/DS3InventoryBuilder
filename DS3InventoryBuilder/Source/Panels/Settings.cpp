@@ -1,6 +1,7 @@
 #include "Settings.h"
 
 #include <AppMain.h>
+#include <Menus/ExportInventory.h>
 #include <wx/spinctrl.h>
 
 namespace
@@ -55,7 +56,7 @@ public:
 		twoHanded->Disable();
 
 		auto* sizer = new wxBoxSizer(wxHORIZONTAL);
-		sizer->Add(new wxStaticText(this, wxID_ANY, "Inventory Sorting Method:"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 10);
+		//sizer->Add(new wxStaticText(this, wxID_ANY, "Inventory Sorting Method:"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 10);
 		sizer->Add(method, 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 10);
 		sizer->Add(reversed, 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 10);
 		sizer->Add(twoHanded, 0, wxALIGN_CENTER_VERTICAL);
@@ -105,10 +106,16 @@ Settings::Settings(wxWindow* parent)
 	attributes->Add(fth, 1);
 	attributes->Add(lck, 1);
 
-	auto* sizer = new wxBoxSizer(wxVERTICAL);
+	auto* exportInventory = new wxButton(GetContent(), wxID_ANY, wxT("Export"));
+	exportInventory->Bind(wxEVT_BUTTON, &Settings::OnExport, this);
 
+	auto* io = new wxBoxSizer(wxVERTICAL);
+	io->Add(exportInventory, 1);
+
+	auto* sizer = new wxBoxSizer(wxVERTICAL);
 	sizer->Add(attributes, 0, wxEXPAND | wxALL, 5);
 	sizer->Add(inventorySorting, 0, wxEXPAND | wxALL, 5);
+	sizer->Add(io, 0, wxEXPAND | wxALL, 5);
 
 	GetContent()->SetSizer(sizer);
 }
@@ -124,4 +131,9 @@ void Settings::UpdateSorting(wxCommandEvent&)
 	auto sorting = inventorySorting->GetInventorySorting();
 	inventorySorting->SetTwoHandedVisible(sorting.method == invbuilder::Weapon::Sorting::Method::AttackPower);
 	wxGetApp().GetSessionData().UpdateInventorySorting(std::move(sorting));
+}
+
+void Settings::OnExport(wxCommandEvent&)
+{
+	ExportInventory{this}.ShowModal();
 }
