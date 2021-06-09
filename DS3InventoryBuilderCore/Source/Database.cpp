@@ -22,9 +22,8 @@ namespace
 #include "Data/weapon_data.json.bz2.txt"
 		};
 
-		// TODO: decompressed has size zero, turn this into array pointer
 		std::vector<char> decompressed;
-		decompressed.reserve(maxDecompressedWeaponDataSize);
+		decompressed.resize(maxDecompressedWeaponDataSize);
 		unsigned int destLen = maxDecompressedWeaponDataSize;
 
 		static_assert(sizeof(uint8_t) == sizeof(char));
@@ -32,6 +31,7 @@ namespace
 		const auto sourceLen = static_cast<unsigned int>(compressed.size());
 
 		const auto success = BZ2_bzBuffToBuffDecompress(&decompressed.front(), &destLen, source, sourceLen, 0, 0);
+		decompressed.resize(destLen);
 
 		assert(success == 0 && "failure decompressing weapon data");
 		(void)success;
