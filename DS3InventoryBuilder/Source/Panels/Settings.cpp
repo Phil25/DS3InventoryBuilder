@@ -114,6 +114,30 @@ public:
 
 class Settings::IOOperations final : public wxPanel
 {
+	class CodeDialog final : public wxDialog
+	{
+		wxStaticText* label;
+		wxTextCtrl* text;
+		wxButton* action;
+
+	public:
+		CodeDialog(wxWindow* parent, wxString dialogName, wxString labelName, wxString actionName, long extraStyle=0)
+			: wxDialog(parent, wxID_ANY, std::move(dialogName), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)
+			, label(new wxStaticText{this, wxID_ANY, std::move(labelName)})
+			, text(new wxTextCtrl{this, wxID_ANY, wxEmptyString, wxDefaultPosition, {260, 120}, wxTE_MULTILINE | extraStyle})
+			, action(new wxButton{this, wxID_ANY, std::move(actionName)})
+		{
+			action->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) { this->EndModal(wxID_APPLY); });
+			text->SetFocus();
+
+			auto* sizer = new wxBoxSizer(wxVERTICAL);
+			sizer->Add(label, 0, wxEXPAND | wxALL, 5);
+			sizer->Add(text, 1, wxEXPAND | wxALL, 5);
+			sizer->Add(action, 0, wxALIGN_CENTER_HORIZONTAL | wxBOTTOM, 5);
+			this->SetSizerAndFit(sizer);
+		}
+	};
+
 	wxButton* encode;
 	wxButton* decode;
 	wxButton* save;
@@ -122,11 +146,13 @@ class Settings::IOOperations final : public wxPanel
 public:
 	IOOperations(wxWindow* parent)
 		: wxPanel(parent)
-		, encode(new wxButton(this, wxID_ANY, wxT("Export")))
-		, decode(new wxButton(this, wxID_ANY, wxT("Import")))
-		, save(new wxButton(this, wxID_ANY, wxT("Save as PNG")))
-		, copy(new wxButton(this, wxID_ANY, wxT("Copy PNG to Clipboard")))
+		, encode(new wxButton{this, wxID_ANY, wxT("Export Code")})
+		, decode(new wxButton{this, wxID_ANY, wxT("Import Code")})
+		, save(new wxButton{this, wxID_ANY, wxT("Save as PNG")})
+		, copy(new wxButton{this, wxID_ANY, wxT("Copy PNG to Clipboard")})
 	{
+		encode->Bind(wxEVT_BUTTON, &IOOperations::OnEncode, this);
+		decode->Bind(wxEVT_BUTTON, &IOOperations::OnDecode, this);
 		save->Bind(wxEVT_BUTTON, &IOOperations::OnSave, this);
 		copy->Bind(wxEVT_BUTTON, &IOOperations::OnCopy, this);
 
@@ -140,6 +166,32 @@ public:
 	}
 
 private:
+	void OnEncode(wxCommandEvent&)
+	{
+		auto dialog = CodeDialog{this, wxT("Export Code"), wxT("Import this code to recreate your inventory."), wxT("Copy to Clipboard"), wxTE_READONLY};
+		if (dialog.ShowModal() != wxID_APPLY)
+			return;
+
+		if (!wxTheClipboard->Open())
+		{
+			wxMessageDialog{nullptr, wxT("Failure accessing the system clipboard."), wxT("Export Code"), wxOK | wxICON_ERROR}.ShowModal();
+			return;
+		}
+
+		wxTheClipboard->SetData(new wxTextDataObject(wxT("inventory code here")));
+		wxTheClipboard->Flush();
+		wxTheClipboard->Close();
+	}
+
+	void OnDecode(wxCommandEvent&)
+	{
+		auto dialog = CodeDialog{this, wxT("Import Code"), wxT("Paste your inventory code here.\nThis will OVERRIDE the current inventory!"), wxT("Apply")};
+		if (dialog.ShowModal() != wxID_APPLY)
+			return;
+
+		// TODO: retrieve inventory code and override
+	}
+
 	void OnSave(wxCommandEvent&)
 	{
 		const auto bitmap = CreateInventoryBitmap();
