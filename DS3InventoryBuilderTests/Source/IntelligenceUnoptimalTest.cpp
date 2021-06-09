@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database IntelligenceUnoptimal_9_7_60_9_20::db = Database::Create();
 PlayerAttributes IntelligenceUnoptimal_9_7_60_9_20::attribs = {9.f,7.f,60.f,9.f,20.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(IntelligenceUnoptimal_9_7_60_9_20, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(IntelligenceUnoptimal_9_7_60_9_20, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

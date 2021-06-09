@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database FaithUnoptimal_9_7_8_70_20::db = Database::Create();
 PlayerAttributes FaithUnoptimal_9_7_8_70_20::attribs = {9.f,7.f,8.f,70.f,20.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(FaithUnoptimal_9_7_8_70_20, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(FaithUnoptimal_9_7_8_70_20, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

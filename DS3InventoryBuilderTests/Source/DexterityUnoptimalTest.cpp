@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database DexterityUnoptimal_8_80_9_9_20::db = Database::Create();
 PlayerAttributes DexterityUnoptimal_8_80_9_9_20::attribs = {8.f,80.f,9.f,9.f,20.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(DexterityUnoptimal_8_80_9_9_20, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(DexterityUnoptimal_8_80_9_9_20, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

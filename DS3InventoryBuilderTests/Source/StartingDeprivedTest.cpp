@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database StartingDeprived_10_10_10_10_10::db = Database::Create();
 PlayerAttributes StartingDeprived_10_10_10_10_10::attribs = {10.f,10.f,10.f,10.f,10.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(StartingDeprived_10_10_10_10_10, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(StartingDeprived_10_10_10_10_10, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

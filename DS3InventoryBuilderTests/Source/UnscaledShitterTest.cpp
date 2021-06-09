@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database UnscaledShitter_99_99_99_99_99::db = Database::Create();
 PlayerAttributes UnscaledShitter_99_99_99_99_99::attribs = {99.f,99.f,99.f,99.f,99.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(UnscaledShitter_99_99_99_99_99, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(UnscaledShitter_99_99_99_99_99, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

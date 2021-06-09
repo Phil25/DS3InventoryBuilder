@@ -93,8 +93,12 @@ def generate_suite(suite, attribs, filename):
                     "frost": zero_out(row[Col.FROST]),
                 }
 
+        out.write("\n#ifndef NDEBUG\n")
+
         for weapon, infusions in weapons.items():
             generate_test(weapon, infusions, suite, out)
+
+        out.write("\n#endif // NDEBUG\n")
 
 for filename in os.listdir("./Data/"):
     split = filename.split("-")

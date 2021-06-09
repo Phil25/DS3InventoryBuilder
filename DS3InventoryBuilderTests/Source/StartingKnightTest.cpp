@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database StartingKnight_13_12_9_9_7::db = Database::Create();
 PlayerAttributes StartingKnight_13_12_9_9_7::attribs = {13.f,12.f,9.f,9.f,7.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(StartingKnight_13_12_9_9_7, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(StartingKnight_13_12_9_9_7, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database Quality_40_40_11_15_7::db = Database::Create();
 PlayerAttributes Quality_40_40_11_15_7::attribs = {40.f,40.f,11.f,15.f,7.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(Quality_40_40_11_15_7, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(Quality_40_40_11_15_7, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database Strength_60_18_11_15_7::db = Database::Create();
 PlayerAttributes Strength_60_18_11_15_7::attribs = {60.f,18.f,11.f,15.f,7.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(Strength_60_18_11_15_7, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(Strength_60_18_11_15_7, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database Luck_20_18_11_15_80::db = Database::Create();
 PlayerAttributes Luck_20_18_11_15_80::attribs = {20.f,18.f,11.f,15.f,80.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(Luck_20_18_11_15_80, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(Luck_20_18_11_15_80, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

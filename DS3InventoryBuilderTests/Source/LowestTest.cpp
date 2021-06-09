@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database Lowest_1_1_1_1_1::db = Database::Create();
 PlayerAttributes Lowest_1_1_1_1_1::attribs = {1.f,1.f,1.f,1.f,1.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(Lowest_1_1_1_1_1, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(Lowest_1_1_1_1_1, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG

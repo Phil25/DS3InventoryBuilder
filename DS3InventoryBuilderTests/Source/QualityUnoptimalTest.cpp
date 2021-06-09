@@ -9,6 +9,8 @@ static PlayerAttributes attribs;
 Database QualityUnoptimal_40_40_6_8_20::db = Database::Create();
 PlayerAttributes QualityUnoptimal_40_40_6_8_20::attribs = {40.f,40.f,6.f,8.f,20.f};
 
+#ifndef NDEBUG
+
 
 TEST_F(QualityUnoptimal_40_40_6_8_20, Ancient_Dragon_Greatshield){
 	{
@@ -29679,3 +29681,4 @@ TEST_F(QualityUnoptimal_40_40_6_8_20, Zweihander){
 	EXPECT_EQ(0, static_cast<int>(status.frost));
 	}
 }
+#endif // NDEBUG
