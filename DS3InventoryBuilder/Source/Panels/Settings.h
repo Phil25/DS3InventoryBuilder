@@ -14,12 +14,13 @@ class Settings final : public Title
 	class InventorySorting;
 	InventorySorting* inventorySorting;
 
+	class IOOperations;
+	IOOperations* ioOperations;
+
 public:
 	Settings(wxWindow* parent);
 
 private:
 	void UpdateAttributes(wxSpinEvent&);
 	void UpdateSorting(wxCommandEvent&);
-
-	void OnExport(wxCommandEvent&);
 };
