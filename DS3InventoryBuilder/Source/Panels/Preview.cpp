@@ -807,7 +807,7 @@ public:
 		this->AddPage(pageRemarks, "Remarks");
 	}
 
-	void UpdateSelection(const std::vector<std::shared_ptr<WeaponContext>>& selection)
+	void UpdateSelection(const WeaponContext::Vector& selection)
 	{
 		pageOffensive->ClearWeapons();
 		pageDefensive->ClearWeapons();
@@ -870,7 +870,7 @@ void Preview::OnSelectionUpdate()
 {
 	const auto& weakSelection = wxGetApp().GetSessionData().GetSelection();
 
-	std::vector<std::shared_ptr<WeaponContext>> selection;
+	WeaponContext::Vector selection;
 	selection.reserve(weakSelection.size());
 
 	for (const auto& weaponContext : weakSelection)

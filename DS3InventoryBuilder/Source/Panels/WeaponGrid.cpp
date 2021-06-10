@@ -235,7 +235,7 @@ private:
 
 	void Update()
 	{
-		WeaponContext::Vector v;
+		WeaponContext::WeakVector v;
 
 		for (const int i : selection)
 			v.push_back(grid->cards[i]->context);
@@ -525,14 +525,26 @@ void WeaponGrid::UpdateRequirements()
 	Refresh(false);
 }
 
-auto WeaponGrid::Retrieve() const -> WeaponContext::Vector
+auto WeaponGrid::Retrieve() const -> WeaponContext::WeakVector
 {
-	WeaponContext::Vector v;
+	WeaponContext::WeakVector v;
 
 	for (const auto& card : cards)
 		v.push_back(card->context);
 
 	return v;
+}
+
+void WeaponGrid::Override(const WeaponContext::Vector& weapons)
+{
+	selection->Clear();
+	cards.clear();
+
+	for (const auto& ptr : weapons)
+		cards.emplace_back(std::make_unique<Card>(ptr));
+
+	Sort();
+	UpdateRequirements();
 }
 
 void WeaponGrid::OnRender(wxPaintEvent& e)

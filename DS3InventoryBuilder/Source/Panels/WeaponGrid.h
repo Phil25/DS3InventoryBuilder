@@ -58,7 +58,8 @@ public:
 	void SetAllLevel(const int level, const Sorting&);
 	void UpdateRequirements();
 
-	auto Retrieve() const -> WeaponContext::Vector;
+	auto Retrieve() const -> WeaponContext::WeakVector;
+	void Override(const WeaponContext::Vector&);
 
 private:
 	void OnRender(wxPaintEvent& e);

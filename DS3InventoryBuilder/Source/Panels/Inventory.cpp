@@ -85,9 +85,14 @@ public:
 	{
 	}
 
-	auto Get() const -> WeaponContext::Vector override
+	auto Get() const -> WeaponContext::WeakVector override
 	{
 		return inventory->grid->Retrieve();
+	}
+
+	void Set(const WeaponContext::Vector& weapons) override
+	{
+		inventory->grid->Override(weapons);
 	}
 };
 

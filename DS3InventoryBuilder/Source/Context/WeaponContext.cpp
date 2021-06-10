@@ -23,6 +23,22 @@ WeaponContext::WeaponContext(const int gridID, const int cardID, std::string nam
 {
 }
 
+WeaponContext::WeaponContext(std::string name, const int level, const int infusion) noexcept
+	: gridID(0), cardID(0), name(std::move(name))
+	, isUnique(GetWeaponUnique(this->name)), isInfusable(GetWeaponInfusable(this->name))
+	, level(level), infusion(isInfusable ? static_cast<Infusion>(infusion) : Infusion::None), requirementsStatus(RequirementsStatus::Met)
+{
+}
+
+bool WeaponContext::IsValid() const noexcept
+{
+	const auto inf = static_cast<int>(infusion);
+	return (0 <= level && level <= 10)
+		&& (0 <= inf && inf < static_cast<int>(Infusion::Size))
+		&& (isInfusable || (!isInfusable && inf == 0))
+		&& !name.empty();
+}
+
 auto WeaponContext::GetCardID() const noexcept -> int
 {
 	return cardID;

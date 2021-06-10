@@ -308,15 +308,18 @@ auto Database::GetNames() const -> const WeaponNames&
 	return names;
 }
 
-auto Database::GetWeapon(const size_t index) const -> const Weapon&
-{
-	assert(index < names.size() && "invalid weapon index");
-	return weapons.at(names[index]);
-}
-
 auto Database::GetWeapon(const std::string& name) const -> const Weapon&
 {
 	return weapons.at(name);
+}
+
+auto Database::GetWeaponName(const int id) const -> std::string
+{
+	for (const auto& [name, data] : weapons)
+		if (data.id == id)
+			return data.name;
+
+	return {};
 }
 
 auto Database::GetSaturationFunction(const size_t index) const -> const SaturationFunction&

@@ -13,5 +13,6 @@ public:
 
 	void Register();
 
-	virtual auto Get() const -> WeaponContext::Vector = 0;
+	virtual auto Get() const -> WeaponContext::WeakVector = 0;
+	virtual void Set(const WeaponContext::Vector&) = 0;
 };

@@ -7,7 +7,8 @@
 class WeaponContext final
 {
 public:
-	using Vector = std::vector<std::weak_ptr<WeaponContext>>;
+	using WeakVector = std::vector<std::weak_ptr<WeaponContext>>;
+	using Vector = std::vector<std::shared_ptr<WeaponContext>>;
 
 	enum class RequirementsStatus
 	{
@@ -31,6 +32,9 @@ private:
 
 public:
 	WeaponContext(const int gridID, const int cardID, std::string name, const int level=10, const Infusion=Infusion::None, const RequirementsStatus=RequirementsStatus::Met) noexcept;
+	WeaponContext(std::string name, const int level, const int infusion) noexcept;
+
+	bool IsValid() const noexcept;
 
 	auto GetCardID() const noexcept -> int;
 	void SetCardID(const int cardID, const int useCount);

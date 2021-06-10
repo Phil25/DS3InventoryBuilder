@@ -72,11 +72,19 @@ void SessionData::UpdateInventorySorting(invbuilder::Weapon::Sorting sorting)
 			ptr->OnUpdate(this->sorting);
 }
 
-auto SessionData::GetInventory() const -> WeaponContext::Vector
+void SessionData::OverrideWeapons(const WeaponContext::Vector& weapons)
+{
+	if (const auto& ptr = inventoryRetriever.lock(); ptr)
+		ptr->Set(weapons);
+	else
+		assert(false && "no inventory retriever registered");
+}
+
+auto SessionData::GetInventory() const -> WeaponContext::WeakVector
 {
 	const auto& ptr = inventoryRetriever.lock();
 	assert(ptr && "no inventory retriever registered");
-	return ptr ? ptr->Get() : WeaponContext::Vector{};
+	return ptr ? ptr->Get() : WeaponContext::WeakVector{};
 }
 
 auto SessionData::GetAttributes() const -> invbuilder::PlayerAttributes
@@ -89,7 +97,7 @@ auto SessionData::GetSorting() const -> const Sorting&
 	return sorting;
 }
 
-auto SessionData::GetSelection() const -> const WeaponContext::Vector&
+auto SessionData::GetSelection() const -> const WeaponContext::WeakVector&
 {
 	return selection;
 }

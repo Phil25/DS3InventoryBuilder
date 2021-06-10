@@ -2,6 +2,7 @@
 
 #include <AppMain.h>
 #include <Utils/DrawWeapon.h>
+#include <Utils/InventoryEncoder.h>
 #include <wx/spinctrl.h>
 #include <wx/filedlg.h>
 #include <wx/clipbrd.h>
@@ -16,7 +17,7 @@ namespace
 		if (weakInventory.empty())
 			return wxBitmap{};
 
-		std::vector<std::shared_ptr<WeaponContext>> inventory;
+		WeaponContext::Vector inventory;
 		for (const auto& weakPtr : weakInventory)
 			if (const auto& ptr = weakPtr.lock(); ptr)
 				inventory.push_back(ptr);
@@ -127,14 +128,24 @@ class Settings::IOOperations final : public wxPanel
 			, text(new wxTextCtrl{this, wxID_ANY, wxEmptyString, wxDefaultPosition, {260, 120}, wxTE_MULTILINE | extraStyle})
 			, action(new wxButton{this, wxID_ANY, std::move(actionName)})
 		{
-			action->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) { this->EndModal(wxID_APPLY); });
 			text->SetFocus();
+			action->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) { this->EndModal(wxID_APPLY); });
 
 			auto* sizer = new wxBoxSizer(wxVERTICAL);
 			sizer->Add(label, 0, wxEXPAND | wxALL, 5);
 			sizer->Add(text, 1, wxEXPAND | wxALL, 5);
 			sizer->Add(action, 0, wxALIGN_CENTER_HORIZONTAL | wxBOTTOM, 5);
 			this->SetSizerAndFit(sizer);
+		}
+
+		auto GetInventoryCode() const
+		{
+			return text->GetValue().ToStdString();
+		}
+
+		void SetInventoryCode(const std::string& code)
+		{
+			text->SetValue(code);
 		}
 	};
 
@@ -169,6 +180,11 @@ private:
 	void OnEncode(wxCommandEvent&)
 	{
 		auto dialog = CodeDialog{this, wxT("Export Code"), wxT("Import this code to recreate your inventory."), wxT("Copy to Clipboard"), wxTE_READONLY};
+
+		const auto weapons = wxGetApp().GetSessionData().GetInventory();
+		const auto inventoryCode = inventory_encoder::Encode(weapons);
+		dialog.SetInventoryCode(inventoryCode);
+
 		if (dialog.ShowModal() != wxID_APPLY)
 			return;
 
@@ -178,7 +194,7 @@ private:
 			return;
 		}
 
-		wxTheClipboard->SetData(new wxTextDataObject(wxT("inventory code here")));
+		wxTheClipboard->SetData(new wxTextDataObject(inventoryCode));
 		wxTheClipboard->Flush();
 		wxTheClipboard->Close();
 	}
@@ -189,7 +205,29 @@ private:
 		if (dialog.ShowModal() != wxID_APPLY)
 			return;
 
-		// TODO: retrieve inventory code and override
+		try
+		{
+			const auto weapons = inventory_encoder::Decode(dialog.GetInventoryCode());
+			wxGetApp().GetSessionData().OverrideWeapons(weapons);
+		}
+		catch (const inventory_encoder::Exception& e)
+		{
+			using E = inventory_encoder::Exception;
+			switch (e)
+			{
+			case E::Empty: 
+				wxMessageDialog{nullptr, wxT("Inventory code is empty."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+				break;
+
+			case E::Invalid:
+				wxMessageDialog{nullptr, wxT("Inventory code is invalid."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+				break;
+
+			case E::RevisionNotSupported: 
+				wxMessageDialog{nullptr, wxT("Inventory code was generated from a newer version."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+				break;
+			}
+		}
 	}
 
 	void OnSave(wxCommandEvent&)
