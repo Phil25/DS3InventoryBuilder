@@ -9,6 +9,7 @@ class Preview final : public Title
 
 public:
 	class TextHeader;
+	class WeaponLabel;
 	class PreviewIcon;
 	class WeaponSimple;
 	class WeaponBook;
@@ -19,7 +20,7 @@ private:
 
 	wxBoxSizer* sizer;
 
-	TextHeader* label;
+	WeaponLabel* label;
 	PreviewIcon* icon;
 	WeaponSimple* simple;
 	WeaponBook* book;

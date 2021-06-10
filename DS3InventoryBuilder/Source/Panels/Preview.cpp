@@ -84,9 +84,91 @@ public:
 class Preview::TextHeader final : public wxStaticText
 {
 public:
-	TextHeader(wxWindow* parent, const char* text, int size=16) : wxStaticText(parent, wxID_ANY, text)
+	TextHeader(wxWindow* parent, const char* text, const int size=16, const wxFontWeight weight=wxFONTWEIGHT_BOLD)
+		: wxStaticText(parent, wxID_ANY, text)
 	{
-		this->SetFont(wxFont{size, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD});
+		this->SetFont(wxFont{size, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, weight});
+	}
+};
+
+class Preview::WeaponLabel final : public wxPanel
+{
+	using DB = invbuilder::Database;
+	using Infusion = invbuilder::Weapon::Infusion;
+
+	wxBoxSizer* sizerSubtitle;
+
+	TextHeader* title;
+	TextHeader* subtitle;
+	wxPanel* infusionIcon;
+	std::string infusionName;
+
+public:
+	WeaponLabel(wxWindow* parent)
+		: wxPanel(parent)
+		, sizerSubtitle(new wxBoxSizer{wxHORIZONTAL})
+		, title(new TextHeader{this, "No weapons selected"})
+		, subtitle(new TextHeader{this, "", 14, wxFONTWEIGHT_NORMAL})
+		, infusionIcon(new wxPanel{this})
+	{
+		infusionIcon->SetMinSize(wxSize{30, 30});
+		infusionIcon->Bind(wxEVT_PAINT, &WeaponLabel::OnInfusionPaint, this);
+
+		sizerSubtitle->Add(infusionIcon, 0, wxALIGN_CENTER_VERTICAL | wxALL, 3);
+		sizerSubtitle->Add(subtitle, 0, wxALIGN_CENTER_VERTICAL | wxALL, 3);
+
+		auto* sizer = new wxBoxSizer(wxVERTICAL);
+		sizer->Add(title, 0, wxEXPAND | wxALL, 3);
+		sizer->Add(sizerSubtitle, 0, wxEXPAND | wxALL, 3);
+		this->SetSizer(sizer);
+	}
+
+	void SetNoWeapons()
+	{
+		title->SetLabel("No weapon selected");
+		subtitle->SetLabel("");
+		sizerSubtitle->Hide(infusionIcon);
+
+		Layout();
+	}
+
+	void SetWeapon(const std::shared_ptr<WeaponContext>& context)
+	{
+		const auto& weapon = wxGetApp().GetDatabase().GetWeapon(context->GetName());
+
+		std::string infusionText = weapon.infusable ? "Not infused" : "Uninfusable";
+		sizerSubtitle->Hide(infusionIcon);
+		const auto inf = context->GetInfusion();
+
+		if (inf != Infusion::None)
+		{
+			infusionName = DB::ToString(context->GetInfusion());
+			infusionText = infusionName;
+
+			sizerSubtitle->Show(infusionIcon);
+			infusionIcon->Refresh();
+		}
+
+		title->SetLabel(context->GetName());
+		subtitle->SetLabel(std::format("{} {} +{}", infusionText, DB::ToString(weapon.type), context->GetLevel(true)));
+
+		Layout();
+	}
+
+	void SetWeapons(const WeaponContext::Vector& selection)
+	{
+		title->SetLabel(std::format("{}x weapons selected", selection.size()));
+		subtitle->SetLabel("");
+		sizerSubtitle->Hide(infusionIcon);
+
+		Layout();
+	}
+
+private:
+	void OnInfusionPaint(wxPaintEvent&)
+	{
+		if (!infusionName.empty() && infusionName != "None")
+			wxPaintDC{infusionIcon}.DrawBitmap(wxGetApp().GetImage(infusionName, 30), 0, 0, false);
 	}
 };
 
@@ -831,7 +913,7 @@ Preview::Preview(wxWindow* parent)
 	, attributesListener(std::make_shared<AttributesListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
 	, sizer(new wxBoxSizer{wxVERTICAL})
-	, label(new TextHeader{GetContent(), "No weapons selected"})
+	, label(new WeaponLabel{GetContent()})
 	, icon(new PreviewIcon{GetContent()})
 	, book(new WeaponBook{GetContent()})
 	, simple(new WeaponSimple{GetContent()})
@@ -840,8 +922,7 @@ Preview::Preview(wxWindow* parent)
 	selectionListener->Register();
 
 	auto* top = new wxBoxSizer(wxHORIZONTAL);
-	top->Add(label);
-	top->AddStretchSpacer(1);
+	top->Add(label, 1, wxEXPAND);
 	top->Add(icon);
 
 	sizer->Add(top, 0, wxEXPAND | wxALL, 3);
@@ -885,13 +966,14 @@ void Preview::OnSelectionUpdate()
 	if (!selection.size())
 	{
 		label->SetLabel("No weapon selected");
+		label->SetNoWeapons();
 		icon->ClearWeaponIcon();
 	}
 	else if (selection.size() == 1)
 	{
 		SetShowSimple(true);
 
-		label->SetLabel(selection[0]->GetName());
+		label->SetWeapon(selection[0]);
 		icon->SetWeaponIcon(selection[0]->GetName());
 		simple->UpdateSelection(selection[0]);
 	}
@@ -903,7 +985,7 @@ void Preview::OnSelectionUpdate()
 		for (const auto& weapon : selection)
 			weapons.push_back(weapon->GetName());
 
-		label->SetLabel(std::format("{}x weapons selected", selection.size()));
+		label->SetWeapons(selection);
 		icon->SetWeaponIcons(std::move(weapons));
 		book->UpdateSelection(selection);
 	}
