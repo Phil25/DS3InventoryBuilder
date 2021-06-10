@@ -274,7 +274,10 @@ class Preview::WeaponSimple final : public wxScrolledWindow
 				++id;
 			}
 
-			SetItemFont(0, GetItemFont(0).MakeBold());
+			auto font = this->GetFont().MakeLarger().MakeLarger();
+			this->SetFont(font);
+
+			SetItemFont(0, font.MakeBold());
 			SetItemTextColour(2, wxColor{66,139,202}); // magic
 			SetItemTextColour(3, wxColor{217,83,79}); // fire
 			SetItemTextColour(4, wxColor{255,191,0}); // lightning
@@ -283,7 +286,7 @@ class Preview::WeaponSimple final : public wxScrolledWindow
 			SetItemTextColour(7, wxColor{92,184,92}); // poison
 			SetItemTextColour(8, wxColor{91,192,222}); // frost
 
-			SetMinSize(wxSize{10, 200}); // originally too large width
+			SetMinSize(wxSize{10, 280}); // originally too large width
 			SetColumnWidth(0, 150);
 		}
 	};
