@@ -824,7 +824,7 @@ class Preview::WeaponBook final : public wxNotebook
 		}
 	};
 
-	class PageMoveset final : public wxWindow
+	/*class PageMoveset final : public wxWindow
 	{
 	public:
 		PageMoveset(wxWindow* parent) : wxWindow(parent, wxID_ANY)
@@ -862,15 +862,15 @@ class Preview::WeaponBook final : public wxNotebook
 			auto* sizer = new wxBoxSizer(wxVERTICAL);
 			this->SetSizer(sizer);
 		}
-	};
+	};*/
 
 	PageOffensive* pageOffensive{nullptr};
 	PageDefensive* pageDefensive{nullptr};
 	PageProperties* pageProperties{nullptr};
-	PageMoveset* pageMoveset{nullptr};
-	PageRanges* pageRanges{nullptr};
-	PageCombos* pageCombos{nullptr};
-	PageRemarks* pageRemarks{nullptr};
+	//PageMoveset* pageMoveset{nullptr};
+	//PageRanges* pageRanges{nullptr};
+	//PageCombos* pageCombos{nullptr};
+	//PageRemarks* pageRemarks{nullptr};
 
 public:
 	WeaponBook(wxPanel* parent)
@@ -878,18 +878,18 @@ public:
 		, pageOffensive(new PageOffensive{this})
 		, pageDefensive(new PageDefensive{this})
 		, pageProperties(new PageProperties{this})
-		, pageMoveset(new PageMoveset{this})
-		, pageRanges(new PageRanges{this})
-		, pageCombos(new PageCombos{this})
-		, pageRemarks(new PageRemarks{this})
+		//, pageMoveset(new PageMoveset{this})
+		//, pageRanges(new PageRanges{this})
+		//, pageCombos(new PageCombos{this})
+		//, pageRemarks(new PageRemarks{this})
 	{
 		this->AddPage(pageOffensive, "Offensive", true);
 		this->AddPage(pageDefensive, "Defensive");
 		this->AddPage(pageProperties, "Properties");
-		this->AddPage(pageMoveset, "Moveset");
-		this->AddPage(pageRanges, "Ranges");
-		this->AddPage(pageCombos, "Combos");
-		this->AddPage(pageRemarks, "Remarks");
+		//this->AddPage(pageMoveset, "Moveset");
+		//this->AddPage(pageRanges, "Ranges");
+		//this->AddPage(pageCombos, "Combos");
+		//this->AddPage(pageRemarks, "Remarks");
 	}
 
 	void UpdateSelection(const WeaponContext::Vector& selection)
