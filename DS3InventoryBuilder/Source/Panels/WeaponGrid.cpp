@@ -449,6 +449,7 @@ bool WeaponGrid::MatchesFilters(const std::string& filter, const CardPtr& card, 
 void WeaponGrid::SetFiltering(std::string filter, const TypeSet& types, const InfusionSet& infusions, const Sorting& sortingOverride)
 {
 	selection->Clear();
+	UpdateMousePosition(-1, true);
 
 	std::move(cards.begin(), cards.end(), std::back_inserter(fallback));
 	cards.clear();
@@ -553,10 +554,25 @@ void WeaponGrid::OnRender(wxPaintEvent& e)
 
 	for (int i = std::max(current.start, 0ULL); i < std::min(current.end, cards.size()); ++i)
 		cards[i]->Render(dc, cardSize);
+
+	dc.SetPen(scrollGuide);
+	const int width = scrollGuide.GetWidth() / 2;
+
+	if (current.start > 0)
+		dc.DrawLine(0, width, cardSize * 5, width);
+
+	if (current.end < cards.size())
+		dc.DrawLine(0, cardSize * visibleRows - width, cardSize * 5, cardSize * visibleRows - width);
 }
 
 void WeaponGrid::RenderCards(const bool fullRedraw)
 {
+	if (current.start >= cards.size())
+	{
+		current.start = 0;
+		current.end = static_cast<size_t>(visibleRows) * 5;
+	}
+
 	for (int pos = 0, i = std::max(current.start, 0ULL); i < std::min(current.end, cards.size()); ++i, ++pos)
 	{
 		const int row = pos / 5;
@@ -666,7 +682,11 @@ void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
 void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw)
 {
 	const auto id = GetIDFromPosition(x, y, current.start, cardSize);
+	UpdateMousePosition(id, redraw);
+}
 
+void WeaponGrid::UpdateMousePosition(const int id, const bool redraw)
+{
 	if (id == mouseOver)
 		return;
 

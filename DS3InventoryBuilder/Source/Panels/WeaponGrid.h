@@ -34,6 +34,7 @@ class WeaponGrid final : public wxPanel
 	int visibleRows{};
 	int cardSize{};
 	Range current{};
+	wxPen scrollGuide{wxColor{0,255,132}, 6, wxPENSTYLE_DOT};
 
 	static int GridID;
 
@@ -76,6 +77,7 @@ private:
 	void OnItemMouseRight(wxMouseEvent&);
 
 	void UpdateMousePosition(const int x, const int y, const bool redraw=true);
+	void UpdateMousePosition(const int id, const bool redraw=true);
 	void OnItemEnterHover(const int id, const bool redraw);
 	void OnItemLeaveHover(const int id, const bool redraw);
 
