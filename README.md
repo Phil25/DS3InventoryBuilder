@@ -6,6 +6,8 @@ It comes with an AR calculator and a rich weapon browsing tool to easily find an
 When you're done, save your inventory as a PNG, or encode it as text to share over chat or paste on your soulsplanner.com build.
 You can import the inventory code and have your setup back any time.
 
+https://user-images.githubusercontent.com/16500675/121757438-cdaba380-cb1d-11eb-9505-c7e1cb298bc0.mp4
+
 ## Full feature list
 1. Imitates in-game 5 column inventory layout and automatically sorts every item you add.
 2. Settable infusions and levels on all weapons with appropriate icons displayed.
