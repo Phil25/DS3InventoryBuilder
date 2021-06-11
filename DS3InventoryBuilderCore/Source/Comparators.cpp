@@ -36,14 +36,16 @@ bool comps::Weight(const Weapon& weap1, const Weapon::Infusion inf1, const int l
 
 bool comps::AttackPower(const Weapon& weap1, const Weapon::Infusion inf1, const int lvl1, const Weapon& weap2, const Weapon::Infusion inf2, const int lvl2, const Database& db, const PlayerAttributes& attribs, const bool twoHanded)
 {
+	using DB = invbuilder::Database;
+
 	// TODO: this comparator is WRONG.
 	// DS3 does really weird things when comparing weapons with very similar AR, and I can't figure out what
 	// You can sometimes observe the order being ex. 62 > 61 > 62 even in-game, when checking out the value in the menu
 	// However, if the difference is big enough (~2 AR), this works fine
 
-	// DS3 always calculates two handed AR for bows/greatbows/crossbows
-	const bool twoHanded1 = twoHanded || invbuilder::Database::IsRanged(weap1); 
-	const bool twoHanded2 = twoHanded || invbuilder::Database::IsRanged(weap2);
+	// DS3 always calculates two handed AR for bows/greatbows/crossbows, and one handed for some twin weapons
+	const bool twoHanded1 = (twoHanded || DB::IsRanged(weap1)) && !DB::IsPaired(weap1);
+	const bool twoHanded2 = (twoHanded || DB::IsRanged(weap2)) && !DB::IsPaired(weap2);
 
 	const auto& [damages1, _1] = calculator::AttackRating(db, weap1.name.c_str(), inf1, lvl1, attribs, twoHanded1);
 	const auto& [damages2, _2] = calculator::AttackRating(db, weap2.name.c_str(), inf2, lvl2, attribs, twoHanded2);

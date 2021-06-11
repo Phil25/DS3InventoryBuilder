@@ -381,6 +381,11 @@ bool Database::IsRanged(const Weapon& w)
 	return w.type == T::Bow || w.type == T::Greatbow || w.type == T::Crossbow;
 }
 
+bool Database::IsPaired(const Weapon& w)
+{
+	return w.id == 16030000; // Twinaxes
+}
+
 auto Database::ToString(const Weapon::Infusion infusion) -> std::string
 {
 	using I = Weapon::Infusion;

@@ -31,6 +31,7 @@ namespace invbuilder
 		static bool IsCastingTool(const Weapon&);
 		static bool IsShield(const Weapon&);
 		static bool IsRanged(const Weapon&);
+		static bool IsPaired(const Weapon&);
 
 		static auto ToString(const Weapon::Infusion) -> std::string;
 		static auto ToString(const Weapon::Type) -> std::string;

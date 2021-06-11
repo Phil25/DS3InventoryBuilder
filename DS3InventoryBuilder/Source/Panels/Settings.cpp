@@ -313,7 +313,20 @@ void Settings::UpdateAttributes(wxSpinEvent&)
 
 void Settings::UpdateSorting(wxCommandEvent&)
 {
+	using M = invbuilder::Weapon::Sorting::Method;
 	auto sorting = inventorySorting->GetInventorySorting();
-	inventorySorting->SetTwoHandedVisible(sorting.method == invbuilder::Weapon::Sorting::Method::AttackPower);
+	static bool showAttackPowerWarning = true;
+
+	if (showAttackPowerWarning && wxGetApp().GetSessionData().GetSorting().method != M::AttackPower && sorting.method == M::AttackPower)
+	{
+		const auto result = wxMessageDialog{nullptr, wxT(
+			"Sorting by Attack Power is not 100% valid. "
+			"If you know the details on how this sorting method is implemented in the game, please let me know.\n"
+			"Click OK to not show this message for this session again."),
+			wxT("Sort by Attack Power"), wxOK | wxCANCEL | wxICON_WARNING}.ShowModal();
+		showAttackPowerWarning = result == wxID_CANCEL;
+	}
+
+	inventorySorting->SetTwoHandedVisible(sorting.method == M::AttackPower);
 	wxGetApp().GetSessionData().UpdateInventorySorting(std::move(sorting));
 }
