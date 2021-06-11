@@ -36,6 +36,14 @@ namespace
 		return std::to_string(static_cast<int>(val));
 	}
 
+	inline auto ToStringIntPair(const float val1, const float val2, const char* whenZero="0") -> std::string
+	{
+		if (!val2 || (std::abs(val1 - val2) < 0.1))
+			return ToStringInt(val1, whenZero);
+		else
+			return std::format("{} ({})", ToStringInt(val1, whenZero), ToStringInt(val2, whenZero));
+	}
+
 	inline auto ToString(const bool val) -> std::string
 	{
 		return val ? "Yes" : "No";
@@ -369,7 +377,8 @@ class Preview::WeaponSimple final : public wxScrolledWindow
 			SetItemTextColour(8, wxColor{91,192,222}); // frost
 
 			SetMinSize(wxSize{10, 280}); // originally too large width
-			SetColumnWidth(0, 150);
+			SetColumnWidth(0, 120);
+			SetColumnWidth(1, 120);
 		}
 	};
 
@@ -456,7 +465,7 @@ class Preview::WeaponSimple final : public wxScrolledWindow
 	public:
 		AttackRating(wxWindow* parent)
 			: wxPanel(parent)
-			, header(new Preview::TextHeader(this, "Attack Rating", 12))
+			, header(new Preview::TextHeader(this, "Attack Rating (2H)", 12))
 			, list(new PropertyList(this, {"Total", "Physical", "Magic", "Fire", "Lightning", "Dark", "Bleed", "Poison", "Frost"}))
 		{
 			auto* sizer = new wxBoxSizer(wxVERTICAL);
@@ -471,12 +480,15 @@ class Preview::WeaponSimple final : public wxScrolledWindow
 		{
 			const auto attribs = wxGetApp().GetSessionData().GetAttributes();
 			const auto& [damage, status] = invbuilder::calculator::AttackRating(
-				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs);
+				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs, false);
 
-			list->SetItem(0, 1, ToStringInt(damage.Total(), "-"));
-			list->SetItem(1, 1, ToStringInt(damage.physical, "-"));
-			list->SetItem(2, 1, ToStringInt(damage.magic, "-"));
-			list->SetItem(3, 1, ToStringInt(damage.fire, "-"));
+			const auto& [damage2h, status2h] = invbuilder::calculator::AttackRating(
+				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs, true);
+
+			list->SetItem(0, 1, ToStringIntPair(damage.Total(), damage2h.Total(), "-"));
+			list->SetItem(1, 1, ToStringIntPair(damage.physical, damage2h.physical, "-"));
+			list->SetItem(2, 1, ToStringIntPair(damage.magic, damage2h.magic, "-"));
+			list->SetItem(3, 1, ToStringIntPair(damage.fire, damage2h.fire, "-"));
 			list->SetItem(4, 1, ToStringInt(damage.lightning, "-"));
 			list->SetItem(5, 1, ToStringInt(damage.dark, "-"));
 			list->SetItem(6, 1, ToStringInt(status.bleed, "-"));

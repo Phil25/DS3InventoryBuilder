@@ -113,10 +113,9 @@ namespace
 	};
 
 	inline auto GetSaturations(const invbuilder::Database& db, const invbuilder::SaturationFunctionID& satIds,
-		const invbuilder::PlayerAttributes& attribs, const bool twoHanding) -> Saturations
+		const invbuilder::PlayerAttributes& attribs) -> Saturations
 	{
-		const auto actualStr = std::floor(attribs.strength + attribs.strength * .5f * twoHanding);
-		const auto str = std::lround(std::min(actualStr, 99.f));
+		const auto str = std::lround(attribs.strength);
 		const auto dex = std::lround(attribs.dexterity);
 		const auto int_ = std::lround(attribs.intelligence);
 		const auto fth = std::lround(attribs.faith);
@@ -191,12 +190,15 @@ namespace
 }
 
 auto calc::AttackRating(const Database& db, const char* name, const Weapon::Infusion infusion, const int level,
-	const PlayerAttributes& attribs, const bool twoHanding) -> std::pair<DamageTypes, Status>
+	PlayerAttributes attribs, const bool twoHanding) -> std::pair<DamageTypes, Status>
 {
 	const auto& weapon = db.GetWeapon(name);
 
+	attribs.strength += attribs.strength * .5f * twoHanding;
+	attribs.strength = std::min(attribs.strength, 99.f);
+
 	const auto& satIds = weapon.properties.at(infusion).saturationFunctionID;
-	const auto saturations = GetSaturations(db, satIds, attribs, twoHanding);
+	const auto saturations = GetSaturations(db, satIds, attribs);
 
 	const auto& requirements = weapon.requirements;
 	const auto& scaling = weapon.properties.at(infusion).level[level].scaling;
