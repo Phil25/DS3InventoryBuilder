@@ -580,7 +580,7 @@ void WeaponGrid::OnMousewheel(wxMouseEvent& e)
 {
 	const auto rotation = e.GetWheelRotation();
 
-	if (rotation < 0 && current.start < cards.size() - (static_cast<size_t>(visibleRows) * 5)) // down
+	if (rotation < 0 && current.end < cards.size()) // down
 	{
 		current.start += 5;
 		current.end += 5;
