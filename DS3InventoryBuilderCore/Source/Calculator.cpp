@@ -1,5 +1,6 @@
 #include "Calculator.h"
 
+#include <cmath>
 #include <algorithm>
 #include <bitset>
 
