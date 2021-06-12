@@ -552,7 +552,7 @@ void WeaponGrid::OnRender(wxPaintEvent& e)
 {
 	auto dc = wxPaintDC{this};
 
-	for (int i = std::max(current.start, 0ULL); i < std::min(current.end, cards.size()); ++i)
+	for (int i = std::max(current.start, static_cast<size_t>(0)); i < std::min(current.end, cards.size()); ++i)
 		cards[i]->Render(dc, cardSize);
 
 	dc.SetPen(scrollGuide);
@@ -573,7 +573,7 @@ void WeaponGrid::RenderCards(const bool fullRedraw)
 		current.end = static_cast<size_t>(visibleRows) * 5;
 	}
 
-	for (int pos = 0, i = std::max(current.start, 0ULL); i < std::min(current.end, cards.size()); ++i, ++pos)
+	for (int pos = 0, i = std::max(current.start, static_cast<size_t>(0)); i < std::min(current.end, cards.size()); ++i, ++pos)
 	{
 		const int row = pos / 5;
 		const int col = pos % 5;

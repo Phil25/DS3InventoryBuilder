@@ -142,10 +142,10 @@ class Finder::FilterControls final : public wxPanel
 	public:
 		TypeFilter(wxWindow* parent)
 			: wxPopupTransientWindow(parent, wxBORDER_THEME)
-			, melee(new Group(this, "Melee", Type::Dagger, Type::Claw, true))
-			, ranged(new Group(this, "Ranged", Type::Bow, Type::Crossbow, true))
-			, castingTools(new Group(this, "Casting Tools", Type::Staff, Type::SacredChime, true))
-			, shields(new Group(this, "Shields", Type::Torch, Type::Greatshield, true))
+			, melee(new Group<Type>(this, "Melee", Type::Dagger, Type::Claw, true))
+			, ranged(new Group<Type>(this, "Ranged", Type::Bow, Type::Crossbow, true))
+			, castingTools(new Group<Type>(this, "Casting Tools", Type::Staff, Type::SacredChime, true))
+			, shields(new Group<Type>(this, "Shields", Type::Torch, Type::Greatshield, true))
 		{
 			auto* sizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -178,10 +178,10 @@ class Finder::FilterControls final : public wxPanel
 	public:
 		InfusionFilter(wxWindow* parent)
 			: wxPopupTransientWindow(parent, wxBORDER_THEME)
-			, melee(new Group(this, "None", Infusion::None, Infusion::None, true))
-			, ranged(new Group(this, "Physical", Infusion::Heavy, Infusion::Raw))
-			, castingTools(new Group(this, "Elemental", Infusion::Crystal, Infusion::Dark))
-			, shields(new Group(this, "Luck", Infusion::Blood, Infusion::Hollow))
+			, melee(new Group<Infusion>(this, "None", Infusion::None, Infusion::None, true))
+			, ranged(new Group<Infusion>(this, "Physical", Infusion::Heavy, Infusion::Raw))
+			, castingTools(new Group<Infusion>(this, "Elemental", Infusion::Crystal, Infusion::Dark))
+			, shields(new Group<Infusion>(this, "Luck", Infusion::Blood, Infusion::Hollow))
 		{
 			auto* sizer = new wxBoxSizer(wxHORIZONTAL);
 

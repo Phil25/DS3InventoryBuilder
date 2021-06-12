@@ -219,7 +219,7 @@ private:
 
 		auto dc = wxPaintDC{this};
 
-		const auto weaponCount = std::min(weapons.size(), 25ULL);
+		const auto weaponCount = std::min(weapons.size(), static_cast<size_t>(25));
 		const auto rowCount = GetRowCount(weaponCount);
 		const auto weaponSize = size / rowCount;
 
