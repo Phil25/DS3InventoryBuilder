@@ -11,6 +11,7 @@ class DS3InventoryBuilder(ConanFile):
         "wxwidgets/3.1.4@bincrafters/stable",
         "rapidjson/cci.20200410",
         "bzip2/1.0.8",
+        "fmt/7.1.3",
         "gtest/cci.20210126",
     )
 

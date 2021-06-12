@@ -7,7 +7,7 @@
 #include <wx/notebook.h>
 #include <wx/dataview.h>
 #include <wx/listctrl.h>
-#include <format>
+#include <fmt/core.h>
 
 namespace
 {
@@ -21,13 +21,13 @@ namespace
 	inline auto ToString(const float val, const char* whenZero="0") -> std::string
 	{
 		if (!val) return whenZero;
-		return std::format("{:.2f}", val);
+		return fmt::format("{:.2f}", val);
 	}
 
 	inline auto ToString1AfterComma(const float val, const char* whenZero="0") -> std::string
 	{
 		if (!val) return whenZero;
-		return std::format("{:.1f}", val);
+		return fmt::format("{:.1f}", val);
 	}
 
 	inline auto ToStringInt(const float val, const char* whenZero="0") -> std::string
@@ -41,7 +41,7 @@ namespace
 		if (!val2 || (std::abs(val1 - val2) < 0.1))
 			return ToStringInt(val1, whenZero);
 		else
-			return std::format("{} ({})", ToStringInt(val1, whenZero), ToStringInt(val2, whenZero));
+			return fmt::format("{} ({})", ToStringInt(val1, whenZero), ToStringInt(val2, whenZero));
 	}
 
 	inline auto ToString(const bool val) -> std::string
@@ -55,8 +55,8 @@ namespace
 		using Infusion = invbuilder::Weapon::Infusion;
 
 		return infusion == Infusion::None
-			? std::format("{} +{}", name, DB::GetDisplayLevel(unique, level))
-			: std::format("{} {} +{}", name, DB::ToString(infusion), DB::GetDisplayLevel(unique, level));
+			? fmt::format("{} +{}", name, DB::GetDisplayLevel(unique, level))
+			: fmt::format("{} {} +{}", name, DB::ToString(infusion), DB::GetDisplayLevel(unique, level));
 	}
 }
 
@@ -158,14 +158,14 @@ public:
 		}
 
 		title->SetLabel(context->GetName());
-		subtitle->SetLabel(std::format("{} {} +{}", infusionText, DB::ToString(weapon.type), context->GetLevel(true)));
+		subtitle->SetLabel(fmt::format("{} {} +{}", infusionText, DB::ToString(weapon.type), context->GetLevel(true)));
 
 		Layout();
 	}
 
 	void SetWeapons(const WeaponContext::Vector& selection)
 	{
-		title->SetLabel(std::format("{}x weapons selected", selection.size()));
+		title->SetLabel(fmt::format("{}x weapons selected", selection.size()));
 		subtitle->SetLabel("");
 		sizerSubtitle->Hide(infusionIcon);
 

@@ -6,7 +6,7 @@
 #include <Database.h>
 #include <wx/popupwin.h>
 #include <wx/srchctrl.h>
-#include <format>
+#include <fmt/core.h>
 
 class Finder::AttributesListener final : public IAttributesListener
 {
@@ -355,7 +355,7 @@ class Finder::FilterControls final : public wxPanel
 	{
 		wxArrayString levels;
 		for (int i = 0; i <= 10; ++i)
-			levels.Add(std::format("+{}", i));
+			levels.Add(fmt::format("+{}", i));
 		return levels;
 	}
 

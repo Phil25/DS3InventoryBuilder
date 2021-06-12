@@ -443,7 +443,7 @@ bool WeaponGrid::MatchesFilters(const std::string& filter, const CardPtr& card, 
 {
 	const auto& name = card->context->GetName();
 	const auto& weapon = wxGetApp().GetDatabase().GetWeapon(name); // TODO: cache type
-	return types.contains(weapon.type) && infusions.contains(card->context->GetInfusion()) && (filter.empty() || MatchString(filter, name));
+	return types.count(weapon.type) && infusions.count(card->context->GetInfusion()) && (filter.empty() || MatchString(filter, name));
 }
 
 void WeaponGrid::SetFiltering(std::string filter, const TypeSet& types, const InfusionSet& infusions, const Sorting& sortingOverride)

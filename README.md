@@ -45,6 +45,7 @@ There is a in-app popup warning about this, but if you have any details on how D
 * [wxWidgets](https://www.wxwidgets.org/) for cross-platform native GUI
 * [RapidJSON](https://rapidjson.org/)
 * [bzip2](https://www.sourceware.org/bzip2/)
+* [fmt](https://github.com/fmtlib/fmt)
 * [GoogleTest](https://github.com/google/googletest)
 
 ## Building

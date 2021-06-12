@@ -2,7 +2,7 @@
 
 #include <AppMain.h>
 #include <Database.h>
-#include <format>
+#include <fmt/core.h>
 
 WeaponPopup::WeaponPopup(const int gridID, const bool fixed, const int selectedLevels, const int selectedInfusions)
 	: gridID(gridID)
@@ -12,7 +12,7 @@ WeaponPopup::WeaponPopup(const int gridID, const bool fixed, const int selectedL
 	auto* levels = new wxMenu{};
 	for (int i = 0; i <= 10; ++i)
 	{
-		auto* item = levels->AppendCheckItem(LevelOffset + i, std::format("+{}", i));
+		auto* item = levels->AppendCheckItem(LevelOffset + i, fmt::format("+{}", i));
 		if (1 << i  & selectedLevels) item->Check();
 	}
 

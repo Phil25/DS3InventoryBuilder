@@ -26,7 +26,8 @@ namespace
 		auto bitmap = wxBitmap{5 * weaponIconSize, rows * weaponIconSize};
 		auto dc = wxMemoryDC{bitmap};
 
-		for (int pos = 0; const auto& context : inventory)
+		int pos = 0;
+		for (const auto& context : inventory)
 		{
 			const int row = pos / 5;
 			const int col = pos % 5;

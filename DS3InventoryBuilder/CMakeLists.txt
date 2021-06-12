@@ -14,6 +14,6 @@ source_group("Source\\Menus" REGULAR_EXPRESSION "Menus/${REG_FILE}")
 source_group("Source\\Panels" REGULAR_EXPRESSION "Panels/${REG_FILE}")
 source_group("Source\\Utils" REGULAR_EXPRESSION "Utils/${REG_FILE}")
 
-target_link_libraries(DS3InventoryBuilder PRIVATE DS3InventoryBuilderCore CONAN_PKG::wxwidgets)
+target_link_libraries(DS3InventoryBuilder PRIVATE DS3InventoryBuilderCore CONAN_PKG::wxwidgets CONAN_PKG::fmt)
 
 add_subdirectory("Source")
