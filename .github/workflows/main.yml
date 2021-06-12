@@ -1,0 +1,113 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      build-type:
+        required: true
+        default: "Release"
+        description: "Build type"
+      release-tag:
+        description: "Release version (ex. 1.0.0 or blank for no release)"
+
+jobs:
+  build:
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - name: "Windows 2019"
+            os: windows-2019
+            binary: "DS3InventoryBuilder.exe"
+            suffix: "Windows"
+            setup-cmds: pwd
+          - name: "Ubuntu 18.04"
+            os: ubuntu-18.04
+            binary: "DS3InventoryBuilder"
+            suffix: "Linux"
+            setup-cmds: |
+              sudo apt update -y
+              sudo apt install -y libgtk2.0-dev libgl-dev
+              pwd
+          - name: "MacOS 10.15"
+            os: macos-10.15
+            binary: "DS3InventoryBuilder.app"
+            suffix: "MacOS"
+            setup-cmds: pwd
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install CMake
+        uses: lukka/get-cmake@v3.19.2
+
+      - name: Setup Environment
+        shell: bash
+        run: |
+          ${{ matrix.config.setup-cmds }}
+          pip3 install wheel setuptools
+          pip3 install conan
+          export PATH=$PATH:"/home/runner/.local/bin"
+          conan --version
+          conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+
+      - name: Install Project
+        shell: bash
+        run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          conan install . --build missing -s build_type="${{ github.event.inputs.build-type }}" -e APP_VERSION=${{ github.event.inputs.release-tag }}
+
+      - name: Build Project
+        shell: bash
+        run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          conan build .
+          ls -al bin
+
+      - name: Prepare Artifacts
+        run: |
+          mkdir -p DS3InventoryBuilder-${{ matrix.config.suffix }}
+          mv bin/${{ matrix.config.binary }} DS3InventoryBuilder-${{ matrix.config.suffix }}/
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: DS3InventoryBuilder-${{ matrix.config.suffix }}
+          path: DS3InventoryBuilder-${{ matrix.config.suffix }}
+
+  release:
+    name: Release
+    if: ${{ github.event.inputs.release-tag }}
+    needs: build
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+
+      - name: Collect Artifacts
+        id: collect-artifacts
+        run: |
+          for d in *; do
+            zip -mr $d.zip $d
+          done
+          artifact_list=$(ls -1)
+          artifact_list="${artifact_list//'%'/'%25'}"   # hack to prevent truncating 
+          artifact_list="${artifact_list//$'\n'/'%0A'}" # newlines in outputs
+          artifact_list="${artifact_list//$'\r'/'%0D'}"
+          echo $artifact_list
+          echo "::set-output name=artifacts::$artifact_list"
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          name: "Release v${{ github.event.inputs.release-tag }}"
+          tag_name: ${{ github.event.inputs.release-tag }}
+          files: ${{ steps.collect-artifacts.outputs.artifacts }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
