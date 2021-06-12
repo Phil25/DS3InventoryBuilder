@@ -344,10 +344,6 @@ private:
 		{
 			return comps::StabilityThenGuardAbsorption(weap1, inf1, lvl1, weap2, inf2, lvl2);
 		}
-		else
-		{
-			static_assert(false, "Unsupported sorting method");
-		}
 
 		return true;
 	}

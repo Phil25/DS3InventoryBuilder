@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Panels/Title.h>
+#include <memory>
 
 class Preview final : public Title
 {

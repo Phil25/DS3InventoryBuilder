@@ -2,6 +2,7 @@
 
 #include <Panels/Title.h>
 #include <Panels/WeaponGrid.h>
+#include <memory>
 
 class Finder final : public Title
 {
