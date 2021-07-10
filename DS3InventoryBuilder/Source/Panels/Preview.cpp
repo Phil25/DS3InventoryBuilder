@@ -307,7 +307,7 @@ class Section final : public wxPanel
 		inline auto GetValueColumnWidth(const std::string& name) -> decltype(minValueColumnWidth)
 		{
 			const auto length = static_cast<decltype(minValueColumnWidth)>(name.length());
-			return std::max(minValueColumnWidth + length * 3, minValueColumnWidth);
+			return std::max(minValueColumnWidth + length * 3, minValueColumnWidth * 1); // force pass by copy
 		}
 
 		inline void AddColumn(const std::string& name, unsigned int width)
