@@ -55,6 +55,15 @@ jobs:
           conan --version
           conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
 
+      - name: Cache Conan Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.conan/data
+          key: ${{ runner.os }}-build-${{ hashFiles('**/metadata.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
       - name: Install Project
         shell: bash
         run: |
