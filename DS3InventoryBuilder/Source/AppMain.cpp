@@ -25,10 +25,11 @@ auto AppMain::Images::Get(const std::string& name, const int size) -> const wxBi
 
 	auto& cache = it->second;
 
-	if (cache.bitmap.GetWidth() != size)
+	if (!cache.bitmap.IsOk() || cache.bitmap.GetWidth() != size)
 	{
 		auto image = cache.image.Scale(size, size, wxIMAGE_QUALITY_BICUBIC);
 		cache.bitmap = wxBitmap{std::move(image)};
+		assert(cache.bitmap.IsOk() && "bitmap should always be valid after init");
 	}
 
 	assert(cache.bitmap.GetHeight() == size && "images should be 1:1");
