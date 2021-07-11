@@ -495,3 +495,31 @@ auto Database::GetScalingGrade(const float scaling) -> char
 	if (scaling < 140.f) return 'A';
 	return 'S';
 }
+
+auto invbuilder::Database::GetInGameInfusionID(const Weapon::Infusion infusion) -> int
+{
+	using I = Weapon::Infusion;
+
+	switch (infusion)
+	{
+	case I::None: return 0;
+	case I::Heavy: return 1;
+	case I::Sharp: return 2;
+	case I::Refined: return 3;
+	case I::Raw: return 13;
+	case I::Crystal: return 5;
+	case I::Simple: return 4;
+	case I::Fire: return 6;
+	case I::Chaos: return 7;
+	case I::Lightning: return 8;
+	case I::Blessed: return 14;
+	case I::Deep: return 9;
+	case I::Dark: return 10;
+	case I::Blood: return 12;
+	case I::Poison: return 11;
+	case I::Hollow: return 15;
+	}
+
+	assert(false && "invalid infusion");
+	return 0;
+}

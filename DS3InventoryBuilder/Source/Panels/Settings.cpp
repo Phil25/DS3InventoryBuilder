@@ -225,7 +225,7 @@ private:
 				break;
 
 			case E::RevisionNotSupported: 
-				wxMessageDialog{nullptr, wxT("Inventory code was generated from a newer version."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+				wxMessageDialog{nullptr, wxT("Inventory code is invalid or generated from a newer version."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
 				break;
 			}
 		}
@@ -236,7 +236,7 @@ private:
 		const auto bitmap = CreateInventoryBitmap();
 		if (!bitmap.IsOk())
 		{
-			wxMessageDialog{nullptr, wxT("Cannot create PNG from an empty inventory."), wxT("Copy PNG to Clipboard"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+			wxMessageDialog{nullptr, wxT("Cannot create PNG from an empty inventory."), wxT("Save as PNG"), wxOK | wxICON_EXCLAMATION}.ShowModal();
 			return;
 		}
 

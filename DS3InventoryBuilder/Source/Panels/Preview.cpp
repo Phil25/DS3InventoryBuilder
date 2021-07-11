@@ -7,7 +7,9 @@
 #include <wx/notebook.h>
 #include <wx/dataview.h>
 #include <wx/listctrl.h>
+#include <wx/clipbrd.h>
 #include <fmt/core.h>
+#include <sstream>
 
 namespace
 {
@@ -58,6 +60,50 @@ namespace
 			? fmt::format("{} +{}", name, DB::GetDisplayLevel(unique, level))
 			: fmt::format("{} {} +{}", name, DB::ToString(infusion), DB::GetDisplayLevel(unique, level));
 	}
+
+	inline auto CreateMassItemGibCode(const std::shared_ptr<WeaponContext>& context)
+	{
+		using DB = invbuilder::Database;
+
+		const auto infusion = DB::GetInGameInfusionID(context->GetInfusion());
+		const auto level = DB::GetDisplayLevel(context->IsUnique(), context->GetLevel());
+
+		return fmt::format("{:X},{},{}", context->GetID(), infusion, level);
+	}
+
+	inline auto CreateMassItemGibCode(const WeaponContext::Vector& selection)
+	{
+		if (!selection.size())
+			return std::string{};
+
+		std::ostringstream oss;
+		for (const auto& context : selection)
+			oss << CreateMassItemGibCode(context) << '\n';
+
+		auto str = oss.str();
+		str.pop_back(); // remove last newline
+
+		return str;
+	}
+
+	const auto itemGibMessage = wxString{
+		"Download the latest The Grand Archives CE table?"
+		"\n\n"
+		"This will allow you to inject selected weapons into DS3 using Cheat Engine."
+		"\n\n"
+		"Mass ItemGib from the Dark-Souls-III-CT-TGA table can spawn multiple weapons at once. "
+		"To use it, load into your character, open Cheat Engine, select DarkSoulsIII.exe and load the table."
+		"\n\n"
+		"Once loaded, navigate to:\n"
+		"Scripts > Build Creation > ItemGib > Mass ItemGib > Select weapons"
+		"\n\n"
+		"Paste the Mass ItemGib code and click \"Spawn Weapons\" to have them added to your inventory. "
+		"Using the \"Discard Selected\" option will allow you to select every weapon, bow and casting tool then discard them in one go. "
+		"This way you can swap inventories with just a few clicks. "
+		"Every ItemGib feature is safe."
+		"\n\n"
+		"Clicking \"OK\" will open the releases page where you can download the table."
+	};
 }
 
 class Preview::AttributesListener final : public IAttributesListener
@@ -104,20 +150,100 @@ class Preview::WeaponLabel final : public wxPanel
 	using DB = invbuilder::Database;
 	using Infusion = invbuilder::Weapon::Infusion;
 
+	class MassItemGibPanel final : public wxPanel
+	{
+		TextHeader* label;
+		wxTextCtrl* code;
+
+		wxBoxSizer* sizerButtons;
+		wxBoxSizer* sizerCode;
+
+	public:
+		MassItemGibPanel(wxWindow* parent)
+			: wxPanel(parent)
+			, label(new TextHeader{this, "Mass ItemGib code:", 14, wxFONTWEIGHT_NORMAL})
+			, code(new wxTextCtrl{this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_READONLY})
+			, sizerButtons(new wxBoxSizer{wxVERTICAL})
+			, sizerCode(new wxBoxSizer{wxVERTICAL})
+		{
+			auto* copy = new wxButton{this, wxID_ANY, wxT("Copy")};
+			auto* help = new wxButton{this, wxID_ANY, wxT("HowTo")};
+
+			copy->Bind(wxEVT_BUTTON, &MassItemGibPanel::OnCopy, this);
+			help->Bind(wxEVT_BUTTON, &MassItemGibPanel::OnHelp, this);
+
+			sizerButtons->Add(copy, 1, wxEXPAND);
+			sizerButtons->Add(help, 1, wxEXPAND);
+
+			sizerCode->Add(label, 1, wxEXPAND);
+			sizerCode->Add(code, 1, wxEXPAND);
+			sizerCode->Hide(label);
+
+			auto* sizer = new wxBoxSizer{wxHORIZONTAL};
+			sizer->Add(sizerButtons, 0, wxEXPAND | wxRIGHT, 3);
+			sizer->Add(sizerCode, 1, wxEXPAND);
+
+			this->SetSizer(sizer);
+		}
+
+		void SetSingle()
+		{
+			sizerCode->Show(label);
+			Layout();
+		}
+
+		void SetMultiple()
+		{
+			sizerCode->Hide(label);
+			Layout();
+		}
+
+		void SetMassItemGibCode(std::string val)
+		{
+			code->SetLabel(std::move(val));
+		}
+
+	private:
+		void OnCopy(wxCommandEvent&)
+		{
+			if (!wxTheClipboard->Open())
+			{
+				wxMessageDialog{nullptr, wxT("Failure accessing the system clipboard."), wxT("Copy Mass ItemGib code"), wxOK | wxICON_ERROR}.ShowModal();
+				return;
+			}
+
+			wxTheClipboard->SetData(new wxTextDataObject(code->GetLabel()));
+			wxTheClipboard->Flush();
+			wxTheClipboard->Close();
+		}
+
+		void OnHelp(wxCommandEvent&)
+		{
+			auto dialog = wxMessageDialog{nullptr, itemGibMessage, wxT("Mass ItemGib code"), wxOK | wxCANCEL};
+
+			if (dialog.ShowModal() == wxID_OK)
+				wxLaunchDefaultBrowser("https://github.com/inunorii/Dark-Souls-III-CT-TGA/releases/latest");
+		}
+	};
+
+	wxBoxSizer* sizerMain;
 	wxBoxSizer* sizerSubtitle;
 
 	TextHeader* title;
 	TextHeader* subtitle;
 	wxPanel* infusionIcon;
 	std::string infusionName;
+	MassItemGibPanel* itemGibPanel;
 
 public:
 	WeaponLabel(wxWindow* parent)
 		: wxPanel(parent)
+		, sizerMain(new wxBoxSizer{wxVERTICAL})
 		, sizerSubtitle(new wxBoxSizer{wxHORIZONTAL})
 		, title(new TextHeader{this, "No weapons selected"})
 		, subtitle(new TextHeader{this, "", 14, wxFONTWEIGHT_NORMAL})
 		, infusionIcon(new wxPanel{this})
+		, itemGibPanel(new MassItemGibPanel{this})
 	{
 		infusionIcon->SetMinSize(wxSize{30, 30});
 		infusionIcon->Bind(wxEVT_PAINT, &WeaponLabel::OnInfusionPaint, this);
@@ -125,17 +251,22 @@ public:
 		sizerSubtitle->Add(infusionIcon, 0, wxALIGN_CENTER_VERTICAL | wxALL, 3);
 		sizerSubtitle->Add(subtitle, 0, wxALIGN_CENTER_VERTICAL | wxALL, 3);
 
-		auto* sizer = new wxBoxSizer(wxVERTICAL);
-		sizer->Add(title, 0, wxEXPAND | wxALL, 3);
-		sizer->Add(sizerSubtitle, 0, wxEXPAND | wxALL, 3);
-		this->SetSizer(sizer);
+		sizerMain->Add(title, 0, wxEXPAND | wxALL, 3);
+		sizerMain->Add(sizerSubtitle, 0, wxEXPAND | wxALL, 3);
+		sizerMain->Add(itemGibPanel, 1, wxEXPAND | wxALL, 3);
+
+		sizerMain->Hide(itemGibPanel);
+
+		this->SetSizer(sizerMain);
 	}
 
 	void SetNoWeapons()
 	{
 		title->SetLabel("No weapon selected");
 		subtitle->SetLabel("");
+
 		sizerSubtitle->Hide(infusionIcon);
+		sizerMain->Hide(itemGibPanel);
 
 		Layout();
 	}
@@ -145,7 +276,13 @@ public:
 		const auto& weapon = wxGetApp().GetDatabase().GetWeapon(context->GetName());
 
 		std::string infusionText = weapon.infusable ? "Not infused" : "Uninfusable";
+
 		sizerSubtitle->Hide(infusionIcon);
+
+		itemGibPanel->SetSingle();
+		itemGibPanel->SetMassItemGibCode(CreateMassItemGibCode(context));
+		sizerMain->Show(itemGibPanel);
+
 		const auto inf = context->GetInfusion();
 
 		if (inf != Infusion::None)
@@ -166,8 +303,13 @@ public:
 	void SetWeapons(const WeaponContext::Vector& selection)
 	{
 		title->SetLabel(fmt::format("{}x weapons selected", selection.size()));
-		subtitle->SetLabel("");
+		subtitle->SetLabel("Mass ItemGib code:");
+
 		sizerSubtitle->Hide(infusionIcon);
+
+		itemGibPanel->SetMultiple();
+		itemGibPanel->SetMassItemGibCode(CreateMassItemGibCode(selection));
+		sizerMain->Show(itemGibPanel);
 
 		Layout();
 	}

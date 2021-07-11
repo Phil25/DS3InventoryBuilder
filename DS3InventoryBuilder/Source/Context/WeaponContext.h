@@ -23,6 +23,7 @@ private:
 
 	const std::string name;
 
+	const int id;
 	const bool isUnique;
 	const bool isInfusable;
 
@@ -40,6 +41,7 @@ public:
 	void SetCardID(const int cardID, const int useCount);
 
 	auto GetName() const noexcept -> const std::string&;
+	auto GetID() const noexcept -> int;
 	bool IsUnique() const noexcept;
 
 	auto GetLevel(const bool display=false) const noexcept -> int;
