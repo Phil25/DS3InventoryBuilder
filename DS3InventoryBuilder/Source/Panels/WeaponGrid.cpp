@@ -97,8 +97,8 @@ struct WeaponGrid::Card final
 
 	wxPoint position{};
 
-	Card(const GridRole role, const int cardID, const std::string& name, const int level=10, const Infusion infusion=Infusion::None)
-		: context(std::make_shared<WeaponContext>(role, cardID, name, level, infusion, GetRequirementsStatus(name)))
+	Card(const int cardID, const std::string& name, const int level=10, const Infusion infusion=Infusion::None)
+		: context(std::make_shared<WeaponContext>(cardID, name, level, infusion, GetRequirementsStatus(name)))
 	{
 	}
 
@@ -379,11 +379,11 @@ void WeaponGrid::InitializeAllWeapons()
 	int cardID = 0;
 	for (const auto& name : wxGetApp().GetDatabase().GetNames())
 	{
-		fallback.emplace_back(std::make_unique<Card>(role, cardID++, name));
+		fallback.emplace_back(std::make_unique<Card>(cardID++, name));
 
 		if (wxGetApp().GetDatabase().GetWeapon(name).infusable)
 			for (int infusion = 1; infusion < static_cast<int>(Infusion::Size); ++infusion)
-				fallback.emplace_back(std::make_unique<Card>(role, cardID++, name, 10, static_cast<Infusion>(infusion)));
+				fallback.emplace_back(std::make_unique<Card>(cardID++, name, 10, static_cast<Infusion>(infusion)));
 	}
 
 	Sort();

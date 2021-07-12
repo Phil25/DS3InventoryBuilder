@@ -4,6 +4,7 @@
 #include <string>
 #include <Weapon.hpp>
 #include <Context/WeaponContext.h>
+#include <Utils/GridRole.hpp>
 
 class IAttributesListener;
 class IInventorySortingListener;

@@ -3,6 +3,7 @@
 #include <wx/wx.h>
 #include <Weapon.hpp>
 #include <Context/WeaponContext.h>
+#include <Utils/GridRole.hpp>
 #include <set>
 
 class WeaponGrid final : public wxPanel

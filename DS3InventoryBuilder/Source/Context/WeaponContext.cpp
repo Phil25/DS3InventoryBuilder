@@ -21,15 +21,15 @@ namespace
 	}
 }
 
-WeaponContext::WeaponContext(const GridRole role, const int cardID, std::string name, const int level, const Infusion infusion, const RequirementsStatus requirementsStatus) noexcept
-	: role(role), cardID(cardID), name(std::move(name))
+WeaponContext::WeaponContext(const int cardID, std::string name, const int level, const Infusion infusion, const RequirementsStatus requirementsStatus) noexcept
+	: cardID(cardID), name(std::move(name))
 	, id(GetWeaponID(this->name)), isUnique(GetWeaponUnique(this->name)), isInfusable(GetWeaponInfusable(this->name))
 	, level(level), infusion(isInfusable ? infusion : Infusion::None), requirementsStatus(requirementsStatus)
 {
 }
 
 WeaponContext::WeaponContext(std::string name, const int level, const int infusion) noexcept
-	: role(GridRole::None), cardID(0), name(std::move(name))
+	: cardID(0), name(std::move(name))
 	, id(GetWeaponID(this->name)), isUnique(GetWeaponUnique(this->name)), isInfusable(GetWeaponInfusable(this->name))
 	, level(level), infusion(isInfusable ? static_cast<Infusion>(infusion) : Infusion::None), requirementsStatus(RequirementsStatus::Met)
 {
