@@ -39,9 +39,9 @@ public:
 	{
 	}
 
-	void OnUpdate(const int gridID) override
+	void OnUpdate(const GridRole role) override
 	{
-		if (gridID != finder->grid->gridID)
+		if (role != GridRole::Browser)
 			finder->grid->DiscardSelection();
 	}
 };
@@ -490,7 +490,7 @@ Finder::Finder(wxWindow* parent)
 	, attributesListener(std::make_shared<AttributesListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
 	, controls(new FilterControls(GetContent(), this))
-	, grid(new WeaponGrid(GetContent()))
+	, grid(new WeaponGrid(GetContent(), GridRole::Browser))
 {
 	attributesListener->Register();
 	selectionListener->Register();

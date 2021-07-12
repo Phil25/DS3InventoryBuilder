@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include <Weapon.hpp>
+#include <Utils/GridRole.hpp>
 
 class WeaponContext final
 {
@@ -18,7 +19,7 @@ public:
 private:
 	using Infusion = invbuilder::Weapon::Infusion;
 
-	const int gridID;
+	const GridRole role;
 	int cardID;
 
 	const std::string name;
@@ -32,7 +33,7 @@ private:
 	RequirementsStatus requirementsStatus;
 
 public:
-	WeaponContext(const int gridID, const int cardID, std::string name, const int level=10, const Infusion=Infusion::None, const RequirementsStatus=RequirementsStatus::Met) noexcept;
+	WeaponContext(const GridRole role, const int cardID, std::string name, const int level=10, const Infusion=Infusion::None, const RequirementsStatus=RequirementsStatus::Met) noexcept;
 	WeaponContext(std::string name, const int level, const int infusion) noexcept;
 
 	bool IsValid() const noexcept;

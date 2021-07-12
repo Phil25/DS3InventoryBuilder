@@ -129,7 +129,7 @@ public:
 	{
 	}
 
-	void OnUpdate(const int) override
+	void OnUpdate(const GridRole) override
 	{
 		preview->OnSelectionUpdate();
 	}

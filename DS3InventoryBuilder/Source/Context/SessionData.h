@@ -29,16 +29,16 @@ class SessionData final
 	struct { int str{18}, dex{18}, int_{10}, fth{10}, lck{7}; } attributes;
 	Sorting sorting{Sorting::Method::Default, false, false};
 	WeaponContext::WeakVector selection;
-	int lastSelectionGridID{-1};
+	GridRole lastGridRole{GridRole::None};
 
 public:
 	SessionData() = default;
 
 	void UpdateAttributes(const int str, const int dex, const int int_, const int fth, const int lck);
-	void UpdateSelection(const int gridID, WeaponContext::WeakVector);
-	void UpdateSelection(const int gridID);
+	void UpdateSelection(const GridRole role, WeaponContext::WeakVector);
+	void UpdateSelection(const GridRole role);
 	void UpdateSelection();
-	void UpdateWeaponTransfer(const int originGridID, const int count);
+	void UpdateWeaponTransfer(const GridRole destinationRole, const int count);
 	void UpdateInventorySorting(Sorting);
 
 	void OverrideWeapons(const WeaponContext::Vector&);

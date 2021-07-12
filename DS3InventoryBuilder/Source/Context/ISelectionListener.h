@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Utils/GridRole.hpp>
 #include <memory>
 
 class ISelectionListener : public std::enable_shared_from_this<ISelectionListener>
@@ -12,5 +13,5 @@ public:
 
 	void Register();
 
-	virtual void OnUpdate(const int gridID) = 0;
+	virtual void OnUpdate(const GridRole role) = 0;
 };

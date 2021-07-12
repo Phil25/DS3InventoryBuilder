@@ -97,8 +97,8 @@ struct WeaponGrid::Card final
 
 	wxPoint position{};
 
-	Card(const int gridID, const int cardID, const std::string& name, const int level=10, const Infusion infusion=Infusion::None)
-		: context(std::make_shared<WeaponContext>(gridID, cardID, name, level, infusion, GetRequirementsStatus(name)))
+	Card(const GridRole role, const int cardID, const std::string& name, const int level=10, const Infusion infusion=Infusion::None)
+		: context(std::make_shared<WeaponContext>(role, cardID, name, level, infusion, GetRequirementsStatus(name)))
 	{
 	}
 
@@ -240,7 +240,7 @@ private:
 		for (const int i : selection)
 			v.push_back(grid->cards[i]->context);
 
-		wxGetApp().GetSessionData().UpdateSelection(grid->gridID, std::move(v));
+		wxGetApp().GetSessionData().UpdateSelection(grid->role, std::move(v));
 	}
 };
 
@@ -349,12 +349,11 @@ private:
 	}
 };
 
-WeaponGrid::WeaponGrid(wxWindow* parent, const bool fixed)
+WeaponGrid::WeaponGrid(wxWindow* parent, const GridRole role)
 	: wxPanel(parent)
 	, selection(std::make_unique<SelectionManager>(this))
 	, sorting(std::make_unique<SortingManager>())
-	, gridID(++GridID)
-	, fixed(fixed)
+	, role(role)
 {
 	this->SetMinSize(wxSize(64 * 5, 128));
 	this->SetMaxSize(wxSize(128 * 5, 99999));
@@ -380,11 +379,11 @@ void WeaponGrid::InitializeAllWeapons()
 	int cardID = 0;
 	for (const auto& name : wxGetApp().GetDatabase().GetNames())
 	{
-		fallback.emplace_back(std::make_unique<Card>(gridID, cardID++, name));
+		fallback.emplace_back(std::make_unique<Card>(role, cardID++, name));
 
 		if (wxGetApp().GetDatabase().GetWeapon(name).infusable)
 			for (int infusion = 1; infusion < static_cast<int>(Infusion::Size); ++infusion)
-				fallback.emplace_back(std::make_unique<Card>(gridID, cardID++, name, 10, static_cast<Infusion>(infusion)));
+				fallback.emplace_back(std::make_unique<Card>(role, cardID++, name, 10, static_cast<Infusion>(infusion)));
 	}
 
 	Sort();
@@ -469,8 +468,8 @@ void WeaponGrid::SetFiltering(std::string filter, const TypeSet& types, const In
 
 void WeaponGrid::Sort()
 {
-	// fixed grids should not use session sorting
-	if (!fixed)
+	// only inventory grid role should use session sorting
+	if (role == GridRole::Inventory)
 		Sort(wxGetApp().GetSessionData().GetSorting());
 }
 
@@ -646,7 +645,7 @@ void WeaponGrid::OnItemMouseLeft(wxMouseEvent& e)
 
 void WeaponGrid::OnItemMouseDoubleLeft(wxMouseEvent&)
 {
-	wxGetApp().GetSessionData().UpdateWeaponTransfer(gridID, 1);
+	wxGetApp().GetSessionData().UpdateWeaponTransfer(OtherGrid(role), 1);
 }
 
 void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
@@ -669,7 +668,7 @@ void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
 		selectedInfusions |= 1 << static_cast<int>(cards[i]->context->GetInfusion());
 	}
 
-	auto menu = WeaponPopup{gridID, fixed, selectedLevels, selectedInfusions};
+	auto menu = WeaponPopup{role, selectedLevels, selectedInfusions};
 	PopupMenu(&menu);
 
 	if (menu.ShouldSelectAll())
@@ -678,7 +677,10 @@ void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
 		selection->Select({0ULL, cards.size() - 1});
 		Refresh(false);
 	}
-	else Sort();
+	else if (menu.WereWeaponsTransferred())
+	{
+		Sort();
+	}
 }
 
 void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw)
@@ -728,5 +730,3 @@ void WeaponGrid::OnItemLeaveHover(const int id, const bool redraw)
 	if (redraw)
 		RefreshRect({cards[id]->position.x, cards[id]->position.y, cardSize, cardSize}, false);
 }
-
-int WeaponGrid::GridID = 0;

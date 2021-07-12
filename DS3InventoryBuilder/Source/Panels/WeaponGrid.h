@@ -36,13 +36,10 @@ class WeaponGrid final : public wxPanel
 	Range current{};
 	wxPen scrollGuide{wxColor{0,255,132}, 6, wxPENSTYLE_DOT};
 
-	static int GridID;
-
 public:
-	const int gridID;
-	const bool fixed;
+	const GridRole role;
 
-	WeaponGrid(wxWindow* parent, const bool fixed=true);
+	WeaponGrid(wxWindow* parent, const GridRole role);
 
 	void InitializeAllWeapons();
 

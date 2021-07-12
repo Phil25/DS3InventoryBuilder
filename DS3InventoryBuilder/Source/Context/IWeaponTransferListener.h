@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <Utils/GridRole.hpp>
 
 class IWeaponTransferListener : public std::enable_shared_from_this<IWeaponTransferListener>
 {
@@ -12,5 +13,5 @@ public:
 
 	void Register();
 
-	virtual void OnUpdate(const int originGridID, const int count) = 0;
+	virtual void OnUpdate(const GridRole destinationRole, const int count) = 0;
 };

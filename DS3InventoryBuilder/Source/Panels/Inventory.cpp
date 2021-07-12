@@ -51,9 +51,9 @@ public:
 	{
 	}
 
-	void OnUpdate(const int gridID) override
+	void OnUpdate(const GridRole role) override
 	{
-		if (gridID != inventory->grid->gridID)
+		if (role != GridRole::Inventory)
 			inventory->grid->DiscardSelection();
 	}
 };
@@ -67,12 +67,12 @@ public:
 	{
 	}
 
-	void OnUpdate(const int originGridID, const int count) override
+	void OnUpdate(const GridRole destinationRole, const int count) override
 	{
-		if (originGridID == inventory->grid->gridID)
-			inventory->grid->RemoveSelectedWeapons();
-		else
+		if (destinationRole == GridRole::Inventory)
 			inventory->grid->AddSelectedWeapons(count);
+		else
+			inventory->grid->RemoveSelectedWeapons();
 	}
 };
 
@@ -103,7 +103,7 @@ Inventory::Inventory(wxWindow* parent)
 	, weaponTransferListener(std::make_shared<WeaponTransferListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
 	, inventoryRetriever(std::make_shared<InventoryRetriever>(this))
-	, grid(new WeaponGrid(GetContent(), false))
+	, grid(new WeaponGrid(GetContent(), GridRole::Inventory))
 {
 	attributesListener->Register();
 	inventorySortingListener->Register();

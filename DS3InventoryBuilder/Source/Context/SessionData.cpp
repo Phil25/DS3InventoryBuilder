@@ -33,34 +33,34 @@ void SessionData::UpdateAttributes(const int str, const int dex, const int int_,
 			ptr->OnUpdate(str, dex, int_, fth, lck);
 }
 
-void SessionData::UpdateSelection(const int gridID, std::vector<std::weak_ptr<WeaponContext>> selection)
+void SessionData::UpdateSelection(const GridRole role, std::vector<std::weak_ptr<WeaponContext>> selection)
 {
-	if (selection.empty() && gridID != lastSelectionGridID)
+	if (selection.empty() && role != lastGridRole)
 		return; // empty update from irrelevant grid
 
 	this->selection = std::move(selection);
 
-	lastSelectionGridID = gridID;
-	UpdateSelection(gridID);
+	lastGridRole = role;
+	UpdateSelection(role);
 }
 
-void SessionData::UpdateSelection(const int gridID)
+void SessionData::UpdateSelection(const GridRole role)
 {
 	for (const auto& weakPtr : listeners.selection)
 		if (const auto ptr = weakPtr.lock(); ptr)
-			ptr->OnUpdate(gridID);
+			ptr->OnUpdate(role);
 }
 
 void SessionData::UpdateSelection()
 {
-	UpdateSelection(lastSelectionGridID);
+	UpdateSelection(lastGridRole);
 }
 
-void SessionData::UpdateWeaponTransfer(const int originGridID, const int count)
+void SessionData::UpdateWeaponTransfer(const GridRole destinationRole, const int count)
 {
 	for (const auto& weakPtr : listeners.weaponTransfer)
 		if (const auto ptr = weakPtr.lock(); ptr)
-			ptr->OnUpdate(originGridID, count);
+			ptr->OnUpdate(destinationRole, count);
 }
 
 void SessionData::UpdateInventorySorting(invbuilder::Weapon::Sorting sorting)

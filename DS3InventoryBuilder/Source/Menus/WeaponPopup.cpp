@@ -4,8 +4,8 @@
 #include <Database.h>
 #include <fmt/core.h>
 
-WeaponPopup::WeaponPopup(const int gridID, const bool fixed, const int selectedLevels, const int selectedInfusions)
-	: gridID(gridID)
+WeaponPopup::WeaponPopup(const GridRole role, const int selectedLevels, const int selectedInfusions)
+	: role(role)
 {
 	using Infusion = invbuilder::Weapon::Infusion;
 
@@ -23,7 +23,7 @@ WeaponPopup::WeaponPopup(const int gridID, const bool fixed, const int selectedL
 		if (1 << i & selectedInfusions) item->Check();
 	}
 
-	if (fixed)
+	if (role == GridRole::Browser)
 	{
 		this->Append(TransferSingle, wxT("Add"));
 		this->Append(TransferRow, wxT("Add row"));
@@ -33,6 +33,13 @@ WeaponPopup::WeaponPopup(const int gridID, const bool fixed, const int selectedL
 	else
 	{
 		this->Append(TransferSingle, wxT("Remove"));
+
+		this->AppendSeparator();
+
+		this->Append(DuplicateSingle, wxT("Duplicate"));
+		this->Append(DuplicateRow, wxT("Make row"));
+		this->Append(Duplicate2Rows, wxT("Make 2 rows"));
+		this->Append(DuplicatePage, wxT("Make page"));
 
 		this->AppendSeparator();
 
@@ -51,14 +58,21 @@ bool WeaponPopup::ShouldSelectAll() const
 	return selection == SelectAll;
 }
 
+bool WeaponPopup::WereWeaponsTransferred() const
+{
+	return selection >= TransferSingle && selection <= TransferPage;
+}
+
 void WeaponPopup::OnSelection(wxCommandEvent& e)
 {
 	selection = static_cast<Selection>(e.GetId());
 
 	if (selection < LevelOffset)
 	{
-		if (selection != SelectAll)
-			wxGetApp().GetSessionData().UpdateWeaponTransfer(gridID, GetTransferCount(selection));
+		if (selection >= TransferSingle && selection <= TransferPage)
+			wxGetApp().GetSessionData().UpdateWeaponTransfer(OtherGrid(role), GetTransferCount(selection));
+		else if (selection >= DuplicateSingle && selection <= DuplicatePage)
+			wxGetApp().GetSessionData().UpdateWeaponTransfer(role, GetTransferCount(selection));
 
 		return;
 	}
@@ -89,9 +103,12 @@ inline auto WeaponPopup::GetTransferCount(const Selection selection) -> int
 {
 	switch(selection)
 	{
-	case TransferSingle: return 1;
+	case TransferSingle: case DuplicateSingle: return 1;
+	case DuplicateRow: return 4;
 	case TransferRow: return 5;
+	case Duplicate2Rows: return 2 * 5 - 1;
 	case Transfer2Rows: return 2 * 5;
+	case DuplicatePage: return 5 * 5 - 1;
 	case TransferPage: return 5 * 5;
 	}
 
