@@ -7,22 +7,6 @@
 WeaponPopup::WeaponPopup(const GridRole role, const int selectedLevels, const int selectedInfusions)
 	: role(role)
 {
-	using Infusion = invbuilder::Weapon::Infusion;
-
-	auto* levels = new wxMenu{};
-	for (int i = 0; i <= 10; ++i)
-	{
-		auto* item = levels->AppendCheckItem(LevelOffset + i, fmt::format("+{}", i));
-		if (1 << i  & selectedLevels) item->Check();
-	}
-
-	auto* infusions = new wxMenu{};
-	for (int i = 0; i < static_cast<int>(Infusion::Size); ++i)
-	{
-		auto* item = infusions->AppendCheckItem(InfusionOffset + i, invbuilder::Database::ToString(static_cast<Infusion>(i)));
-		if (1 << i & selectedInfusions) item->Check();
-	}
-
 	if (role == GridRole::Browser)
 	{
 		this->Append(TransferSingle, wxT("Add"));
@@ -43,8 +27,8 @@ WeaponPopup::WeaponPopup(const GridRole role, const int selectedLevels, const in
 
 		this->AppendSeparator();
 
-		this->AppendSubMenu(levels, wxT("Level"));
-		this->AppendSubMenu(infusions, wxT("Infusion"));
+		this->AppendSubMenu(CreateLevelSubmenu(selectedLevels), wxT("Level"));
+		this->AppendSubMenu(CreateInfusionSubmenu(selectedInfusions), wxT("Infusion"));
 	}
 
 	this->AppendSeparator();
@@ -97,6 +81,33 @@ void WeaponPopup::OnSelection(wxCommandEvent& e)
 	}
 
 	wxGetApp().GetSessionData().UpdateSelection();
+}
+
+inline auto WeaponPopup::CreateLevelSubmenu(const int selected) -> wxMenu*
+{
+	auto* levels = new wxMenu{};
+
+	for (int i = 0; i <= 10; ++i)
+	{
+		auto* item = levels->AppendCheckItem(LevelOffset + i, fmt::format("+{}", i));
+		if (1 << i  & selected) item->Check();
+	}
+
+	return levels;
+}
+
+inline auto WeaponPopup::CreateInfusionSubmenu(const int selected) -> wxMenu*
+{
+	using Infusion = invbuilder::Weapon::Infusion;
+	auto* infusions = new wxMenu{};
+
+	for (int i = 0; i < static_cast<int>(Infusion::Size); ++i)
+	{
+		auto* item = infusions->AppendCheckItem(InfusionOffset + i, invbuilder::Database::ToString(static_cast<Infusion>(i)));
+		if (1 << i & selected) item->Check();
+	}
+
+	return infusions;
 }
 
 inline auto WeaponPopup::GetTransferCount(const Selection selection) -> int

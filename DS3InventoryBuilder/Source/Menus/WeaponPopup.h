@@ -32,5 +32,8 @@ public:
 private:
 	void OnSelection(wxCommandEvent&);
 
+	static inline auto CreateLevelSubmenu(const int selected) -> wxMenu*;
+	static inline auto CreateInfusionSubmenu(const int selected) -> wxMenu*;
+
 	static inline auto GetTransferCount(const Selection) -> int;
 };
