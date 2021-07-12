@@ -42,6 +42,11 @@ bool WeaponPopup::ShouldSelectAll() const
 	return selection == SelectAll;
 }
 
+bool WeaponPopup::WereWeaponsAltered() const
+{
+	return selection >= LevelOffset; // and, by extent, infusion offset
+}
+
 bool WeaponPopup::WereWeaponsTransferred() const
 {
 	return selection >= TransferSingle && selection <= TransferPage;
@@ -63,7 +68,7 @@ void WeaponPopup::OnSelection(wxCommandEvent& e)
 
 	const auto& weapons = wxGetApp().GetSessionData().GetSelection();
 
-	if (selection < InfusionOffset)
+	if (selection < InfusionOffset) // levels
 	{
 		const auto level = selection - LevelOffset;
 
@@ -71,7 +76,7 @@ void WeaponPopup::OnSelection(wxCommandEvent& e)
 			if (const auto& ptr = weakPtr.lock(); ptr)
 				ptr->SetLevel(level);
 	}
-	else
+	else // infusions
 	{
 		const auto infusion = static_cast<invbuilder::Weapon::Infusion>(selection - InfusionOffset);
 

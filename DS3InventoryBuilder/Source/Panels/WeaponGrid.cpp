@@ -677,7 +677,7 @@ void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
 		selection->Select({0ULL, cards.size() - 1});
 		Refresh(false);
 	}
-	else if (menu.WereWeaponsTransferred())
+	else if (menu.WereWeaponsTransferred() || menu.WereWeaponsAltered())
 	{
 		Sort();
 	}

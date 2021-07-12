@@ -27,6 +27,7 @@ public:
 	WeaponPopup(const GridRole role, const int selectedLevels, const int selectedInfusions);
 
 	bool ShouldSelectAll() const;
+	bool WereWeaponsAltered() const;
 	bool WereWeaponsTransferred() const;
 
 private:
