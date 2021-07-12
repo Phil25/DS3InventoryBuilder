@@ -40,16 +40,26 @@ WeaponPopup::WeaponPopup(const int gridID, const bool fixed, const int selectedL
 		this->AppendSubMenu(infusions, wxT("Infusion"));
 	}
 
+	this->AppendSeparator();
+	this->Append(SelectAll, wxT("Select All"));
+
 	this->Bind(wxEVT_COMMAND_MENU_SELECTED, &WeaponPopup::OnSelection, this);
+}
+
+bool WeaponPopup::ShouldSelectAll() const
+{
+	return selection == SelectAll;
 }
 
 void WeaponPopup::OnSelection(wxCommandEvent& e)
 {
-	const auto selection = static_cast<Selection>(e.GetId());
+	selection = static_cast<Selection>(e.GetId());
 
 	if (selection < LevelOffset)
 	{
-		wxGetApp().GetSessionData().UpdateWeaponTransfer(gridID, GetTransferCount(selection));
+		if (selection != SelectAll)
+			wxGetApp().GetSessionData().UpdateWeaponTransfer(gridID, GetTransferCount(selection));
+
 		return;
 	}
 
@@ -75,7 +85,7 @@ void WeaponPopup::OnSelection(wxCommandEvent& e)
 	wxGetApp().GetSessionData().UpdateSelection();
 }
 
-auto WeaponPopup::GetTransferCount(const Selection selection) -> int
+inline auto WeaponPopup::GetTransferCount(const Selection selection) -> int
 {
 	switch(selection)
 	{

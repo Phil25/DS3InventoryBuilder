@@ -672,7 +672,13 @@ void WeaponGrid::OnItemMouseRight(wxMouseEvent& e)
 	auto menu = WeaponPopup{gridID, fixed, selectedLevels, selectedInfusions};
 	PopupMenu(&menu);
 
-	Sort();
+	if (menu.ShouldSelectAll())
+	{
+		selection->Clear();
+		selection->Select({0ULL, cards.size() - 1});
+		Refresh(false);
+	}
+	else Sort();
 }
 
 void WeaponGrid::UpdateMousePosition(const int x, const int y, const bool redraw)
