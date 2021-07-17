@@ -89,20 +89,19 @@ namespace
 	const auto itemGibMessage = wxString{
 		"Download the latest The Grand Archives CE table?"
 		"\n\n"
-		"This will allow you to inject selected weapons into DS3 using Cheat Engine."
+		"This will allow you to add weapons straight to your character using Cheat Engine.\n"
+		"Requires TGA CE table version 2.1.2 or higher."
 		"\n\n"
-		"Mass ItemGib from the Dark-Souls-III-CT-TGA table can spawn multiple weapons at once. "
-		"To use it, load into your character, open Cheat Engine, select DarkSoulsIII.exe and load the table."
-		"\n\n"
-		"Once loaded, navigate to:\n"
+		"After loading the table, navigate to:\n"
 		"Scripts > Build Creation > ItemGib > Mass ItemGib > Select weapons"
 		"\n\n"
-		"Paste the Mass ItemGib code and click \"Spawn Weapons\" to have them added to your inventory. "
-		"Using the \"Discard Selected\" option will allow you to select every weapon, bow and casting tool then discard them in one go. "
-		"This way you can swap inventories with just a few clicks. "
-		"Every ItemGib feature is safe."
+		"Paste the code and click \"Spawn Weapons\" to have them added to your inventory.\n"
+		"This, along with every ItemGib feature, is safe."
 		"\n\n"
-		"Clicking \"OK\" will open the releases page where you can download the table."
+		"TIP: Using the \"Discard Selected\" option in the game will allow you to select every weapon, shield, bow and casting tool then discard them all in one go. "
+		"This way you can swap entire inventories with a few clicks."
+		"\n\n"
+		"Clicking \"OK\" will open the releases page in your browser."
 	};
 }
 
@@ -219,7 +218,7 @@ class Preview::WeaponLabel final : public wxPanel
 
 		void OnHelp(wxCommandEvent&)
 		{
-			auto dialog = wxMessageDialog{nullptr, itemGibMessage, wxT("Mass ItemGib code"), wxOK | wxCANCEL};
+			auto dialog = wxMessageDialog{nullptr, itemGibMessage, wxT("Mass ItemGib code HowTo"), wxOK | wxCANCEL};
 
 			if (dialog.ShowModal() == wxID_OK)
 				wxLaunchDefaultBrowser("https://github.com/inunorii/Dark-Souls-III-CT-TGA/releases/latest");
