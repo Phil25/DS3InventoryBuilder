@@ -15,16 +15,20 @@ public:
 		NotMet, TwoHanded, Met
 	};
 
+	struct Properties final
+	{
+		const int id;
+		const bool unique;
+		const bool infusable;
+	};
+
 private:
 	using Infusion = invbuilder::Weapon::Infusion;
 
-	int cardID;
+	int cardID{};
 
 	const std::string name;
-
-	const int id;
-	const bool isUnique;
-	const bool isInfusable;
+	const Properties properties;
 
 	int level;
 	Infusion infusion;

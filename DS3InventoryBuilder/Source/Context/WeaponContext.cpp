@@ -5,33 +5,22 @@
 
 namespace
 {
-	inline auto GetWeaponID(const std::string& name)
+	inline auto GetWeaponProperties(const std::string& name) -> WeaponContext::Properties
 	{
-		return wxGetApp().GetDatabase().GetWeapon(name).id;
-	}
-
-	inline auto GetWeaponInfusable(const std::string& name)
-	{
-		return wxGetApp().GetDatabase().GetWeapon(name).infusable;
-	}
-
-	inline auto GetWeaponUnique(const std::string& name)
-	{
-		return wxGetApp().GetDatabase().GetWeapon(name).unique;
+		const auto& weapon = wxGetApp().GetDatabase().GetWeapon(name);
+		return {weapon.id, weapon.unique, weapon.infusable};
 	}
 }
 
 WeaponContext::WeaponContext(const int cardID, std::string name, const int level, const Infusion infusion, const RequirementsStatus requirementsStatus) noexcept
-	: cardID(cardID), name(std::move(name))
-	, id(GetWeaponID(this->name)), isUnique(GetWeaponUnique(this->name)), isInfusable(GetWeaponInfusable(this->name))
-	, level(level), infusion(isInfusable ? infusion : Infusion::None), requirementsStatus(requirementsStatus)
+	: cardID(cardID), name(std::move(name)), properties(GetWeaponProperties(this->name))
+	, level(level), infusion(properties.infusable ? infusion : Infusion::None), requirementsStatus(requirementsStatus)
 {
 }
 
 WeaponContext::WeaponContext(std::string name, const int level, const int infusion) noexcept
-	: cardID(0), name(std::move(name))
-	, id(GetWeaponID(this->name)), isUnique(GetWeaponUnique(this->name)), isInfusable(GetWeaponInfusable(this->name))
-	, level(level), infusion(isInfusable ? static_cast<Infusion>(infusion) : Infusion::None), requirementsStatus(RequirementsStatus::Met)
+	: cardID(cardID), name(std::move(name)), properties(GetWeaponProperties(this->name))
+	, level(level), infusion(properties.infusable ? static_cast<Infusion>(infusion) : Infusion::None), requirementsStatus(RequirementsStatus::Met)
 {
 }
 
@@ -40,8 +29,8 @@ bool WeaponContext::IsValid() const noexcept
 	const auto inf = static_cast<int>(infusion);
 	return (0 <= level && level <= 10)
 		&& (0 <= inf && inf < static_cast<int>(Infusion::Size))
-		&& (isInfusable || (!isInfusable && inf == 0))
-		&& id && !name.empty();
+		&& !name.empty() && properties.id > 0
+		&& (properties.infusable || (!properties.infusable && inf == 0));
 }
 
 auto WeaponContext::GetCardID() const noexcept -> int
@@ -63,17 +52,17 @@ auto WeaponContext::GetName() const noexcept -> const std::string&
 
 auto WeaponContext::GetID() const noexcept -> int
 {
-	return id;
+	return properties.id;
 }
 
 bool WeaponContext::IsUnique() const noexcept
 {
-	return isUnique;
+	return properties.unique;
 }
 
 auto WeaponContext::GetLevel(const bool display) const noexcept -> int
 {
-	return display ? invbuilder::Database::GetDisplayLevel(isUnique, level) : level;
+	return display ? invbuilder::Database::GetDisplayLevel(properties.unique, level) : level;
 }
 
 void WeaponContext::SetLevel(const int level) noexcept
@@ -89,7 +78,7 @@ auto WeaponContext::GetInfusion() const noexcept -> Infusion
 
 void WeaponContext::SetInfusion(const Infusion infusion) noexcept
 {
-	this->infusion = isInfusable ? infusion : invbuilder::Weapon::Infusion::None;
+	this->infusion = properties.infusable ? infusion : invbuilder::Weapon::Infusion::None;
 }
 
 auto WeaponContext::GetRequirementsStatus() const noexcept -> RequirementsStatus
