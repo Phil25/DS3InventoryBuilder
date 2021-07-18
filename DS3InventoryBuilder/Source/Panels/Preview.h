@@ -5,7 +5,6 @@
 
 class Preview final : public Title
 {
-	class AttributesListener;
 	class SelectionListener;
 
 public:
@@ -16,7 +15,6 @@ public:
 	class WeaponBook;
 
 private:
-	std::shared_ptr<AttributesListener> attributesListener;
 	std::shared_ptr<SelectionListener> selectionListener;
 
 	wxBoxSizer* sizer;

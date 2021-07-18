@@ -8,8 +8,8 @@
 #include <wx/dataview.h>
 #include <wx/listctrl.h>
 #include <wx/clipbrd.h>
+#include <fmt/format.h>
 #include <fmt/core.h>
-#include <sstream>
 
 namespace
 {
@@ -76,14 +76,13 @@ namespace
 		if (!selection.size())
 			return std::string{};
 
-		std::ostringstream oss;
+		std::vector<std::string> codes;
+		codes.reserve(selection.size());
+
 		for (const auto& context : selection)
-			oss << CreateMassItemGibCode(context) << '\n';
+			codes.emplace_back(CreateMassItemGibCode(context));
 
-		auto str = oss.str();
-		str.pop_back(); // remove last newline
-
-		return str;
+		return fmt::format("{}", fmt::join(codes, "\n"));
 	}
 
 	const auto itemGibMessage = wxString{
@@ -104,20 +103,6 @@ namespace
 		"Clicking \"OK\" will open the releases page in your browser."
 	};
 }
-
-class Preview::AttributesListener final : public IAttributesListener
-{
-	Preview* const preview;
-
-public:
-	AttributesListener(Preview* const preview) : preview(preview)
-	{
-	}
-
-	void OnUpdate(const int str, const int dex, const int int_, const int fth, const int lck) override
-	{
-	}
-};
 
 class Preview::SelectionListener final : public ISelectionListener
 {
@@ -1063,7 +1048,6 @@ public:
 
 Preview::Preview(wxWindow* parent)
 	: Title(parent, "Weapon Preview")
-	, attributesListener(std::make_shared<AttributesListener>(this))
 	, selectionListener(std::make_shared<SelectionListener>(this))
 	, sizer(new wxBoxSizer{wxVERTICAL})
 	, label(new WeaponLabel{GetContent()})
@@ -1071,7 +1055,6 @@ Preview::Preview(wxWindow* parent)
 	, book(new WeaponBook{GetContent()})
 	, simple(new WeaponSimple{GetContent()})
 {
-	attributesListener->Register();
 	selectionListener->Register();
 
 	auto* top = new wxBoxSizer(wxHORIZONTAL);
