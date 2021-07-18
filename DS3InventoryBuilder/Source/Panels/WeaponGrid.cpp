@@ -434,11 +434,11 @@ void WeaponGrid::DiscardSelection()
 	}
 }
 
-bool WeaponGrid::MatchesFilters(const std::string& filter, const CardPtr& card, const TypeSet& types, const InfusionSet& infusions) const
+bool WeaponGrid::MatchesFilters(const WeaponContext& context, const std::string& filter, const TypeSet& types, const InfusionSet& infusions) const
 {
-	const auto& name = card->context->GetName();
-	const auto& weapon = wxGetApp().GetDatabase().GetWeapon(name); // TODO: cache type
-	return types.count(weapon.type) && infusions.count(card->context->GetInfusion()) && (filter.empty() || MatchString(filter, name));
+	return types.count(context.GetType())
+		&& infusions.count(context.GetInfusion())
+		&& (filter.empty() || MatchString(filter, context.GetName()));
 }
 
 void WeaponGrid::SetFiltering(std::string filter, const TypeSet& types, const InfusionSet& infusions, const Sorting& sortingOverride)
@@ -454,8 +454,9 @@ void WeaponGrid::SetFiltering(std::string filter, const TypeSet& types, const In
 	for (auto it = fallback.begin(); it != fallback.end();)
 	{
 		auto& card = *it;
+		assert(card->context && "context for a card not initialized");
 
-		if (MatchesFilters(filter, card, types, infusions))
+		if (MatchesFilters(*card->context, filter, types, infusions))
 		{
 			cards.emplace_back(std::move(card));
 			it = fallback.erase(it);

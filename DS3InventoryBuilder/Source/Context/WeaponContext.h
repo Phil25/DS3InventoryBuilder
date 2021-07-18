@@ -7,6 +7,9 @@
 class WeaponContext final
 {
 public:
+	using Weapon = invbuilder::Weapon;
+	using Infusion = Weapon::Infusion;
+
 	using WeakVector = std::vector<std::weak_ptr<WeaponContext>>;
 	using Vector = std::vector<std::shared_ptr<WeaponContext>>;
 
@@ -20,11 +23,10 @@ public:
 		const int id;
 		const bool unique;
 		const bool infusable;
+		const Weapon::Type type;
 	};
 
 private:
-	using Infusion = invbuilder::Weapon::Infusion;
-
 	int cardID{};
 
 	const std::string name;
@@ -46,6 +48,7 @@ public:
 	auto GetName() const noexcept -> const std::string&;
 	auto GetID() const noexcept -> int;
 	bool IsUnique() const noexcept;
+	auto GetType() const noexcept -> Weapon::Type;
 
 	auto GetLevel(const bool display=false) const noexcept -> int;
 	void SetLevel(const int level) noexcept;

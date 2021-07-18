@@ -8,7 +8,7 @@ namespace
 	inline auto GetWeaponProperties(const std::string& name) -> WeaponContext::Properties
 	{
 		const auto& weapon = wxGetApp().GetDatabase().GetWeapon(name);
-		return {weapon.id, weapon.unique, weapon.infusable};
+		return {weapon.id, weapon.unique, weapon.infusable, weapon.type};
 	}
 }
 
@@ -58,6 +58,11 @@ auto WeaponContext::GetID() const noexcept -> int
 bool WeaponContext::IsUnique() const noexcept
 {
 	return properties.unique;
+}
+
+auto WeaponContext::GetType() const noexcept -> Weapon::Type
+{
+	return properties.type;
 }
 
 auto WeaponContext::GetLevel(const bool display) const noexcept -> int
