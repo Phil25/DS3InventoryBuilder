@@ -47,8 +47,8 @@ bool comps::AttackPower(const Weapon& weap1, const Weapon::Infusion inf1, const 
 	const bool twoHanded1 = (twoHanded || DB::IsRanged(weap1)) && !DB::IsPaired(weap1);
 	const bool twoHanded2 = (twoHanded || DB::IsRanged(weap2)) && !DB::IsPaired(weap2);
 
-	const auto& [damages1, _1] = calculator::AttackRating(db, weap1.name.c_str(), inf1, lvl1, attribs, twoHanded1);
-	const auto& [damages2, _2] = calculator::AttackRating(db, weap2.name.c_str(), inf2, lvl2, attribs, twoHanded2);
+	const auto& [damages1, _1] = calculator::AttackRating(db, weap1, inf1, lvl1, attribs, twoHanded1);
+	const auto& [damages2, _2] = calculator::AttackRating(db, weap2, inf2, lvl2, attribs, twoHanded2);
 
 	const auto ar1 = static_cast<int>(damages1.Total());
 	const auto ar2 = static_cast<int>(damages2.Total());
@@ -78,8 +78,8 @@ bool comps::Effect(const Weapon& weap1, const Weapon::Infusion inf1, const int l
 
 bool comps::AttackPowerPrecise(const Weapon& weap1, const Weapon::Infusion inf1, const int lvl1, const Weapon& weap2, const Weapon::Infusion inf2, const int lvl2, const Database& db, const PlayerAttributes& attribs)
 {
-	const auto& [damages1, _1] = calculator::AttackRating(db, weap1.name.c_str(), inf1, lvl1, attribs);
-	const auto& [damages2, _2] = calculator::AttackRating(db, weap2.name.c_str(), inf2, lvl2, attribs);
+	const auto& [damages1, _1] = calculator::AttackRating(db, weap1, inf1, lvl1, attribs);
+	const auto& [damages2, _2] = calculator::AttackRating(db, weap2, inf2, lvl2, attribs);
 
 	RETURN_COMPARISON_ON_DIFFERENCE(damages1.Total(), damages2.Total());
 	return Default(weap1, inf1, lvl1, weap2, inf2, lvl2);
@@ -87,8 +87,8 @@ bool comps::AttackPowerPrecise(const Weapon& weap1, const Weapon::Infusion inf1,
 
 bool comps::AttackPowerPreciseTwoHanded(const Weapon& weap1, const Weapon::Infusion inf1, const int lvl1, const Weapon& weap2, const Weapon::Infusion inf2, const int lvl2, const Database& db, const PlayerAttributes& attribs)
 {
-	const auto& [damages1, _1] = calculator::AttackRating(db, weap1.name.c_str(), inf1, lvl1, attribs, true);
-	const auto& [damages2, _2] = calculator::AttackRating(db, weap2.name.c_str(), inf2, lvl2, attribs, true);
+	const auto& [damages1, _1] = calculator::AttackRating(db, weap1, inf1, lvl1, attribs, true);
+	const auto& [damages2, _2] = calculator::AttackRating(db, weap2, inf2, lvl2, attribs, true);
 
 	RETURN_COMPARISON_ON_DIFFERENCE(damages1.Total(), damages2.Total());
 	return Default(weap1, inf1, lvl1, weap2, inf2, lvl2);
@@ -99,8 +99,8 @@ bool comps::AttackPowerPreciseTwoHandedIfRequired(const Weapon& weap1, const Wea
 	const bool twoHanded1 = attribs.strength * 1.5 < weap1.requirements.strength;
 	const bool twoHanded2 = attribs.strength * 1.5 < weap2.requirements.strength;
 
-	const auto& [damages1, _1] = calculator::AttackRating(db, weap1.name.c_str(), inf1, lvl1, attribs, twoHanded1);
-	const auto& [damages2, _2] = calculator::AttackRating(db, weap2.name.c_str(), inf2, lvl2, attribs, twoHanded2);
+	const auto& [damages1, _1] = calculator::AttackRating(db, weap1, inf1, lvl1, attribs, twoHanded1);
+	const auto& [damages2, _2] = calculator::AttackRating(db, weap2, inf2, lvl2, attribs, twoHanded2);
 
 	RETURN_COMPARISON_ON_DIFFERENCE(damages1.Total(), damages2.Total());
 	return Default(weap1, inf1, lvl1, weap2, inf2, lvl2);

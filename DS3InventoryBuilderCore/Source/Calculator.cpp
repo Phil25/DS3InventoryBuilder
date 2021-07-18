@@ -193,8 +193,12 @@ namespace
 auto calc::AttackRating(const Database& db, const char* name, const Weapon::Infusion infusion, const int level,
 	PlayerAttributes attribs, const bool twoHanding) -> std::pair<DamageTypes, Status>
 {
-	const auto& weapon = db.GetWeapon(name);
+	return AttackRating(db, db.GetWeapon(name), infusion, level, attribs, twoHanding);
+}
 
+auto calc::AttackRating(const Database& db, const Weapon& weapon, const Weapon::Infusion infusion, const int level,
+	PlayerAttributes attribs, const bool twoHanding) -> std::pair<DamageTypes, Status>
+{
 	attribs.strength += attribs.strength * .5f * twoHanding;
 	attribs.strength = std::min(attribs.strength, 99.f);
 

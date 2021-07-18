@@ -606,10 +606,10 @@ class Preview::WeaponSimple final : public wxScrolledWindow
 		{
 			const auto attribs = wxGetApp().GetSessionData().GetAttributes();
 			const auto& [damage, status] = invbuilder::calculator::AttackRating(
-				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs, false);
+				wxGetApp().GetDatabase(), weapon, infusion, level, attribs, false);
 
 			const auto& [damage2h, status2h] = invbuilder::calculator::AttackRating(
-				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs, true);
+				wxGetApp().GetDatabase(), weapon, infusion, level, attribs, true);
 
 			list->SetItem(0, 1, ToStringIntPair(damage.Total(), damage2h.Total(), "-"));
 			list->SetItem(1, 1, ToStringIntPair(damage.physical, damage2h.physical, "-"));
@@ -829,11 +829,10 @@ class Preview::WeaponBook final : public wxNotebook
 
 		void AddWeapon(const invbuilder::Weapon& weapon, const int level, const invbuilder::Weapon::Infusion infusion)
 		{
-			// TODO: allow to pass const invbuilder::Weapon& instead of db and name cstr
+			const auto name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
 			const auto attribs = wxGetApp().GetSessionData().GetAttributes();
 			const auto& [attack, status] = invbuilder::calculator::AttackRating(
-				wxGetApp().GetDatabase(), weapon.name.c_str(), infusion, level, attribs);
-			std::string name = GetDisplayName(weapon.name, weapon.unique, level, infusion);
+				wxGetApp().GetDatabase(), weapon, infusion, level, attribs);
 
 			attackRating->AddWeapon({name,
 				ToString(attack.Total()),
