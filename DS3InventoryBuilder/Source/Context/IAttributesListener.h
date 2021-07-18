@@ -12,5 +12,5 @@ public:
 
 	void Register();
 
-	virtual void OnUpdate(const int str, const int dex, const int int_, const int fth, const int lck) = 0;
+	virtual void OnUpdate() = 0;
 };

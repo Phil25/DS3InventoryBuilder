@@ -27,10 +27,9 @@ void SessionData::UpdateAttributes(const int str, const int dex, const int int_,
 
 	UpdateSelection();
 
-	// TODO: this does not need to trigger anything
 	for (const auto& weakPtr : listeners.attributes)
 		if (const auto ptr = weakPtr.lock(); ptr)
-			ptr->OnUpdate(str, dex, int_, fth, lck);
+			ptr->OnUpdate();
 }
 
 void SessionData::UpdateSelection(const GridRole role, std::vector<std::weak_ptr<WeaponContext>> selection)

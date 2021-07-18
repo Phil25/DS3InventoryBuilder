@@ -510,8 +510,6 @@ void WeaponGrid::SetAllLevel(const int level, const Sorting& sortingOverride)
 
 void WeaponGrid::UpdateRequirements()
 {
-	const auto& attr = wxGetApp().GetSessionData().GetAttributes();
-
 	for (auto& card : cards)
 		card->context->SetRequirementsStatus(GetRequirementsStatus(card->context->GetName()));
 

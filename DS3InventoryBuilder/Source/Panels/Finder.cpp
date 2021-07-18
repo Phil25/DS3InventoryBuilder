@@ -17,7 +17,7 @@ public:
 	{
 	}
 
-	void OnUpdate(const int str, const int dex, const int int_, const int fth, const int lck) override
+	void OnUpdate() override
 	{
 		using M = invbuilder::Weapon::Sorting::Method;
 		const auto& method = finder->sorting.method;
