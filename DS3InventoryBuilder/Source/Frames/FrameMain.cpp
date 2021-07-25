@@ -24,3 +24,10 @@ FrameMain::FrameMain(wxString title) : wxFrame(nullptr, wxID_ANY, std::move(titl
 
 	this->SetSizerAndFit(main);
 }
+
+void FrameMain::NotifyOutdated()
+{
+	auto* bar = this->CreateStatusBar();
+	bar->SetBackgroundColour(wxColor{255,78,80});
+	bar->SetStatusText(wxT("Your DS3InventoryBuilder version is out of date!"));
+}

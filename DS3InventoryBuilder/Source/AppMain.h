@@ -38,6 +38,9 @@ public:
 	auto GetDatabase() -> const invbuilder::Database&;
 	auto GetImage(const std::string& name, const int size) -> const wxBitmap&;
 	auto GetSessionData() -> SessionData&;
+
+private:
+	void CheckLatestAppVersion();
 };
 
 DECLARE_APP(AppMain)
