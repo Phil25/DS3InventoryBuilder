@@ -20,14 +20,14 @@ namespace update_checker
 		return tagName.GetString();
 	}
 
-	bool Check(wxWebRequestEvent& e)
+	auto GetVersion(wxWebRequestEvent& e)
 	{
 		assert(e.GetState() == wxWebRequest::State_Completed && "wxWebRequest should have finished");
 
 		wxStringOutputStream out;
 		e.GetResponse().GetStream()->Read(out);
 
-		return ParseVersion(out) == APP_VERSION;
+		return ParseVersion(out);
 	}
 }
 
@@ -111,8 +111,12 @@ void AppMain::CheckLatestAppVersion()
 
 	this->Bind(wxEVT_WEBREQUEST_STATE, [&](wxWebRequestEvent& e)
 	{
-		if (e.GetState() == wxWebRequest::State_Completed && !update_checker::Check(e))
-			this->frameMain->NotifyOutdated();
+		if (e.GetState() == wxWebRequest::State_Completed)
+		{
+			auto latest = update_checker::GetVersion(e);
+			if (latest != APP_VERSION)
+				this->frameMain->NotifyOutdated(std::move(latest));
+		}
 	});
 
 	request.Start();
