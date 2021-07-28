@@ -7,14 +7,28 @@ class HelpLinks final : public wxMenu
 	enum Selection
 	{
 		Update,
+
+		// promo
 		WebInventoryTool,
 		DS3OptimalFashion,
+
+		// character
 		SoulsPlanner,
 		MugenMonkey,
+
+		// spreadsheets
 		PoiseCalculator,
 		PoiseResetData,
+		MotionValues,
+		WeaponArtGroups,
+		ParryData,
+		MiscData,
+
+		// reddit
 		WeaponCombos,
 		WeaponRanges,
+
+		// cheat
 		TGACETable,
 	};
 

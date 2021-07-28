@@ -21,7 +21,11 @@ HelpLinks::HelpLinks(const bool hasLatestVersion)
 	this->Append(WeaponRanges, wxT("Weapon Ranges"));
 	this->Append(WeaponCombos, wxT("Weapon Combos"));
 	this->Append(PoiseCalculator, wxT("Refined Poise Calculator"));
-	this->Append(PoiseResetData, wxT("WA Poise Data"));
+	this->Append(PoiseResetData, wxT("Weapon Art Poise Data"));
+	this->Append(WeaponArtGroups, wxT("Weapon Art Groups"));
+	this->Append(MotionValues, wxT("Motion Values"));
+	this->Append(ParryData, wxT("Parry Data"));
+	this->Append(MiscData, wxT("Miscellaneous Data"));
 
 	this->AppendSeparator();
 	this->Append(TGACETable, wxT("The Grand Archives CE Table"));
@@ -59,6 +63,22 @@ void HelpLinks::OnSelection(wxCommandEvent& e)
 
 		case PoiseResetData:
 			wxLaunchDefaultBrowser("https://docs.google.com/spreadsheets/d/1MadZfjiHI1xIeOmc1cvLNtWPCGnU7Kh4AzyCuAeqA8s");
+			break;
+
+		case MotionValues:
+			wxLaunchDefaultBrowser("https://docs.google.com/spreadsheets/d/1vhpA46Z_FWYCJwfYpnlGIrEGb5fxP_2cNAsGLhzm8wI");
+			break;
+
+		case WeaponArtGroups:
+			wxLaunchDefaultBrowser("https://docs.google.com/spreadsheets/d/1Vt5UyOKCiAH0XthtbWomkhTMqDRm1PDjvcRPr_RbqZQ");
+			break;
+
+		case ParryData:
+			wxLaunchDefaultBrowser("https://docs.google.com/spreadsheets/d/e/2PACX-1vTSGvPuaj9jSOZd5GIJpIGfrTNqBuNbS8vsZsDL1K6AFkKv_79vDBVbL3u-2tZ9OuYo2XKoz5QE3XMk/pubhtml");
+			break;
+
+		case MiscData:
+			wxLaunchDefaultBrowser("https://docs.google.com/spreadsheets/d/1WxScAfOaak7gQ9oqdyoon3ZRnbis80cSPiSdHjXPm04");
 			break;
 
 		case WeaponCombos:
