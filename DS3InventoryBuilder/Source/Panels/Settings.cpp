@@ -3,12 +3,19 @@
 #include <AppMain.h>
 #include <Utils/DrawWeapon.h>
 #include <Utils/InventoryEncoder.h>
+#include <Menus/HelpLinks.h>
 #include <wx/spinctrl.h>
 #include <wx/filedlg.h>
 #include <wx/clipbrd.h>
 
 namespace
 {
+	const auto exportCodeLabel = wxString{"Export Code"};
+	const auto importCodeLabel = wxString{"Import Code"};
+	const auto savePNGLabel = wxString{"Save PNG"};
+	const auto copyPNGLabel = wxString{"Copy PNG"};
+	const auto helpLabel = wxString{"Helpful Links"};
+
 	constexpr auto weaponIconSize = 128;
 
 	auto CreateInventoryBitmap()
@@ -114,7 +121,7 @@ public:
 	}
 };
 
-class Settings::IOOperations final : public wxPanel
+class Settings::MenuBar final : public wxPanel
 {
 	class CodeDialog final : public wxDialog
 	{
@@ -154,33 +161,41 @@ class Settings::IOOperations final : public wxPanel
 	wxButton* decode;
 	wxButton* save;
 	wxButton* copy;
+	wxButton* help;
 
 public:
-	IOOperations(wxWindow* parent)
+	MenuBar(wxWindow* parent)
 		: wxPanel(parent)
-		, encode(new wxButton{this, wxID_ANY, wxT("Export Code")})
-		, decode(new wxButton{this, wxID_ANY, wxT("Import Code")})
-		, save(new wxButton{this, wxID_ANY, wxT("Save as PNG")})
-		, copy(new wxButton{this, wxID_ANY, wxT("Copy PNG to Clipboard")})
+		, encode(new wxButton{this, wxID_ANY, exportCodeLabel})
+		, decode(new wxButton{this, wxID_ANY, importCodeLabel})
+		, save(new wxButton{this, wxID_ANY, savePNGLabel})
+		, copy(new wxButton{this, wxID_ANY, copyPNGLabel})
+		, help(new wxButton{this, wxID_ANY, helpLabel})
 	{
-		encode->Bind(wxEVT_BUTTON, &IOOperations::OnEncode, this);
-		decode->Bind(wxEVT_BUTTON, &IOOperations::OnDecode, this);
-		save->Bind(wxEVT_BUTTON, &IOOperations::OnSave, this);
-		copy->Bind(wxEVT_BUTTON, &IOOperations::OnCopy, this);
+		encode->Bind(wxEVT_BUTTON, &MenuBar::OnEncode, this);
+		decode->Bind(wxEVT_BUTTON, &MenuBar::OnDecode, this);
+		save->Bind(wxEVT_BUTTON, &MenuBar::OnSave, this);
+		copy->Bind(wxEVT_BUTTON, &MenuBar::OnCopy, this);
+		help->Bind(wxEVT_BUTTON, &MenuBar::OnHelp, this);
 
 		auto* sizer = new wxBoxSizer(wxHORIZONTAL);
 		sizer->Add(encode, 3, wxTOP, 3);
 		sizer->Add(decode, 3, wxLEFT | wxTOP, 3);
+
 		sizer->AddStretchSpacer(1);
 		sizer->Add(save, 3, wxRIGHT | wxTOP, 3);
 		sizer->Add(copy, 3, wxTOP, 3);
+
+		sizer->AddStretchSpacer(1);
+		sizer->Add(help, 3, wxTOP, 3);
+
 		this->SetSizer(sizer);
 	}
 
 private:
 	void OnEncode(wxCommandEvent&)
 	{
-		auto dialog = CodeDialog{this, wxT("Export Code"), wxT("Import this code to recreate your inventory."), wxT("Copy to Clipboard"), wxTE_READONLY};
+		auto dialog = CodeDialog{this, exportCodeLabel, wxT("Import this code to recreate your inventory."), wxT("Copy to Clipboard"), wxTE_READONLY};
 
 		const auto weapons = wxGetApp().GetSessionData().GetInventory();
 		const auto inventoryCode = inventory_encoder::Encode(weapons);
@@ -191,7 +206,7 @@ private:
 
 		if (!wxTheClipboard->Open())
 		{
-			wxMessageDialog{nullptr, wxT("Failure accessing the system clipboard."), wxT("Export Code"), wxOK | wxICON_ERROR}.ShowModal();
+			wxMessageDialog{nullptr, wxT("Failure accessing the system clipboard."), exportCodeLabel, wxOK | wxICON_ERROR}.ShowModal();
 			return;
 		}
 
@@ -202,7 +217,7 @@ private:
 
 	void OnDecode(wxCommandEvent&)
 	{
-		auto dialog = CodeDialog{this, wxT("Import Code"), wxT("Paste your inventory code here.\nThis will OVERRIDE the current inventory!"), wxT("Apply")};
+		auto dialog = CodeDialog{this, importCodeLabel, wxT("Paste your inventory code here.\nThis will OVERRIDE the current inventory!"), wxT("Apply")};
 		if (dialog.ShowModal() != wxID_APPLY)
 			return;
 
@@ -217,15 +232,15 @@ private:
 			switch (e)
 			{
 			case E::Empty: 
-				wxMessageDialog{nullptr, wxT("Inventory code is empty."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+				wxMessageDialog{nullptr, wxT("Inventory code is empty."), importCodeLabel, wxOK | wxICON_EXCLAMATION}.ShowModal();
 				break;
 
 			case E::Invalid:
-				wxMessageDialog{nullptr, wxT("Inventory code is invalid."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+				wxMessageDialog{nullptr, wxT("Inventory code is invalid."), importCodeLabel, wxOK | wxICON_EXCLAMATION}.ShowModal();
 				break;
 
 			case E::RevisionNotSupported: 
-				wxMessageDialog{nullptr, wxT("Inventory code is invalid or generated from a newer version."), wxT("Import Code"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+				wxMessageDialog{nullptr, wxT("Inventory code is invalid or generated from a newer version."), importCodeLabel, wxOK | wxICON_EXCLAMATION}.ShowModal();
 				break;
 			}
 		}
@@ -236,16 +251,16 @@ private:
 		const auto bitmap = CreateInventoryBitmap();
 		if (!bitmap.IsOk())
 		{
-			wxMessageDialog{nullptr, wxT("Cannot create PNG from an empty inventory."), wxT("Save as PNG"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+			wxMessageDialog{nullptr, wxT("Cannot create PNG from an empty inventory."), savePNGLabel, wxOK | wxICON_EXCLAMATION}.ShowModal();
 			return;
 		}
 
-		auto dialog = wxFileDialog{this, wxT("Save as PNG"), wxEmptyString, wxT("MyInventory.png"), wxT("PNG files (*.png)|*.png|All files|*"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT};
+		auto dialog = wxFileDialog{this, savePNGLabel, wxEmptyString, wxT("MyInventory.png"), wxT("PNG files (*.png)|*.png|All files|*"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT};
 		if (dialog.ShowModal() == wxID_CANCEL)
 			return;
 
 		if (!bitmap.SaveFile(dialog.GetPath(), wxBITMAP_TYPE_PNG))
-			wxMessageDialog{nullptr, wxT("Error writing to file."), wxT("Save as PNG"), wxOK | wxICON_ERROR}.ShowModal();
+			wxMessageDialog{nullptr, wxT("Error writing to file."), savePNGLabel, wxOK | wxICON_ERROR}.ShowModal();
 	}
 
 	void OnCopy(wxCommandEvent&)
@@ -253,20 +268,29 @@ private:
 		const auto bitmap = CreateInventoryBitmap();
 		if (!bitmap.IsOk())
 		{
-			wxMessageDialog{nullptr, wxT("Cannot create PNG from an empty inventory."), wxT("Copy PNG to Clipboard"), wxOK | wxICON_EXCLAMATION}.ShowModal();
+			wxMessageDialog{nullptr, wxT("Cannot create PNG from an empty inventory."), copyPNGLabel, wxOK | wxICON_EXCLAMATION}.ShowModal();
 			return;
 		}
 
 		if (!wxTheClipboard->Open())
 		{
-			wxMessageDialog{nullptr, wxT("Failure accessing the system clipboard."), wxT("Copy PNG to Clipboard"), wxOK | wxICON_ERROR}.ShowModal();
+			wxMessageDialog{nullptr, wxT("Failure accessing the system clipboard."), copyPNGLabel, wxOK | wxICON_ERROR}.ShowModal();
 			return;
 		}
 
 		wxTheClipboard->SetData(new wxBitmapDataObject(bitmap));
 		wxTheClipboard->Close();
 
-		wxMessageDialog{nullptr, wxT("Inventory copied!\nBe sure to paste it before closing this application."), wxT("Copy PNG to Clipboard"), wxOK}.ShowModal();
+		wxMessageDialog{nullptr, wxT("Inventory copied!\nBe sure to paste it before closing this application."), copyPNGLabel, wxOK}.ShowModal();
+	}
+
+	void OnHelp(wxCommandEvent&)
+	{
+		auto menu = HelpLinks{};
+		const auto pos = help->GetPosition();
+		const auto size = help->GetSize();
+
+		PopupMenu(&menu, {pos.x, pos.y + size.GetHeight()});
 	}
 };
 
@@ -278,7 +302,7 @@ Settings::Settings(wxWindow* parent)
 	, fth(new Attribute{GetContent(), "FTH", 10})
 	, lck(new Attribute{GetContent(), "LCK", 7})
 	, inventorySorting(new InventorySorting{GetContent()})
-	, ioOperations(new IOOperations{GetContent()})
+	, menuBar(new MenuBar{GetContent()})
 {
 	this->SetMinSize(wxSize(550, 180));
 
@@ -301,7 +325,7 @@ Settings::Settings(wxWindow* parent)
 	auto* sizer = new wxBoxSizer(wxVERTICAL);
 	sizer->Add(attributes, 0, wxEXPAND | wxALL, 10);
 	sizer->Add(inventorySorting, 0, wxEXPAND | wxALL, 10);
-	sizer->Add(ioOperations, 0, wxEXPAND | wxALL, 10);
+	sizer->Add(menuBar, 0, wxEXPAND | wxALL, 10);
 
 	GetContent()->SetSizer(sizer);
 }
