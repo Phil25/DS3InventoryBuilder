@@ -1,35 +1,6 @@
 #include "AppMain.h"
 
 #include <wx/mstream.h>
-#include <wx/sstream.h>
-#include <wx/webrequest.h>
-#include <rapidjson/document.h>
-
-namespace update_checker
-{
-	const auto url = wxString{"https://api.github.com/repos/Phil25/DS3InventoryBuilder/releases/latest"};
-
-	std::string ParseVersion(const wxStringOutputStream& out)
-	{
-		rapidjson::Document doc;
-		doc.Parse(out.GetString());
-
-		const auto& tagName = doc["tag_name"];
-		assert(tagName.IsString() && "tag_name from GitHub API should be a string");
-
-		return tagName.GetString();
-	}
-
-	auto GetVersion(wxWebRequestEvent& e)
-	{
-		assert(e.GetState() == wxWebRequest::State_Completed && "wxWebRequest should have finished");
-
-		wxStringOutputStream out;
-		e.GetResponse().GetStream()->Read(out);
-
-		return ParseVersion(out);
-	}
-}
 
 wxIMPLEMENT_APP(AppMain);
 
@@ -73,7 +44,6 @@ AppMain::AppMain()
 bool AppMain::OnInit()
 {
 	wxInitAllImageHandlers();
-	CheckLatestAppVersion();
 
 	images = std::make_unique<Images>(database);
 
@@ -101,23 +71,4 @@ auto AppMain::GetImage(const std::string& name, const int size) -> const wxBitma
 auto AppMain::GetSessionData() -> SessionData&
 {
 	return sessionData;
-}
-
-void AppMain::CheckLatestAppVersion()
-{
-	auto request = wxWebSession::GetDefault().CreateRequest(this, update_checker::url);
-	if (!request.IsOk())
-		return;
-
-	this->Bind(wxEVT_WEBREQUEST_STATE, [&](wxWebRequestEvent& e)
-	{
-		if (e.GetState() == wxWebRequest::State_Completed)
-		{
-			auto latest = update_checker::GetVersion(e);
-			if (latest != APP_VERSION)
-				this->frameMain->NotifyOutdated(std::move(latest));
-		}
-	});
-
-	request.Start();
 }

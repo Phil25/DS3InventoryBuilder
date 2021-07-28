@@ -19,7 +19,7 @@ class HelpLinks final : public wxMenu
 	};
 
 public:
-	HelpLinks();
+	HelpLinks(const bool hasLatestVersion);
 
 private:
 	void OnSelection(wxCommandEvent& e);

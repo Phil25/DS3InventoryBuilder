@@ -21,6 +21,7 @@ public:
 	Settings(wxWindow* parent);
 
 private:
+	void CheckLatestAppVersion();
 	void UpdateAttributes(wxSpinEvent&);
 	void UpdateSorting(wxCommandEvent&);
 };

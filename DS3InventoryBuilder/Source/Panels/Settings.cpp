@@ -7,6 +7,9 @@
 #include <wx/spinctrl.h>
 #include <wx/filedlg.h>
 #include <wx/clipbrd.h>
+#include <wx/sstream.h>
+#include <wx/webrequest.h>
+#include <rapidjson/document.h>
 
 namespace
 {
@@ -59,6 +62,33 @@ namespace
 		return arr;
 	}
 }
+
+namespace update_checker
+{
+	const auto url = wxString{"https://api.github.com/repos/Phil25/DS3InventoryBuilder/releases/latest"};
+
+	std::string ParseVersion(const wxStringOutputStream& out)
+	{
+		rapidjson::Document doc;
+		doc.Parse(out.GetString());
+
+		const auto& tagName = doc["tag_name"];
+		assert(tagName.IsString() && "tag_name from GitHub API should be a string");
+
+		return tagName.GetString();
+	}
+
+	auto GetVersion(wxWebRequestEvent& e)
+	{
+		assert(e.GetState() == wxWebRequest::State_Completed && "wxWebRequest should have finished");
+
+		wxStringOutputStream out;
+		e.GetResponse().GetStream()->Read(out);
+
+		return ParseVersion(out);
+	}
+}
+
 
 class Settings::Attribute final : public wxPanel
 {
@@ -162,6 +192,7 @@ class Settings::MenuBar final : public wxPanel
 	wxButton* save;
 	wxButton* copy;
 	wxButton* help;
+	bool hasLatestVersion{true};
 
 public:
 	MenuBar(wxWindow* parent)
@@ -190,6 +221,18 @@ public:
 		sizer->Add(help, 3, wxTOP, 3);
 
 		this->SetSizer(sizer);
+	}
+
+	void SetHasLatestVersion(const bool val)
+	{
+		hasLatestVersion = val;
+
+		if (!val)
+		{
+			help->Hide();
+			help->SetBackgroundColour(wxColor{231,180,22});
+			help->ShowWithEffect(wxSHOW_EFFECT_SLIDE_TO_LEFT);
+		}
 	}
 
 private:
@@ -286,7 +329,7 @@ private:
 
 	void OnHelp(wxCommandEvent&)
 	{
-		auto menu = HelpLinks{};
+		auto menu = HelpLinks{hasLatestVersion};
 		const auto pos = help->GetPosition();
 		const auto size = help->GetSize();
 
@@ -328,6 +371,23 @@ Settings::Settings(wxWindow* parent)
 	sizer->Add(menuBar, 0, wxEXPAND | wxALL, 10);
 
 	GetContent()->SetSizer(sizer);
+
+	CheckLatestAppVersion();
+}
+
+void Settings::CheckLatestAppVersion()
+{
+	auto request = wxWebSession::GetDefault().CreateRequest(this, update_checker::url);
+	if (!request.IsOk())
+		return;
+
+	this->Bind(wxEVT_WEBREQUEST_STATE, [&](wxWebRequestEvent& e)
+	{
+		if (e.GetState() == wxWebRequest::State_Completed)
+			this->menuBar->SetHasLatestVersion(update_checker::GetVersion(e) == APP_VERSION);
+	});
+
+	request.Start();
 }
 
 void Settings::UpdateAttributes(wxSpinEvent&)

@@ -4,7 +4,6 @@
 #include <Panels/Inventory.h>
 #include <Panels/Settings.h>
 #include <Panels/Preview.h>
-#include <fmt/format.h>
 
 FrameMain::FrameMain(wxString title) : wxFrame(nullptr, wxID_ANY, std::move(title))
 {
@@ -24,11 +23,4 @@ FrameMain::FrameMain(wxString title) : wxFrame(nullptr, wxID_ANY, std::move(titl
 	main->Add(right, 0, wxEXPAND | wxRIGHT | wxTOP | wxBOTTOM, 3);
 
 	this->SetSizerAndFit(main);
-}
-
-void FrameMain::NotifyOutdated(std::string latestVersion)
-{
-	auto* bar = this->CreateStatusBar();
-	bar->SetBackgroundColour(wxColor{255,78,80});
-	bar->SetStatusText(fmt::format("Your DS3InventoryBuilder version is out of date! Latest: v{}", std::move(latestVersion)));
 }
