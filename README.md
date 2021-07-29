@@ -1,3 +1,5 @@
+> #### Check out [Dark Souls III Inventory Tool](https://ds3-inventory.nyasu.business/) by sovietspaceship, a tool similar to this one, but web-based.
+
 # DS3InventoryBuilder
 
 This app replicates the Dark Souls 3 weapon inventory for you to preview swaps or just store weapons for your builds.
