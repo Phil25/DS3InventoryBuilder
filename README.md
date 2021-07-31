@@ -12,20 +12,21 @@ https://user-images.githubusercontent.com/16500675/121757438-cdaba380-cb1d-11eb-
 
 ## Full feature list
 1. Imitates in-game 5 column inventory layout and automatically sorts every item you add.
-2. Settable infusions and levels on all weapons with appropriate icons displayed.
-3. Missing requirements icons, with an additional state which shows where a weapon needs to be two handed.
-4. All sorting methods both ascending and descending are available ([note `Attack Power` in known bugs](#known-bugs)).
-5. Input your character attributes to get exact damage numbers for your weapons and manage missing requirements.
-6. Highlighting swaps at L2/R2 distance from the current selection.
-7. Simple weapon preview with single selection and switching to advanced comparison view with multiple selection.
-8. Weapon preview includes damages, absorption, properties, requirements and scaling along with the hidden luck scaling.
-9. Rich weapon browser, with ability to filter by name, classes, infusions, levels and sorting methods.
-10. Additional modifiers for sorting the browser, ex. sorting by two handed damage only where two handing is required.
-11. Save your inventory as PNG on your computer or copy it directly to clipboard.
-12. Export your inventory in an encoded form to share it over chat or paste it on soulsplanner.com along with your build.
-13. Import yours and others' inventory codes.
-14. ???
-15. Profit.
+1. Settable infusions and levels on all weapons with appropriate icons displayed.
+1. Missing requirements icons, with an additional state which shows where a weapon needs to be two handed.
+1. All sorting methods both ascending and descending are available ([note `Attack Power` in known bugs](#known-bugs)).
+1. Input your character attributes to get exact damage numbers for your weapons and manage missing requirements.
+1. Mass ItemGib support for quickly adding many weapons in-game (requires [TGA CE Table](https://github.com/inunorii/Dark-Souls-III-CT-TGA/releases/latest)).
+1. Highlighting swaps at L2/R2 distance from the current selection.
+1. Simple weapon preview with single selection and switching to advanced comparison view with multiple selection.
+1. Weapon preview includes damages, absorption, properties, requirements and scaling along with the hidden luck scaling.
+1. Rich weapon browser, with ability to filter by name, classes, infusions, levels and sorting methods.
+1. Additional modifiers for sorting the browser, ex. sorting by two handed damage only where two handing is required.
+1. Save your inventory as PNG on your computer or copy it directly to clipboard.
+1. Export your inventory in an encoded form to share it over chat or paste it on soulsplanner.com along with your build.
+1. Import yours and others' inventory codes.
+1. ???
+1. Profit.
 
 ## Known bugs
 * Sorting by `Attack Power` is not 100% valid.
@@ -41,6 +42,7 @@ There is a in-app popup warning about this, but if you have any details on how D
 * [Post on calcuting AR](https://www.reddit.com/r/darksouls3/comments/4gqrpy/how_to_calculate_attack_rating_of_any_weapon_at/) by `u/Frostitutes`.
 * [Spreadsheet with full weapon data](https://www.reddit.com/r/darksouls3/comments/4j3o40/spreadsheet_with_full_ar_calculation/) by `u/monrandira` and `u/pireax`.
 * [ds3-ar](https://github.com/Derling/ds3-ar/tree/master/src) project from `Derling`.
+* [TGA Cheat Engine Table](https://github.com/inunorii/Dark-Souls-III-CT-TGA) by `inunorii` and everyone involved.
 
 ## Legal and thirdparty
 * Item names and images are properties of FromSoftware Inc

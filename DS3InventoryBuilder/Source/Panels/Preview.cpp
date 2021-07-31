@@ -89,7 +89,7 @@ namespace
 		"Download the latest The Grand Archives CE table?"
 		"\n\n"
 		"This will allow you to add weapons straight to your character using Cheat Engine.\n"
-		"Requires TGA CE table version 2.1.2 or higher."
+		"Requires TGA CE table version 2.2 or higher."
 		"\n\n"
 		"After loading the table, navigate to:\n"
 		"Scripts > Build Creation > ItemGib > Mass ItemGib > Select weapons"
