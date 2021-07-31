@@ -24,19 +24,19 @@ jobs:
             binary: "DS3InventoryBuilder.exe"
             suffix: "Windows"
             setup-cmds: pwd
-          - name: "Ubuntu 18.04"
-            os: ubuntu-18.04
-            binary: "DS3InventoryBuilder"
-            suffix: "Linux"
-            setup-cmds: |
-              sudo apt update -y
-              sudo apt install -y libgtk2.0-dev libgl-dev
-              pwd
-          - name: "MacOS 10.15"
-            os: macos-10.15
-            binary: "DS3InventoryBuilder.app"
-            suffix: "MacOS"
-            setup-cmds: pwd
+#          - name: "Ubuntu 18.04"
+#            os: ubuntu-18.04
+#            binary: "DS3InventoryBuilder"
+#            suffix: "Linux"
+#            setup-cmds: |
+#              sudo apt update -y
+#              sudo apt install -y libgtk2.0-dev libgl-dev
+#              pwd
+#          - name: "MacOS 10.15"
+#            os: macos-10.15
+#            binary: "DS3InventoryBuilder.app"
+#            suffix: "MacOS"
+#            setup-cmds: pwd
 
     steps:
       - name: Checkout
