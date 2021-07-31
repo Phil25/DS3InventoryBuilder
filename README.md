@@ -56,7 +56,7 @@ There is a in-app popup warning about this, but if you have any details on how D
 This project uses the [Conan](https://docs.conan.io/en/latest/installation.html) package manager.
 Since it's a Python-based tool, you might want to install it through `pip` in a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment).
 1. clone and cd to repo,
-1. add Bincrafters remote: `conan remote add bincrafters https://bincrafters.jfrog.io/artifactory/api/conan/conan-legacy-bincrafters`
+1. add Bincrafters remote: `conan remote add bincrafters https://bincrafters.jfrog.io/artifactory/api/conan/conan`
 1. setup CMake and dependencies: `conan install .`,
     * optionally specify compiler by adding `-s compiler=clang -s compiler.version=11`,
     * optionally specify build type by adding `--build_type=Debug`,
